@@ -108,113 +108,113 @@
 \indexentry{maximum!and Second Deriv. Test|hyperpage}{148}
 \indexentry{minimum!and First Deriv. Test|hyperpage}{148}
 \indexentry{curve sketching|hyperpage}{152}
-\indexentry{Newton's Method|hyperpage}{160}
-\indexentry{related rates|hyperpage}{166}
-\indexentry{optimization|hyperpage}{173}
-\indexentry{differential|hyperpage}{181}
-\indexentry{derivative!differential|hyperpage}{181}
-\indexentry{differential!notation|hyperpage}{181}
-\indexentry{antiderivative|hyperpage}{189}
-\indexentry{indefinite integral|hyperpage}{189}
-\indexentry{integration!indefinite|hyperpage}{189}
-\indexentry{integration!notation|hyperpage}{190}
-\indexentry{Constant Multiple Rule!of integration|hyperpage}{193}
-\indexentry{integration!Sum/Difference Rule|hyperpage}{194}
-\indexentry{Sum/Difference Rule!of integration|hyperpage}{194}
-\indexentry{integration!Power Rule|hyperpage}{194}
-\indexentry{Power Rule!integration|hyperpage}{194}
-\indexentry{initial value problem|hyperpage}{194}
-\indexentry{integration!definite|hyperpage}{201}
-\indexentry{definite integral|hyperpage}{201}
-\indexentry{signed area|hyperpage}{201}
-\indexentry{total signed area|hyperpage}{201}
-\indexentry{integration!notation|hyperpage}{201}
-\indexentry{integration!area|hyperpage}{201}
-\indexentry{integration!definite!properties|hyperpage}{203}
-\indexentry{definite integral!properties|hyperpage}{203}
-\indexentry{Riemann Sum|hyperpage}{210}
-\indexentry{Left Hand Rule|hyperpage}{210}
-\indexentry{Right Hand Rule|hyperpage}{210}
-\indexentry{Midpoint Rule|hyperpage}{210}
-\indexentry{summation!notation|hyperpage}{211}
-\indexentry{summation!properties|hyperpage}{213}
-\indexentry{Riemann Sum|hyperpage}{214}
-\indexentry{Left Hand Rule|hyperpage}{215}
-\indexentry{Right Hand Rule|hyperpage}{215}
-\indexentry{Midpoint Rule|hyperpage}{215}
-\indexentry{Riemann Sum|hyperpage}{217}
-\indexentry{Riemann Sum!and definite integral|hyperpage}{224}
-\indexentry{integration!definite!Riemann Sums|hyperpage}{224}
-\indexentry{Fundamental Theorem of Calculus|hyperpage}{228}
-\indexentry{integration!Fun. Thm. of Calc.|hyperpage}{228}
-\indexentry{Fundamental Theorem of Calculus|hyperpage}{229}
-\indexentry{integration!Fun. Thm. of Calc.|hyperpage}{229}
-\indexentry{integration!notation|hyperpage}{229}
-\indexentry{integration!displacement|hyperpage}{230}
-\indexentry{displacement|hyperpage}{230}
-\indexentry{Fundamental Theorem of Calculus!and Chain Rule|hyperpage}{232}
-\indexentry{integration!area between curves|hyperpage}{233}
-\indexentry{Mean Value Theorem!of integration|hyperpage}{235}
-\indexentry{integration!Mean Value Theorem|hyperpage}{235}
-\indexentry{integration!average value|hyperpage}{236}
-\indexentry{average value of function|hyperpage}{236}
-\indexentry{integration!numerical|hyperpage}{240}
-\indexentry{numerical integration|hyperpage}{240}
-\indexentry{elementary function|hyperpage}{240}
-\indexentry{numerical integration!Left/Right Hand Rule|hyperpage}{240}
-\indexentry{Right Hand Rule|hyperpage}{240}
-\indexentry{Left Hand Rule|hyperpage}{240}
-\indexentry{integration!numerical!Left/Right Hand Rule|hyperpage}{240}
-\indexentry{Trapezoidal Rule|hyperpage}{243}
-\indexentry{numerical integration!Trapezoidal Rule|hyperpage}{243}
-\indexentry{integration!numerical!Trapezoidal Rule|hyperpage}{243}
-\indexentry{Simpson's Rule|hyperpage}{245}
-\indexentry{numerical integration!Simpson's Rule|hyperpage}{245}
-\indexentry{integration!numerical!Simpson's Rule|hyperpage}{245}
-\indexentry{integration!numerical!Left/Right Hand Rule|hyperpage}{247}
-\indexentry{integration!numerical!Trapezoidal Rule|hyperpage}{247}
-\indexentry{integration!numerical!Simpson's Rule|hyperpage}{247}
-\indexentry{Left/Right Hand Rule|hyperpage}{247}
-\indexentry{Trapezoidal Rule|hyperpage}{247}
-\indexentry{Simpson's Rule|hyperpage}{247}
-\indexentry{numerical integration!Left/Right Hand Rule|hyperpage}{247}
-\indexentry{numerical integration!Trapezoidal Rule|hyperpage}{247}
-\indexentry{numerical integration!Simpson's Rule|hyperpage}{247}
-\indexentry{integration!numerical!Trapezoidal Rule|hyperpage}{248}
-\indexentry{integration!numerical!Simpson's Rule|hyperpage}{248}
-\indexentry{Trapezoidal Rule!error bounds|hyperpage}{248}
-\indexentry{Simpson's Rule!error bounds|hyperpage}{248}
-\indexentry{numerical integration!Trapezoidal Rule!error bounds|hyperpage}{248}
-\indexentry{numerical integration!Simpson's Rule!error bounds|hyperpage}{248}
-\indexentry{integration!by substitution|hyperpage}{257}
-\indexentry{integration!of trig. functions|hyperpage}{263}
-\indexentry{integration!definite!and substitution|hyperpage}{270}
-\indexentry{definite integral!and substitution|hyperpage}{270}
-\indexentry{integration!by parts|hyperpage}{275}
-\indexentry{integration!of trig. powers|hyperpage}{286}
-\indexentry{integration!of trig. powers|hyperpage}{291}
-\indexentry{integration!trig. subst.|hyperpage}{297}
-\indexentry{integration!partial fraction decomp.|hyperpage}{306}
-\indexentry{hyperbolic function!definition|hyperpage}{313}
-\indexentry{hyperbolic function!identities|hyperpage}{316}
-\indexentry{hyperbolic function!derivatives|hyperpage}{316}
-\indexentry{hyperbolic function!integrals|hyperpage}{316}
-\indexentry{derivative!hyperbolic funct.|hyperpage}{316}
-\indexentry{integration!hyperbolic funct.|hyperpage}{316}
-\indexentry{hyperbolic function!inverse|hyperpage}{317}
-\indexentry{hyperbolic function!inverse!logarithmic def.|hyperpage}{318}
-\indexentry{derivative!inverse hyper.|hyperpage}{319}
-\indexentry{hyperbolic function!inverse!derivative|hyperpage}{319}
-\indexentry{integration!inverse hyper.|hyperpage}{319}
-\indexentry{hyperbolic function!inverse!integration|hyperpage}{319}
-\indexentry{limit!L'H\^opital's Rule|hyperpage}{324}
-\indexentry{L'H\^opital's Rule|hyperpage}{324}
-\indexentry{limit!L'H\^opital's Rule|hyperpage}{326}
-\indexentry{L'H\^opital's Rule|hyperpage}{326}
-\indexentry{limit!indeterminate form|hyperpage}{327}
-\indexentry{indeterminate form|hyperpage}{327}
-\indexentry{limit!indeterminate form|hyperpage}{328}
-\indexentry{indeterminate form|hyperpage}{328}
+\indexentry{related rates|hyperpage}{159}
+\indexentry{limit!L'H\^opital's Rule|hyperpage}{166}
+\indexentry{L'H\^opital's Rule|hyperpage}{166}
+\indexentry{limit!L'H\^opital's Rule|hyperpage}{168}
+\indexentry{L'H\^opital's Rule|hyperpage}{168}
+\indexentry{limit!indeterminate form|hyperpage}{169}
+\indexentry{indeterminate form|hyperpage}{169}
+\indexentry{limit!indeterminate form|hyperpage}{170}
+\indexentry{indeterminate form|hyperpage}{170}
+\indexentry{optimization|hyperpage}{175}
+\indexentry{differential|hyperpage}{183}
+\indexentry{derivative!differential|hyperpage}{183}
+\indexentry{differential!notation|hyperpage}{183}
+\indexentry{Newton's Method|hyperpage}{191}
+\indexentry{antiderivative|hyperpage}{197}
+\indexentry{indefinite integral|hyperpage}{197}
+\indexentry{integration!indefinite|hyperpage}{197}
+\indexentry{integration!notation|hyperpage}{198}
+\indexentry{Constant Multiple Rule!of integration|hyperpage}{201}
+\indexentry{integration!Sum/Difference Rule|hyperpage}{202}
+\indexentry{Sum/Difference Rule!of integration|hyperpage}{202}
+\indexentry{integration!Power Rule|hyperpage}{202}
+\indexentry{Power Rule!integration|hyperpage}{202}
+\indexentry{initial value problem|hyperpage}{202}
+\indexentry{integration!definite|hyperpage}{209}
+\indexentry{definite integral|hyperpage}{209}
+\indexentry{signed area|hyperpage}{209}
+\indexentry{total signed area|hyperpage}{209}
+\indexentry{integration!notation|hyperpage}{209}
+\indexentry{integration!area|hyperpage}{209}
+\indexentry{integration!definite!properties|hyperpage}{211}
+\indexentry{definite integral!properties|hyperpage}{211}
+\indexentry{Riemann Sum|hyperpage}{218}
+\indexentry{Left Hand Rule|hyperpage}{218}
+\indexentry{Right Hand Rule|hyperpage}{218}
+\indexentry{Midpoint Rule|hyperpage}{218}
+\indexentry{summation!notation|hyperpage}{219}
+\indexentry{summation!properties|hyperpage}{221}
+\indexentry{Riemann Sum|hyperpage}{222}
+\indexentry{Left Hand Rule|hyperpage}{223}
+\indexentry{Right Hand Rule|hyperpage}{223}
+\indexentry{Midpoint Rule|hyperpage}{223}
+\indexentry{Riemann Sum|hyperpage}{225}
+\indexentry{Riemann Sum!and definite integral|hyperpage}{232}
+\indexentry{integration!definite!Riemann Sums|hyperpage}{232}
+\indexentry{Fundamental Theorem of Calculus|hyperpage}{236}
+\indexentry{integration!Fun. Thm. of Calc.|hyperpage}{236}
+\indexentry{Fundamental Theorem of Calculus|hyperpage}{237}
+\indexentry{integration!Fun. Thm. of Calc.|hyperpage}{237}
+\indexentry{integration!notation|hyperpage}{237}
+\indexentry{integration!displacement|hyperpage}{238}
+\indexentry{displacement|hyperpage}{238}
+\indexentry{Fundamental Theorem of Calculus!and Chain Rule|hyperpage}{240}
+\indexentry{integration!area between curves|hyperpage}{241}
+\indexentry{Mean Value Theorem!of integration|hyperpage}{243}
+\indexentry{integration!Mean Value Theorem|hyperpage}{243}
+\indexentry{integration!average value|hyperpage}{244}
+\indexentry{average value of function|hyperpage}{244}
+\indexentry{integration!by substitution|hyperpage}{250}
+\indexentry{integration!of trig. functions|hyperpage}{256}
+\indexentry{integration!definite!and substitution|hyperpage}{263}
+\indexentry{definite integral!and substitution|hyperpage}{263}
+\indexentry{integration!numerical|hyperpage}{268}
+\indexentry{numerical integration|hyperpage}{268}
+\indexentry{elementary function|hyperpage}{268}
+\indexentry{numerical integration!Left/Right Hand Rule|hyperpage}{268}
+\indexentry{Right Hand Rule|hyperpage}{268}
+\indexentry{Left Hand Rule|hyperpage}{268}
+\indexentry{integration!numerical!Left/Right Hand Rule|hyperpage}{268}
+\indexentry{Trapezoidal Rule|hyperpage}{271}
+\indexentry{numerical integration!Trapezoidal Rule|hyperpage}{271}
+\indexentry{integration!numerical!Trapezoidal Rule|hyperpage}{271}
+\indexentry{Simpson's Rule|hyperpage}{273}
+\indexentry{numerical integration!Simpson's Rule|hyperpage}{273}
+\indexentry{integration!numerical!Simpson's Rule|hyperpage}{273}
+\indexentry{integration!numerical!Left/Right Hand Rule|hyperpage}{275}
+\indexentry{integration!numerical!Trapezoidal Rule|hyperpage}{275}
+\indexentry{integration!numerical!Simpson's Rule|hyperpage}{275}
+\indexentry{Left/Right Hand Rule|hyperpage}{275}
+\indexentry{Trapezoidal Rule|hyperpage}{275}
+\indexentry{Simpson's Rule|hyperpage}{275}
+\indexentry{numerical integration!Left/Right Hand Rule|hyperpage}{275}
+\indexentry{numerical integration!Trapezoidal Rule|hyperpage}{275}
+\indexentry{numerical integration!Simpson's Rule|hyperpage}{275}
+\indexentry{integration!numerical!Trapezoidal Rule|hyperpage}{276}
+\indexentry{integration!numerical!Simpson's Rule|hyperpage}{276}
+\indexentry{Trapezoidal Rule!error bounds|hyperpage}{276}
+\indexentry{Simpson's Rule!error bounds|hyperpage}{276}
+\indexentry{numerical integration!Trapezoidal Rule!error bounds|hyperpage}{276}
+\indexentry{numerical integration!Simpson's Rule!error bounds|hyperpage}{276}
+\indexentry{integration!by parts|hyperpage}{284}
+\indexentry{integration!of trig. powers|hyperpage}{295}
+\indexentry{integration!of trig. powers|hyperpage}{300}
+\indexentry{integration!trig. subst.|hyperpage}{306}
+\indexentry{integration!partial fraction decomp.|hyperpage}{315}
+\indexentry{hyperbolic function!definition|hyperpage}{322}
+\indexentry{hyperbolic function!identities|hyperpage}{325}
+\indexentry{hyperbolic function!derivatives|hyperpage}{325}
+\indexentry{hyperbolic function!integrals|hyperpage}{325}
+\indexentry{derivative!hyperbolic funct.|hyperpage}{325}
+\indexentry{integration!hyperbolic funct.|hyperpage}{325}
+\indexentry{hyperbolic function!inverse|hyperpage}{326}
+\indexentry{hyperbolic function!inverse!logarithmic def.|hyperpage}{327}
+\indexentry{derivative!inverse hyper.|hyperpage}{328}
+\indexentry{hyperbolic function!inverse!derivative|hyperpage}{328}
+\indexentry{integration!inverse hyper.|hyperpage}{328}
+\indexentry{hyperbolic function!inverse!integration|hyperpage}{328}
 \indexentry{integration!improper|hyperpage}{334}
 \indexentry{improper integration|hyperpage}{334}
 \indexentry{convergence!of improper int.|hyperpage}{334}
@@ -358,12 +358,12 @@
 \indexentry{convergence!of power series|hyperpage}{453}
 \indexentry{power series!convergence|hyperpage}{453}
 \indexentry{series!power|hyperpage}{453}
-\indexentry{convergence!radius of|hyperpage}{454}
-\indexentry{convergence!interval of|hyperpage}{454}
-\indexentry{radius of convergence|hyperpage}{454}
-\indexentry{interval of convergence|hyperpage}{454}
-\indexentry{series!radius of convergence|hyperpage}{454}
-\indexentry{series!interval of convergence|hyperpage}{454}
+\indexentry{convergence!radius of|hyperpage}{453}
+\indexentry{convergence!interval of|hyperpage}{453}
+\indexentry{radius of convergence|hyperpage}{453}
+\indexentry{interval of convergence|hyperpage}{453}
+\indexentry{series!radius of convergence|hyperpage}{453}
+\indexentry{series!interval of convergence|hyperpage}{453}
 \indexentry{series!power!derivatives and integrals|hyperpage}{457}
 \indexentry{integration!of power series|hyperpage}{457}
 \indexentry{derivative!power series|hyperpage}{457}
@@ -379,8 +379,8 @@
 \indexentry{Maclaurin Series|hyperindexformat{\see{Taylor Series}}}{477}
 \indexentry{series!Taylor|hyperpage}{477}
 \indexentry{series!Maclaurin|hyperpage}{477}
-\indexentry{Taylor Series!equality with generating function|hyperpage}{479}
-\indexentry{analytic function|hyperpage}{480}
+\indexentry{Taylor Series!equality with generating function|hyperpage}{478}
+\indexentry{analytic function|hyperpage}{479}
 \indexentry{Binomial Series|hyperpage}{480}
 \indexentry{series!Binomial|hyperpage}{480}
 \indexentry{Taylor Series!common series|hyperpage}{482}

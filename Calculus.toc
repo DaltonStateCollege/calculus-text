@@ -3,7 +3,7 @@
 \contentsline {chapter}{Preface}{vii}{section*.2}
 \contentsline {chapter}{\numberline {1}Limits}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}An Introduction To Limits}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Epsilon-Delta Definition of a Limit}{9}{section.1.2}
+\contentsline {section}{\numberline {1.2}Epsilon-Delta Definition of a Limit (Optional)}{9}{section.1.2}
 \contentsline {section}{\numberline {1.3}Finding Limits Analytically}{18}{section.1.3}
 \contentsline {section}{\numberline {1.4}One Sided Limits}{30}{section.1.4}
 \contentsline {section}{\numberline {1.5}Continuity}{37}{section.1.5}
@@ -23,27 +23,27 @@
 \contentsline {section}{\numberline {3.4}Concavity and the Second Derivative}{144}{section.3.4}
 \contentsline {section}{\numberline {3.5}Curve Sketching}{152}{section.3.5}
 \contentsline {chapter}{\numberline {4}Applications of the Derivative}{159}{chapter.4}
-\contentsline {section}{\numberline {4.1}Newton's Method}{159}{section.4.1}
-\contentsline {section}{\numberline {4.2}Related Rates}{166}{section.4.2}
-\contentsline {section}{\numberline {4.3}Optimization}{173}{section.4.3}
-\contentsline {section}{\numberline {4.4}Differentials}{180}{section.4.4}
-\contentsline {chapter}{\numberline {5}Integration}{189}{chapter.5}
+\contentsline {section}{\numberline {4.1}Related Rates}{159}{section.4.1}
+\contentsline {section}{\numberline {4.2}L'H\^opital's Rule}{166}{section.4.2}
+\contentsline {section}{\numberline {4.3}Optimization}{175}{section.4.3}
+\contentsline {section}{\numberline {4.4}Differentials}{182}{section.4.4}
+\contentsline {section}{\numberline {4.5}Newton's Method (Optional)}{190}{section.4.5}
+\contentsline {chapter}{\numberline {5}Integration}{197}{chapter.5}
 \thispagestyle {empty}
-\contentsline {section}{\numberline {5.1}Antiderivatives and Indefinite Integration}{189}{section.5.1}
+\contentsline {section}{\numberline {5.1}Antiderivatives and Indefinite Integration}{197}{section.5.1}
 \thispagestyle {empty}
-\contentsline {section}{\numberline {5.2}The Definite Integral}{199}{section.5.2}
-\contentsline {section}{\numberline {5.3}Riemann Sums}{210}{section.5.3}
-\contentsline {section}{\numberline {5.4}The Fundamental Theorem of Calculus}{228}{section.5.4}
-\contentsline {section}{\numberline {5.5}Numerical Integration}{240}{section.5.5}
-\contentsline {chapter}{\numberline {6}Techniques of Antidifferentiation}{255}{chapter.6}
-\contentsline {section}{\numberline {6.1}Substitution}{255}{section.6.1}
-\contentsline {section}{\numberline {6.2}Integration by Parts}{275}{section.6.2}
-\contentsline {section}{\numberline {6.3}Trigonometric Integrals}{286}{section.6.3}
-\contentsline {section}{\numberline {6.4}Trigonometric Substitution}{296}{section.6.4}
-\contentsline {section}{\numberline {6.5}Partial Fraction Decomposition}{305}{section.6.5}
-\contentsline {section}{\numberline {6.6}Hyperbolic Functions}{313}{section.6.6}
-\contentsline {section}{\numberline {6.7}L'H\^opital's Rule}{324}{section.6.7}
-\contentsline {section}{\numberline {6.8}Improper Integration}{333}{section.6.8}
+\contentsline {section}{\numberline {5.2}The Definite Integral}{207}{section.5.2}
+\contentsline {section}{\numberline {5.3}Riemann Sums}{218}{section.5.3}
+\contentsline {section}{\numberline {5.4}The Fundamental Theorem of Calculus}{236}{section.5.4}
+\contentsline {section}{\numberline {5.5}Substitution}{248}{section.5.5}
+\contentsline {section}{\numberline {5.6}Numerical Integration (Optional)}{268}{section.5.6}
+\contentsline {chapter}{\numberline {6}Techniques of Antidifferentiation}{283}{chapter.6}
+\contentsline {section}{\numberline {6.1}Integration by Parts}{283}{section.6.1}
+\contentsline {section}{\numberline {6.2}Trigonometric Integrals}{295}{section.6.2}
+\contentsline {section}{\numberline {6.3}Trigonometric Substitution}{305}{section.6.3}
+\contentsline {section}{\numberline {6.4}Partial Fraction Decomposition}{314}{section.6.4}
+\contentsline {section}{\numberline {6.5}Hyperbolic Functions}{322}{section.6.5}
+\contentsline {section}{\numberline {6.6}Improper Integration}{333}{section.6.6}
 \contentsline {chapter}{\numberline {7}Applications of Integration}{345}{chapter.7}
 \contentsline {section}{\numberline {7.1}Area Between Curves}{346}{section.7.1}
 \contentsline {section}{\numberline {7.2}Volume by Cross-Sectional Area; Disk and Washer Methods}{353}{section.7.2}
@@ -97,4 +97,4 @@
 \contentsline {section}{\numberline {13.5}Surface Area}{791}{section.13.5}
 \contentsline {section}{\numberline {13.6}Volume Between Surfaces and Triple Integration}{798}{section.13.6}
 \contentsline {chapter}{\numberline {A}Solutions To Selected Problems}{A.1}{appendix.A}
-\contentsline {chapter}{Index}{A.33}{section*.506}
+\contentsline {chapter}{Index}{A.61}{section*.506}

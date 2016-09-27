@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=955
-NormalPos.bottom=595
+NormalPos.right=1009
+NormalPos.bottom=609
 Class=LaTeXView
 Document=Calculus.tex
 
 [Frame0_View0,0]
-TopLine=0
-Cursor=451
+TopLine=99
+Cursor=2810
 
 [SessionInfo]
 FrameCount=1
