@@ -412,3 +412,7 @@ TSWLatexianTemp*
 
 # auto folder when using emacs and auctex 
 /auto/*
+
+# TeXnic Center
+*.tcp
+*.tps
