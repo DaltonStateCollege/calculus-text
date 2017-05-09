@@ -1,0 +1,259 @@
+\section{Vector Fields}\label{sec:vector_fields}
+Chapter 14introduced double and triple integrals. We went from $\int dx$ to $\int \int  dx dy$ and
+$\int \int \int dx dy dz$. All those integrals add up small pieces, and the limit gives area or volume
+or mass. What could be more natural than that? I regret to say, after the success of
+those multiple integrals, that something is missing. It is even more regrettable that
+we didn't notice it. The missing piece is nothing less than the Fundamental Theorem
+of Calculus.
+
+The double integral $\int \int dx dy$ equals the area. To compute it, we did not use an
+antiderivative of 1. At least not consciously. The method was almost trial and error,
+and the hard part was to find the limits of integration. This chapter goes deeper, to
+show how the step from a double integral to a single integral is really a new form of
+the Fundamental Theorem-when it is done right.
+
+Two new ideas are needed early, one pleasant and one not. You will like vector
+fields. You may not think so highly of line integrals. Those are ordinary single integrals
+like $\int v(x) dx$ , but they go along curves instead of straight lines. The nice step $dx$
+becomes the confusing step $ds$. Where $\int dx$ equals the length of the interval, $\int  ds$ is
+the length of the curve. The point is that regions are enclosed by curves, and we have
+to integrate along them. The Fundamental Theorem in its two-dimensional form
+(Green's Theorem) connects a \textbf{double integral over the region to a single integral along
+its boundary curve}.
+
+The great applications are in science and engineering, where vector fields are so
+natural. But there are changes in the language. Instead of an antiderivative, we speak
+about a \textbf{potential function}. Instead of the derivative, we take the "divergence" and
+"curl." Instead of area, we compute \textbf{flux} and \textbf{circulation} and \textbf{work}. Examples come
+first.
+
+15.1 Vector Fields
+
+For an ordinary scalar function, the input is a number x and the output is a number
+$f(x)$. For a vector field (or vector function), the input is a point $(x, y)$ and the output
+is a two-dimensional vector $F(x, y)$. There is a "field" of vectors, one at every point.
+In three dimensions the input point is $(x, y, z)$ and the output vector F has three
+components.
+
+DEFINITION Let $R$ be a region in the $xy$ plane. A \textbf{vector field}  $F$ assigns to every point
+$(x, y)$ in $R$ a vector $F(x, y)$ with two components:
+$F(x, y) = M(x, y)i + N(x, y)j. (1)$
+This plane vector field involves two functions of two variables. They are the components
+M and N, which vary from point to point. A vector has fixed components, a
+vector field has varying components.
+A three-dimensional vector field has components M(x, y, z) and N(x, y, z) and
+P(x, y, 2). Then the vectors are F = Mi + Nj + Pk.
+EXAMPLE 1 The position vector at (x, y) is R = xi + yj. Its components are M = x
+and N = y. The vectors grow larger as we leave the origin (Figure 15.la). Their
+direction is outward and their length is IRI = J;i?;i = r, The vector R is boldface,
+the number r is lightface.
+EXAMPLE 2 The vector field R/r consists of unit vectors u,, pointing outward. We
+divide R = xi + yj by its length, at every point except the origin. The components
+of Rlr are M = xlr and N = y/r. Figure 15.1 shows a third field ~/r~, whose length
+is 1 /r.
+Fig. 15.1 The vector fields R and R/r and R/r2 are radial. Lengths r and 1 and l/r
+EXAMPLE 3 The spin field or rotation field or turning field goes around the origin
+instead of away from it. The field is S. Its components are M = - y and N = x:
+S = - yi + xj also has length IS1 = J(-y)2 + x2 = r. (2)
+S is perpendicular to R-their dot product is zero: S R = (- y)(x) + (x)(y) = 0. The
+spin fields S/r and S/r2 have lengths 1 and llr:
+The unit vector S/r is u,. Notice the blank at (O,O), where this field is not defined.
+Fig. 15.2 The spin fields S and S/r and S/r2 go around the origin. Lengths r and 1 and l/r. 
+15.1 Vector Fields
+EXAMPLE 4 A gradientfield starts with an ordinary function f(x, y). The components
+M and PJ are the partial derivatives df/dx and dfldy. Then the field F is the gradient
+off:
+F = grad f = Vf= dfldx i + dfldy j. (3)
+This vector field grad f is everywhere perpendicular to the level curves f(x, y) = c. The
+length lgrad f 1 tells how fast f is changing (in the direction it changes fastest). Invent
+a function like f = x2y, and you immediately have its gradient field F = 2xyi + x2j.
+To repealt, M is df/dx and N is dfldy.
+For every vector field you should ask two questions: Is it a gradient field? If so,
+what is f? Here are answers for the radial fields and spin fields:
+MA The radial fields R and R/r and ~/r~ are a11 gradient fields.
+The spin fields S and S/r are not gradients of any f(x, y),
+The spin field S/r2 is the gradient of the polar angle 0 = tan- '(ylx).
+The derivatives off = f(x2+ y2) are x and y. Thus R is a gradient field. The gradient
+off = r is the unit vector R/r pointing outwards. Both fields are perpendicular to
+circles around the origin. Those are the level curves off = f r2 and f = r.
+Question Is every R/rn a gradient field?
+Answer Yes. But among the spin fields, the only gradient is S/r2.
+A ma-jor goal of this chapter is to recognize gradient fields by a simple test. The
+rejection of S and S/r will be interesting. For some reason -yi + xj is rejected and
+yi + xj is accepted. (It is the gradient of .) The acceptance of S/r2 as the
+gradient off = 0 contains a surprise at the origin (Section 15.3).
+Gradient fields are called conservative. The function f is the potential function.
+These words, and the next examples, come from physics and engineering.
+EXAMPLE5 The velocity field is V and the flow field is pV.
+Suppose: fluid moves steadily down a pipe. Or a river flows smoothly (no waterfall).
+Or the air circulates in a fixed pattern. The velocity can be different at different points,
+but there is no change with time. The velocity vector V gives the direction offlow
+and speed of Jow at every point.
+In reality the velocity field is V(x, y, z), with three components M, N, P. Those are
+the velocities v,, v2, v, in the x, y, z directions. The speed (VI is the length: IVI2 =
+v: + v: -t v:. In a "plane flow" the k component is zero, and the velocity field is
+v,i+v2j= Mi+ Nj.
+gravity
+F = -R//."
+Fig. 15.3 A steady velocity field V and two force fields F. 
+15 Vector Calculus
+For a compact disc or a turning wheel, V is a spin field (V =US, co =angular
+velocity). A tornado might be closer to V =S/r2 (except for a dead spot at the center).
+An explosion could have V =R/r2. A quieter example is flow in and out of a lake
+with steady rain as a source term.
+TheJlowJield pV is the density p times the velocity field. While V gives the rate of
+movement, pV gives the rate of movement of mass. A greater density means a greater
+rate IpVJof "mass transport." It is like the number of passengers on a bus times the
+speed of the bus.
+EXAMPLE 6 Force fields from gravity: F is downward in the classroom, F is radial
+in space.
+When gravity pulls downward, it has only one nonzero component: F = -mgk. This
+assumes that vectors to the center of the Earth are parallel-almost true in a classroom.
+Then F is the gradient of -mgz (note dfldz = -mg).
+In physics the usual potential is not -mgz but +mgz. The force field is minus grad f
+also in electrical engineering. Electrons flow from high potential to low potential.
+The mathematics is the same, but the sign is reversed.
+In space, the force is radial inwards: F = -mMGR/r3. Its magnitude is proportional
+to l/r2 (Newton's inverse square law). The masses are m and M, and the
+gravitational constant is G =6.672 x 10-"--with distance in meters, mass in kilograms,
+and time in seconds. The dimensions of G are (force)(di~tance)~/(mass)~. This
+is different from the acceleration g =9.8m/sec2, which already accounts for the mass
+and radius of the Earth.
+Like all radial fields, gravity is a gradient field. It comes from a potential f:
+EXAMPLE 7 (a short example) Current in a wire produces a magnetic field B. It is
+the spin field S/r2 around the wire, times the strength of the current.
+STREAMLINES AND LINES OF FORCE
+Drawing a vector field is not always easy. Even the spin field looks messy when the
+vectors are too long (they go in circles and fall across each other). The circles give a
+clearer picture than the vectors. In any field, the vectors are tangent to "jield lineswwhich
+in the spin case are circles.
+DEFINITION C is afield line or integral curve if the vectors F(x, y) are tangent to C.
+The slope dyldx of the curve C equals the slope N/M of the vector F =Mi + Nj:
+We are still drawing the field of vectors, but now they are infinitesimally short.
+They are connected into curves! What is lost is their length, because S and S/r and
+S/r2 all have the same field lines (circles). For the position field R and gravity field
+R/r3, the field lines are rays from the origin. In this case the "curves" are actually
+straight.
+EXAMPLE 8 Show that the field lines for the velocity field V =yi +xj are hyperbolas.
+dy N x -- --- * y dy =x dx *y2 -x2 =constant.
+~X-M-~ 
+15.1 Vector Fields
+reamlines x2 - y2 = C
+Fig. 15.4 Velocity fields are tangent to streamlines. Gradient fields also have equipotentials.
+At every point these hyperbolas line up with the velocity V. Each particle of fluid
+travels on afield line. In fluid flow those hyperbolas are called streamlines. Drop a
+leaf into a river, and it follows a streamline. Figure 15.4 shows the streamlines for a
+river going around a bend.
+Don't forget the essential question about each vector field. Is it a gradient field?
+For V = yi + xj the answer is yes, and the potential is f = xy:
+the gradient of xy is (8flax)i + (8flay)j = yi + xj. (7)
+When there is a potential, it has level curves. They connect points of equal potential,
+so the curves f (x, y) = c are called equipotentials. Here they are the curves xy = calso
+hyperbolas. Since gradients are perpendicular to level curves, the streamlines are
+perpendicular to the equipotentials. Figure 15.4 is sliced one way by streamlines and
+the other way by equipotentials.
+A gradient field F = afldx i + afldy j is tangent to the field lines (streamlines)
+and perpendicular to the equipotentials (level curves off).
+In the gradient direction f changes fastest. In the level direction f doesn't change at
+all. The chain rule along f (x, y) = c proves these directions to be perpendicular:
+af dx af dy -- + - = 0 or (grad f) (tangent to level curve) = 0.
+ax dt oy dt
+EXAMPLE 9 The streamlines of S/r2 are circles around (0,O). The equipotentials are
+rays 0 = c. Add rays to Figure 15.2 for the gradient field S/r2.
+For the gravity field those are reversed. A body is pulled in along the field lines (rays).
+The equipotentials are the circles where f = llr is constant. The plane is crisscrossed
+by "orthogonal trajectories9'-curves that meet everywhere at right angles.
+If you bring a magnet near a pile of iron filings, a little shake will display the field
+lines. In a force field, they are "lines of force." Here are the other new words.
+Vector hid F, y, z) = Mi + Nj + Pk Plane field F = M(x, y)i + N(x, y)j
+Radial field: multiple of R = xi + yj + zk Spifl field: multiple of  = - yi + xj
+Gradient ktd = conservative field: A4 = wax, N = af, P = 18~
+Potmtialf(x, yf (not a vector) Equipotential curves f(x, y) = c
+Streamline = field line = integral curve: a curve that has F(x, y) as its tangent
+vectors. 
+554 15 Vector Calculus
+15.1 EXERCISES
+Read-through questions
+A vector field assigns a a to each point (x, y) or (x, y, z).
+In two dimensions F(x,y) = b i + c j. An example is
+the position field R = d . Its magnitude is IRI = e
+and its direction is f . It is the gradient field for f =
+g . The level curves are h , and they are i to
+the vectors R.
+Reversing this picture, the spin field is S = i . Its magnitude
+is IS1 = k and its direction is I . It is not a
+gradient field, because no function has af/ax = m and
+af/ay = n . S is the velocity field for flow going 0 . The streamlines or P lines or integral s are r . The flow field pV gives the rate at which s is moved
+by the flow.
+A gravity field from the origin is proportional to F = t
+which has IF1 = u . This is Newton's v square law.
+It is a gradient field, with potential f = w .The equipotential
+curves f(x, y) = c are x . They are Y to the field
+lines which are . This illustrates that the A of a
+function f(x, y) is B to its level curves.
+The velocity field yi + xj is the gradient off = c . Its
+streamlines are D .The slope dyldx of a streamline equals
+the ratio E of velocity components. The field is F to
+the streamlines. Drop a leaf onto the flow, and it goes along
+G .
+Find a potential f(x, y) for the gradient fields 1-8. Draw the
+streamlines perpendicular to the equipotentials f(x, y) = c.
+1 F = i + 2j (constant field) 2 F = xi +j
+7 F=xyi+ j 8 F=i+ j
+9 Draw the shear field F =xj. Check that it is not a gradient
+field: If af/ax =0 then af/ay =x is impossible. What are the
+streamlines (field lines) in the direction of F?
+10 Find all functions that satisfy af/ax = -y and show that
+none of them satisfy af/ay = x. Then the spin field S =
+-yi + xj is not a gradient field.
+Compute af/ax and af/ay in 11-18. Draw the gradient field
+F =padf and the equipotentials f(x, y) = c:
+15f=x2-y2 16 f = ex cos y
+Find equations for the streamlines in 19-24 by solving dyldx =
+N/M (including a constant C). Draw the streamlines.
+21 F =S (spin field) 22 F =S/r (spin field)
+23 F =grad (xly) 24 F =grad (2x + y).
+25 The Earth's gravity field is radial, but in a room the field
+lines seem to go straight down into the floor. This is because
+nearby field lines always look .
+26 A line of charges produces the electrostatic force field F =
+R/r2=(xi + yj)/(x2+ y2). Find the potential f(x, y). (F is also
+the gravity field for a line of =asses.)
+In 27-32 write down the vector fields Mi + Nj.
+27 F points radially away from the origin with magnitude 5.
+28 The velocity is perpendicular to the curves x3 + y3 =c and
+the speed is 1.
+29 The gravitational force F comes from two unit masses at
+(0,O) and (1,O).
+30 The streamlines are in the 45" direction and the speed is 4.
+31 The streamlines are circles clockwise around the origin
+and the speed is 1.
+32 The equipotentials are the parabolas y = x2+ c and F is
+a gradient field.
+33 Show directly that the hyperbolas xy = 2 and x2 -y2 = 3
+are perpendicular at the point (2, l), by computing both slopes
+dyldx and multiplying to get -1.
+34 The derivative off (x, y) = c isf, +f,(dy/dx) =0. Show that
+the slope of this level curve is dyldx = -MIN. It is perpendicular
+to streamlines because (- M/N)(N/M)= .
+35 The x and y derivatives of f(r) are dfldx = and
+dflay =-by the chain rule. (Test f =r2.) The equipotentials
+are .
+36 F =(ax + by)i + (bx + cy)j is a gradient field. Find the
+potential f and describe the equipotentials.
+37 True or false:
+I. The constant field i + 2k is a gradient field.
+2. For non-gradient fields, equipotentials meet streamlines
+at non-right angles.
+3. In three dimensions the equipotentials are surfaces
+instead of curves.
+4. F = x2i+ y2j+ z2k points outward from (0,0,0)-
+a radial field.
+38 Create and draw f and F and your own equipotentials
+and streamlines. 
+15.2 Line Integrals 555
+39 How can different vector fields have the same streamlines? 40 Draw arrows at six or eight points to show the direction
+Can they have the same equipotentials? Can they have the and magnitude of each field:
+same f? (a) R +S (b) Rlr -S/r (c) x2i+x2j (d)yi
+
+%%\printexercises{exercises/13_06_exercises}

@@ -1,0 +1,347 @@
+\section{Line Integrals}\label{sec:line_integrals}
+15.2
+along a
+Line
+curve. It
+Integrals
+can equal an area, but
+.-
+that is a special
+case and not typical. Instead of area, here are two important line integrals in physics
+and engineering:
+Work along a curve = F T ds Flow across a curve =
+In the first integral, F is a force field. In the second integral, F is a flow field. Work
+is done in the direction of movement, so we integrate F T. Flow is measured through
+the curve C, so we integrate F n. Here T is the unit tangent vector, and F T is the
+force cornponent along the curve. Similarly n is the unit normal vector, at right angles
+with T. Then F n is the component of flow perpendicular to the curve.
+We will write those integrals in several forms. They may never be as comfortable
+as J y(x) dx, but eventually we get them under control. I mention these applications
+early, so you can see where we are going. This section concentrates on work, and
+flow comes later. (It is also calledflux-the Latin word for flow.) You recognize ds
+as the step along the curve, corresponding to dx on the x axis. Where f dx gives the
+length of an interval (it equals b - a), 5 ds is the length of the curve.
+EXAMPLE 1 Flight from Atlanta to Los Angeles on a straight line and a semicircle.
+According to Delta Airlines, the distance straight west is 2000 miles. Atlanta is at
+(1000,O) and Los Angeles is at (-1000, O), with the origin halfway between. The
+semicircle route C has radius 1000. This is not a great circle route. It is more of a
+"flat circle," which goes north past Chicago. No plane could fly it (it probably goes
+into space).
+The equation for the semicircle is x2 + y2 = 10002. Parametrically this path is x =
+1000 cos t, y = 1000 sin t. For a line integral the parameter is better. The plane leaves
+Atlanta at t = 0 and reaches L.A. at t = n, more than three hours later. On the straight
+2000-mile path, Delta could almost do it. Around the semicircle C, the distance is
+lOOOn miles and the speed has to be 1000 miles per hour. Remember that speed is
+distance ds divided by time dt:
+dsldt = ,/(dx~dt)~ + (dyldt)' = l000,/(- sin t)2 + (cos t)2 = 1000. (1)
+The tangent vector to C is proportional to (dxldt, dyldt) = (-1000 sin t, 1000 cos t).
+But T is a unit vector, so we divide by 1000-which is the speed.
+Suppose the wind blows due east with force F = Mi. The components are M and
+zero. Foir M =constant, compute the dot product F *T and the work -2000 M:
+FwT= Mi*(-sin t i+cos tj)= M(-sin t)+O(cos t)= - M sin t 
+15 Vector Calculus
+Work is force times distance moved. It is negative, because the wind acts against the
+movement. You may point out that the work could have been found more simplygo
+2000 miles and multiply by - M. I would object that this straight route is a
+dzrerent path. But you claim that the path doesn't matter-the work of the wind is
+-2000M on every path. I concede that this time you are right (but not always).
+Most line integrals depend on the path. Those that don't are crucially important.
+For a gradient field, we only need to know the starting point P and the finish Q.
+158 When F is the gradient of a potential function f (x, y), the work J, F T ds
+depends only on the endpoints P and Q. The work is the change in
+if F = afpx i + af/ay j then F T ds = f (Q) -f(P).
+When F = Mi, its components M and zero are the partial derivatives off = Mx. To
+compute the line integral, just evaluate f at the endpoints. Atlanta has x = 1000, Los
+Angeles has x = - 1000, and the potential function f = Mx is like an antiderivative:
+work = f (Q) - f (P) = M(- 1000) - M(1000) = - 2000M. (3)
+LAX LAX - 1000 , - 1000 1000
+J F . Tdr = - 2000M depends on path
+Fig. 15.5 Force Mi, work -2000M on all paths. Force Myi, no work on straight path.
+May I give a rough explanation of the work integral 5 F T ds? It becomes clearer
+when the small movement Tds is written as dx i + dy j. The work is the dot product
+with F:
+The infinitesimal work is df: The total work is 5 df= f(Q) - f (P). This is the Fundamental
+Theorem for a line integral. Only one warning: When F is not the gradient of any
+f (Example 2), the Theorem does not apply.
+EXAMPLE 2 Fly these paths against the non-constant force field F = Myi. Compute
+the work.
+There is no force on the straight path where y = 0. Along the x axis the wind does
+no work. But the semicircle goes up where y = 1000 sin t and the wind is strong:
+F*T=(Myi)*(-sinti+costj)= -My sin t= - lOOOM sin2t
+This work is enormous (and unrealistic). But the calculations make an important
+point-everything is converted to the parameter t. The second point is that F = Myi
+is not a gradient field. First reason: The work was zero on the straight path and 
+15.2 Line Integrals
+nonzero on the semicircle. Second reason: No function has df/ dx = My and df /dy =
+0. (The first makes f depend on y and the second forbids it. This F is called a shear
+force.) Without a potential we cannot substitute P and Q-and the work depends
+on the path.
+THE DEFINITION OF LINE INTEGRALS
+We go back to the start, to define F T ds. We can think of F T as a function g(x, y)
+along the path, and define its integral as a limit of sums:
+N IC g(~, y)ds = limit of xi, yi)Asi as (As),,,., -i 0.
+i= 1 (5)
+The points (xi, y,) lie on the curve C. The last point Q is (x,, y,); the first point P is
+(xo, yo). The step Asi is the distance to (xi, yi) from the previous point. As the steps
+get small (As -, 0) the straight pieces follow the curve. Exactly as in Section 8.2, the
+special case g = 1 gives the arc length. As long as g(x, y) is piecewise continuous
+(jumps allowed) and the path is piecewise smooth (corners allowed), the limit exists
+and defines the line integral.
+When g is the density of a wire, the line integral is the total mass. When g is F T,
+the integral is the work. But nobody does the calculation by formula (5). We now
+introduce a parameter t-which could be the time, or the arc length s, or the distance
+x along the base.
+The diflerential ds becomes (ds/dt)dt. Everything changes over to t:
+The curve starts when t = a, runs through the points (x(t), y(t)), and ends when t = b.
+The square root in the integral is the speed dsldt. In three dimensions the points on
+C are (x(t), y(t), z(t)) and (dz/dt)l is in the square root.
+EXAMPLE 3 The points on a coil spring are (x, y, z) = (cos t, sin t, t). Find the mass
+of two complete turns (from t = 0 to t = 44 if the density is p = 4.
+Solution The key is (d~/dt)~ + (d~/dt)~ + (d~ldt)~ = sin2t + cos2t + 1 = 2. Thus
+dsldt = fi. To find the mass, integrate the mass per unit length which is g = p = 4:
+That is a line integral in three-dimensional space. It shows how to introduce t. But
+it misses the main point of this section, because it contains no vector field F. This
+section is about work, not just mass.
+DIFFERENT FORMS OF THE WORK INTEGRAL
+The work integral IF T ds can be written in a better way. The force is F = Mi + Nj.
+A small step along the curve is dx i + dy j. Work is force times distance, but it is only
+the force component along the path that counts. The dot product F -Tds finds that
+component automatically. 
+15 Vector Calculus
+I 15C The vector to a point on C is R = xi + yj. Then dR = Tds = dx i + dy j:
+I Along a space curve the work is jF*~ds=f~*d~=j~dx+~d~+ ~dz.
+The product M dx is (force in x direction)(movement in x direction). This is zero if
+either factor is zero. When the only force is gravity, pushing a piano takes no work.
+It is friction that hurts. Carrying the piano up the stairs brings in Pdz, and the total
+work is the piano weight P times the change in z.
+To connect the new I F dR with the old IF *T ds, remember the tangent vector
+T. It is dRlds. ~herefoie Tds is dR. The best for computations is dR, because the
+unit vector T has a division by dsldt = ,/(d~/dt)~ + (d~ldt)~. Later we multiply by this
+square root, in converting ds to (dsldtjdt. It makes no sense to compute the square
+root, divide by it, and then multiply by it. That is avoided in the improved form
+~M~x+N~Y.
+EXAMPLE 4 Vector field F = - yi + xj, path from (1,O) to (0, 1): Find the work.
+Note 1 This F is the spin field S. It goes around the origin, while R = xi + yj goes
+outward. Their dot product is F R = - yx + xy = 0. This does not mean that
+F dR = 0. The force is perpendicular to R, but not to the change in R. The work to
+move from (I, 0) to (0, I), x axis to y axis, is not zero.
+Note 2 We have not described the path C. That must be done. The spin field is not
+a gradient field, and the work along a straight line does not equal the work on a
+quarter-circle:
+straight line x = 1 - t, y = t quarter-circle x = cos t, y = sin t.
+Calculation of work Change F dR = M dx + N dy to the parameter t:
+Straight line: - y dx + x dy = - t(- dt) + (1 - t)dt = 1 l lo1
+S 7T
+Quarter-circle: - y dx + x dy = -sin t(- sin t dt) + cos t(cos t dt) = -. 2
+General method The path is given by x(t) and y(t). Substitute those into M(x, y)
+and N(x, y)-then F is a function of t. Also find dxldt and dyldt. Integrate
+M dxldt + N dyldt from the starting time t to the finish.
+I work 7[: / 2 no work ' work F.dR = 1
+Fig.15.6 Threepath~for~F~dR=~-~dx+.udy=l,n/2,0. 
+15.2 Llne Integrals
+For practice, take the path down the x axis to the origin (x = 1 - t, y = 0). Then
+go up the y axis (x = 0, y = t - 1). The starting time at (1,O) is t = 0. The turning time
+at the origin is t = 1. The finishing time at (0, 1) is t = 2. The integral has two parts
+because this new path has two parts:
+Bent path: J-ydx+xdy=O+O (y=O on one part, then x=O).
+Note 3 The answer depended on the path, for this spin field F = S. The answer did
+not depend on the choice of parameter. If we follow the same path at a different
+speed, the work is the same. We can choose another parameter 2, since (ds/dt)dt and
+(ds/dz)dz both equal ds. Traveling twice as fast on the straight path (x = 1 - 22,
+y = 22) we finish at t = 4 instead of t = 1. The work is still 1:
+CONSERVNION OF TOTAL ENERGY (KINETIC + POTENTIAL)
+When a force field does work on a mass m, it normally gives that mass a new velocity.
+Newton's Law is F =ma = mdvldt. (It is a vector law. Why write out three components?)
+The work F dR is
+J (m dvldt) (v dt) = *mv v]: = mv(Q)12 - mlv(P)12.
+The work equals the change in the kinetic energy 4mlv12. But for a gradient field the
+work is also the change in potential-with a minus sign from physics:
+Comparing (8) with (9), the combination m1vl2 + f is the same at P and Q. The total
+energy, kinetic plus potential, is conserved.
+INDEPENDENCE OF PATH: GRADIENT FIELDS
+The work of the spin field S depends on the path. Example 4 took three pathsstraight
+line, quarter-circle, bent line. The work was 1, 42, and 0, different on each
+path. This happens for more than 99.99% of all vector fields. It does not happen for
+the most important fields. Mathematics and physics concentrate on very special
+fields-for which the work depends only on the endpoints. We now explain what
+happens, when the integral is independent of the path.
+Suppose you integrate from P to Q on one path, and back to P on another path.
+Combined, that is a closed path from P to P (Figure 15.7). But a backward integral
+is the negative of a forward integral, since dR switches sign. If the integrals from P
+to Q are equal, the integral around the closed path is zero:
+closed path 1 back path 2 path 1 path 2
+The circle on the first integral indicates a closed path. Later we will drop the P's.
+Not all closed path integrals are zero! For most fields F, different paths yield
+different work. For "conservative" fields, all paths yield the same work. Then zero 
+15 Vector Calculus
+work around a closed path conserves energy. The big question is: How to decide
+which fields are conservative, without trying all paths? Here is the crucial information
+about conservative fields, in a plane region R with no holes:
+15D F = M(x, y)i + N(x, y)j is a conservative field if it has these properties:
+A. The work J F dR around every closed path is zero.
+B. The work F d R depends only on P and Q, not on the path.
+C. F is a gradient field: M = df/ax and N = df/dy for some potential f(x, y).
+D. The components satisfy dM/ay = (3Nldx.
+A field with one of these properties has them all. D is the quick test.
+These statements A-D bring everything together for conservative fields (alias gradient
+fields). A closed path goes one way to Q and back the other way to P. The work
+cancels, and statements A and B are equivalent. We now connect them to C. Note:
+Test D says that the "curl" of F is zero. That can wait for Green's Theorem in the
+next section-the full discussion of the curl comes in 15.6.
+First, a gradient field F = grad f is conservative. The work is f (Q) - f (P), by the
+fundamental theorem for line integrals. It depends only on the endpoints and not the
+path. Therefore statement C leads back to B.
+Our job is in the other direction, to show that conservative fields Mi + Nj are
+gradients. Assume that the work integral depends only on the endpoints. We must
+construct a potentialf, so that F is its gradient. In other words, dfldx must be M and
+dfldy must be N.
+Fix the point P. Define f (Q) as the work to reach Q. Then F equals grad
+Check the reasoning. At the starting point P, f is zero. At every other point Q, f is
+the work J M dx + N dy to reach that point. Allpathshsfom P to Q give the same f(Q),
+because the field is assumed conservative. After two examples we prove that grad f
+agrees with F-the construction succeeds.
+back path 2 -
+Fig. 15.7 Conservative fields:  F dR = 0 and j@ F d R = f (Q) - f (P). Here f (P) = 0.
+EXAMPLE 5 Find f (x, y) when F = Mi + Nj = 2xyi + x2j. We want (: f /ax = 2xy
+and dfldy = x2.
+Solution 1 Choose P = (0,O). Integrate M dx + N dy along to (x, 0) and up to (x, y):
+(x. 0) 0, Y)
+2xy dx = 0 (since y = 0) x2dY = x2y (which is f ). S (0.0) S (x, 0)
+Certainly f = x2y meets the requirements: f, = 2xy and f, = x2. Thus F = gradf Note
+that dy = 0 in the first integral (on the x axis). Then dx = 0 in the second integral
+(X is fixed). The integrals add to f = x2y. 
+15.2 Line Integrals
+Solution 2 Integrate 2xydx + x2dy on the straight line (xt, yt) from t = 0 to t = 1:
+Iol 2(xt)(yt)(x dt) + (~t)~(y dt)= So13x2yt2dt= x2yt3]: = x2y.
+Most authors use Solution 1. I use Solution 2. Most students use Solution 3:
+Solution 3 Directly solve df/dx = M = 2xy and then fix up dfldy = N = x2:
+af/dx = 2xy gives f = x2y (plus any function of y).
+In this example x2y already has the correct derivative dfldy = x2. No additional
+function of y is necessary. When we integrate with respect to x, the constant of
+integration (usually C ) becomes a function C(y).
+You will get practice in finding f. This is only possible for conservative fields! I
+tested M = 2xy and N = x2 in advance (using D) to be sure that dM/dy = dN/dx.
+EXAMPLE 6 Look for f (x, y) when Mi + Nj is the spin field -yi + xj.
+Attempted solution 1 Integrate -y dx + x dy from (0,O)to (x, 0) to (x, y):
+I(x, 0)
+-ydx=O and I
+(x. Y)
+x dy = xy (which seems like f).
+(0,O) (x. 0)
+Attempted solution 2 Integrate -y dx + x dy on the line (xt, yt) from t = 0 to 1 :
+So1-(yt)(x dt) + (xt)(y dt) = 0 (a different f, also wrong).
+Aitempted solution 3 Directly solve dfldx = -y and try to fix up af/dy = x:
+af/dx = -y gives f = -xy (plus any function C(y)).
+The y derivative of this f is -x + dC/dy. That does not agree with the required
+dfldy = x. Conclusion: The spin field -yi + xj is not conservative. There is no f.
+Test D gives dM/dy = -1 and dN/dx = + 1.
+To finish this section, we move from examples to a proof. The potential f(Q) is
+defined as the work to reach Q. We must show that its partial derivatives are M and
+N. This seems reasonable from the formula f (Q) = I M dx + N dy, but we have to
+think it through.
+Remember statement A, that all paths give the same f(Q). Take a path that goes
+from P to the left of Q. It comes in to Q on a line y = constant (so dy = 0). As the
+path reaches Q, we are only integrating M dx. The derivative of this integral, at Q, is
+df/ax = M. That is the Fundamental Theorem of Calculus.
+To show that af/ay= N, take a different path. Go from P to a point below Q. The
+path comes up to Q on a vertical line (so dx = 0). Near Q we are only integrating
+N dy, so i?f/dy= N.
+The requirement that the region must have no holes will be critical for test D.
+EXAMPLE 7 Find f (x, y) = x dx + y dy. Test D is passed: aN/ax= 0= dM/dy.
+Solution 1 j:",: x dx = +x2is added to j:;:; y dy = fy2.
+Solution 2 1; (xt)(x dt) + (yt)(y dt) = 1; (x2+ y2)t dt =f (x2+ y2).
+Solution 3 afjax = x gives f = +x2+ C(y).Then af/dy = y needs C(y)= :y2. 
+562 15 Vector Calculus
+15.2 EXERCISES
+Read-through questions
+Work is the a of F dR. Here F is the b and R is
+the c . The d product finds the component of
+in the direction of movement dR = dxi + dyj. The straight
+path (x, y) = (t, 2t) goes from f at t = 0 to g at t =
+1 withdR=dti+ h .TheworkofF=3i+jisjF=dR=
+j i dt= i .
+Another form of d R is T ds, where T is the k vector to
+the path and ds = ,/T. For the path (t, 2t), the unit vector
+Tis m andds= n dt.ForF=3i+j,F*Tdsisstill
+0 dt. This F is the gradient off = P . The change in
+f= 3x +y from (0,O) to (1,2) is q .
+When F = gradf, the dot product F dR is (af/dx)dx + r = df: The work integral from P to Q is j df = s . In this case the work depends on the t but not on the
+u . Around a closed path the work is v . The field is
+called w . F = (1 + y)i + xj is the gradient off = x .
+The work from (0,O) to (1,2) is Y , the change in potential.
+For the spin field S = 2 , the work (does)(does not)
+depend on the path. The path (x, y) = (3 cos t, 3 sin t) is a
+circle with SgdR = A . The work is B around the
+complete circle. Formally jg(x, y)ds is the limit of the sum
+c.
+The four equivalent properties of a conservative field F =
+Mi+ Nj are A: D , B: E , C: F , and D: G . Test D is (passed)(not passed) by F = (y + 1)i + xj. The work
+IF dR around the circle (cos t, sin t) is H . The work on
+the upper semicircle equals the work on I . This field is
+the gradient off = J , so the work to (- 1,0) is K .
+Compute the line integrals in 1-6.
+jcds and jcdy: x = t, y = 2t, 0 6 t < 1.
+fcxds and jcxyds: x=cost, y=sint, O<t<n/2.
+S, xy ds: bent line from (0,O) to (1, 1) to (1,O).
+1, y dx - x dy: any square path, sides of length 3.
+fc dx and jc y dx: any closed circle of radius 3.
+Jc (dsldt) dt: any path of length 5.
+Does if xy dy equal f xy2]:?
+Does jfx dx equal fx2]:?
+Does (jc d~)~ = (IC d~)~ + (fC dy)l?
+Does jc (d~)~ make sense?
+11-16 find the work in moving from (1,O) to (0,l). When F
+is conservative, construct f: choose your own path when F is
+not conservative.
+11 F=i+yj 12 F=yi+j
+17 For which powers n is S/rn a gradient by test D?
+18 For which powers n is R/rn a gradient by test D?
+19 A wire hoop around a vertical circle x2 + z2 = a2 has
+density p = a + z. Find its mass M = pds.
+20 A wire of constant density p lies on the semicircle
+x2 + Y2 = a2, y 3 0. Find its mass M and also its moment
+Mx = 1 py ds. Where is its center of mass 2 = My/M, j = Mx/
+M?
+21 If the density around the circle x2 + y2 = a2 is p = x2, what
+is the mass and where is the center of mass?
+22 Find F dR along the space curve x = t, y = t2, z = t3,
+O<t<l.
+(a) F = grad (xy + xz) (b) F = yi - xj + zk
+23 (a) Find the unit tangent vector T and the speed dsldt
+along the path R = 2t i + t2 j.
+(b) For F = 3xi + 4j, find F T ds using (a) and F dR
+directly.
+(c) What is the work from (2, 1) to (4,4)?
+24 If M(x, y, z)i + N(x, y, z)j is the gradient of f(x, y, z), show
+that none of these functions can depend on z.
+25 Find all gradient fields of the form M(y)i + N(x)j.
+26 Compute the work W(x, y) = j M dx + N dy on the
+straight line path (xt, yt) from t = 0 to t = 1. Test to see if aW/
+ax = M and aWpy = N.
+(a) M = y3, N = 3xy2 (b) M = x3, N = 3yx2
+(c)M=x/y,N=y/x (d)M=ex+Y,N=e"+Y
+27 Find a field F whose work around the unit square (y = 0
+then x = 1 then y = 1 then x = 0) equals 4.
+28 Find a nonconservative F whose work around the unit
+circle x2 + y2 = 1 is zero.
+In 29-34 compute 1 F dR along the straight line R = ti + tj
+and the parabola R = ti + t2j, from (0,O) to (1,l). When F is a
+gradient field, use its potential f (x, y).
+29 F=i-2j 30 F = x2j
+33 F=yi-xj 34 F = (xi + yj)/(x2 + y2 + 1)
+35 For which numbers a and b is F = axyi + (x2 + by)j a
+gradient field?
+36 Compute j - y dx + x dy from (1,O) to (0,l) on the line
+x = 1 - t2, y = t2 and the quarter-circle x = cos 2t, y = sin 2t.
+Example 4 found 1 and n/2 with different parameters. 
+
+Apply the test Nx = My to 37-42. Find f when test D is passed. 43 Around the unit circle find 4 ds and  dx and 8 xds.
+44 True or false, with reason:
+(a) When F = yi the line integral lFedR along a curve
+xi + yj grad xy from P to Q equals the usual area-under the curve.
+39 $F = \frac{xi+yj}{|xi+yj|}$ 40 $F = \frac{grad xy}{|grad xy|}$
+(b) That line integral depends only on P and Q, not on the
+curve.
+41 F=R+S 42 F =(ax + by)i + (cx + dy)j (c) That line integral around the unit circle equals n. 
+
+%%\printexercises{exercises/13_06_exercises}
