@@ -1,5 +1,6 @@
+\usepackage{mdframed}
 \section{Vector Fields}\label{sec:vector_fields}
-Chapter 14introduced double and triple integrals. We went from $\int dx$ to $\int \int  dx dy$ and
+We have already introduced double and triple integrals. We went from $\int dx$ to $\int \int  dx dy$ and
 $\int \int \int dx dy dz$. All those integrals add up small pieces, and the limit gives area or volume
 or mass. What could be more natural than that? I regret to say, after the success of
 those multiple integrals, that something is missing. It is even more regrettable that
@@ -10,76 +11,90 @@ The double integral $\int \int dx dy$ equals the area. To compute it, we did not
 antiderivative of 1. At least not consciously. The method was almost trial and error,
 and the hard part was to find the limits of integration. This chapter goes deeper, to
 show how the step from a double integral to a single integral is really a new form of
-the Fundamental Theorem-when it is done right.
+the Fundamental Theorem -- when it is done right.
 
-Two new ideas are needed early, one pleasant and one not. You will like vector
-fields. You may not think so highly of line integrals. Those are ordinary single integrals
+Two new ideas are needed early, one pleasant and one not. You will like \emph{vector
+fields}. You may not think so highly of \emph{line integrals}. Those are ordinary single integrals
 like $\int v(x) dx$ , but they go along curves instead of straight lines. The nice step $dx$
-becomes the confusing step $ds$. Where $\int dx$ equals the length of the interval, $\int  ds$ is
+becomes the confusing step $ds$. Where $\int dx$ equals the length of the interval, $\int ds$ is
 the length of the curve. The point is that regions are enclosed by curves, and we have
 to integrate along them. The Fundamental Theorem in its two-dimensional form
-(Green's Theorem) connects a \textbf{double integral over the region to a single integral along
+(Green's Theorem) connects a \emph{double integral over the region} to \emph{a single integral along
 its boundary curve}.
 
 The great applications are in science and engineering, where vector fields are so
 natural. But there are changes in the language. Instead of an antiderivative, we speak
-about a \textbf{potential function}. Instead of the derivative, we take the "divergence" and
-"curl." Instead of area, we compute \textbf{flux} and \textbf{circulation} and \textbf{work}. Examples come
+about a \emph{potential function}. Instead of the derivative, we take the ``divergence'' and
+``curl.'' Instead of area, we compute \emph{flux} and \emph{circulation} and \emph{work}. Examples come
 first.
 
-15.1 Vector Fields
-
-For an ordinary scalar function, the input is a number x and the output is a number
+For an ordinary scalar function, the input is a number $x$ and the output is a number
 $f(x)$. For a vector field (or vector function), the input is a point $(x, y)$ and the output
-is a two-dimensional vector $F(x, y)$. There is a "field" of vectors, one at every point.
-In three dimensions the input point is $(x, y, z)$ and the output vector F has three
+is a two-dimensional vector $F(x, y)$. There is a ``field'' of vectors, one at every point.
+In three dimensions the input point is $(x, y, z)$ and the output vector $\mathbf{F}$ has three
 components.
 
-DEFINITION Let $R$ be a region in the $xy$ plane. A \textbf{vector field}  $F$ assigns to every point
-$(x, y)$ in $R$ a vector $F(x, y)$ with two components:
-$F(x, y) = M(x, y)i + N(x, y)j. (1)$
+Let $R$ be a region in the $xy$ plane. A \emph{vector field}  $\mathbf{F}$ assigns to every point
+$(x, y)$ in $\mathbb{R}$ a vector $\mathbf{F}(x, y)$ with two components:
+$\mathbf{F}(x, y) = M(x, y)\mathbf{i} + N(x, y)\mathbf{j}$.
 This plane vector field involves two functions of two variables. They are the components
-M and N, which vary from point to point. A vector has fixed components, a
+$M$ and $N$, which vary from point to point. A vector has fixed components; a
 vector field has varying components.
-A three-dimensional vector field has components M(x, y, z) and N(x, y, z) and
-P(x, y, 2). Then the vectors are F = Mi + Nj + Pk.
-EXAMPLE 1 The position vector at (x, y) is R = xi + yj. Its components are M = x
+A three-dimensional vector field has components $M(x, y, z)$, $N(x, y, z)$, and
+$P(x, y, z)$. Then the vectors are $\mathbf{F} = M\mathbf{i} + N\mathbf{j} + P\mathbf{k}$.
+
+\example{ex_lagrange3}{}{The position vector at (x, y) is R = xi + yj. Its components are M = x
 and N = y. The vectors grow larger as we leave the origin (Figure 15.la). Their
 direction is outward and their length is IRI = J;i?;i = r, The vector R is boldface,
-the number r is lightface.
-EXAMPLE 2 The vector field R/r consists of unit vectors u,, pointing outward. We
+the number r is lightface.}
+
+\example{ex_lagrange3}{}{}{ The vector field R/r consists of unit vectors u,, pointing outward. We
 divide R = xi + yj by its length, at every point except the origin. The components
 of Rlr are M = xlr and N = y/r. Figure 15.1 shows a third field ~/r~, whose length
-is 1 /r.
+is 1 /r.}
+
 Fig. 15.1 The vector fields R and R/r and R/r2 are radial. Lengths r and 1 and l/r
-EXAMPLE 3 The spin field or rotation field or turning field goes around the origin
+
+\example{ex_lagrange3}{}{}{ The spin field or rotation field or turning field goes around the origin
 instead of away from it. The field is S. Its components are M = - y and N = x:
 S = - yi + xj also has length IS1 = J(-y)2 + x2 = r. (2)
 S is perpendicular to R-their dot product is zero: S R = (- y)(x) + (x)(y) = 0. The
 spin fields S/r and S/r2 have lengths 1 and llr:
-The unit vector S/r is u,. Notice the blank at (O,O), where this field is not defined.
+The unit vector S/r is u,. Notice the blank at (O,O), where this field is not defined.}
 Fig. 15.2 The spin fields S and S/r and S/r2 go around the origin. Lengths r and 1 and l/r. 
+
 15.1 Vector Fields
-EXAMPLE 4 A gradientfield starts with an ordinary function f(x, y). The components
-M and PJ are the partial derivatives df/dx and dfldy. Then the field F is the gradient
-off:
-F = grad f = Vf= dfldx i + dfldy j. (3)
-This vector field grad f is everywhere perpendicular to the level curves f(x, y) = c. The
-length lgrad f 1 tells how fast f is changing (in the direction it changes fastest). Invent
-a function like f = x2y, and you immediately have its gradient field F = 2xyi + x2j.
-To repealt, M is df/dx and N is dfldy.
-For every vector field you should ask two questions: Is it a gradient field? If so,
-what is f? Here are answers for the radial fields and spin fields:
-MA The radial fields R and R/r and ~/r~ are a11 gradient fields.
-The spin fields S and S/r are not gradients of any f(x, y),
-The spin field S/r2 is the gradient of the polar angle 0 = tan- '(ylx).
-The derivatives off = f(x2+ y2) are x and y. Thus R is a gradient field. The gradient
-off = r is the unit vector R/r pointing outwards. Both fields are perpendicular to
-circles around the origin. Those are the level curves off = f r2 and f = r.
-Question Is every R/rn a gradient field?
-Answer Yes. But among the spin fields, the only gradient is S/r2.
-A ma-jor goal of this chapter is to recognize gradient fields by a simple test. The
-rejection of S and S/r will be interesting. For some reason -yi + xj is rejected and
+
+\example{ex_lagrange3}{}{A Gradient Field.}{ A \emph{gradient field} starts with an ordinary function $f(x, y)$. The components
+$M\mathbf{i}$ and $P\mathbf{j}$ are the partial derivatives $\dfrac{\partial f}{\partial x}$ and $\dfrac{\partial f}{\partial y}$. Then the field $\mathbf{F}$ is the gradient
+of $f$, denoted $\nabla f$:
+
+$$\mathbf{F} = \nabla f = \dfrac{\partial f}{\partial x}\mathbf{i} + \dfrac{\partial f}{\partial y} \mathbf{j}.$$
+This vector field $\nabla f$ is everywhere perpendicular to the level curves $f(x, y) = c$. The
+length $\mid \nabla f \mid$ tells how fast $f$ is changing (in the direction it changes fastest). Invent
+a function like $f = x^2y$, and you immediately have its gradient field $\mathbf{F} = 2xy\mathbf{i} + x^2\mathbf{j}$.
+To repeat, $M$ is $\dfrac{\partial f}{\partial x}$ and $N$ is $\dfrac{\partial f}{\partial y}$.
+For every vector field you should ask two questions: \emph{Is it a gradient field?} \emph{If so,
+what is $f$?} Here are answers for the radial fields and spin fields:
+
+\begin{mdframed}
+
+The radial fields $\mathbf{R}$, $\mathbf{R}/r$, and $\mathbf{R}/r^2$ are all gradient fields.
+	
+The spin fields $\mathbf{S}$ and $\mathbf{S}/r$ are not gradients of any $f(x, y)$.
+
+The spin field $S/r^2$ is the gradient of the polar angle $\mathbf{\theta} = \tan^{-1}\left(\dfrac{y}{x}\right)$.
+\end{mdframed}
+
+The derivatives of $f = \frac{1}{2}(x^2+ y^2)$ are $x$ and $y$. Thus $\mathbf{R}$ is a gradient field. The gradient
+of $f = r$ is the unit vector $\mathbf{R}/r$ pointing outwards. Both fields are perpendicular to
+circles around the origin. Those are the level curves of $f = \frac{1}{2}r^2$ and $f = r$.
+
+
+Question: Is every $\mathbf{R}/r^n$ a gradient field?
+Answer: Yes. But among the spin fields, the only gradient is $\mathbf{S}/r^2$.
+A major goal of this chapter is to recognize gradient fields by a simple test. The
+rejection of $\mathbf{S}$ and S/r will be interesting. For some reason -yi + xj is rejected and
 yi + xj is accepted. (It is the gradient of .) The acceptance of S/r2 as the
 gradient off = 0 contains a surprise at the origin (Section 15.3).
 Gradient fields are called conservative. The function f is the potential function.
@@ -96,7 +111,7 @@ v,i+v2j= Mi+ Nj.
 gravity
 F = -R//."
 Fig. 15.3 A steady velocity field V and two force fields F. 
-15 Vector Calculus
+
 For a compact disc or a turning wheel, V is a spin field (V =US, co =angular
 velocity). A tornado might be closer to V =S/r2 (except for a dead spot at the center).
 An explosion could have V =R/r2. A quieter example is flow in and out of a lake
