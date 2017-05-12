@@ -43,27 +43,27 @@ vector field has varying components.
 A three-dimensional vector field has components $M(x, y, z)$, $N(x, y, z)$, and
 $P(x, y, z)$. Then the vectors are $\mathbf{F} = M\mathbf{i} + N\mathbf{j} + P\mathbf{k}$.
 
-\example{ex_lagrange3}{}{The position vector at (x, y) is R = xi + yj. Its components are M = x
-and N = y. The vectors grow larger as we leave the origin (Figure 15.la). Their
-direction is outward and their length is IRI = J;i?;i = r, The vector R is boldface,
-the number r is lightface.}
+\example{ex_lagrange3}{}{The position vector at $(x, y)$ is $\mathbf{R} = x\mathbf{i} + y\mathbf{j}$. Its components are $M = x$
+and $N = y$. The vectors grow larger as we leave the origin (Figure 15.la). Their
+direction is outward and their length is $\mid R \mid \sqrt{x^2+y^2} = r$. The vector $\mathbf{R}$ is boldface;
+the number $r$ is lightface.}
 
-\example{ex_lagrange3}{}{}{ The vector field R/r consists of unit vectors u,, pointing outward. We
-divide R = xi + yj by its length, at every point except the origin. The components
-of Rlr are M = xlr and N = y/r. Figure 15.1 shows a third field ~/r~, whose length
-is 1 /r.}
+\example{ex_lagrange3}{}{}{ The vector field $\mathbf{R}/r$ consists of unit vectors $\mathbf{u}_r$, pointing outward. We
+divide $\mathbf{R} = x\mathbf{i} + y\mathbf{j}$ by its length, at every point except the origin. The components
+of $\mathbf{R}/r$ are $M = x/r$ and $N = y/r$. Figure 15.1 shows a third field $\mathbf{R}/r^2$, whose length
+is $1/r$.}
 
-Fig. 15.1 The vector fields R and R/r and R/r2 are radial. Lengths r and 1 and l/r
+Fig. 15.1 The vector fields $\mathbf{R}$, $\mathbf{R}/r$, and $\mathbf{R}/r^2$ are radial. Their lengths are $r$, $1$, and $l/r$.
 
 \example{ex_lagrange3}{}{}{ The spin field or rotation field or turning field goes around the origin
-instead of away from it. The field is S. Its components are M = - y and N = x:
-S = - yi + xj also has length IS1 = J(-y)2 + x2 = r. (2)
-S is perpendicular to R-their dot product is zero: S R = (- y)(x) + (x)(y) = 0. The
-spin fields S/r and S/r2 have lengths 1 and llr:
-The unit vector S/r is u,. Notice the blank at (O,O), where this field is not defined.}
-Fig. 15.2 The spin fields S and S/r and S/r2 go around the origin. Lengths r and 1 and l/r. 
+instead of away from it. The field is $\mathbf{S}$. Its components are $M = - y$ and $N = x$:
+$$\mathbf{S} = - y\mathbf{i} + x\mathbf{j} \text{ also has length } \mid \mathbf{S} \mid = \sqrt{(-y)^2 + x^2} = r$$
+$\mathbf{S}$ is perpendicular to $\mathbf{R}$ -- their dot product is zero: $\mathbf{S}\cdot \mathbf{R} = (- y)(x) + (x)(y) = 0$. The
+spin fields $\mathbf{S}/r$ and $\mathbf{S}/r^2$ have lengths $1$ and $1/r$:
+The unit vector $\mathbf{S}/r$ is $\mathbf{u}_r$. Notice the blank at $(0,0)$, where this field is not defined.}
 
-15.1 Vector Fields
+Fig. 15.2 The spin fields $\mathbf{S}$, $\mathbf{S}/r$, and $\mathbf{S}/r^2$ go around the origin. Their lengths are $r$, $1$, and $l/r$. 
+
 
 \example{ex_lagrange3}{}{A Gradient Field.}{ A \emph{gradient field} starts with an ordinary function $f(x, y)$. The components
 $M\mathbf{i}$ and $P\mathbf{j}$ are the partial derivatives $\dfrac{\partial f}{\partial x}$ and $\dfrac{\partial f}{\partial y}$. Then the field $\mathbf{F}$ is the gradient
@@ -94,181 +94,116 @@ circles around the origin. Those are the level curves of $f = \frac{1}{2}r^2$ an
 Question: Is every $\mathbf{R}/r^n$ a gradient field?
 Answer: Yes. But among the spin fields, the only gradient is $\mathbf{S}/r^2$.
 A major goal of this chapter is to recognize gradient fields by a simple test. The
-rejection of $\mathbf{S}$ and S/r will be interesting. For some reason -yi + xj is rejected and
-yi + xj is accepted. (It is the gradient of .) The acceptance of S/r2 as the
-gradient off = 0 contains a surprise at the origin (Section 15.3).
-Gradient fields are called conservative. The function f is the potential function.
+rejection of $\mathbf{S}$ and $\mathbf{S}/r$ will be interesting. For some reason $-y\mathbf{i} + x\mathbf{j}$ is rejected and
+$y\mathbf{i} + x\mathbf{j}}$ is accepted. (Can you tell what it is the gradient of?) The acceptance of $\mathbf{S}/r^2$ as the
+gradient of $f = 0$ contains a surprise at the origin (Section 15.3).
+Gradient fields are called \emph{conservative}. The function $f$ is the \emph{potential function}.
 These words, and the next examples, come from physics and engineering.
-EXAMPLE5 The velocity field is V and the flow field is pV.
+
+EXAMPLE5 The velocity field is $\mathbf{V}$ and the flow field is $\rho \mathbf{V}$.
+
 Suppose: fluid moves steadily down a pipe. Or a river flows smoothly (no waterfall).
 Or the air circulates in a fixed pattern. The velocity can be different at different points,
-but there is no change with time. The velocity vector V gives the direction offlow
-and speed of Jow at every point.
-In reality the velocity field is V(x, y, z), with three components M, N, P. Those are
-the velocities v,, v2, v, in the x, y, z directions. The speed (VI is the length: IVI2 =
-v: + v: -t v:. In a "plane flow" the k component is zero, and the velocity field is
-v,i+v2j= Mi+ Nj.
-gravity
-F = -R//."
-Fig. 15.3 A steady velocity field V and two force fields F. 
+but there is no change with time. The velocity vector $\mathbf{V}$ gives the direction of flow
+and speed of flow at every point.
+In reality the velocity field is $\mathbf{V}(x, y, z)$, with three components $M$, $N$, and $P$. Those are
+the velocities $v_1$, $v_2$, and $v_3$, in the $x$, $y$, and $z$ directions. The speed $\mid \mathbf{V} \mid$ is the length: 
+$\mid\mathbf{V}\mid^2 = v_1^2 + v_2^2 +v_3^2$. In a ``plane flow'' the $\mathbf{k}$ component is zero, and the velocity field is
+$v_1\mathbf{i}+v_2\mathbf{j}= M\mathbf{i}+ N\mathbf{j}$.
 
-For a compact disc or a turning wheel, V is a spin field (V =US, co =angular
-velocity). A tornado might be closer to V =S/r2 (except for a dead spot at the center).
-An explosion could have V =R/r2. A quieter example is flow in and out of a lake
+Fig. 15.3 A steady velocity field $\mathbf{V}$ and two force fields $\mathbf{F}$. 
+
+For a compact disc or a turning wheel, $\mathbf{V}$ is a spin field ($V =\omega \mathbf{S}$, $\omega=$ angular
+velocity). A tornado might be closer to $\mathbf{V} =\mathbf{S}/r^2$ (except for a dead spot at the center).
+An explosion could have $\mathbf{V} =\mathbf{R}/r^2$. A quieter example is flow in and out of a lake
 with steady rain as a source term.
-TheJlowJield pV is the density p times the velocity field. While V gives the rate of
-movement, pV gives the rate of movement of mass. A greater density means a greater
-rate IpVJof "mass transport." It is like the number of passengers on a bus times the
+The \emph{flow field} $\rho \mathbf{V}$ is the density $\rho$ times the velocity field. While $\mathbf{V}$ gives the rate of
+movement, $\rho \mathbf{V}$ gives the rate of movement of mass. A greater density means a greater
+rate $\mid \rho \mathbf{V} \mid$ of "mass transport." It is like the number of passengers on a bus times the
 speed of the bus.
-EXAMPLE 6 Force fields from gravity: F is downward in the classroom, F is radial
+
+EXAMPLE 6 Force fields from gravity: $\mathbf{F}$ is downward in the classroom, $\mathbf{F}$ is radial
 in space.
-When gravity pulls downward, it has only one nonzero component: F = -mgk. This
-assumes that vectors to the center of the Earth are parallel-almost true in a classroom.
-Then F is the gradient of -mgz (note dfldz = -mg).
-In physics the usual potential is not -mgz but +mgz. The force field is minus grad f
-also in electrical engineering. Electrons flow from high potential to low potential.
+When gravity pulls downward, it has only one nonzero component: $\mathbf{F} = -mg\mathbf{k}$. This
+assumes that vectors to the center of the Earth are parallel -- almost true in a classroom.
+Then F is the gradient of $-mgz$ (note that $\dfrac{\partial f}{\partial z} = -mg$).
+\emph{In physics the usual potential is not $-mgz$ but $+mgz$.} The force field is \emph{minus} $\nabla f$
+in electrical engineering as well. Electrons flow from high potential to low potential.
 The mathematics is the same, but the sign is reversed.
-In space, the force is radial inwards: F = -mMGR/r3. Its magnitude is proportional
-to l/r2 (Newton's inverse square law). The masses are m and M, and the
-gravitational constant is G =6.672 x 10-"--with distance in meters, mass in kilograms,
-and time in seconds. The dimensions of G are (force)(di~tance)~/(mass)~. This
-is different from the acceleration g =9.8m/sec2, which already accounts for the mass
+
+In space, the force is radial inwards: $\mathbf{F} = -mMG\mathbf{R}/r^3$. Its magnitude is proportional
+to $1/r^2$ (Newton's inverse square law). The masses are $m$ and $M$, and the
+gravitational constant is $G =6.672 x 10^{-11}$ -- with distance in meters, mass in kilograms,
+and time in seconds. The dimensions of $G$ are $(\text{force})(\text{distance})^2/(\text{mass})^2$. This
+is different from the acceleration $g =9.8m/\text{sec}^2$, which already accounts for the mass
 and radius of the Earth.
-Like all radial fields, gravity is a gradient field. It comes from a potential f:
-EXAMPLE 7 (a short example) Current in a wire produces a magnetic field B. It is
-the spin field S/r2 around the wire, times the strength of the current.
+
+Like all radial fields, gravity is a gradient field. It comes from a potential $f$:
+$$f=\dfrac{mMG}{r} \text{ and }\dfrac{\partial f}{\partial x}=-\dfrac{mMGx}{r^3} \text{ and }\dfrac{\partial f}{\partial y}=-\dfrac{mMGy}{r^3} \text{ and }\dfrac{\partial f}{\partial z}=-\dfrac{mMGz}{r^3}.$$ 
+
+EXAMPLE 7 (a short example) Current in a wire produces a magnetic field $\mathbf{B}$. It is
+the spin field $\mathbf{S}/r^2$ around the wire, times the strength of the current.
+
 STREAMLINES AND LINES OF FORCE
 Drawing a vector field is not always easy. Even the spin field looks messy when the
-vectors are too long (they go in circles and fall across each other). The circles give a
-clearer picture than the vectors. In any field, the vectors are tangent to "jield lineswwhich
+vectors are too long (they go in circles and fall across each other). \emph{The circles give a
+clearer picture than the vectors}. In any field, the vectors are tangent to ``\emph{field lines}'' which
 in the spin case are circles.
-DEFINITION C is afield line or integral curve if the vectors F(x, y) are tangent to C.
-The slope dyldx of the curve C equals the slope N/M of the vector F =Mi + Nj:
+
+DEFINITION $\mathbf{C}$ is a \emph{field line} or \emph{integral curve} if the vectors $\mathbf{F}(x, y)$ are tangent to $C$.
+The slope $dy/dx$ of the curve $C$ equals the slope $N/M$ of the vector $\mathbf{F} =M\mathbf{i} + N\mathbf{j}$:
+
+$$\dfrac{dy}{dx}=\dfrac{N(x,y)}{M(x,y)} \left(=-\dfrac{x}{y} \text{ for the spin field}\right).$$
+
 We are still drawing the field of vectors, but now they are infinitesimally short.
-They are connected into curves! What is lost is their length, because S and S/r and
-S/r2 all have the same field lines (circles). For the position field R and gravity field
-R/r3, the field lines are rays from the origin. In this case the "curves" are actually
+They are connected into curves! What is lost is their length, because $\mathbf{S}$, $\mathbf{S}/r$, and
+$\mathbf{S}/r^2$ all have the same field lines (circles). For the position field $\mathbf{R}$ and gravity field
+$R/r^3$, the field lines are rays from the origin. In this case the ``curves'' are actually
 straight.
-EXAMPLE 8 Show that the field lines for the velocity field V =yi +xj are hyperbolas.
-dy N x -- --- * y dy =x dx *y2 -x2 =constant.
-~X-M-~ 
-15.1 Vector Fields
-reamlines x2 - y2 = C
+
+EXAMPLE 8 Show that the field lines for the velocity field $\mathbf{V} =y\mathbf{i} +x\mathbf{j}$ are hyperbolas.
+$$\dfrac{dy}{dx}=\dfrac{N}{M}=\dfrac{x}{y} \Rightarrow ydy=xdx \Rightarrow \frac{1}{2}y^2-\frac{1}{2}x^2=\text{constant}.$$
+
 Fig. 15.4 Velocity fields are tangent to streamlines. Gradient fields also have equipotentials.
-At every point these hyperbolas line up with the velocity V. Each particle of fluid
-travels on afield line. In fluid flow those hyperbolas are called streamlines. Drop a
+
+
+At every point these hyperbolas line up with the velocity $\mathbf{V}$. \emph{Each particle of fluid
+travels on a field line}. In fluid flow those hyperbolas are called \emph{streamlines}. Drop a
 leaf into a river, and it follows a streamline. Figure 15.4 shows the streamlines for a
 river going around a bend.
+
+
 Don't forget the essential question about each vector field. Is it a gradient field?
-For V = yi + xj the answer is yes, and the potential is f = xy:
-the gradient of xy is (8flax)i + (8flay)j = yi + xj. (7)
+For $\mathbf{V} = y\mathbf{i} + x\mathbf{j}$ the answer is yes, and the potential is $f = xy$:
+
+$$\nabla(xy)=\dfrac{\partial f}{\partial x}\mathbf{i}+\dfrac{\partial f}{\partial y}\mathbf{j}=y\mathbf{i}+x\mathbf{j}$$
+
 When there is a potential, it has level curves. They connect points of equal potential,
-so the curves f (x, y) = c are called equipotentials. Here they are the curves xy = calso
-hyperbolas. Since gradients are perpendicular to level curves, the streamlines are
-perpendicular to the equipotentials. Figure 15.4 is sliced one way by streamlines and
+so the curves $f(x, y) = c$ are called \emph{equipotentials}. Here they are the curves $xy = c$ -- also
+hyperbolas. Since gradients are perpendicular to level curves, \emph{the streamlines are
+perpendicular to the equipotentials}. Figure 15.4 is sliced one way by streamlines and
 the other way by equipotentials.
-A gradient field F = afldx i + afldy j is tangent to the field lines (streamlines)
-and perpendicular to the equipotentials (level curves off).
-In the gradient direction f changes fastest. In the level direction f doesn't change at
-all. The chain rule along f (x, y) = c proves these directions to be perpendicular:
-af dx af dy -- + - = 0 or (grad f) (tangent to level curve) = 0.
-ax dt oy dt
-EXAMPLE 9 The streamlines of S/r2 are circles around (0,O). The equipotentials are
-rays 0 = c. Add rays to Figure 15.2 for the gradient field S/r2.
+
+In general, a gradient field $\mathbf{F} =\dfrac{\partial f}{\partial x}\mathbf{i}+\dfrac{\partial f}{\partial y}\mathbf{j}$ is tangent to the field lines (streamlines) and perpendicular to the equipotentials (level curves of $f$).
+
+In the gradient direction $f$ changes fastest. In the level direction $f$ doesn't change at
+all. The chain rule along $f (x, y) = c$ proves these directions to be perpendicular:
+$$\dfrac{\partial f}{\partial x}\dfrac{dx}{dt}+\dfrac{\partial f}{\partial y}\dfrac{dy}{dt}=0 \text{ or } (\nabla f)\cdot(tangent to level curve)=0.$$
+
+EXAMPLE 9 The streamlines of $\mathbf{S}/r^2$ are circles around $(0,0)$. The equipotentials are
+rays $\theta = c$. Add rays to Figure 15.2 for the gradient field $\mathbf{S}/r^2$.
+
 For the gravity field those are reversed. A body is pulled in along the field lines (rays).
-The equipotentials are the circles where f = llr is constant. The plane is crisscrossed
-by "orthogonal trajectories9'-curves that meet everywhere at right angles.
+The equipotentials are the circles where $f = 1/r$ is constant. The plane is crisscrossed
+by ``orthogonal trajectories'' -- curves that meet everywhere at right angles.
 If you bring a magnet near a pile of iron filings, a little shake will display the field
-lines. In a force field, they are "lines of force." Here are the other new words.
-Vector hid F, y, z) = Mi + Nj + Pk Plane field F = M(x, y)i + N(x, y)j
-Radial field: multiple of R = xi + yj + zk Spifl field: multiple of  = - yi + xj
-Gradient ktd = conservative field: A4 = wax, N = af, P = 18~
-Potmtialf(x, yf (not a vector) Equipotential curves f(x, y) = c
-Streamline = field line = integral curve: a curve that has F(x, y) as its tangent
+lines. In a force field, they are ``lines of force.'' \emph{Here are the other new words.}
+
+Vector field $\mathbf{F}(x, y, z) = M\mathbf{i} + N\mathbf{j} + P\mathbf{k}$ Plane field $\mathbf{F} = M(x, y)\mathbf{i} + N(x, y)\mathbf{j}$
+Radial field: multiple of $\mathbf{R} = x\mathbf{i} + y\mathbf{j} + z\mathbf{k}$ Spin field: multiple of  $\mathbf{S}= - y\mathbf{i} + x\mathbf{j}$
+Gradient field = conservative field: $M = \dfrac{\partial f}{\partial x}, N = \dfrac{\partial f}{\partial y}, P = \dfrac{\partial f}{\partial z}$
+Potential $f(x, y$ (not a vector) Equipotential curves: $f(x, y) = c$.
+Streamline = field line = integral curve: a curve that has $\mathbf{F}(x, y)$ as its tangent
 vectors. 
-554 15 Vector Calculus
-15.1 EXERCISES
-Read-through questions
-A vector field assigns a a to each point (x, y) or (x, y, z).
-In two dimensions F(x,y) = b i + c j. An example is
-the position field R = d . Its magnitude is IRI = e
-and its direction is f . It is the gradient field for f =
-g . The level curves are h , and they are i to
-the vectors R.
-Reversing this picture, the spin field is S = i . Its magnitude
-is IS1 = k and its direction is I . It is not a
-gradient field, because no function has af/ax = m and
-af/ay = n . S is the velocity field for flow going 0 . The streamlines or P lines or integral s are r . The flow field pV gives the rate at which s is moved
-by the flow.
-A gravity field from the origin is proportional to F = t
-which has IF1 = u . This is Newton's v square law.
-It is a gradient field, with potential f = w .The equipotential
-curves f(x, y) = c are x . They are Y to the field
-lines which are . This illustrates that the A of a
-function f(x, y) is B to its level curves.
-The velocity field yi + xj is the gradient off = c . Its
-streamlines are D .The slope dyldx of a streamline equals
-the ratio E of velocity components. The field is F to
-the streamlines. Drop a leaf onto the flow, and it goes along
-G .
-Find a potential f(x, y) for the gradient fields 1-8. Draw the
-streamlines perpendicular to the equipotentials f(x, y) = c.
-1 F = i + 2j (constant field) 2 F = xi +j
-7 F=xyi+ j 8 F=i+ j
-9 Draw the shear field F =xj. Check that it is not a gradient
-field: If af/ax =0 then af/ay =x is impossible. What are the
-streamlines (field lines) in the direction of F?
-10 Find all functions that satisfy af/ax = -y and show that
-none of them satisfy af/ay = x. Then the spin field S =
--yi + xj is not a gradient field.
-Compute af/ax and af/ay in 11-18. Draw the gradient field
-F =padf and the equipotentials f(x, y) = c:
-15f=x2-y2 16 f = ex cos y
-Find equations for the streamlines in 19-24 by solving dyldx =
-N/M (including a constant C). Draw the streamlines.
-21 F =S (spin field) 22 F =S/r (spin field)
-23 F =grad (xly) 24 F =grad (2x + y).
-25 The Earth's gravity field is radial, but in a room the field
-lines seem to go straight down into the floor. This is because
-nearby field lines always look .
-26 A line of charges produces the electrostatic force field F =
-R/r2=(xi + yj)/(x2+ y2). Find the potential f(x, y). (F is also
-the gravity field for a line of =asses.)
-In 27-32 write down the vector fields Mi + Nj.
-27 F points radially away from the origin with magnitude 5.
-28 The velocity is perpendicular to the curves x3 + y3 =c and
-the speed is 1.
-29 The gravitational force F comes from two unit masses at
-(0,O) and (1,O).
-30 The streamlines are in the 45" direction and the speed is 4.
-31 The streamlines are circles clockwise around the origin
-and the speed is 1.
-32 The equipotentials are the parabolas y = x2+ c and F is
-a gradient field.
-33 Show directly that the hyperbolas xy = 2 and x2 -y2 = 3
-are perpendicular at the point (2, l), by computing both slopes
-dyldx and multiplying to get -1.
-34 The derivative off (x, y) = c isf, +f,(dy/dx) =0. Show that
-the slope of this level curve is dyldx = -MIN. It is perpendicular
-to streamlines because (- M/N)(N/M)= .
-35 The x and y derivatives of f(r) are dfldx = and
-dflay =-by the chain rule. (Test f =r2.) The equipotentials
-are .
-36 F =(ax + by)i + (bx + cy)j is a gradient field. Find the
-potential f and describe the equipotentials.
-37 True or false:
-I. The constant field i + 2k is a gradient field.
-2. For non-gradient fields, equipotentials meet streamlines
-at non-right angles.
-3. In three dimensions the equipotentials are surfaces
-instead of curves.
-4. F = x2i+ y2j+ z2k points outward from (0,0,0)-
-a radial field.
-38 Create and draw f and F and your own equipotentials
-and streamlines. 
-15.2 Line Integrals 555
-39 How can different vector fields have the same streamlines? 40 Draw arrows at six or eight points to show the direction
-Can they have the same equipotentials? Can they have the and magnitude of each field:
-same f? (a) R +S (b) Rlr -S/r (c) x2i+x2j (d)yi
 
 %%\printexercises{exercises/13_06_exercises}
