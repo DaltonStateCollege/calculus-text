@@ -1,6 +1,17 @@
 \section{Cylindrical and Spherical Coordinates}\label{sec:cylindrical_spherical}
 
+\noindent\textbf{\large Triple Integration with Cylindrical Coordinates}\\
 
+Cylindrical coordinates are good for describing solids that are symmetric around an axis.  The solid is three dimensional, and so we use the coordinates $(r,\theta,z)$ for this solid.  The radius $r$ and angle $\theta$ are the same as in polar coordinates, with $r$ being the distance out from axis and $\theta$ being the angle around the axis. The coordinate $z$ is the same as in the Cartesian system - the vertical distance up the axis.  See Figure \ref.
+
+For example, consider the full solid cylinder of radius $1$ centered on the $z$-axis with the bottom on the $xy$-plane and the top at $z = 3$.  The coordinates that describe this solid are
+$$0 \leq r \leq 1, \: 0 \leq \theta \leq 2\pi, \: 0 \leq z \leq 3.$$
+If we are only working with a half cylinder, for example, the $\theta$ coordinate would be restricted as appropriate to $0 \leq \theta \pi$ instead. This half-cylinder is shown in Figure \ref. 
+
+When integrating over such an object, these would be the bounds on the three variables of integration $dr$, $d\theta$, $dz$.  The differential of volume $dV$ would be $$dV = r \: dr \: d\theta \: dz$$ since we are working with the same two coordinates $r$ and $\theta$ from polar coordinates and the third coordinate is the same as in the Cartesian system.  This is the volume of the curved box in Figure \ref.  In other words, the volume of the half-cylinder described above, its volume would be
+$$V = \iiint \: dV = \int_{0}^{3} \int_{0}^{\pi} \int_{0}^{1} r \: dr \: d\theta \: dz$$
+As expected, this triple integral computes to
+$$V =  \int_{0}^{3} \int_{0}^{\pi} \dfrac{1}{2} \: d\theta \: dz = \dfrac{3\pi}{2}$$
 
 
 
