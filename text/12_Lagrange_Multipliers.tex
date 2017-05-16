@@ -61,15 +61,15 @@ V_z = \lambda g_z & \Rightarrow xy = \lambda (2x+2y) \\
 g(x,y,z) = 20 & \Rightarrow 2xz + 2yz + xy = 20
 \end{align*}
 Multiplying each of the first three equations by $x$, $y$, and $z$, respectively, gives the system
-\begin{align}
+\begin{align*}
 xyz & = \lambda(2xz+xy) \\
 xyz & = \lambda(2yz + xy) \\
 xyz & = \lambda (2xz+2yz) \\
 2xz + 2yz + xy & = 20
-\end{align}
-Note that the first three equations imply that $\lambda \neq 0$, else one would arrive at the conclusion $xyz=0$, which does not make sense in this situation.  Therefore we can divide by $\lambda$ and we get from equations $(1)$ and $(2)$ that
+\end{align*}
+Note that the first three equations imply that $\lambda \neq 0$, else one would arrive at the conclusion $xyz=0$, which does not make sense in this situation.  Therefore we can divide by $\lambda$ and we get from the first two equations that
 $$2xz + xy = 2yz + xy \text{ or } xz = yz.$$
-Since $z \neq 0$, we get that $x=y$.  Further, equations $(2)$ and $(3)$ imply that
+Since $z \neq 0$, we get that $x=y$.  Further, the second and third equations imply that
 $$2yz + xy = 2xz + 2yz \text{ or } xy = 2xz.$$
 Again, since $x \neq 0$, we get that $y = 2z$.  Lastly, substitute $x = y = 2z$ into equation $(4)$ and we get
 $$4z^2 + 4z^2 + 4z^2 = 20.$$
@@ -77,9 +77,7 @@ This gives us $3z^2 = 5$ or $z = \sqrt{\frac{5}{3}}$.  Therefore the dimenions o
 $$x = y = 2\sqrt{\frac{5}{3}} \text{ feet, and } z = \sqrt{\frac{5}{3}} \text{ feet}.$$
 }
 
-At the minimum, the level curve $f(x,y) = c$ is tangent to the constraint curve $g(x,y) = k$.  If that constraint curve is given parametrically by $x(t)$ and $y(t)$, then minimizing $f\left(x(t),y(t)\right)$ uses the chain rule:
-$$\frac{df}{dt} = \frac{\partial f}{\partial x} \frac{dx}{dt} + \frac{\partial f}{\partial y} \frac{dy}{dt}$$
-or $\nabla f \cdot \left( \frac{dx}{dt}, \frac{dy}{dt} \right) = 0$.  This is the calculus proof that $\nabla f$ is perpendicular to the curve.  Thus $\nabla f$ is parallel to $\nabla g$.  This means $(f_x,f_y) = \lambda (g_x,g_y)$.\\
+
 
 \noindent\textbf{\large Maximum and Minimum with Two Constraints}\\
 
