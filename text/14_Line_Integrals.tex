@@ -1,39 +1,31 @@
 \section{Line Integrals}\label{sec:line_integrals}
-15.2
-along a
-Line
-curve. It
-Integrals
-can equal an area, but
-.-
-that is a special
-case and not typical. Instead of area, here are two important line integrals in physics
-and engineering:
-Work along a curve = F T ds Flow across a curve =
-In the first integral, F is a force field. In the second integral, F is a flow field. Work
-is done in the direction of movement, so we integrate F T. Flow is measured through
-the curve C, so we integrate F n. Here T is the unit tangent vector, and F T is the
-force cornponent along the curve. Similarly n is the unit normal vector, at right angles
-with T. Then F n is the component of flow perpendicular to the curve.
-We will write those integrals in several forms. They may never be as comfortable
-as J y(x) dx, but eventually we get them under control. I mention these applications
-early, so you can see where we are going. This section concentrates on work, and
-flow comes later. (It is also calledflux-the Latin word for flow.) You recognize ds
-as the step along the curve, corresponding to dx on the x axis. Where f dx gives the
-length of an interval (it equals b - a), 5 ds is the length of the curve.
+A \emph{line integral} is an \emph{integral along a curve}. It can equal an area, but that is a special
+case and not typical. Instead of area, here are two important line integrals in physics and engineering.
+
+\definition{def:unit_tangent}{Work and Flow}
+{The \emph{work along a curve} $C$ is given by $\int_C \mathbf{F}\cdot \mathbf{T} ds$. The \emph{flow across a curve} $C$ is given by $\int_C \mathbf{F}\cdot \mathbf{n} ds$.}
+
+In the first integral above, $\mathbf{F}$ is a \emph{force field}. In the second integral, $\mathbf{F}$ is a \emph{flow field}. Work
+is done in the direction of movement, so we integrate $\mathbf{F}\cdot \mathbf{T}$. Flow is measured through
+the curve $C$, so we integrate $\mathbf{F}\cdot \mathbf{n}$. Here $\mathbf{T}$ is the unit tangent vector, and $\mathbf{F}\cdot \mathbf{T}$ is the
+force component along the curve. Similarly $\mathbf{n}$ is the unit normal vector, at right angles with $\mathbf{T}$. Then $\mathbf{F}\cdot \mathbf{n}$ is the component of flow perpendicular to the curve.
+We will write those integrals in several forms. This section concentrates on work, and flow comes later. (It is also called \emph{flux} -- the Latin word for flow.) You recognize $ds$
+as the step along the curve, corresponding to $dx$ on the $x$-axis. Where $\int_a^b dx$ gives the
+length of an interval (it equals $b - a$), $\int_a^b ds$ is the length of a curve.
+
 EXAMPLE 1 Flight from Atlanta to Los Angeles on a straight line and a semicircle.
 According to Delta Airlines, the distance straight west is 2000 miles. Atlanta is at
-(1000,O) and Los Angeles is at (-1000, O), with the origin halfway between. The
-semicircle route C has radius 1000. This is not a great circle route. It is more of a
-"flat circle," which goes north past Chicago. No plane could fly it (it probably goes
+(1000,0) and Los Angeles is at (-1000, 0), with the origin halfway between. The
+semicircle route $C$ has radius 1000. This is not a great circle route. It is more of a
+``flat circle'', which goes north past Chicago. No plane could fly it (it probably goes
 into space).
-The equation for the semicircle is x2 + y2 = 10002. Parametrically this path is x =
-1000 cos t, y = 1000 sin t. For a line integral the parameter is better. The plane leaves
-Atlanta at t = 0 and reaches L.A. at t = n, more than three hours later. On the straight
-2000-mile path, Delta could almost do it. Around the semicircle C, the distance is
-lOOOn miles and the speed has to be 1000 miles per hour. Remember that speed is
-distance ds divided by time dt:
-dsldt = ,/(dx~dt)~ + (dyldt)' = l000,/(- sin t)2 + (cos t)2 = 1000. (1)
+The equation for the semicircle is $x^2 + y^2 = 1000^2$. Parametrically this path is $x =
+1000 \cos t, y = 1000 \sin t$. For a line integral the parameter is better. The plane leaves
+Atlanta at $t = 0$ and reaches L.A. at $t = \pi$, more than three hours later. On the straight
+2000-mile path, Delta could almost do it. Around the semicircle $C$, the distance is
+$1000\pi$ miles and the speed has to be 1000 miles per hour. Remember that speed is
+distance $ds$ divided by time $dt$:
+$$ds/dt = \sqrt{(dx/dt)^2 + (dy/dt)^2} = l000\sqrt{(- sin t)2 + (cos t)2} = 1000$$ (1)
 The tangent vector to C is proportional to (dxldt, dyldt) = (-1000 sin t, 1000 cos t).
 But T is a unit vector, so we divide by 1000-which is the speed.
 Suppose the wind blows due east with force F = Mi. The components are M and
@@ -41,7 +33,7 @@ zero. Foir M =constant, compute the dot product F *T and the work -2000 M:
 FwT= Mi*(-sin t i+cos tj)= M(-sin t)+O(cos t)= - M sin t 
 15 Vector Calculus
 Work is force times distance moved. It is negative, because the wind acts against the
-movement. You may point out that the work could have been found more simplygo
+movement. You may point out that the work could have been found more simply go
 2000 miles and multiply by - M. I would object that this straight route is a
 dzrerent path. But you claim that the path doesn't matter-the work of the wind is
 -2000M on every path. I concede that this time you are right (but not always).
@@ -56,7 +48,9 @@ Angeles has x = - 1000, and the potential function f = Mx is like an antiderivat
 work = f (Q) - f (P) = M(- 1000) - M(1000) = - 2000M. (3)
 LAX LAX - 1000 , - 1000 1000
 J F . Tdr = - 2000M depends on path
+
 Fig. 15.5 Force Mi, work -2000M on all paths. Force Myi, no work on straight path.
+
 May I give a rough explanation of the work integral 5 F T ds? It becomes clearer
 when the small movement Tds is written as dx i + dy j. The work is the dot product
 with F:
@@ -71,12 +65,13 @@ F*T=(Myi)*(-sinti+costj)= -My sin t= - lOOOM sin2t
 This work is enormous (and unrealistic). But the calculations make an important
 point-everything is converted to the parameter t. The second point is that F = Myi
 is not a gradient field. First reason: The work was zero on the straight path and 
-15.2 Line Integrals
 nonzero on the semicircle. Second reason: No function has df/ dx = My and df /dy =
 0. (The first makes f depend on y and the second forbids it. This F is called a shear
 force.) Without a potential we cannot substitute P and Q-and the work depends
 on the path.
+
 THE DEFINITION OF LINE INTEGRALS
+
 We go back to the start, to define F T ds. We can think of F T as a function g(x, y)
 along the path, and define its integral as a limit of sums:
 N IC g(~, y)ds = limit of xi, yi)Asi as (As),,,., -i 0.
