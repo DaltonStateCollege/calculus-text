@@ -30,107 +30,107 @@ first.
 For an ordinary scalar function, the input is a number $x$ and the output is a number
 $f(x)$. For a vector field (or vector function), the input is a point $(x, y)$ and the output
 is a two-dimensional vector $F(x, y)$. There is a ``field'' of vectors, one at every point.
-In three dimensions the input point is $(x, y, z)$ and the output vector $\mathbf{F}$ has three
+In three dimensions the input point is $(x, y, z)$ and the output vector $\vec F}$ has three
 components.
 
-Let $R$ be a region in the $xy$ plane. A \emph{vector field}  $\mathbf{F}$ assigns to every point
-$(x, y)$ in $\mathbb{R}$ a vector $\mathbf{F}(x, y)$ with two components:
-$\mathbf{F}(x, y) = M(x, y)\mathbf{i} + N(x, y)\mathbf{j}$.
+Let $R$ be a region in the $xy$ plane. A \emph{vector field}  $\vec F$ assigns to every point
+$(x, y)$ in $\mathbb{R}$ a vector $\vec F(x, y)$ with two components:
+$\vec F(x, y) = M(x, y)\vec i + N(x, y)\vec j$.
 This plane vector field involves two functions of two variables. They are the components
 $M$ and $N$, which vary from point to point. A vector has fixed components; a
 vector field has varying components.
 A three-dimensional vector field has components $M(x, y, z)$, $N(x, y, z)$, and
-$P(x, y, z)$. Then the vectors are $\mathbf{F} = M\mathbf{i} + N\mathbf{j} + P\mathbf{k}$.
+$P(x, y, z)$. Then the vectors are $\vec F = M\vec i + N\vec j + P\vec k$.
 
-\example{ex_lagrange3}{}{The position vector at $(x, y)$ is $\mathbf{R} = x\mathbf{i} + y\mathbf{j}$. Its components are $M = x$
+\example{ex_lagrange3}{}{The position vector at $(x, y)$ is $\vec R = x\vec i + y\vec j$. Its components are $M = x$
 and $N = y$. The vectors grow larger as we leave the origin (Figure 15.la). Their
-direction is outward and their length is $\mid R \mid \sqrt{x^2+y^2} = r$. The vector $\mathbf{R}$ is boldface;
+direction is outward and their length is $\mid R \mid \sqrt{x^2+y^2} = r$. The vector $\vec R$ is boldface;
 the number $r$ is lightface.}
 
-\example{ex_lagrange3}{}{}{ The vector field $\mathbf{R}/r$ consists of unit vectors $\mathbf{u}_r$, pointing outward. We
-divide $\mathbf{R} = x\mathbf{i} + y\mathbf{j}$ by its length, at every point except the origin. The components
-of $\mathbf{R}/r$ are $M = x/r$ and $N = y/r$. Figure 15.1 shows a third field $\mathbf{R}/r^2$, whose length
+\example{ex_lagrange3}{}{}{ The vector field $\vec R/r$ consists of unit vectors $\vec u_r$, pointing outward. We
+divide $\vec R = x\vec i + y\vec j$ by its length, at every point except the origin. The components
+of $\vec R/r$ are $M = x/r$ and $N = y/r$. Figure 15.1 shows a third field $\vec R/r^2$, whose length
 is $1/r$.}
 
-Fig. 15.1 The vector fields $\mathbf{R}$, $\mathbf{R}/r$, and $\mathbf{R}/r^2$ are radial. Their lengths are $r$, $1$, and $l/r$.
+Fig. 15.1 The vector fields $\vec R$, $\vec R/r$, and $\vec R/r^2$ are radial. Their lengths are $r$, $1$, and $1/r$.
 
 \example{ex_lagrange3}{}{}{ The spin field or rotation field or turning field goes around the origin
-instead of away from it. The field is $\mathbf{S}$. Its components are $M = - y$ and $N = x$:
-$$\mathbf{S} = - y\mathbf{i} + x\mathbf{j} \text{ also has length } \mid \mathbf{S} \mid = \sqrt{(-y)^2 + x^2} = r$$
-$\mathbf{S}$ is perpendicular to $\mathbf{R}$ -- their dot product is zero: $\mathbf{S}\cdot \mathbf{R} = (- y)(x) + (x)(y) = 0$. The
-spin fields $\mathbf{S}/r$ and $\mathbf{S}/r^2$ have lengths $1$ and $1/r$:
-The unit vector $\mathbf{S}/r$ is $\mathbf{u}_r$. Notice the blank at $(0,0)$, where this field is not defined.}
+instead of away from it. The field is $\vec S$. Its components are $M = - y$ and $N = x$:
+$$\vec S = - y\vec i + x\vec j \text{ also has length } \mid \vec S \mid = \sqrt{(-y)^2 + x^2} = r$$
+$\vec S$ is perpendicular to $\vec R$ -- their dot product is zero: $\vec S\cdot \vec R = (- y)(x) + (x)(y) = 0$. The
+spin fields $\vec S/r$ and $\vec S/r^2$ have lengths $1$ and $1/r$:
+The unit vector $\vec S/r$ is $\vec u_r$. Notice the blank at $(0,0)$, where this field is not defined.}
 
-Fig. 15.2 The spin fields $\mathbf{S}$, $\mathbf{S}/r$, and $\mathbf{S}/r^2$ go around the origin. Their lengths are $r$, $1$, and $l/r$. 
+Fig. 15.2 The spin fields $\vec S$, $\vec S/r$, and $\vec S/r^2$ go around the origin. Their lengths are $r$, $1$, and $l/r$. 
 
 
 \example{ex_lagrange3}{}{A Gradient Field.}{ A \emph{gradient field} starts with an ordinary function $f(x, y)$. The components
-$M\mathbf{i}$ and $P\mathbf{j}$ are the partial derivatives $\dfrac{\partial f}{\partial x}$ and $\dfrac{\partial f}{\partial y}$. Then the field $\mathbf{F}$ is the gradient
+$M\vec i$ and $P\vec j$ are the partial derivatives $\dfrac{\partial f}{\partial x}$ and $\dfrac{\partial f}{\partial y}$. Then the field $\vec F$ is the gradient
 of $f$, denoted $\nabla f$:
 
-$$\mathbf{F} = \nabla f = \dfrac{\partial f}{\partial x}\mathbf{i} + \dfrac{\partial f}{\partial y} \mathbf{j}.$$
+$$\vec F = \nabla f = \dfrac{\partial f}{\partial x}\vec i + \dfrac{\partial f}{\partial y} \vec j.$$
 This vector field $\nabla f$ is everywhere perpendicular to the level curves $f(x, y) = c$. The
 length $\mid \nabla f \mid$ tells how fast $f$ is changing (in the direction it changes fastest). Invent
-a function like $f = x^2y$, and you immediately have its gradient field $\mathbf{F} = 2xy\mathbf{i} + x^2\mathbf{j}$.
+a function like $f = x^2y$, and you immediately have its gradient field $\vec F = 2xy\vec i + x^2\vec j$.
 To repeat, $M$ is $\dfrac{\partial f}{\partial x}$ and $N$ is $\dfrac{\partial f}{\partial y}$.
 For every vector field you should ask two questions: \emph{Is it a gradient field?} \emph{If so,
 what is $f$?} Here are answers for the radial fields and spin fields:
 
 \begin{mdframed}
 
-The radial fields $\mathbf{R}$, $\mathbf{R}/r$, and $\mathbf{R}/r^2$ are all gradient fields.
+The radial fields $\vec R$, $\vec R/r$, and $\vec R/r^2$ are all gradient fields.
 	
-The spin fields $\mathbf{S}$ and $\mathbf{S}/r$ are not gradients of any $f(x, y)$.
+The spin fields $\vec S$ and $\vec S/r$ are not gradients of any $f(x, y)$.
 
-The spin field $S/r^2$ is the gradient of the polar angle $\mathbf{\theta} = \tan^{-1}\left(\dfrac{y}{x}\right)$.
+The spin field $\vec S/r^2$ is the gradient of the polar angle $\vec \theta = \tan^{-1}\left(\dfrac{y}{x}\right)$.
 \end{mdframed}
 
-The derivatives of $f = \frac{1}{2}(x^2+ y^2)$ are $x$ and $y$. Thus $\mathbf{R}$ is a gradient field. The gradient
-of $f = r$ is the unit vector $\mathbf{R}/r$ pointing outwards. Both fields are perpendicular to
+The derivatives of $f = \frac{1}{2}(x^2+ y^2)$ are $x$ and $y$. Thus $\vec R$ is a gradient field. The gradient
+of $f = r$ is the unit vector $\vec R/r$ pointing outwards. Both fields are perpendicular to
 circles around the origin. Those are the level curves of $f = \frac{1}{2}r^2$ and $f = r$.
 
 
-Question: Is every $\mathbf{R}/r^n$ a gradient field?
-Answer: Yes. But among the spin fields, the only gradient is $\mathbf{S}/r^2$.
+Question: Is every $\vec R/r^n$ a gradient field?
+Answer: Yes. But among the spin fields, the only gradient is $\vec S/r^2$.
 A major goal of this chapter is to recognize gradient fields by a simple test. The
-rejection of $\mathbf{S}$ and $\mathbf{S}/r$ will be interesting. For some reason $-y\mathbf{i} + x\mathbf{j}$ is rejected and
-$y\mathbf{i} + x\mathbf{j}}$ is accepted. (Can you tell what it is the gradient of?) The acceptance of $\mathbf{S}/r^2$ as the
+rejection of $\vec S$ and $\vec S/r$ will be interesting. For some reason $-y\vec i + x\vec j$ is rejected and
+$y\vec i + x\vec j$ is accepted. (Can you tell what it is the gradient of?) The acceptance of $\vec S/r^2$ as the
 gradient of $f = 0$ contains a surprise at the origin (Section 15.3).
 Gradient fields are called \emph{conservative}. The function $f$ is the \emph{potential function}.
 These words, and the next examples, come from physics and engineering.
 
-EXAMPLE5 The velocity field is $\mathbf{V}$ and the flow field is $\rho \mathbf{V}$.
+EXAMPLE5 The velocity field is $\vec V$ and the flow field is $\rho \vec V$.
 
 Suppose: fluid moves steadily down a pipe. Or a river flows smoothly (no waterfall).
 Or the air circulates in a fixed pattern. The velocity can be different at different points,
-but there is no change with time. The velocity vector $\mathbf{V}$ gives the direction of flow
+but there is no change with time. The velocity vector $\vec V}$ gives the direction of flow
 and speed of flow at every point.
-In reality the velocity field is $\mathbf{V}(x, y, z)$, with three components $M$, $N$, and $P$. Those are
-the velocities $v_1$, $v_2$, and $v_3$, in the $x$, $y$, and $z$ directions. The speed $\mid \mathbf{V} \mid$ is the length: 
-$\mid\mathbf{V}\mid^2 = v_1^2 + v_2^2 +v_3^2$. In a ``plane flow'' the $\mathbf{k}$ component is zero, and the velocity field is
-$v_1\mathbf{i}+v_2\mathbf{j}= M\mathbf{i}+ N\mathbf{j}$.
+In reality the velocity field is $\vec V(x, y, z)$, with three components $M$, $N$, and $P$. Those are
+the velocities $v_1$, $v_2$, and $v_3$, in the $x$, $y$, and $z$ directions. The speed $\mid \vec V \mid$ is the length: 
+$\mid\vec V\mid^2 = v_1^2 + v_2^2 +v_3^2$. In a ``plane flow'' the $\vec k$ component is zero, and the velocity field is
+$v_1\vec i+v_2\vec j= M\vec i+ N\vec j$.
 
-Fig. 15.3 A steady velocity field $\mathbf{V}$ and two force fields $\mathbf{F}$. 
+Fig. 15.3 A steady velocity field $\vec V$ and two force fields $\vec F$. 
 
-For a compact disc or a turning wheel, $\mathbf{V}$ is a spin field ($V =\omega \mathbf{S}$, $\omega=$ angular
-velocity). A tornado might be closer to $\mathbf{V} =\mathbf{S}/r^2$ (except for a dead spot at the center).
-An explosion could have $\mathbf{V} =\mathbf{R}/r^2$. A quieter example is flow in and out of a lake
+For a compact disc or a turning wheel, $\vec V$ is a spin field ($V =\omega \vec S$, $\omega=$ angular
+velocity). A tornado might be closer to $\vec V =\vec S/r^2$ (except for a dead spot at the center).
+An explosion could have $\vec V =\vec R/r^2$. A quieter example is flow in and out of a lake
 with steady rain as a source term.
-The \emph{flow field} $\rho \mathbf{V}$ is the density $\rho$ times the velocity field. While $\mathbf{V}$ gives the rate of
-movement, $\rho \mathbf{V}$ gives the rate of movement of mass. A greater density means a greater
-rate $\mid \rho \mathbf{V} \mid$ of "mass transport." It is like the number of passengers on a bus times the
+The \emph{flow field} $\rho \vec V$ is the density $\rho$ times the velocity field. While $\vec V$ gives the rate of
+movement, $\rho \vec V$ gives the rate of movement of mass. A greater density means a greater
+rate $\mid \rho \vec V \mid$ of "mass transport." It is like the number of passengers on a bus times the
 speed of the bus.
 
-EXAMPLE 6 Force fields from gravity: $\mathbf{F}$ is downward in the classroom, $\mathbf{F}$ is radial
+EXAMPLE 6 Force fields from gravity: $\vec F$ is downward in the classroom, $\vec F$ is radial
 in space.
-When gravity pulls downward, it has only one nonzero component: $\mathbf{F} = -mg\mathbf{k}$. This
+When gravity pulls downward, it has only one nonzero component: $\vec F = -mg\vec k$. This
 assumes that vectors to the center of the Earth are parallel -- almost true in a classroom.
 Then F is the gradient of $-mgz$ (note that $\dfrac{\partial f}{\partial z} = -mg$).
 \emph{In physics the usual potential is not $-mgz$ but $+mgz$.} The force field is \emph{minus} $\nabla f$
 in electrical engineering as well. Electrons flow from high potential to low potential.
 The mathematics is the same, but the sign is reversed.
 
-In space, the force is radial inwards: $\mathbf{F} = -mMG\mathbf{R}/r^3$. Its magnitude is proportional
+In space, the force is radial inwards: $\vec F = -mMG\vec R/r^3$. Its magnitude is proportional
 to $1/r^2$ (Newton's inverse square law). The masses are $m$ and $M$, and the
 gravitational constant is $G =6.672 x 10^{-11}$ -- with distance in meters, mass in kilograms,
 and time in seconds. The dimensions of $G$ are $(\text{force})(\text{distance})^2/(\text{mass})^2$. This
@@ -140,8 +140,8 @@ and radius of the Earth.
 Like all radial fields, gravity is a gradient field. It comes from a potential $f$:
 $$f=\dfrac{mMG}{r} \text{ and }\dfrac{\partial f}{\partial x}=-\dfrac{mMGx}{r^3} \text{ and }\dfrac{\partial f}{\partial y}=-\dfrac{mMGy}{r^3} \text{ and }\dfrac{\partial f}{\partial z}=-\dfrac{mMGz}{r^3}.$$ 
 
-EXAMPLE 7 (a short example) Current in a wire produces a magnetic field $\mathbf{B}$. It is
-the spin field $\mathbf{S}/r^2$ around the wire, times the strength of the current.
+EXAMPLE 7 (a short example) Current in a wire produces a magnetic field $\vec B$. It is
+the spin field $\vec S/r^2$ around the wire, times the strength of the current.
 
 STREAMLINES AND LINES OF FORCE
 Drawing a vector field is not always easy. Even the spin field looks messy when the
@@ -149,33 +149,33 @@ vectors are too long (they go in circles and fall across each other). \emph{The 
 clearer picture than the vectors}. In any field, the vectors are tangent to ``\emph{field lines}'' which
 in the spin case are circles.
 
-DEFINITION $\mathbf{C}$ is a \emph{field line} or \emph{integral curve} if the vectors $\mathbf{F}(x, y)$ are tangent to $C$.
-The slope $dy/dx$ of the curve $C$ equals the slope $N/M$ of the vector $\mathbf{F} =M\mathbf{i} + N\mathbf{j}$:
+DEFINITION $\vec C$ is a \emph{field line} or \emph{integral curve} if the vectors $\vec F(x, y)$ are tangent to $C$.
+The slope $dy/dx$ of the curve $C$ equals the slope $N/M$ of the vector $\vec F =M\vec i + N\vec j$:
 
 $$\dfrac{dy}{dx}=\dfrac{N(x,y)}{M(x,y)} \left(=-\dfrac{x}{y} \text{ for the spin field}\right).$$
 
 We are still drawing the field of vectors, but now they are infinitesimally short.
-They are connected into curves! What is lost is their length, because $\mathbf{S}$, $\mathbf{S}/r$, and
-$\mathbf{S}/r^2$ all have the same field lines (circles). For the position field $\mathbf{R}$ and gravity field
-$R/r^3$, the field lines are rays from the origin. In this case the ``curves'' are actually
+They are connected into curves! What is lost is their length, because $\vec S$, $\vec S/r$, and
+$\vec S/r^2$ all have the same field lines (circles). For the position field $\vec R$ and gravity field
+$\vec R/r^3$, the field lines are rays from the origin. In this case the ``curves'' are actually
 straight.
 
-EXAMPLE 8 Show that the field lines for the velocity field $\mathbf{V} =y\mathbf{i} +x\mathbf{j}$ are hyperbolas.
+EXAMPLE 8 Show that the field lines for the velocity field $\vec V} =y\vec i +x\vec j$ are hyperbolas.
 $$\dfrac{dy}{dx}=\dfrac{N}{M}=\dfrac{x}{y} \Rightarrow ydy=xdx \Rightarrow \frac{1}{2}y^2-\frac{1}{2}x^2=\text{constant}.$$
 
 Fig. 15.4 Velocity fields are tangent to streamlines. Gradient fields also have equipotentials.
 
 
-At every point these hyperbolas line up with the velocity $\mathbf{V}$. \emph{Each particle of fluid
+At every point these hyperbolas line up with the velocity $\vec V$. \emph{Each particle of fluid
 travels on a field line}. In fluid flow those hyperbolas are called \emph{streamlines}. Drop a
 leaf into a river, and it follows a streamline. Figure 15.4 shows the streamlines for a
 river going around a bend.
 
 
 Don't forget the essential question about each vector field. Is it a gradient field?
-For $\mathbf{V} = y\mathbf{i} + x\mathbf{j}$ the answer is yes, and the potential is $f = xy$:
+For $\vec V = y\vec i + x\vec j$ the answer is yes, and the potential is $f = xy$:
 
-$$\nabla(xy)=\dfrac{\partial f}{\partial x}\mathbf{i}+\dfrac{\partial f}{\partial y}\mathbf{j}=y\mathbf{i}+x\mathbf{j}$$
+$$\nabla(xy)=\dfrac{\partial f}{\partial x}\vec i+\dfrac{\partial f}{\partial y}\vec j=y\vec i+x\vec j$$
 
 When there is a potential, it has level curves. They connect points of equal potential,
 so the curves $f(x, y) = c$ are called \emph{equipotentials}. Here they are the curves $xy = c$ -- also
@@ -183,14 +183,14 @@ hyperbolas. Since gradients are perpendicular to level curves, \emph{the streaml
 perpendicular to the equipotentials}. Figure 15.4 is sliced one way by streamlines and
 the other way by equipotentials.
 
-In general, a gradient field $\mathbf{F} =\dfrac{\partial f}{\partial x}\mathbf{i}+\dfrac{\partial f}{\partial y}\mathbf{j}$ is tangent to the field lines (streamlines) and perpendicular to the equipotentials (level curves of $f$).
+In general, a gradient field $\vec F} =\dfrac{\partial f}{\partial x}\vec i+\dfrac{\partial f}{\partial y}\vec j$ is tangent to the field lines (streamlines) and perpendicular to the equipotentials (level curves of $f$).
 
 In the gradient direction $f$ changes fastest. In the level direction $f$ doesn't change at
 all. The chain rule along $f (x, y) = c$ proves these directions to be perpendicular:
 $$\dfrac{\partial f}{\partial x}\dfrac{dx}{dt}+\dfrac{\partial f}{\partial y}\dfrac{dy}{dt}=0 \text{ or } (\nabla f)\cdot(tangent to level curve)=0.$$
 
-EXAMPLE 9 The streamlines of $\mathbf{S}/r^2$ are circles around $(0,0)$. The equipotentials are
-rays $\theta = c$. Add rays to Figure 15.2 for the gradient field $\mathbf{S}/r^2$.
+EXAMPLE 9 The streamlines of $\vec S/r^2$ are circles around $(0,0)$. The equipotentials are
+rays $\theta = c$. Add rays to Figure 15.2 for the gradient field $\vec S/r^2$.
 
 For the gravity field those are reversed. A body is pulled in along the field lines (rays).
 The equipotentials are the circles where $f = 1/r$ is constant. The plane is crisscrossed
@@ -198,11 +198,11 @@ by ``orthogonal trajectories'' -- curves that meet everywhere at right angles.
 If you bring a magnet near a pile of iron filings, a little shake will display the field
 lines. In a force field, they are ``lines of force.'' \emph{Here are the other new words.}
 
-Vector field $\mathbf{F}(x, y, z) = M\mathbf{i} + N\mathbf{j} + P\mathbf{k}$ Plane field $\mathbf{F} = M(x, y)\mathbf{i} + N(x, y)\mathbf{j}$
-Radial field: multiple of $\mathbf{R} = x\mathbf{i} + y\mathbf{j} + z\mathbf{k}$ Spin field: multiple of  $\mathbf{S}= - y\mathbf{i} + x\mathbf{j}$
+Vector field $\vec F(x, y, z) = M\vec i + N\vec j + P\vec k$ Plane field $\vec F = M(x, y)\vec i + N(x, y)\vec j$
+Radial field: multiple of $\vec R = x\vec i + y\vec j + z\vec k$ Spin field: multiple of  $\vec S}= - y\vec i + x\vec j$
 Gradient field = conservative field: $M = \dfrac{\partial f}{\partial x}, N = \dfrac{\partial f}{\partial y}, P = \dfrac{\partial f}{\partial z}$
 Potential $f(x, y$ (not a vector) Equipotential curves: $f(x, y) = c$.
-Streamline = field line = integral curve: a curve that has $\mathbf{F}(x, y)$ as its tangent
+Streamline = field line = integral curve: a curve that has $\vec F(x, y)$ as its tangent
 vectors. 
 
 %%\printexercises{exercises/13_06_exercises}
