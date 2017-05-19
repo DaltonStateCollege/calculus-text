@@ -1,59 +1,69 @@
 \section{Line Integrals}\label{sec:line_integrals}
-A \emph{line integral} is an \emph{integral along a curve}. It can equal an area, but that is a special
-case and not typical. Instead of area, here are two important line integrals in physics and engineering.
+A \emph{line integral} is an integral along a curve. It can equal an area, but
+that is a special case and not typical. Instead of area, here are two important line integrals in physics
+and engineering:
 
-\definition{def:unit_tangent}{Work and Flow}
-{The \emph{work along a curve} $C$ is given by $\int_C \mathbf{F}\cdot \mathbf{T} ds$. The \emph{flow across a curve} $C$ is given by $\int_C \mathbf{F}\cdot \mathbf{n} ds$.}
+\keyidea{idea:work_and_flow}{Work and Flow}
+{
+$$\text{Work along a curve } = \int_C \vec F \cdot \vec T ds$$
+ $$\text{Flow across a curve } = \int_C \vec F \cdot \vec n ds$$
+}
 
-In the first integral above, $\mathbf{F}$ is a \emph{force field}. In the second integral, $\mathbf{F}$ is a \emph{flow field}. Work
-is done in the direction of movement, so we integrate $\mathbf{F}\cdot \mathbf{T}$. Flow is measured through
-the curve $C$, so we integrate $\mathbf{F}\cdot \mathbf{n}$. Here $\mathbf{T}$ is the unit tangent vector, and $\mathbf{F}\cdot \mathbf{T}$ is the
-force component along the curve. Similarly $\mathbf{n}$ is the unit normal vector, at right angles with $\mathbf{T}$. Then $\mathbf{F}\cdot \mathbf{n}$ is the component of flow perpendicular to the curve.
-We will write those integrals in several forms. This section concentrates on work, and flow comes later. (It is also called \emph{flux} -- the Latin word for flow.) You recognize $ds$
-as the step along the curve, corresponding to $dx$ on the $x$-axis. Where $\int_a^b dx$ gives the
-length of an interval (it equals $b - a$), $\int_a^b ds$ is the length of a curve.
+In the first integral, $\vec F$ is a force field. In the second integral, $\vec F$ is a flow field. Work is done in the direction of movement, so we integrate $\vec F \cdot \vec T$. Flow is measured through the curve $C$, so we integrate $\vec F \cdot \vec n$. Here $\vec T$ is the unit tangent vector, and $\vec F \cdot \vec T$ is the
+force component along the curve. Similarly, $\vec n$ is the unit normal vector, at right angles
+with $\vec T$. Then $\vec F \cdot \vec n$ is the component of flow perpendicular to the curve.
+We will write those integrals in several forms. This section concentrates on work, and
+flow comes later. The flow is also called the \emph{flux}. You recognize $ds$
+as the step along the curve, corresponding to $dx$ on the $x$ axis. Where $\int_a^b dx$ gives the length of an interval (it equals $b - a$), $\int_C ds$ is the length of the curve $C$.
 
 EXAMPLE 1 Flight from Atlanta to Los Angeles on a straight line and a semicircle.
 According to Delta Airlines, the distance straight west is 2000 miles. Atlanta is at
-(1000,0) and Los Angeles is at (-1000, 0), with the origin halfway between. The
-semicircle route $C$ has radius 1000. This is not a great circle route. It is more of a
-``flat circle'', which goes north past Chicago. No plane could fly it (it probably goes
+$(1000,0)$ and Los Angeles is at $(-1000, 0)$, with the origin halfway between. The
+semicircle route $C$ has radius $1000$. This is not a great circle route. It is more of a
+"flat circle," which goes north past Chicago. No plane could fly it (it probably goes
 into space).
 The equation for the semicircle is $x^2 + y^2 = 1000^2$. Parametrically this path is $x =
-1000 \cos t, y = 1000 \sin t$. For a line integral the parameter is better. The plane leaves
-Atlanta at $t = 0$ and reaches L.A. at $t = \pi$, more than three hours later. On the straight
-2000-mile path, Delta could almost do it. Around the semicircle $C$, the distance is
-$1000\pi$ miles and the speed has to be 1000 miles per hour. Remember that speed is
+1000 \cos t$, $y = 1000 \sin t$. For a line integral the parametric form is usually easier to work with. The plane leaves
+Atlanta at $t = 0$ and reaches L.A. at $t = n$, more than three hours later. On the straight
+$2000$-mile path, Delta could almost do it. Around the semicircle $C$, the distance is
+$lOOO\pi$ miles and the speed has to be $1000$ miles per hour. Remember that speed is
 distance $ds$ divided by time $dt$:
-$$ds/dt = \sqrt{(dx/dt)^2 + (dy/dt)^2} = l000\sqrt{(- sin t)2 + (cos t)2} = 1000$$ (1)
-The tangent vector to C is proportional to (dxldt, dyldt) = (-1000 sin t, 1000 cos t).
-But T is a unit vector, so we divide by 1000-which is the speed.
-Suppose the wind blows due east with force F = Mi. The components are M and
-zero. Foir M =constant, compute the dot product F *T and the work -2000 M:
-FwT= Mi*(-sin t i+cos tj)= M(-sin t)+O(cos t)= - M sin t 
-15 Vector Calculus
-Work is force times distance moved. It is negative, because the wind acts against the
-movement. You may point out that the work could have been found more simply go
-2000 miles and multiply by - M. I would object that this straight route is a
-dzrerent path. But you claim that the path doesn't matter-the work of the wind is
--2000M on every path. I concede that this time you are right (but not always).
-Most line integrals depend on the path. Those that don't are crucially important.
-For a gradient field, we only need to know the starting point P and the finish Q.
-158 When F is the gradient of a potential function f (x, y), the work J, F T ds
-depends only on the endpoints P and Q. The work is the change in
-if F = afpx i + af/ay j then F T ds = f (Q) -f(P).
-When F = Mi, its components M and zero are the partial derivatives off = Mx. To
-compute the line integral, just evaluate f at the endpoints. Atlanta has x = 1000, Los
-Angeles has x = - 1000, and the potential function f = Mx is like an antiderivative:
-work = f (Q) - f (P) = M(- 1000) - M(1000) = - 2000M. (3)
-LAX LAX - 1000 , - 1000 1000
-J F . Tdr = - 2000M depends on path
+$$ds/dt = \sqrt{(dx/dt)^2 + (dy/dt)^2} = 1000\sqrt{(- \sin t)^2 + (\cos t)^2} = 1000.$$
 
-Fig. 15.5 Force Mi, work -2000M on all paths. Force Myi, no work on straight path.
+The tangent vector to $C$ is proportional to $(dx/dt, dy/dt) = (-1000 \sin t, 1000 \cos t)$.
+But $\vec T$ is a unit vector, so we divide by $1000$ -- which is the speed.
+\example{ex_vectorfield_1}{}
+{
+Suppose the wind blows due east with force $\vec F = M\vec i$. The components are $M$ and
+zero. Assuming that $M$ is constant, compute the dot product $\vec F \cdot \vec T$ and the work done by the wind over the course of the flight.}
+{
+$$\vec F \cdot \vec T= M\vec i \cdot(-\sin t \vec i+\cos t \vec j)= M(-\sin t)+0(\cos t)= -M \sin t$$ 
+}
 
-May I give a rough explanation of the work integral 5 F T ds? It becomes clearer
-when the small movement Tds is written as dx i + dy j. The work is the dot product
-with F:
+Work is force times distance moved. In the last example it was negative, because the wind acted against the movement of the plane. Because $M$ was constant, the work could have been found more simply by simply taking the distance of the straight-line path between the endpoints
+ (2000 miles) and multiplying by $- M$. However, in general this will not be the case.
+Most line integrals depend on the path taken. Those that do not depend on the path are crucially important.
+
+For a emph{gradient field}, we only need to know the starting point $P$ and the end point $Q$.
+
+\keyidea{idea:gradient_path_independence}{}
+{
+When $F$ is the gradient of a potential function $f (x, y)$, the work $\int \vec F \cdot \vec T ds$ depends only on the endpoints $P$ and $Q$. The work is the change in $f$:
+$$\text{if } \vec F = \partial f \partial x \vec i + \partial f/\partial y \vec j \text{ then } int_C \vec F \cdot \vec T ds = f (Q) - f(P)$$.
+}
+
+When $\vec F = M \vec i$, its components $M$ and zero are the partial derivatives of $f = Mx$. To
+compute the line integral, just evaluate $f$ at the endpoints. Atlanta has $x = 1000$, Los
+Angeles has $x = - 1000$, and the potential function $f = Mx$ is like an antiderivative:
+
+$$\text{work} = f (Q) - f (P) = M(- 1000) - M(1000) = - 2000M.$$
+
+
+Here is an intuitive explanation of the work integral $\int_C \vec F \cdot \vec T ds$. Consider the small movement $\vec T ds$, written as $dx \vec i + dy \vec j$. The work is the dot product
+with $\vec F$:
+
+$$\vec F \cdot \vec T ds=\left(\dfrac{\partial f}{\partial x}\vec i + \dfrac{\partial f}{\partial y}\vec j \right)\cdot \left(dx \vec i +dy \vec j \right)=\dfrac{\partial f}{\partial x}dx+\dfrac{\partial f}{\partial y}dy=df.$$
+
 The infinitesimal work is df: The total work is 5 df= f(Q) - f (P). This is the Fundamental
 Theorem for a line integral. Only one warning: When F is not the gradient of any
 f (Example 2), the Theorem does not apply.
@@ -65,13 +75,12 @@ F*T=(Myi)*(-sinti+costj)= -My sin t= - lOOOM sin2t
 This work is enormous (and unrealistic). But the calculations make an important
 point-everything is converted to the parameter t. The second point is that F = Myi
 is not a gradient field. First reason: The work was zero on the straight path and 
+15.2 Line Integrals
 nonzero on the semicircle. Second reason: No function has df/ dx = My and df /dy =
 0. (The first makes f depend on y and the second forbids it. This F is called a shear
 force.) Without a potential we cannot substitute P and Q-and the work depends
 on the path.
-
 THE DEFINITION OF LINE INTEGRALS
-
 We go back to the start, to define F T ds. We can think of F T as a function g(x, y)
 along the path, and define its integral as a limit of sums:
 N IC g(~, y)ds = limit of xi, yi)Asi as (As),,,., -i 0.
