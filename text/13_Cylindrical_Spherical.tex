@@ -2,20 +2,50 @@
 
 \noindent\textbf{\large Triple Integration with Cylindrical Coordinates}\\
 
-Cylindrical coordinates are good for describing solids that are symmetric around an axis.  The solid is three dimensional, and so we use the coordinates $(r,\theta,z)$ for this solid.  The radius $r$ and angle $\theta$ are the same as in polar coordinates, with $r$ being the distance out from axis and $\theta$ being the angle around the axis. The coordinate $z$ is the same as in the Cartesian system - the vertical distance up the axis.  See Figure \ref.
+Cylindrical coordinates are good for describing solids that are symmetric around an axis.  The solid is three dimensional, and so we use the coordinates $(r,\theta,z)$ for points in this solid.  In short, the radius $r$ and angle $\theta$ are the same as in polar coordinates, with $r$ being the distance out from axis and $\theta$ being the angle around the axis, with the positive $x$-axis being the direction of $\theta = 0$ as usual. The coordinate $z$ is the same as in the Cartesian system - the vertical distance up the axis.  See Figure \ref. \\
 
-For example, consider the full solid cylinder of radius $1$ centered on the $z$-axis with the bottom on the $xy$-plane and the top at $z = 3$.  The coordinates that describe this solid are
-$$0 \leq r \leq 1, \: 0 \leq \theta \leq 2\pi, \: 0 \leq z \leq 3.$$
-If we are only working with a half cylinder, for example, the $\theta$ coordinate would be restricted as appropriate to $0 \leq \theta \pi$ instead. This half-cylinder is shown in Figure \ref. 
+The conversions between cylindrical and Cartesian coordinates are given as follows, which follows from our previous study of polar coordinates.\\
 
-When integrating over such an object, these would be the bounds on the three variables of integration $dr$, $d\theta$, $dz$.  The differential of volume $dV$ would be $$dV = r \: dr \: d\theta \: dz$$ since we are working with the same two coordinates $r$ and $\theta$ from polar coordinates and the third coordinate is the same as in the Cartesian system.  This is the volume of the curved box in Figure \ref.  In other words, the volume of the half-cylinder described above, its volume would be
-$$V = \iiint \: dV = \int_{0}^{3} \int_{0}^{\pi} \int_{0}^{1} r \: dr \: d\theta \: dz$$
-As expected, this triple integral computes to
-$$V =  \int_{0}^{3} \int_{0}^{\pi} \dfrac{1}{2} \: d\theta \: dz = \dfrac{3\pi}{2}$$
+\keyidea{idea:cylcart_conversion}{Converting between cylindrical and Cartesian coordinates}{
+Given a point $(r,\theta,z)$ in cylindrical coordinates, its Cartesian coordinates are
+$$x = r \cos\theta, \: y = r \sin\theta, \: z = z.$$
+Given a point $(x,y,z)$ in Cartesian coordinates, we use
+$$r^2 = x^2 + y^2, \: \tan\theta = \dfrac{y}{x}, \: z = z$$
+to convert to cylindrical coordinates.\\
+}
+
+\example{ex_cartcyl_convert}{}{Write the point $(\sqrt{3},1,-1)$ in cylindrical coordinates.}{Since we are given the Cartesian coordinates, we use the above conversion formulas to convert this point to cylindrical coordinates.  Since $r^2 = x^2 + y^2$, we arrive at $$r = \sqrt{3+1} = 2.$$ Since $\tan\theta = \dfrac{1}{\sqrt{3}}$, it follows that $\theta = \dfrac{\pi}{6}$ as the point is in the first quadrant of the $xy$-plane.  Therefore the cylindrical coordinates of this point are $\left( 2, \frac{\pi}{6}, -1\right)$. \\
+}
+
+
+Certain surfaces and solids are conveniently described using cylindrical coordinates. For example, consider the solid half-cylinder $D$ of radius $1$ centered on the $z$-axis with the bottom on the $xy$-plane and the top at $z = 3$.  If the half-cylinder is above the first two quadrants of the $xy$-plane, then the coordinates that describe this solid are
+$$0 \leq r \leq 1, \: 0 \leq \theta \leq \pi, \: 0 \leq z \leq 3.$$
+This half-cylinder is shown in Figure \ref. \\
+
+Surfaces and solids described using Cartesian coordinates can also be written using cylindrical coordinates, and vice versa, using our conversion formulas above.\\
+
+\example{ex_cylsurface}{}{Consider the surface described by $z=r^2$ in cylindrical coordinates.  Write the equation for this surface in Cartesian coordinates and identify the surface.}{We know that $r^2 = x^2 + y^2$, and so we can write $z = x^2 + y^2$.  This is a paraboloid with vertex at the origin opening up. See Figure \ref. \\
+}  
 
 
 
+When integrating over a solid $D$ described with cylindrical coordinates, one would evaluate an integral $\displaystyle\iiint_D f(x,y,z) \: dV$, but using $dr$, $d\theta$, and $dz$ instead of $dx$, $dy$, and $dz$.  The differential of volume $dV$ would be $$dV = r \: dr \: d\theta \: dz$$ since we are working with the same two coordinates $r$ and $\theta$ from polar coordinates and the third coordinate is the same as in the Cartesian system.  This is the volume of the curved box in Figure \ref.  In other words, the integral above becomes
+$$\displaystyle\iiint_D f(x,y,z) \: dV = \displaystyle\iiint_D f(r\cos\theta,r\sin\theta,z) \: r \: dr \: d\theta \: dz$$
+where each occurrence of $x$ and $y$ in the integrand has been converted to cylindrical coordinates.  The bounds on each integral would be the corresponding bounds on $r$, $\theta$, and $z$ that describe the solid $D$.\\
 
+\example{ex_cylindervolume}{}{Compute the volume of the half-cylinder $D$described previously, for $0 \leq r \leq 1$, $0 \leq \theta \leq \pi$, $0 \leq z \leq 3$.}{Since we are computing the volume of $D$, the integrand is $f(x,y,z) = 1$ and so
+$$V = \iiint_D \: dV = \iiint_D \: r \: dr \: d\theta \: dz.$$
+Using our bounds on $r$, $\theta$, and $z$ that describe $D$ as our bounds of integration, we get a volume of
+$$V = \int_0^3 \int_0^{\pi} \int_0^1 r \: dr \: d\theta \: dz = \int_0^3 \int_0^{\pi} \dfrac{1}{2} \: d\theta \: dz = \dfrac{3\pi}{2}$$
+cubic units.\\
+}
+
+\example{ex_conevolume}{}{The surface $z = 1 - r$ encloses a conical solid between itself and the $xy$-plane.  Find the volume of this solid as seen in Figure \ref.}{The cone $z = 1-r$ intersects the $xy$-plane ($z = 0$) at a radius of $r = 1$.  This puts the bounds on $r$ as $0 \leq r \leq 1$, and clearly the bounds on $\theta$ would be $0 \leq \theta \leq 2\pi$ since the solid is the full cone.  Since the solid is not a cylinder, at least one of the bounds on $z$ must be non-constant.  At any radius $r$, the height of the solid is bounded between the $xy$-plane and the surface $z = 1-r$.  Therefore the bounds on $z$ are $0 \leq z \leq 1-r$, and we will integrate with respect to $dz$ first.  Therefore the volume is
+$$V = \int_{0}^{2\pi} \int_{0}^{1} \int_{0}^{1-r} r \: dz \: dr \: d\theta = 2\pi \int_0^1 (1-r)r \: dr$$
+which evaluates to a volume of $\dfrac{\pi}{3}$ cubic units.\\
+}
+
+\noindent\textbf{\large Triple Integration with Spherical Coordinates}\\
 
 
 \printexercises{exercises/13_07_exercises}
