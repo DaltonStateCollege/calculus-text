@@ -13,8 +13,7 @@
 \newboolean{printlabelname}
 \setboolean{printlabelname}{false}
 \ifthenelse{\boolean{printlabelname}}{\usepackage[notref,notcite]{showkeys}}{}
-
-
+\usepackage{pdfpages}
 
 %% end detour
 %\usepackage{amsmath}
@@ -122,9 +121,9 @@
 %\input{text/04_Differentials}
 
 
-\addtocounter{chapter}{4}
+%\addtocounter{chapter}{5}
 
-\clearpage{\pagestyle{empty}\cleardoublepage}
+%\clearpage{\pagestyle{empty}\cleardoublepage}
 
 \setcounterref{definitioncounter}{lastdefcount1}
 \addtocounter{definitioncounter}{-1}
@@ -134,8 +133,8 @@
 \addtocounter{keyideacounter}{-1}
 \setcounterref{examplecounter}{lastexamplecount1}
 \addtocounter{examplecounter}{-1}
-\setcounter{page}{189}
-\thispagestyle{empty}
+\setcounter{page}{288}
+%\thispagestyle{empty}
 
 %\chapter{Integration}\label{chapter:integration}
 %\addtocontents{toc}{\protect\enlargethispage{2\baselineskip}}
@@ -150,19 +149,19 @@
 %\input{text/05_Numerical_Integration}
 
 
-%%\addtocounter{chapter}{5}
+\addtocounter{chapter}{5}
 
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Techniques of Antidifferentiation}\label{chapter:anti_tech}
 \thispagestyle{empty}
 
-\input{text/06_Substitution}
+%%\input{text/06_Substitution}
 \input{text/06_Int_By_Parts}
 \input{text/06_Trigonometric_Integrals}
 \input{text/06_Trig_Sub}
 \input{text/06_Partial_Fractions}
 \input{text/06_Hyperbolic_Functions}
-\input{text/06_LHopitals_Rule}
+%%\input{text/06_LHopitals_Rule}
 \input{text/06_Improper_Integration}
 
 %%\addtocounter{chapter}{6}
