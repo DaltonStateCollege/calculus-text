@@ -45,7 +45,48 @@ $$V = \int_{0}^{2\pi} \int_{0}^{1} \int_{0}^{1-r} r \: dz \: dr \: d\theta = 2\p
 which evaluates to a volume of $\dfrac{\pi}{3}$ cubic units.\\
 }
 
+
+\example{ex_volume02}{}{A solid $D$ is the region inside the cylinder $x^2 + y^2 = 1$, below the plane $z = 2$ and above the paraboloid $z = 1 - x^2 - y^2$, with all distances in meters.  See Figure \ref.  If the density of this solid is 
+$$\delta(x,y,z) = \sqrt{x^2 + y^2}$$
+kilograms per cubic meter, determine the mass of this solid.}{As this solid is a cylinder with a paraboloid cut out of the bottom, it makes sense to use cylindrical coordinates here, where the mass is the integral of the density over the solid.  The solid is described by
+$$0 \leq r \leq 1, \: 0 \leq \theta \leq 2\pi, \: 1-x^2-y^2 = 1-r^2 \leq z \leq 2$$
+and the density function, when converted to cylindrical coordinates, is $\delta(r,\theta,z) = \sqrt{r^2} = r.$  Integrating using the order $dz \: d\theta \: dr$ and the additional factor of $r$ for cylindrical coordinates yields a mass of
+$$\int_{0}^{1} \int_{0}^{2\pi} \int_{1-r^2}^{2} r \: r \: dz \: d\theta \: dr = 2\pi \int_0^1 r^2 - r^4 \: dr = 2\pi \left( \dfrac{1}{12} \right) = \dfrac{\pi}{6}$$
+kilograms.\\
+}
+
 \noindent\textbf{\large Triple Integration with Spherical Coordinates}\\
+
+Objects bounded by spheres or cones are more easily described using a different coordinate system called spherical coordinates.  The Earth, for example, is a solid sphere (or near enough). On its surface we use two coordinates - latitude and longitude. To dig inward or fly outward, there is a third coordinate, the distance $\rho$ from the center. This Greek letter \textit{rho} replaces radius $r$ to avoid confusion with cylindrical coordinates. Where $r$ is measured from the $z$-axis, $\rho$ is measured directly from the origin. Thus 
+$$\rho^2 = x^2 + y^2 + z^2$$
+which is the square of the distance between the origin and the point $(x,y,z)$. The angle $\theta$ is the same as before, and it goes from $0$ to $2\pi$ with $0$ pointing in the direction of the positive $x$-axis. It is the longitude, which increases as you travel east around the Equator. The angle $\phi$ is new, however. It equals $0$ at the North Pole and $\pi$ (not $2\pi$) at the South Pole. It is the polar angle, measured down from the $z$-axis. The Equator, for example, has a latitude of $0$ degrees but a polar angle of $\phi$ of $\frac{\pi}{2}$ instead. See Figure \ref. 
+
+The spherical coordinates of a point $(x,y,z)$ is given by the ordered triple $(\rho, \theta, \phi)$ where $\rho \geq 0$ and $0 \leq \phi \leq \pi$.  The relationship between spherical and Cartesian coordinates is illustrated by Figure \ref.  From the triangles, we have
+$$z = \rho \cos\phi \text{ and } r = \rho \sin\phi$$
+But we know that $x = r \cos\theta$ and $y = r \sin\theta$ from before, so we end up with the following conversion equations.\\
+
+\keyidea{idea:sphericalcart_conversion}{Converting between spherical and Cartesian coordinates}{
+Given a point $(\rho, \theta, z)$ in spherical coordinates, its Cartesian coordinates are
+$$x = \rho \sin\phi \cos\theta, \: y = \rho \sin\phi \sin\theta, \: z = \rho \cos\phi.$$
+Given a point $(x,y,z)$ in Cartesian coordinates, we use
+$$\rho^2 = x^2 + y^2 + z^2, \tan\theta = \dfrac{y}{x}, \cos\phi = \dfrac{z}{\rho} = \dfrac{z}{\sqrt{x^2 + y^2 + z^2}}$$
+to convert to spherical coordinates.\\
+}
+
+\example{ex_spherconvert}{}{The point $\left( 3, \dfrac{\pi}{6}, \dfrac{2\pi}{3}\right)$ is given in spherical coordinates.  What is the Cartesian coordinate representation of this point?}{Using the conversion equations above, we have
+\begin{align*}
+x & = \rho \sin\phi \cos\theta = 3 \sin\left( \frac{2\pi}{3}\right) \cos\left(\frac{\pi}{6}\right) = 3\left( \frac{\sqrt{3}}{2}\right)\left(\frac{\sqrt{3}}{2}\right) = \dfrac{9}{4} \\
+y & = \rho \sin\phi \sin\theta = 3 \sin\left( \frac{2\pi}{3}\right) \sin\left(\frac{\pi}{6}\right = 3\left( \frac{\sqrt{3}}{2}\right)\left( \frac{1}{2}\right) = \dfrac{3\sqrt{3}}{4} \\
+z & = \rho \cos\phi = 3 \cos\left( \frac{2\pi}{3} \right) = 3\left(\frac{1}{2}\right) = \dfrac{3}{2}\\
+which corresponds to the Cartesian coordinates of $\left( \dfrac{9}{4}, \dfrac{3\sqrt{3}}{4}, \dfrac{3}{2}\right)$.\\
+\end{align*}
+}
+
+Surfaces like spheres and cones can be easily described in spherical coordinates.  For example, $\rho = R$ describes the surface of a sphere of radious $R$, while $\phi = \dfrac{\pi}{3}$ describes a conical surface opening up at a $60$ degree angle from $z$-axis (or a $30$ degree angle from the $xy$-plane). Some solids, such as cones or parts of spheres, have bounds which are easily described in spherical coordinates, too.  For example, the bounds
+$$0 \leq \rho \leq 1, 0 \leq \theta \leq 2\pi, \dfrac{\pi}{2} \leq \phi \leq \pi$$
+describes the solid lower half unit sphere, while the bounds
+$$0 \leq \rho \leq 1, 0 \leq \theta \leq 2\pi, 0 \leq \phi \leq \dfrac{\pi}{4}$$
+describes a conical solid opening up with a spherical top.\\
 
 
 \printexercises{exercises/13_07_exercises}
