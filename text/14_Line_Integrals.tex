@@ -64,57 +64,71 @@ with $\vec F$:
 
 $$\vec F \cdot \vec T ds=\left(\dfrac{\partial f}{\partial x}\vec i + \dfrac{\partial f}{\partial y}\vec j \right)\cdot \left(dx \vec i +dy \vec j \right)=\dfrac{\partial f}{\partial x}dx+\dfrac{\partial f}{\partial y}dy=df.$$
 
-The infinitesimal work is df: The total work is 5 df= f(Q) - f (P). This is the Fundamental
-Theorem for a line integral. Only one warning: When F is not the gradient of any
-f (Example 2), the Theorem does not apply.
-EXAMPLE 2 Fly these paths against the non-constant force field F = Myi. Compute
+The infinitesimal work is $df$. The total work is $\int df= f(Q) - f (P)$. This is the Fundamental
+Theorem for a line integral. Only one warning: when $\vec F$ is not the gradient of any
+$f$ the Theorem does not apply. Consider the next example.
+EXAMPLE 2 Fly these paths against the non-constant force field $\vec F = My\vec i$. Compute
 the work.
-There is no force on the straight path where y = 0. Along the x axis the wind does
-no work. But the semicircle goes up where y = 1000 sin t and the wind is strong:
-F*T=(Myi)*(-sinti+costj)= -My sin t= - lOOOM sin2t
+There is no force on the straight path where $y = 0$. Along the $x$ axis the wind does
+no work. But the semicircle goes up where $y = 1000 \sin t$ and the wind is strong:
+$\vec F \cdot \vec T=(My \vec i)\cdot(-\sin t \vec i+\cos t \vec j)= -My \sin t= - 1000M \sin 2t$.
 This work is enormous (and unrealistic). But the calculations make an important
-point-everything is converted to the parameter t. The second point is that F = Myi
+point: everything is converted to the parameter $t$. The second point is that $\vec F = My \vec i$
 is not a gradient field. First reason: The work was zero on the straight path and 
-15.2 Line Integrals
-nonzero on the semicircle. Second reason: No function has df/ dx = My and df /dy =
-0. (The first makes f depend on y and the second forbids it. This F is called a shear
-force.) Without a potential we cannot substitute P and Q-and the work depends
+nonzero on the semicircle. Second reason: No function $f$ satisfies both $df/ dx = My$ and $df /dy =
+0$. To see this, notice that the first equation requires $f$ to depend on $y$, whereas the second equation requires $f$ to be constant with respect to $y$. Without a potential we cannot substitute $P$ and $Q$ -- and the work depends
 on the path.
+
 THE DEFINITION OF LINE INTEGRALS
-We go back to the start, to define F T ds. We can think of F T as a function g(x, y)
+We go back to the start, to define $\vec F \cdot \vec T ds$. We can think of $\vec F \cdot \vec T$ as a function $g(x, y)$
 along the path, and define its integral as a limit of sums:
-N IC g(~, y)ds = limit of xi, yi)Asi as (As),,,., -i 0.
-i= 1 (5)
-The points (xi, y,) lie on the curve C. The last point Q is (x,, y,); the first point P is
-(xo, yo). The step Asi is the distance to (xi, yi) from the previous point. As the steps
-get small (As -, 0) the straight pieces follow the curve. Exactly as in Section 8.2, the
-special case g = 1 gives the arc length. As long as g(x, y) is piecewise continuous
+
+\begin{definition}
+ $$int_C g(x,y)ds = \lim_{||\Delta s||\to\infty} sum_{i=1}^N g(x_i,y_i)\Delta s_i$$
+\end{definition}
+
+The points $(x_i, y_i)$ lie on the curve $C$. The last point $Q$ is $(x_N, y_N)$; the first point $P$ is
+$(x_0, y_0)$. The step $\Delta s_i$ is the distance to $(x_i, y_i)$ from the previous point. As the steps
+get small (as $\Delta s \to 0$) the straight pieces follow the curve. The
+special case $g = 1$ gives the arc length. As long as $g(x, y)$ is piecewise continuous
 (jumps allowed) and the path is piecewise smooth (corners allowed), the limit exists
 and defines the line integral.
-When g is the density of a wire, the line integral is the total mass. When g is F T,
-the integral is the work. But nobody does the calculation by formula (5). We now
-introduce a parameter t-which could be the time, or the arc length s, or the distance
-x along the base.
-The diflerential ds becomes (ds/dt)dt. Everything changes over to t:
-The curve starts when t = a, runs through the points (x(t), y(t)), and ends when t = b.
-The square root in the integral is the speed dsldt. In three dimensions the points on
-C are (x(t), y(t), z(t)) and (dz/dt)l is in the square root.
-EXAMPLE 3 The points on a coil spring are (x, y, z) = (cos t, sin t, t). Find the mass
-of two complete turns (from t = 0 to t = 44 if the density is p = 4.
-Solution The key is (d~/dt)~ + (d~/dt)~ + (d~ldt)~ = sin2t + cos2t + 1 = 2. Thus
-dsldt = fi. To find the mass, integrate the mass per unit length which is g = p = 4:
-That is a line integral in three-dimensional space. It shows how to introduce t. But
-it misses the main point of this section, because it contains no vector field F. This
+When $g$ is the density of a wire, the line integral is the total mass. When $g$ is $\vec F \cdot \vec T$,
+the integral is the work. But nobody does the calculation by the definition. We now
+introduce a parameter $t$ - which could be the time, or the arc length $s$, or the distance
+$x$ along the base.
+The differential $ds$ becomes $(ds/dt)dt$. Everything changes over to $t$:
+
+$$\int g(x,y)ds=\int_{t=a}^{t=b}g(x(t),y(t))\sqrt{(dx/dt)^2+(dy/dt)^2}dt$$
+
+The curve starts when $t = a$, runs through the points $(x(t), y(t))$, and ends when $t = b$.
+The square root in the integral is the speed $ds/dt$. In three dimensions the points on
+$C$ are $(x(t), y(t), z(t))$ and $(dz/dt)^2$ is in the square root.
+
+EXAMPLE 3 The points on a coil spring are $(x, y, z) = (\cos t, \sin t, t)$. Find the mass
+of two complete turns (from $t = 0$ to $t = 44$ if the density is $\rho = 4$.
+Solution The key is $(dx/dt)^2 + (dy/dt)^2 + (dz/dt)^2 = \sin^2 t + \cos^2 t + 1 = 2$. Thus
+$ds/dt = \sqrt{2}$. To find the mass, integrate the mass per unit length which is $g = \rho = 4$:
+
+$$\text{mass}=\int_0^{4\pi}\rho \dfrac{ds}{dt}dt=\int_0^{4\pi}4\sqrt{2}dt=16\sqrt{2}\pi$$
+
+That is a line integral in three-dimensional space. It shows how to introduce $t$. But
+it misses the main point of this section, because it contains no vector field $\vec F$. This
 section is about work, not just mass.
+
 DIFFERENT FORMS OF THE WORK INTEGRAL
-The work integral IF T ds can be written in a better way. The force is F = Mi + Nj.
-A small step along the curve is dx i + dy j. Work is force times distance, but it is only
-the force component along the path that counts. The dot product F -Tds finds that
+
+The work integral $\int F \cdot \vec T ds$ can be written in a better way. The force is $\vec F = M\vec i + N\vec j$.
+A small step along the curve is $dx \vec i + dy \vec j$. Work is force times distance, but it is only
+the force component along the path that counts. The dot product $F\cdot T ds$ finds that
 component automatically. 
-15 Vector Calculus
-I 15C The vector to a point on C is R = xi + yj. Then dR = Tds = dx i + dy j:
-I Along a space curve the work is jF*~ds=f~*d~=j~dx+~d~+ ~dz.
-The product M dx is (force in x direction)(movement in x direction). This is zero if
+
+I 15C The vector to a point on $C$ is $\vec R = x\vec i + y\vec j$. Then $d\vec R = \vec T ds = dx \vec i + dy \vec j$:
+
+$$\text{work}=\int_C\vec F \cdot d\vec R=\int_C M dx+N dy.$$ 
+
+Along a space curve the work is $\int \vec F \cdot \vec T ds=\int \vec F \cdot d \vec R=\int M dx+N dy +P dz$.
+The product $M dx$ is \(force in x direction)(movement in x direction). This is zero if
 either factor is zero. When the only force is gravity, pushing a piano takes no work.
 It is friction that hurts. Carrying the piano up the stairs brings in Pdz, and the total
 work is the piano weight P times the change in z.
