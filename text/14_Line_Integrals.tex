@@ -128,55 +128,71 @@ I 15C The vector to a point on $C$ is $\vec R = x\vec i + y\vec j$. Then $d\vec 
 $$\text{work}=\int_C\vec F \cdot d\vec R=\int_C M dx+N dy.$$ 
 
 Along a space curve the work is $\int \vec F \cdot \vec T ds=\int \vec F \cdot d \vec R=\int M dx+N dy +P dz$.
-The product $M dx$ is \(force in x direction)(movement in x direction). This is zero if
-either factor is zero. When the only force is gravity, pushing a piano takes no work.
-It is friction that hurts. Carrying the piano up the stairs brings in Pdz, and the total
-work is the piano weight P times the change in z.
-To connect the new I F dR with the old IF *T ds, remember the tangent vector
-T. It is dRlds. ~herefoie Tds is dR. The best for computations is dR, because the
-unit vector T has a division by dsldt = ,/(d~/dt)~ + (d~ldt)~. Later we multiply by this
-square root, in converting ds to (dsldtjdt. It makes no sense to compute the square
+The expression $M dx$ is the product of force in the $x$ direction ($M$) and movement in the $x$ direction ($dx$). This product is zero if
+either factor is zero. Ignoring friction, pushing a piano along level ground takes no work.
+On the other hand, carrying the piano up the stairs brings in a nonzero $P dz$ term, and the total
+work is the piano weight $P$ times the change in $z$.
+To connect the new $\int \vec F \cdot d\vec R$ with the old $\int \vec F \cdot \vec T ds$, remember the tangent vector
+$\vec T$. It is $\d\vec R/ds$. Therefore $\vec T ds$ is $d\vec R$. The best for computations is $d\vec R$, because the
+unit vector $\vec T$ has a division by $ds/dt = \sqrt{(dx/dt)^2 + (dy/dt)^2}$. Later we multiply by this
+square root, in converting $ds$ to $(ds/dt)dt$. It makes no sense to compute the square
 root, divide by it, and then multiply by it. That is avoided in the improved form
-~M~x+N~Y.
-EXAMPLE 4 Vector field F = - yi + xj, path from (1,O) to (0, 1): Find the work.
-Note 1 This F is the spin field S. It goes around the origin, while R = xi + yj goes
-outward. Their dot product is F R = - yx + xy = 0. This does not mean that
-F dR = 0. The force is perpendicular to R, but not to the change in R. The work to
-move from (I, 0) to (0, I), x axis to y axis, is not zero.
-Note 2 We have not described the path C. That must be done. The spin field is not
+$\int Mdx+Ndy$.
+EXAMPLE 4 Vector field $\vec F = - y\vec i + x\vec j$, path from $(1,O)$ to $(0, 1)$: Find the work.
+Note 1 This $\vec F$ is the spin field $\vec S$. It goes around the origin, while $\vec R = x\vec i + y\vec j$ goes
+outward. Their dot product is $\vec F \cdot \vec R = - yx + xy = 0$. This does not mean that
+$\vec F \cdot d\vec R = 0$. The force is perpendicular to R, but not to the \emph{change} in R. The work to
+move from $(1, 0)$ to $(0, 1$) is not zero.
+Note 2 We have not described the path $C$. That must be done. The spin field is not
 a gradient field, and the work along a straight line does not equal the work on a
 quarter-circle:
-straight line x = 1 - t, y = t quarter-circle x = cos t, y = sin t.
-Calculation of work Change F dR = M dx + N dy to the parameter t:
-Straight line: - y dx + x dy = - t(- dt) + (1 - t)dt = 1 l lo1
-S 7T
-Quarter-circle: - y dx + x dy = -sin t(- sin t dt) + cos t(cos t dt) = -. 2
-General method The path is given by x(t) and y(t). Substitute those into M(x, y)
-and N(x, y)-then F is a function of t. Also find dxldt and dyldt. Integrate
-M dxldt + N dyldt from the starting time t to the finish.
-I work 7[: / 2 no work ' work F.dR = 1
-Fig.15.6 Threepath~for~F~dR=~-~dx+.udy=l,n/2,0. 
-15.2 Llne Integrals
-For practice, take the path down the x axis to the origin (x = 1 - t, y = 0). Then
-go up the y axis (x = 0, y = t - 1). The starting time at (1,O) is t = 0. The turning time
-at the origin is t = 1. The finishing time at (0, 1) is t = 2. The integral has two parts
+
+$$\text{Straight line path: } x = 1 - t, y = t$$
+$$\text{Quarter-circle path: }x = \cos t, y = \sin t$$.
+
+\underline{Calculation of work:} Change $\vec F \cdot d\vec R = M dx + N dy$ to the parameter $t$:
+
+$$\text{Straight line: }\int_C -y dx + x dy =\int_0^1 - t(- dt) + (1 - t)dt = 1
+
+$$\text{Quarter-circle: }\int_C -y dx + x dy =\int_0^{\pi/2} -\sin t(- \sin t dt) + \cos t(\cos t dt) = \dfrac{\pi}{2}$$
+
+\underline{General method:} The path is given by $x(t)$ and $y(t)$. Substitute those into $M(x, y)$
+and $N(x, y)$ -- then $\vec F$ is a function of $t$. Also find $dx/dt$ and $dy/dt$. Integrate
+$M dx/dt + N dy/dt$ from the starting time $t$ to the finish.
+
+For practice, take the path down the $x$ axis to the origin $(x = 1 - t, y = 0)$. Then
+go up the $y$ axis $(x = 0, y = t - 1)$. The starting time at $(1,0)$ is $t = 0$. The turning time
+at the origin is $t = 1$. The finishing time at $(0, 1)$ is $t = 2$. The integral has two parts
 because this new path has two parts:
-Bent path: J-ydx+xdy=O+O (y=O on one part, then x=O).
-Note 3 The answer depended on the path, for this spin field F = S. The answer did
+$$\text{Bent path: }\int -ydx+xdy=0+0 (y=0 \text{ on one part, then }x=0).$$
+Note 3 The answer depended on the path, for this spin field $\vec F = \vec S$. The answer did
 not depend on the choice of parameter. If we follow the same path at a different
-speed, the work is the same. We can choose another parameter 2, since (ds/dt)dt and
-(ds/dz)dz both equal ds. Traveling twice as fast on the straight path (x = 1 - 22,
-y = 22) we finish at t = 4 instead of t = 1. The work is still 1:
-CONSERVNION OF TOTAL ENERGY (KINETIC + POTENTIAL)
-When a force field does work on a mass m, it normally gives that mass a new velocity.
-Newton's Law is F =ma = mdvldt. (It is a vector law. Why write out three components?)
-The work F dR is
-J (m dvldt) (v dt) = *mv v]: = mv(Q)12 - mlv(P)12.
-The work equals the change in the kinetic energy 4mlv12. But for a gradient field the
-work is also the change in potential-with a minus sign from physics:
-Comparing (8) with (9), the combination m1vl2 + f is the same at P and Q. The total
+speed, the work is the same. We can choose another parameter $\tau$, since $(ds/dt)dt$ and
+$(ds/d\tau)d\tau$ both equal $ds$. Traveling twice as fast on the straight path $(x = 1 - 2\tau,
+y = 2\tau)$ we finish at $\tau = \frac{1}{2}$ instead of $\tau = 1$. The work is still $1$:
+
+CONSERVATION OF TOTAL ENERGY (KINETIC + POTENTIAL)
+
+When a force field does work on a mass $m$, it normally gives that mass a new velocity.
+Newton's Law is $\vec F =m\vec a = d\vec v/dt$. (It is a vector law. Why write out three components?)
+The work $\int \vec F \cdot d\vec R$ is
+\begin{equation}
+\int (m d\vec v/dt)\cdot (\vec v dt) = \frac{1}{2}m\vec v\cdot \vec v \right]_P^Q = \frac{1}{2}m\mid \vec v(Q)\mid ^2 - \frac{1}{2}m\mid \vec v(P)\mid ^2
+\label{workeq1}
+\end{equation}
+
+The work equals the change in the kinetic energy $\frac{1}{2}m\mid \vec v \mid ^2$. But for a gradient field the
+work is also the change in potential - with a minus sign from physics:
+\begin{equation}
+\text{work}=\int \vec F \cdot d\vec R=-\int df=f(P)-f(Q).
+\label{workeq2}
+\end{equation}
+
+Comparing \ref{workeq1} with \ref{workeq2}, the combination $\frac{1}{2}m\mid\vec v \mid ^2 + f$ is the same at $P$ and $Q$. The total
 energy, kinetic plus potential, is conserved.
+
 INDEPENDENCE OF PATH: GRADIENT FIELDS
+
 The work of the spin field S depends on the path. Example 4 took three pathsstraight
 line, quarter-circle, bent line. The work was 1, 42, and 0, different on each
 path. This happens for more than 99.99% of all vector fields. It does not happen for
