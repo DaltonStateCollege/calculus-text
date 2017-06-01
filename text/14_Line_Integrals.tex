@@ -32,7 +32,7 @@ $$ds/dt = \sqrt{(dx/dt)^2 + (dy/dt)^2} = 1000\sqrt{(- \sin t)^2 + (\cos t)^2} = 
 
 The tangent vector to $C$ is proportional to $(dx/dt, dy/dt) = (-1000 \sin t, 1000 \cos t)$.
 But $\vec T$ is a unit vector, so we divide by $1000$ -- which is the speed.
-\example{ex_vectorfield_1}{}
+\example{ex_line_integrals0}{}
 {
 Suppose the wind blows due east with force $\vec F = M\vec i$. The components are $M$ and
 zero. Assuming that $M$ is constant, compute the dot product $\vec F \cdot \vec T$ and the work done by the wind over the course of the flight.}
@@ -67,11 +67,12 @@ $$\vec F \cdot \vec T ds=\left(\dfrac{\partial f}{\partial x}\vec i + \dfrac{\pa
 The infinitesimal work is $df$. The total work is $\int df= f(Q) - f (P)$. This is the Fundamental
 Theorem for a line integral. Only one warning: when $\vec F$ is not the gradient of any
 $f$ the Theorem does not apply. Consider the next example.
-EXAMPLE 2 Fly these paths against the non-constant force field $\vec F = My\vec i$. Compute
-the work.
-There is no force on the straight path where $y = 0$. Along the $x$ axis the wind does
+\example{ex_line_integrals1}{}{Fly these paths against the non-constant force field $\vec F = My\vec i$. Compute
+the work.}
+{There is no force on the straight path where $y = 0$. Along the $x$ axis the wind does
 no work. But the semicircle goes up where $y = 1000 \sin t$ and the wind is strong:
-$\vec F \cdot \vec T=(My \vec i)\cdot(-\sin t \vec i+\cos t \vec j)= -My \sin t= - 1000M \sin 2t$.
+$\vec F \cdot \vec T=(My \vec i)\cdot(-\sin t \vec i+\cos t \vec j)= -My \sin t= - 1000M \sin 2t$.}
+
 This work is enormous (and unrealistic). But the calculations make an important
 point: everything is converted to the parameter $t$. The second point is that $\vec F = My \vec i$
 is not a gradient field. First reason: The work was zero on the straight path and 
@@ -105,12 +106,12 @@ The curve starts when $t = a$, runs through the points $(x(t), y(t))$, and ends 
 The square root in the integral is the speed $ds/dt$. In three dimensions the points on
 $C$ are $(x(t), y(t), z(t))$ and $(dz/dt)^2$ is in the square root.
 
-EXAMPLE 3 The points on a coil spring are $(x, y, z) = (\cos t, \sin t, t)$. Find the mass
-of two complete turns (from $t = 0$ to $t = 44$ if the density is $\rho = 4$.
-Solution The key is $(dx/dt)^2 + (dy/dt)^2 + (dz/dt)^2 = \sin^2 t + \cos^2 t + 1 = 2$. Thus
+\example{ex_line_integrals2}{}{The points on a coil spring are $(x, y, z) = (\cos t, \sin t, t)$. Find the mass
+of two complete turns (from $t = 0$ to $t = 44$ if the density is $\rho = 4$.}
+{The key is $(dx/dt)^2 + (dy/dt)^2 + (dz/dt)^2 = \sin^2 t + \cos^2 t + 1 = 2$. Thus
 $ds/dt = \sqrt{2}$. To find the mass, integrate the mass per unit length which is $g = \rho = 4$:
 
-$$\text{mass}=\int_0^{4\pi}\rho \dfrac{ds}{dt}dt=\int_0^{4\pi}4\sqrt{2}dt=16\sqrt{2}\pi$$
+$$\text{mass}=\int_0^{4\pi}\rho \dfrac{ds}{dt}dt=\int_0^{4\pi}4\sqrt{2}dt=16\sqrt{2}\pi$$}
 
 That is a line integral in three-dimensional space. It shows how to introduce $t$. But
 it misses the main point of this section, because it contains no vector field $\vec F$. This
@@ -138,7 +139,8 @@ unit vector $\vec T$ has a division by $ds/dt = \sqrt{(dx/dt)^2 + (dy/dt)^2}$. L
 square root, in converting $ds$ to $(ds/dt)dt$. It makes no sense to compute the square
 root, divide by it, and then multiply by it. That is avoided in the improved form
 $\int Mdx+Ndy$.
-EXAMPLE 4 Vector field $\vec F = - y\vec i + x\vec j$, path from $(1,O)$ to $(0, 1)$: Find the work.
+
+\example{ex_line_integrals3}{}{ Consider the vector field $\vec F = - y\vec i + x\vec j$, and a path from $(1,O)$ to $(0, 1)$. Find the work done in moving along the path in the field.
 Note 1 This $\vec F$ is the spin field $\vec S$. It goes around the origin, while $\vec R = x\vec i + y\vec j$ goes
 outward. Their dot product is $\vec F \cdot \vec R = - yx + xy = 0$. This does not mean that
 $\vec F \cdot d\vec R = 0$. The force is perpendicular to R, but not to the \emph{change} in R. The work to
@@ -245,7 +247,7 @@ the work $\int M dx + N dy$ to reach that point. All paths from $P$ to $Q$ give 
 because the field is assumed conservative. After two examples we prove that $\nabla f$
 agrees with $\vec F$ -- the construction succeeds.
 
-EXAMPLE 5 Find $f(x,y)$ when $\vec F = M\vec i + N\vec j = 2xy\vec i + x^2\vec j$. We want $\partial f /\partial x = 2xy$
+\example{ex_line_integrals4}{}{Find $f(x,y)$ when $\vec F = M\vec i + N\vec j = 2xy\vec i + x^2\vec j$.} {We want $\partial f /\partial x = 2xy$
 and $\partial f/\partial y = x^2$.
 Solution 1 Choose $P = (0,0)$. Integrate $M dx + N dy$ along to $(x, 0)$ and up to $(x, y)$:
 $$\int_{(0,0)}^{(x,0)}2xydx=0 \text{(since y = 0)   } \int_{(x,0)}^{(x,y)}x^2dy = x^2y \text{ (which is } f \text{ ).}$$ 
@@ -266,11 +268,12 @@ $$\partial f/\partial x = 2xy \text{ gives }f = x^2y \text{ (plus any function o
 In this example $x^2y$ already has the correct derivative $\partial f/\partial y = x^2$. No additional
 function of $y$ is necessary. When we integrate with respect to $x$, the constant of
 integration (usually $C$ ) becomes a function $C(y)$.
-
+}
 You will get practice in finding $f$. This is only possible for conservative fields!
 
-EXAMPLE 6 Look for $f(x,y)$ when $M\vec i + N\vec j$ is the spin field $-y\vec i + x\vec j$.
-Attempted solution 1 Integrate $-y dx + x dy$ from $(0,0)$ to $(x, 0)$ to $(x, y)$:
+\example{ex_line_integrals5}{}{Look for $f(x,y)$ when $M\vec i + N\vec j$ is the spin field $-y\vec i + x\vec j$.}
+
+{Attempted solution 1 Integrate $-y dx + x dy$ from $(0,0)$ to $(x, 0)$ to $(x, y)$:
 $$\int_{(0,0)}^{(x,0)}-ydx=0\text{ and }$$\int_{(x,0)}^{(x,y)}x dy = xy \text{ (which seems like }f).$$
 
 Attempted solution 2 Integrate $-y dx + x dy$ on the line $(xt, yt)$ from $t = 0$ to $1$ :
@@ -282,7 +285,7 @@ $\partial f/\partial x = -y$ gives $f = -xy$ (plus any function $C(y)$).
 The $y$ derivative of this $f$ is $-x + dC/dy$. That does not agree with the required
 $\partial f/\partial y = x$. Conclusion: The spin field $-y\vec i + x\vec j$ is not conservative. There is no $f$.
 
-Finally, note that $\partial M/\partial y = -1$ and $\partial N/\partial x =  1$. Since these partial derivatives are not the same, we have another verification that $f$ is not conservative.
+Finally, note that $\partial M/\partial y = -1$ and $\partial N/\partial x =  1$. Since these partial derivatives are not the same, we have another verification that $f$ is not conservative.}
 
 To finish this section, we move from examples to a proof. The potential $f(Q)$ is
 defined as the work to reach $Q$. We must show that its partial derivatives are $M$ and
@@ -299,10 +302,10 @@ $N dy$, so $\partial f/\partial y= N$.
 
 The requirement that the region must have no holes will be critical for test D.
 
-EXAMPLE 7 Find $f (x, y) =\int_{(0,0)}^{(x,y)} x dx + y dy$. Test D is passed: $\partial N/\partial x= 0= \partial M/\partial y$.
+\example{ex_line_integrals6}{}{ Find $f (x, y) =\int_{(0,0)}^{(x,y)} x dx + y dy$.}{ Test D is passed: $\partial N/\partial x= 0= \partial M/\partial y$.
 Solution 1 $\int_{(0,0)}^{(x,0)} x dx = \frac{1}{2}x^2$ is added to $\int_{(x,0)}^{(x,y)} y dy = \frac{1}{2}y^2$.
 Solution 2 $\int_0^1 (xt)(x dt) + (yt)(y dt) = \int_0^1 (x^2+ y^2)t dt =\frac{1}{2}(x^2+ y^2)$.
-Solution 3 $\partial f/\partial x = x$ gives $f = \frac{1}{2}x^2+ C(y)$. Then $\partial f/\partial y = y$ needs $C(y)= \frac{1}{2}y^2$. 
+Solution 3 $\partial f/\partial x = x$ gives $f = \frac{1}{2}x^2+ C(y)$. Then $\partial f/\partial y = y$ needs $C(y)= \frac{1}{2}y^2$. }
 
 %15.2 EXERCISES
 %Read-through questions
