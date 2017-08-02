@@ -1,12 +1,12 @@
 \section{Method of Lagrange Multipliers}\label{sec:lagrange_multipliers}
 
-This section faces up to a practical problem we encountered at the end of the last section. We often minimize or maximize one function $f(x, y)$ while another function $g(x, y)$ is fixed. There is a constraint on x and y, given by $g(x, y) = k$ for some constant $k$. This restricts the material available, or the funds available, or the energy available. With this constraint, the problem is to do the best possible, maximizing or minimizing $f(x,y)$.
+This section faces up to a practical problem we encountered at the end of the last section. We often minimize or maximize one function $f(x, y)$ while another function $g(x, y)$ is fixed. There is a constraint on x and y, given by $g(x, y) = k$ for some constant $k$. This restricts the material available, or the funds available, or the energy available, for example. With this constraint, the problem is to do the best possible, either maximizing or minimizing the function $f(x,y)$.
 
-At the absolute minimum of $f(x, y)$, the requirement $g(x, y) = k$ is probably violated.
-In that case the minimum point is not allowed. We cannot use $f_x = 0$ and $f_y = 0$ as
+At the absolute minimum of $f(x, y)$, if one exists, the requirement $g(x, y) = k$ is probably violated.
+In that case the minimum point is not allowed. We cannot use just $f_x = 0$ and $f_y = 0$ as
 those equations don't account for g. We must find equations for the constrained minimum or constrained maximum. They will involve $f_x$ and $f_y$, and also $g_x$ and $g_y$, which give local information about $f$ and $g$. To see the equations, we look at two examples.\\
 
-\example{ex_lagrange1}{}{Minimize $f(x,y) = x^2 + y^2$ subject to the restraint $g(x,y) = 2x + y = k$}{Look at the level curves in Figure \ref{}. They are circles $x^2 + y^2 = c$. When $c$ is small, the circles do not touch the line $2x + y = k$. There are no points that satisfy the constraint, when $c$ is too small. Now increase $c$. Eventually the growing circles $x^2 + y^2 = c$ will just touch the line $x + 2y = k$. The point where they touch is the winner. It gives the smallest value of $c$ that can be achieved on the line. The touching point is $(x_{\text{min}}, y_{\text{min}})$, and the value of $c$ is $f_{\text{min}}$.
+\example{ex_lagrange1}{}{Minimize $f(x,y) = x^2 + y^2$ subject to the restraint $g(x,y) = 2x + y = k$, for a constant $k$.}{Look at the level curves in Figure \ref{}. They are circles $$x^2 + y^2 = c.$$ When $c$ is small, the circles do not touch the line $2x + y = k$. There are no points that satisfy the constraint, when $c$ is too small. Now increase $c$. Eventually the growing circles $x^2 + y^2 = c$ will just touch the line $x + 2y = k$. The point where they touch is the winner. It gives the smallest value of $c$ that can be achieved on the line. The touching point is $(x_{\text{min}}, y_{\text{min}})$, and the value of $c$ there is $f_{\text{min}}$.
 
 What equation describes that point? When the circle touches the line, they are
 tangent. They have the same slope. The perpendiculars to the circle and the line go in
@@ -20,11 +20,11 @@ There are now three unknowns $x$, $y$, and $\lambda$, as well as three equations
 \frac{\partial f}{\partial y} = \lambda \frac{\partial g}{\partial y} \quad & \Rightarrow 2y = \lambda \\
 g(x,y) = k \quad & \Rightarrow 2x + y = k.
 \end{align*}
-In the third equation, substitute $2\lambda$ for $2x$ and $\frac{1}{2}\lambda$ for $y$.  Then $2x+y = \frac{5}{2}\lambda = k$.  Knowing $\lambda = \frac{2}{5}k$, the first two of the above equations give
-$$x = \lambda = \frac{2}{5}k, \: y = \frac{1}{2}\lambda = \frac{1}{5}k$$
+where the third equation is simply the constraint. Now we solve this system. In the third equation, substitute $2\lambda$ for $2x$ and $\frac{1}{2}\lambda$ for $y$, which follow from the first two equations.  This yields $2x+y = \frac{5}{2}\lambda = k$.  Knowing $\lambda = \frac{2}{5}k$, the first two of the above equations give
+$$x = \lambda = \frac{2}{5}k, \: \: \: y = \frac{1}{2}\lambda = \frac{1}{5}k$$
 and so 
 $$f_{\text{min}} = \left( \frac{2}{5}k \right)^2 + \left( \frac{1}{5}k \right)^2 = \frac{1}{5}k^2.$$
-The winning point is $(x_{\text{min}},y_{\text{min}}) = \left( \frac{2}{5}k, \frac{1}{5}k \right)$.  It minimizes the distance squared $f = x^2 + y^2 = \frac{1}{5}k^2$ from the origin to the line.}
+The winning point is $(x_{\text{min}},y_{\text{min}}) = \left( \frac{2}{5}k, \frac{1}{5}k \right)$.  It minimizes the distance squared $f = x^2 + y^2 = \frac{1}{5}k^2$ from the origin to the line. One can reinterpret this problem as finding the point on the line $2x+y=k$ closest to the origin.}
 
 \theorem{thm:lagrange1}{Lagrange Multipliers with One Constraint}
 {At the minimum or maximum of $f(x, y)$ subject to $g(x, y) = k$, the gradient of $f$ is
@@ -34,9 +34,9 @@ To minimize or maximize $f(x,y)$ subject to $g(x,y) = k$, solve this system of t
 \index{Lagrange Multipliers}
 }
 
-\example{ex_lagrange2}{}{Maximize and minimize $f(x,y) = x^2 + y^2$ on the ellipse $g(x,y) = (x-1)^2 + 4y^2 = 4$.}{As in Figure \ref{}, the circles $x^2 + y^2 = c$ grow until they touch the ellipse.  The touching point is $(x_{\text{min}},y_{\text{min}})$ and that smallest value of $c$ is $f_{\text{min}}$.  As the circles continue to grow, they cut through the ellipse.  Finally there is a point $(x_{\text{max}},y_{\text{max}})$ where the last circle touches.  That largest value of $c$ is $f_{\text{max}}$.  
+\example{ex_lagrange2}{}{Find the maximum and minimum values of $f(x,y) = x^2 + y^2$ on the ellipse $g(x,y) = (x-1)^2 + 4y^2 = 4$.}{As in Figure \ref{}, the circles $x^2 + y^2 = c$ grow until they touch the ellipse.  The touching point is $(x_{\text{min}},y_{\text{min}})$ and that smallest value of $c$ is $f_{\text{min}}$.  As the circles continue to grow, they cut through the ellipse.  Finally there is a point $(x_{\text{max}},y_{\text{max}})$ where the last circle touches.  That largest value of $c$ is $f_{\text{max}}$.  
 
-The minimum and maximum are described by the same rule: the cirle is tangent to the ellipse.  The perpendiculars go in the same direction.  Therefore $\nabla f$ is a multiple of $\nabla g$, and the unknown multiplier is $\lambda$. 
+The minimum and maximum are described by the same rule: the circle is tangent to the ellipse.  The perpendiculars go in the same direction.  Therefore $\nabla f$ is a multiple of $\nabla g$, and the unknown multiplier is $\lambda$. 
 \begin{align*}
 \frac{\partial f}{\partial x} = \lambda \frac{\partial g}{\partial x} \quad & \Rightarrow 2x = 2\lambda(x-1) \\
 \frac{\partial f}{\partial y} = \lambda \frac{\partial g}{\partial y} \quad & \Rightarrow 2y = 8 \lambda y \\
@@ -44,16 +44,16 @@ g(x,y) = k \quad & \Rightarrow (x-1)^2 + 4y^2 = 4.
 \end{align*}
 The second equation allows two possibilities: $y = 0$ or $\lambda = \frac{1}{4}$.  For the case $y = 0$, the last equation gives $(x-1)^2 = 4$ or $x^2 - 2x -3 = 0$, and thus $x = 3$ or $x = -1$.  Then the first equation gives $\lambda = \frac{3}{2}$ or $\lambda = \frac{1}{2}$.  The values of $f$ are therefore $x^2 + y^2 = 3^2 + 0^2 = 9$ and $x^2 + y^2 = (-1)^2 + 0^2 = 1$.  
 
-In the other case that $\lambda = \frac{1}{4}$, the first equation yields $x = -\frac{1}{3}$.  Then the last equation requires $y^2 = \frac{5}{9}$.  Since $x^2 = \frac{1}{9}$ we find $x^2 + y^2 = \frac{6}{9} = \frac{2}{3}$.  This is the value of $f_{\text{min}}$, and the value of $f_{\text{max}}$ is $9$.  
+In the other case that $\lambda = \frac{1}{4}$, the first equation yields $x = -\frac{1}{3}$.  Then the last equation requires $y^2 = \frac{5}{9}$.  Since $x^2 = \frac{1}{9}$ we find $x^2 + y^2 = \frac{6}{9} = \frac{2}{3}$.
 
-The equations we started with have four solutions, at which the circle and ellipse are tangent.  The four points are $(3,0)$, $(-1,0)$, $\left( -\frac{1}{3},\frac{\sqrt{5}}{3}\right)$, and $\left( -\frac{1}{3},-\frac{\sqrt{5}}{3} \right)$.  The four values of $f$ are, respectively, $9$, $1$, $\frac{2}{3}$, and $\frac{2}{3}$.
+The equations we started with have four simultaneous solutions, at which the circle and ellipse are tangent.  The four points are $(3,0)$, $(-1,0)$, $\left( -\frac{1}{3},\frac{\sqrt{5}}{3}\right)$, and $\left( -\frac{1}{3},-\frac{\sqrt{5}}{3} \right)$.  The four values of $f$ are, respectively, $9$, $1$, $\frac{2}{3}$, and $\frac{2}{3}$. Therefore the maximum value of $f$ on the ellipse is $9$ and the minimum value is $\frac{2}{3}$.
 }
 
-Using this method, the three equation are $f_x = \lambda g_x$, $f_y = \lambda g_y$, and $g = k$, with unknowns $x$, $y$, and $\lambda$.  There is no absolute method for solving this system of equations (unless they are all linear equations, then use elimination or Cramer's Rule to solve).  Often, the first two equations yield $x$ and $y$ in terms of $\lambda$, and substituting into $g(x,y) = k$ gives an equation for $\lambda$. This next example illustrates this method when one is maximizing or minimizing a function $f(x,y,z)$ of three variables subject to a constraint $g(x,y,z) = k$. The method is the same except that the equation $\nabla f = \lambda \nabla g$ will yield three equations in the variables $x$, $y$, and $z$, with the fourth equation $g(x,y,z) = k$ creating a system of four equations in four unknowns.
+Using this method, the system we need to solve includes the equations $f_x = \lambda g_x$, $f_y = \lambda g_y$, and $g = k$, with unknowns $x$, $y$, and $\lambda$.  There is no absolute method for solving this system of equations (unless they are all linear equations, then one can use elimination or Cramer's Rule to solve).  Often, the first two equations yield $x$ and $y$ in terms of $\lambda$, and substituting into $g(x,y) = k$ gives an equation for $\lambda$. This next example illustrates this method when one is maximizing or minimizing a function $f(x,y,z)$ of three variables subject to a constraint $g(x,y,z) = k$. The method is the same except that the equation $\nabla f = \lambda \nabla g$ will yield three equations in the variables $x$, $y$, and $z$, with the fourth equation $g(x,y,z) = k$ creating a system of four equations in four unknowns.
 
 \example{ex_lagrange3}{}{Suppose that $20$ square feet of cardboard is to be used to create a rectangular box with an open top. What dimensions will result in a box with the maximum volume?}{If we let $x$, $y$, and $z$ be the dimensions of the box, then the volume is given by $V(x,y,z) = xyz$ which is the function to be maximized.  The constraint in this problem is the amount of cardboard, or surface area, and so
-$$g(x,y,z) = 2xz + 2yz + xy = 20.$$
-The method of Lagrange multipliers yields the equations
+$$g(x,y,z) = 2xz + 2yz + xy = 20$$
+since there is no top to this box. The method of Lagrange multipliers yields the equations
 \begin{align*}
 V_x = \lambda g_x & \Rightarrow yz = \lambda(2z+y) \\
 V_y = \lambda g_y & \Rightarrow xz = \lambda(2z + x) \\
@@ -67,14 +67,14 @@ xyz & = \lambda(2yz + xy) \\
 xyz & = \lambda (2xz+2yz) \\
 2xz + 2yz + xy & = 20
 \end{align*}
-Note that the first three equations imply that $\lambda \neq 0$, else one would arrive at the conclusion $xyz=0$, which does not make sense in this situation.  Therefore we can divide by $\lambda$ and we get from the first two equations that
+Note that the first three equations imply that $\lambda \neq 0$, else one would arrive at the conclusion $xyz=0$, which does not make sense in this situation.  Therefore we can divide by $\lambda$ and we get from equating the first two equations that
 $$2xz + xy = 2yz + xy \text{ or } xz = yz.$$
-Since $z \neq 0$, we get that $x=y$.  Further, the second and third equations imply that
+Since $z \neq 0$, we get that $x=y$.  Similarly, the second and third equations imply that
 $$2yz + xy = 2xz + 2yz \text{ or } xy = 2xz.$$
 Again, since $x \neq 0$, we get that $y = 2z$.  Lastly, substitute $x = y = 2z$ into equation $(4)$ and we get
 $$4z^2 + 4z^2 + 4z^2 = 20.$$
-This gives us $3z^2 = 5$ or $z = \sqrt{\frac{5}{3}}$.  Therefore the dimenions of the box with maximum volume must be
-$$x = y = 2\sqrt{\frac{5}{3}} \text{ feet, and } z = \sqrt{\frac{5}{3}} \text{ feet}.$$
+This gives us $3z^2 = 5$ or $z = \sqrt{\frac{5}{3}}$.  Therefore the dimensions of the box with maximum volume must be
+$$x = y = 2\sqrt{\frac{5}{3}} \approx 2.58 \text{ feet, and } z = \sqrt{\frac{5}{3}} \approx 1.29 \text{ feet}.$$
 }
 
 
@@ -83,16 +83,16 @@ $$x = y = 2\sqrt{\frac{5}{3}} \text{ feet, and } z = \sqrt{\frac{5}{3}} \text{ f
 
 The whole subject of minimization or maximization is called optimization. Its applications to business decisions make up operations research. The special case of linear functions is always important - in this part of mathematics it is called linear programming. A book about those subjects won't fit inside a calculus book, but we can take one more step - to allow a second constraint.
 
-The function to minimize or maximize is now $f(x,y,z)$ and two constraints are given by $g(x,y,z) = k_1$ and $h(x,y,z) = k_2$.  The multipliers are $\lambda_1$ and $\lambda_2$.  We need at least three variables $x$, $y$, and $z$ because two constraints would completely determine $x$ and $y$ without a third.
+The function to minimize or maximize is now $f(x,y,z)$ and two constraints are given by $g(x,y,z) = k_1$ and $h(x,y,z) = k_2$, for two constants $k_1$ and $k_2$.  The multipliers are $\lambda_1$ and $\lambda_2$.  We need at least three variables $x$, $y$, and $z$ because two constraints would completely determine $x$ and $y$ without a third.
 
-Figure \ref{} shows the geometry behind these equations.  For convenience $f$ is $x^2 + y^2 + z^2$, so we are minimizing distance squared.  The constraints $g = x + y + z = 9$ and $h = x + 2y + 3z = 20$ are linear - their graphs are planes.  The constraints keep $(x,y,z)$ on both planes - and therefore on the line where they meet.  We are finding the squared distance from $(0,0,0)$ to a line.  
+Figure \ref{} shows the geometry behind these equations.  For convenience, suppose $f$ is $x^2 + y^2 + z^2$, and so we are minimizing distance squared.  The constraints $$g = x + y + z = 9 \: \text{ and } \: h = x + 2y + 3z = 20$$ are linear, and their graphs are planes.  The constraints keep the points $(x,y,z)$ on both planes, and therefore on the line where they intersect.  We are therefore finding the squared distance from $(0,0,0)$ to a line again.  
 
 What equations do we solve in this case?  The level surfaces $x^2 + y^2 + z^2 = c$ are spheres.  They grow as $c$ increases.  The first sphere to touch the line is tangent to it, and that touching point gives the minimum solution (the smallest $c$). All three vectors $\nabla f$, $\nabla g$, $\nabla h$ are perpendicular to the line:
 \begin{align*}
 \text{line tangent to sphere} & \Rightarrow \nabla f \text{ perpendicular to line} \\
 \text{line in both planes} & \Rightarrow \nabla g \text{ and } \nabla h \text{ perpendicular to line}
 \end{align*}
-Thus $\nabla f$, $\nabla g$, and $\nabla h$ are in the same plane - perpendicular to the line.  With three vectors in a plane, $\nabla f$ must be a combination of $\nabla g$ and $\nabla h$:
+Thus $\nabla f$, $\nabla g$, and $\nabla h$ are in the same plane, one that is perpendicular to the line.  With three vectors in a plane, $\nabla f$ must be a combination of $\nabla g$ and $\nabla h$:
 $$(f_x,f_y,f_z) = \lambda_1 (g_x,g_y,g_z) + \lambda_2 (h_x,h_y,h_z).$$
 This is the key equation.  It applies to curved surfaces as well as planes.
 
@@ -108,16 +108,16 @@ subject to $g(x,y,z) = k_1$ and $h(x,y,z) = k_2$. To minimize or maximize $f(x,y
 \index{Lagrange Multipliers}
 }
 
-\example{ex_lagrange4}{}{Minimize $f(x,y,z) = x^2 + y^2 + z^2$ when $g = x+y+z = 9$ and $h = x+2y+3z = 20$.}{In figure \ref{}, the normals to those planes are $\nabla g = (1,1,1)$ and $\nabla h = (1,2,3)$.  The gradient of $f$ is $\nabla f = (2x,2y,2z)$.  The equations become
+\example{ex_lagrange4}{}{Find the minimum value of $f(x,y,z) = x^2 + y^2 + z^2$ when $$g = x+y+z = 9 \: \text{ and } \: h = x+2y+3z = 20.$$}{In figure \ref{}, the normals to those planes are $\nabla g = (1,1,1)$ and $\nabla h = (1,2,3)$.  The gradient of $f$ is $\nabla f = (2x,2y,2z)$.  The equation $$\nabla f = \lambda_1 \nabla g + \lambda_2 \nabla h$$ becomes
 $$2x = \lambda_1 + \lambda_2, \: 2y = \lambda_1 + 2\lambda_2, \: 2z = \lambda_1 + 3 \lambda_2.$$
-Substitute these $x$, $y$, $z$ into the constraint equations $x+y+z=9$ and $x+2y+3z=20$ to get
+Solve for $x$, $y$, and $z$ and substitute these into the constraint equations to get
 \begin{align*}
 \frac{1}{2}\left( (\lambda_1+\lambda_2) + (\lambda_1+2\lambda_2) + (\lambda_1+3\lambda_2) \right) & = 9 \\
 \frac{1}{2}\left( (\lambda_1 + \lambda_2) + 2(\lambda_1+2\lambda_2) + 3(\lambda_1 + 3\lambda_2) +  \right) & = 20
 \end{align*}
 After multiplying these by $2$, they simplify down to 
 $$3\lambda_1 + 6\lambda_2 = 18 \text{ and } 6\lambda_1 + 14\lambda_2 = 40.$$
-This is a linear system with solution $\lambda_1 = 2$ and $\lambda_2 = 2$.  The previous equations therefore give $(x,y,z) = (2,3,4)$.  This point gives $f_{\text{min}} = 29$.
+This is a linear system with solution $\lambda_1 = 2$ and $\lambda_2 = 2$.  The previous equations therefore give $(x,y,z) = (2,3,4)$.  This point gives $f_{\text{min}} = 29$, the minimum value of $f$ subject to the two constraints.
 }
 
 

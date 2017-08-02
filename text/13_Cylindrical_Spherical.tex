@@ -1,8 +1,8 @@
-\section{Cylindrical and Spherical Coordinates}\label{sec:cylindrical_spherical}
+\section{Cylindrical and Spherical Integration}\label{sec:cylindrical_spherical}
 
 \noindent\textbf{\large Triple Integration with Cylindrical Coordinates}\\
 
-Cylindrical coordinates are good for describing solids that are symmetric around an axis.  The solid is three dimensional, and so we use the coordinates $(r,\theta,z)$ for points in this solid.  In short, the radius $r$ and angle $\theta$ are the same as in polar coordinates, with $r$ being the distance out from axis and $\theta$ being the angle around the axis, with the positive $x$-axis being the direction of $\theta = 0$ as usual. The coordinate $z$ is the same as in the Cartesian system - the vertical distance up the axis.  See Figure \ref. \\
+Cylindrical coordinates are useful for describing many solids that are symmetric around an axis.  The solid is three dimensional, and so we use the coordinates $(r,\theta,z)$ for points in this solid.  In short, the radius $r$ and angle $\theta$ are the same as in polar coordinates, with $r$ being the distance out from axis of symmetry and $\theta$ being the angle around the axis, with the positive $x$-axis being the direction of $\theta = 0$ as usual. The coordinate $z$ is the same as in the Cartesian system - the vertical distance up the axis, with $z=0$ being the $xy$-plane.  See Figure \ref. \\
 
 The conversions between cylindrical and Cartesian coordinates are given as follows, which follows from our previous study of polar coordinates.\\
 
@@ -14,11 +14,11 @@ $$r^2 = x^2 + y^2, \: \tan\theta = \dfrac{y}{x}, \: z = z$$
 to convert to cylindrical coordinates.\\
 }
 
-\example{ex_cartcyl_convert}{}{Write the point $(\sqrt{3},1,-1)$ in cylindrical coordinates.}{Since we are given the Cartesian coordinates, we use the above conversion formulas to convert this point to cylindrical coordinates.  Since $r^2 = x^2 + y^2$, we arrive at $$r = \sqrt{3+1} = 2.$$ Since $\tan\theta = \dfrac{1}{\sqrt{3}}$, it follows that $\theta = \dfrac{\pi}{6}$ as the point is in the first quadrant of the $xy$-plane.  Therefore the cylindrical coordinates of this point are $\left( 2, \frac{\pi}{6}, -1\right)$. \\
+\example{ex_cartcyl_convert}{}{Write the point $(\sqrt{3},1,-1)$ in cylindrical coordinates.}{Since we are given the Cartesian coordinates, we use the above conversion formulas to convert this point to cylindrical coordinates.  Since $r^2 = x^2 + y^2$, we arrive at $$r = \sqrt{3+1} = 2.$$ Since $\tan\theta = \dfrac{1}{\sqrt{3}}$, it follows that $\theta = \dfrac{\pi}{6}$ as the point is in the first quadrant of the $xy$-plane.  Therefore the cylindrical coordinates of this point are $\left( 2, \frac{\pi}{6}, -1\right)$, since the $z$-coordinate remains the same. \\
 }
 
 
-Certain surfaces and solids are conveniently described using cylindrical coordinates. For example, consider the solid half-cylinder $D$ of radius $1$ centered on the $z$-axis with the bottom on the $xy$-plane and the top at $z = 3$.  If the half-cylinder is above the first two quadrants of the $xy$-plane, then the coordinates that describe this solid are
+As mentioned, certain surfaces and solids are conveniently described using cylindrical coordinates. For example, consider the solid half-cylinder $D$ of radius $1$ centered on the $z$-axis with the bottom on the $xy$-plane and the top at $z = 3$.  If the half-cylinder is above the first two quadrants of the $xy$-plane, then any point in the cylinder has a $\theta$ coordinate between $0$ and $\pi$.  Therefore the coordinates that describe this solid are
 $$0 \leq r \leq 1, \: 0 \leq \theta \leq \pi, \: 0 \leq z \leq 3.$$
 This half-cylinder is shown in Figure \ref. \\
 
@@ -29,15 +29,15 @@ Surfaces and solids described using Cartesian coordinates can also be written us
 
 
 
-When integrating over a solid $D$ described with cylindrical coordinates, one would evaluate an integral $\displaystyle\iiint_D f(x,y,z) \: dV$, but using $dr$, $d\theta$, and $dz$ instead of $dx$, $dy$, and $dz$.  The differential of volume $dV$ would be $$dV = r \: dr \: d\theta \: dz$$ since we are working with the same two coordinates $r$ and $\theta$ from polar coordinates and the third coordinate is the same as in the Cartesian system.  This is the volume of the curved box in Figure \ref.  In other words, the integral above becomes
+When integrating over a solid $D$ described with cylindrical coordinates, one would evaluate a triple integral $\displaystyle\iiint_D f(x,y,z) \: dV$, but using $dr$, $d\theta$, and $dz$ instead of $dx$, $dy$, and $dz$.  The differential of volume $dV$ would be $$dV = r \: dr \: d\theta \: dz$$ since we are working with the same two coordinates $r$ and $\theta$ from polar coordinates and the third coordinate is the same as in the Cartesian system.  This is the volume of the curved box in Figure \ref.  In other words, the integral above becomes
 $$\displaystyle\iiint_D f(x,y,z) \: dV = \displaystyle\iiint_D f(r\cos\theta,r\sin\theta,z) \: r \: dr \: d\theta \: dz$$
-where each occurrence of $x$ and $y$ in the integrand has been converted to cylindrical coordinates.  The bounds on each integral would be the corresponding bounds on $r$, $\theta$, and $z$ that describe the solid $D$.\\
+where each occurrence of $x$ and $y$ in the integrand has been converted to cylindrical coordinates.  The bounds on each integral would be the corresponding bounds on $r$, $\theta$, and $z$ that describe the solid $D$, and we can integrate in any appropriate order.\\
 
-\example{ex_cylindervolume}{}{Compute the volume of the half-cylinder $D$described previously, for $0 \leq r \leq 1$, $0 \leq \theta \leq \pi$, $0 \leq z \leq 3$.}{Since we are computing the volume of $D$, the integrand is $f(x,y,z) = 1$ and so
-$$V = \iiint_D \: dV = \iiint_D \: r \: dr \: d\theta \: dz.$$
+\example{ex_cylindervolume}{}{Compute the volume of the half-cylinder $D$ described previously, for $0 \leq r \leq 1$, $0 \leq \theta \leq \pi$, $0 \leq z \leq 3$.}{Since we are computing the volume of $D$, the integrand is $f(x,y,z) = 1$ and so
+$$V = \iiint_D 1 \: dV = \iiint_D \: r \: dr \: d\theta \: dz.$$
 Using our bounds on $r$, $\theta$, and $z$ that describe $D$ as our bounds of integration, we get a volume of
-$$V = \int_0^3 \int_0^{\pi} \int_0^1 r \: dr \: d\theta \: dz = \int_0^3 \int_0^{\pi} \dfrac{1}{2} \: d\theta \: dz = \dfrac{3\pi}{2}$$
-cubic units.\\
+$$\int_0^3 \int_0^{\pi} \int_0^1 r \: dr \: d\theta \: dz = \int_0^3 \int_0^{\pi} \left( \dfrac{1}{2}r^2 \right]_0^1 \: d\theta \: dz = \int_0^3 \int_0^{\pi} \dfrac{1}{2} \: d\theta \: dz$$
+which evaluates to a volume of $\frac{3\pi}{2}$ cubic units.\\
 }\\
 
 \example{ex_conevolume}{}{The surface $z = 1 - r$ encloses a conical solid between itself and the $xy$-plane.  Find the volume of this solid as seen in Figure \ref.}{The cone $z = 1-r$ intersects the $xy$-plane ($z = 0$) at a radius of $r = 1$.  This puts the bounds on $r$ as $0 \leq r \leq 1$, and clearly the bounds on $\theta$ would be $0 \leq \theta \leq 2\pi$ since the solid is the full cone.  Since the solid is not a cylinder, at least one of the bounds on $z$ must be non-constant.  At any radius $r$, the height of the solid is bounded between the $xy$-plane and the surface $z = 1-r$.  Therefore the bounds on $z$ are $0 \leq z \leq 1-r$, and we will integrate with respect to $dz$ first.  Therefore the volume is
@@ -48,64 +48,64 @@ which evaluates to a volume of $\dfrac{\pi}{3}$ cubic units.\\
 
 \example{ex_volume02}{}{A solid $D$ is the region inside the cylinder $x^2 + y^2 = 1$, below the plane $z = 2$ and above the paraboloid $z = 1 - x^2 - y^2$, with all distances in meters.  See Figure \ref.  If the density of this solid is 
 $$\delta(x,y,z) = \sqrt{x^2 + y^2}$$
-kilograms per cubic meter, determine the mass of this solid.}{As this solid is a cylinder with a paraboloid cut out of the bottom, it makes sense to use cylindrical coordinates here, where the mass is the integral of the density over the solid.  The solid is described by
+kilograms per cubic meter, determine the mass of this solid.}{As this solid is a cylinder with a paraboloid cut out of the bottom, it makes sense to use cylindrical coordinates here, where the mass is the integral of the density over the solid.  The $z$-coordinates of this solid solid are bounded below by $1-x^2-y^2$ or $1-r^2$, and bounded above by $z=2$.  Therefore the solid $D$ is described by
 $$0 \leq r \leq 1, \: 0 \leq \theta \leq 2\pi, \: 1-x^2-y^2 = 1-r^2 \leq z \leq 2$$
-and the density function, when converted to cylindrical coordinates, is $\delta(r,\theta,z) = \sqrt{r^2} = r.$  Integrating using the order $dz \: d\theta \: dr$ and the additional factor of $r$ for cylindrical coordinates yields a mass of
-$$\int_{0}^{1} \int_{0}^{2\pi} \int_{1-r^2}^{2} r \: r \: dz \: d\theta \: dr = 2\pi \int_0^1 r^2 - r^4 \: dr = 2\pi \left( \dfrac{1}{12} \right) = \dfrac{\pi}{6}$$
+and the density function, when converted to cylindrical coordinates, is $$\delta(r,\theta,z) = \sqrt{r^2} = r.$$  Integrating using the order $dz \: d\theta \: dr$ and the additional factor of $r$ for cylindrical coordinates yields a mass of
+$$\int_{0}^{1} \int_{0}^{2\pi} \int_{1-r^2}^{2} r^2 \: dz \: d\theta \: dr = 2\pi \int_0^1 r^2 + r^4 \: dr = 2\pi \left( \dfrac{1}{12} \right) = \dfrac{16 \pi}{15}$$
 kilograms.\\
 }\\
 
 \noindent\textbf{\large Triple Integration with Spherical Coordinates}\\
 
-Objects bounded by spheres or cones are more easily described using a different coordinate system called spherical coordinates.  The Earth, for example, is a solid sphere (or near enough). On its surface we use two coordinates - latitude and longitude. To dig inward or fly outward, there is a third coordinate, the distance $\rho$ from the center. This Greek letter \textit{rho} replaces radius $r$ to avoid confusion with cylindrical coordinates. Where $r$ is measured from the $z$-axis, $\rho$ is measured directly from the origin. Thus 
+Objects bounded by spheres or cones are more easily described using a different coordinate system called spherical coordinates.  The Earth, for example, is a solid sphere (or near enough). On its surface we use two coordinates - latitude and longitude. To dig inward or fly outward, there is a third coordinate, the distance $\rho$ from the center. This Greek letter \textit{rho} replaces radius $r$ to avoid confusion with cylindrical coordinates. Where $r$ is measured from the $z$-axis, $\rho$ is measured directly from the origin. Thus for any point $(x,y,z)$,
 $$\rho^2 = x^2 + y^2 + z^2$$
-which is the square of the distance between the origin and the point $(x,y,z)$. The angle $\theta$ is the same as before, and it goes from $0$ to $2\pi$ with $0$ pointing in the direction of the positive $x$-axis. It is the longitude, which increases as you travel east around the Equator. The angle $\phi$ is new, however. It equals $0$ at the North Pole and $\pi$ (not $2\pi$) at the South Pole. It is the polar angle, measured down from the $z$-axis. The Equator, for example, has a latitude of $0$ degrees but a polar angle of $\phi$ of $\frac{\pi}{2}$ instead. See Figure \ref. 
+which is the square of the distance between the origin and the point. The angle $\theta$ is the same as in cylindrical coordinates, and it goes from $0$ to $2\pi$ on a full sphere with $\theta = 0$ pointing in the direction of the positive $x$-axis. It is the longitude, which increases as you travel east around the Equator. The angle $\phi$ is new, however. It equals $0$ at the North Pole and $\pi$ (not $2\pi$) at the South Pole. It is the polar angle, measured down from the $z$-axis. The Equator, for example, has a latitude of $0$ degrees but a polar angle of $\phi = \frac{\pi}{2}$ instead. See Figure \ref. 
 
-The spherical coordinates of a point $(x,y,z)$ is given by the ordered triple $(\rho, \theta, \phi)$ where $\rho \geq 0$ and $0 \leq \phi \leq \pi$.  The relationship between spherical and Cartesian coordinates is illustrated by Figure \ref.  From the triangles, we have
+The spherical coordinates of a point $(x,y,z)$ are given by the ordered triple $(\rho, \theta, \phi)$ where $\rho$, $\theta$, and $\phi$ can be restricted to $\rho \geq 0$, $0 \leq \theta \leq 2\pi$, and $0 \leq \phi \leq \pi$.  The relationship between spherical and Cartesian coordinates is illustrated by Figure \ref.  From the triangles, we have
 $$z = \rho \cos\phi \text{ and } r = \rho \sin\phi$$
 But we know that $x = r \cos\theta$ and $y = r \sin\theta$ from before, so we end up with the following conversion equations.\\
 
 \keyidea{idea:sphericalcart_conversion}{Converting between spherical and Cartesian coordinates}{
-Given a point $(\rho, \theta, z)$ in spherical coordinates, its Cartesian coordinates are
+Given a point $(\rho, \theta, \phi)$ in spherical coordinates, its Cartesian coordinates are
 $$x = \rho \sin\phi \cos\theta, \: y = \rho \sin\phi \sin\theta, \: z = \rho \cos\phi.$$
 Given a point $(x,y,z)$ in Cartesian coordinates, we use
 $$\rho^2 = x^2 + y^2 + z^2, \tan\theta = \dfrac{y}{x}, \cos\phi = \dfrac{z}{\rho} = \dfrac{z}{\sqrt{x^2 + y^2 + z^2}}$$
 to convert to spherical coordinates.\\
 }
 
-\example{ex_spherconvert}{}{The point $\left( 3, \dfrac{\pi}{6}, \dfrac{2\pi}{3}\right)$ is given in spherical coordinates.  What is the Cartesian coordinate representation of this point?}{Using the conversion equations above, we have
+\example{ex_spherconvert}{}{The point $\left( 3, \dfrac{\pi}{6}, \dfrac{2\pi}{3}\right)$ is given in spherical coordinates.  What are the Cartesian coordinates representing this point?}{Using the conversion equations above, we have
 \begin{align*}
 x & = \rho \sin\phi \cos\theta = 3 \sin\left( \frac{2\pi}{3}\right) \cos\left(\frac{\pi}{6}\right) = 3\left( \frac{\sqrt{3}}{2}\right)\left(\frac{\sqrt{3}}{2}\right) = \dfrac{9}{4} \\
-y & = \rho \sin\phi \sin\theta = 3 \sin\left( \frac{2\pi}{3}\right) \sin\left(\frac{\pi}{6}\right = 3\left( \frac{\sqrt{3}}{2}\right)\left( \frac{1}{2}\right) = \dfrac{3\sqrt{3}}{4} \\
+y & = \rho \sin\phi \sin\theta = 3 \sin\left( \frac{2\pi}{3}\right) \sin\left(\frac{\pi}{6}\right) = 3\left( \frac{\sqrt{3}}{2}\right)\left( \frac{1}{2}\right) = \dfrac{3\sqrt{3}}{4} \\
 z & = \rho \cos\phi = 3 \cos\left( \frac{2\pi}{3} \right) = 3\left(\frac{1}{2}\right) = \dfrac{3}{2}\\
 \end{align*}
 which corresponds to the Cartesian coordinates of $\left( \dfrac{9}{4}, \dfrac{3\sqrt{3}}{4}, \dfrac{3}{2}\right)$.\\} \\
 
-Surfaces like spheres and cones can be easily described in spherical coordinates.  For example, $\rho = R$ describes the surface of a sphere of radius $R$, while $\phi = \dfrac{\pi}{3}$ describes a conical surface opening up at a $60$ degree angle from $z$-axis (or a $30$ degree angle from the $xy$-plane). Some solids, such as cones or parts of spheres, have bounds which are easily described in spherical coordinates, too.  For example, the bounds
-$$0 \leq \rho \leq 1, 0 \leq \theta \leq 2\pi, \dfrac{\pi}{2} \leq \phi \leq \pi$$
-describes the solid lower half unit sphere, while the bounds
-$$0 \leq \rho \leq 1, 0 \leq \theta \leq 2\pi, 0 \leq \phi \leq \dfrac{\pi}{4}$$
-describes a conical solid opening up with a spherical top.\\
+Surfaces like spheres and cones can be easily described in spherical coordinates.  For example, $\rho = R$ describes the surface of a sphere of radius $R$, while $\phi = \dfrac{\pi}{3}$ describes a conical surface opening up at a $60$ degree angle from the $z$-axis (or a $30$ degree angle from the $xy$-plane). Some solids, such as solid cones or parts of solid spheres, have bounds which are easily described in spherical coordinates. For example, the bounds
+$$0 \leq \rho \leq 1, \: \:  0 \leq \theta \leq 2\pi, \: \: \dfrac{\pi}{2} \leq \phi \leq \pi$$
+describes the solid lower hemisphere of radius $1$, while the bounds
+$$0 \leq \rho \leq 1, \: \:  0 \leq \theta \leq 2\pi, \: \: 0 \leq \phi \leq \dfrac{\pi}{4}$$
+describes a conical solid opening up at a $45$ degree angle with a spherical top.\\
 
-If one is to integrate over a solid $D$ best described in spherical coordinates, such as when finding its volume, one can think of the solid as being divided into spherical boxes or spherical wedges of thickness $d\rho$ and angles $d\theta$ and $d\phi$.  The dimensions of this spherical box, as seen in Figure \ref{}, are $d\rho$, $\rho \: d\phi$ (arc of circle of radius $\rho$ and angle $d\phi$), and $\rho \: \sin\phi \: d\theta$ (arc of a circle with radius $\rho \: \sin\phi$ and angle $d\theta$). Therefore the approximate volume of the spherical box is
+If one is to integrate over a solid $D$ best described in spherical coordinates, such as when finding its volume, one can think of the solid as being divided into spherical boxes or spherical wedges of thickness $d\rho$ and angles $d\theta$ and $d\phi$.  The dimensions of this spherical box, as seen in Figure \ref{}, are $d\rho$, $\rho \: d\phi$ (arc of a circle of radius $\rho$ and angle $d\phi$), and $\rho \: \sin\phi \: d\theta$ (arc of a circle with radius $\rho \: \sin\phi$ and angle $d\theta$). Therefore the approximate volume of the spherical box is
 $$dV = \rho^2 \: \sin\phi \: d\rho \: d\theta \: d\phi.$$
-Therefore to integrate a function $f(x,y,z)$ over a region $E$ described using spherical coordinates, one would compute
-$$\iiint_E f(x,y,z) \: dA = \iiint_E f(\rho,\theta,\phi) \: \rho^2 \: \sin\phi \: d\rho \: d\theta \: d\phi$$
-where the bounds on $\rho$, $\theta$, and $\phi$ are as appropriate to describe the solid $E$. As a first example of this, we will verify the geometric formula for the volume of a sphere.\\
+To integrate a function $f(x,y,z)$ over a solid $D$ described using spherical coordinates, one would therefore compute
+$$\iiint_D f(x,y,z) \: dA = \iiint_D f(\rho,\theta,\phi) \: \rho^2 \: \sin\phi \: d\rho \: d\theta \: d\phi$$
+where the bounds on $\rho$, $\theta$, and $\phi$ are as appropriate to describe the solid $D$. As a first example of this, we will verify the geometric formula for the volume of a sphere.\\
 
-\example{ex_volume03}{}{Determine the volume of a sphere of radius $R$.}{Let $E$ be the sphere of radius $R$ centered at the origin.  Then we can describe $E$ using spherical coordinates as simply all points $(\rho,\theta,\phi)$ where
+\example{ex_volume03}{}{Determine the volume of a sphere of radius $R$.}{Let $D$ be the sphere of radius $R$ centered at the origin.  Then we can describe $D$ using spherical coordinates as simply all points $(\rho,\theta,\phi)$ where
 $$0 \leq \rho \leq R, \: 0 \leq \theta \leq 2\pi, \: 0 \leq \phi \leq \pi.$$
 Therefore the volume of this ball is equal to
-$$V = \int_0^{2pi} \int_0^{\pi} \int_0^R \rho^2 \: \sin\phi \: d\rho \: d\phi \: d\theta = \left( \dfrac{1}{3}\rho^3 \right]_{0}^{R} \left( -\cos\phi \right]_{0}^{\pi} \left( \theta \right]_{0}^{2\pi} = \dfrac{1}{3}R^3 (2) (2\pi)$$
+$$V = \int_0^{2\pi} \int_0^{\pi} \int_0^R \rho^2 \: \sin\phi \: d\rho \: d\phi \: d\theta = \left( \dfrac{1}{3}\rho^3 \right]_{0}^{R} \left( -\cos\phi \right]_{0}^{\pi} \left( \theta \right]_{0}^{2\pi} = \dfrac{1}{3}R^3 (2) (2\pi)$$
 which is equal to the familiar formula for the volume of a sphere being $\dfrac{4}{3}\pi R^3$.\\
 }\\
 
 \example{ex_volume04}{}{Evaluate the integral
-$$\iiint_E x^2 + y^2 + z^2 \: dV$$
-where $E$ is the solid that lies above the cone $z = \sqrt{x^2 + y^2}$ but below the sphere of radius $\frac{1}{2}$ centered at $\left( 0,0,\frac{1}{2}\right)$.}
-{The cone $z = \sqrt{x^2 + y^2}$ is the cone pointing upward from the origin at an angle of $\frac{\pi}{4}$ from the $xy$-plane. The solid $E$ therefore consists of a half-spherical top with a conical bottom, with the point of the cone at the origin, meeting the spherical top at the horizontal equator of the sphere.\\
+$$\iiint_D x^2 + y^2 + z^2 \: dV$$
+where $D$ is the solid that lies above the cone $z = \sqrt{x^2 + y^2}$ but below the sphere of radius $\frac{1}{2}$ centered at $\left( 0,0,\frac{1}{2}\right)$.}
+{The cone $z = \sqrt{x^2 + y^2}$ is the cone pointing upward from the origin at an angle of $\frac{\pi}{4}$ from the $xy$-plane. The solid $D$ therefore consists of a half-spherical top with a conical bottom, with the point of the cone at the origin, meeting the spherical top at the horizontal equator of the sphere.\\
 
-To describe this solid in spherical coordinates, note that the sphere of radius $\frac{1}{2}$ centered at the point $\left( 0,0,\frac{1}{2}\right)$ can be written as $$x^2 + y^2 + \left( z - \frac{1}{2}\right)^2 = \frac{1}{4}$$ which is equivalent to $x^2 + y^2 + z^2 = z$. In spherical coordinates, this says $\rho^2 = \rho \: \cos\phi$, or $\rho = \cos\phi$.  As for the cone, the equation $\phi = \frac{\pi}{4}$ for $\rho > 0$ describes this surface.  Therefore $E$ can be described as all points $\left( \rho, \theta,\phi\right)$ with $0 \leq \rho \leq \cos\phi$, $0 \leq \theta \leq 2\pi$, and $0 \leq \phi \leq \frac{\pi}{4}$.  \\
+To describe this solid in spherical coordinates, note that the sphere of radius $\frac{1}{2}$ centered at the point $\left( 0,0,\frac{1}{2}\right)$ can be written as $$x^2 + y^2 + \left( z - \frac{1}{2}\right)^2 = \frac{1}{4}$$ which is equivalent to $x^2 + y^2 + z^2 = z$. In spherical coordinates, this says $\rho^2 = \rho \: \cos\phi$, or $\rho = \cos\phi$.  As for the cone, the equation $\phi = \frac{\pi}{4}$ describes this surface.  Therefore $D$ can be described as all points $\left( \rho, \theta,\phi\right)$ with $0 \leq \rho \leq \cos\phi$, $0 \leq \theta \leq 2\pi$, and $0 \leq \phi \leq \frac{\pi}{4}$.  \\
 
 Lastly, to integrate we need to write the integrand $x^2 + y^2 + z^2$ as $\rho^2$ and include the spherical integration factor $\rho^2 \: \sin\phi$.  Therefore
 \begin{eqnarray*}
