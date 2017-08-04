@@ -172,6 +172,8 @@
 \printanswers {exercises/12_06_exercises}
 \noindent {\bf Section 12.8} \vskip \baselineskip 
 \printanswers {exercises/12_07_exercises}
+\noindent {\bf Section 12.9} \vskip \baselineskip 
+\printanswers {exercises/12_09_exercises}
 \noindent {\Large \bf Chapter 13} \vskip \baselineskip 
 \noindent {\bf Section 13.1} \vskip \baselineskip 
 
@@ -186,4 +188,6 @@
 \printanswers {exercises/13_05_exercises}
 \noindent {\bf Section 13.6} \vskip \baselineskip 
 \printanswers {exercises/13_06_exercises}
+\noindent {\bf Section 13.7} \vskip \baselineskip 
+\printanswers {exercises/13_07_exercises}
 \end {multicols}\normalsize 
