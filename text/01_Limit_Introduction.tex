@@ -25,18 +25,26 @@ While our question is not precisely formed (what constitutes ``near the value 1'
 Consider this again at a different value for $x$. When $x$ is near 0, what value (if any) is $y$ near? By considering Figure \ref{fig:sinx_over_x}, one can see that it seems that $y$ takes on values near $1$. But what happens when $x=0$? We have $$ y \rightarrow \frac{\sin 0}{0} \rightarrow \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\text{\ ''}}.$$ 
 The expression ``$0/0$'' has no value; it is \emph{indeterminate.} \index{limit!indeterminate form}\index{indeterminate form} Such an expression gives no information about what is going on with the function nearby. We cannot find out how $y$ behaves near $x=0$ for this function simply by letting $x=0$. 
 
-\emph{Finding a limit} entails understanding how a function behaves near a particular value of $x$. Before continuing, it will be useful to establish some notation. Let $y=f(x)$; that is, let $y$ be a function of $x$ for some function $f$. The expression ``the limit of $y$ as $x$ approaches 1'' describes a number, often referred to as $L$, that $y$ nears as $x$ nears 1. We write all this as $$\lim_{x\to 1} y = \lim_{x\to 1} f(x) = L.$$ This is not a complete definition (that will come in the next section); this is a pseudo-definition that will allow us to explore the idea of a limit. \index{limit!pseudo-definition}
+\emph{Finding a limit} entails understanding how a function behaves near a particular value of $x$. 
+
+\keyidea{idea:limit}{Informal Definition of Limit}
+{
+The expression ``the limit of $f(x)$ as $x$ approaches the number $c$ equals $L$,'' denoted $\displaystyle \lim_{x \to c} f(x) = L$, means that as values for $x$ get closer and closer to the number $c$, the values of $f(x)$ get closer and closer to the number $L$. \index{limit!informal definition}
+}
+
+This is not a complete definition (that will come in the next section); this is a pseudo-definition that will allow us to explore the idea of a limit. \index{limit!pseudo-definition}
 
 Above, where $f(x) = \sin(x)/x$, we approximated $$\lim_{x\to 1} \frac{\sin x}{x} \approx 0.84 \quad \text{ and } \quad \lim_{x\to 0}\frac{\sin x}{x} \approx 1.$$ (We \textit{approximated} these limits, hence used the ``$\approx$'' symbol, since we are working with the pseudo-definition of a limit, not the actual definition.)
 
 Once we have the true definition of a limit, we will find limits \textit{analytically}; that is, exactly using a variety of mathematical tools. For now, we will \textit{approximate} limits both graphically and numerically. Graphing a function can provide a good approximation, though often not very precise. Numerical methods can provide a more accurate approximation. We have already approximated limits graphically, so we now turn our attention to numerical approximations.
 
+\mtable{.3}{Values of $\sin(x)/x$ with $x$ near 1.}{table:sinx_1}{\input{figures/sinx_over_x_table_1}}
 
 Consider again $\lim_{x\to 1}\sin (x)/x$. To approximate this limit numerically, we can create a table of $x$ and $f(x)$ values where $x$ is ``near'' 1. This is done in Figure \ref{table:sinx_1}.\par
 
 Notice that for values of $x$ near $1$, we have $\sin (x)/x$ near $0.841$. The $x=1$ row is in bold to highlight the fact that when considering limits, we are \textit{not} concerned with the value of the function at that particular $x$ value; we are only concerned with the values of the function when $x$ is \textit{near} 1. 
 
-\mtable{.3}{Values of $\sin(x)/x$ with $x$ near 1.}{table:sinx_1}{\input{figures/sinx_over_x_table_1}}
+
 
 %\vskip \baselineskip
 
