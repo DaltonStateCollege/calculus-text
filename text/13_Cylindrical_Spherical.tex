@@ -2,7 +2,9 @@
 
 \noindent\textbf{\large Triple Integration with Cylindrical Coordinates}\\
 
-Cylindrical coordinates are useful for describing many solids that are symmetric around an axis.  The solid is three dimensional, and so we use the coordinates $(r,\theta,z)$ for points in this solid.  In short, the radius $r$ and angle $\theta$ are the same as in polar coordinates, with $r$ being the distance out from axis of symmetry and $\theta$ being the angle around the axis, with the positive $x$-axis being the direction of $\theta = 0$ as usual. The coordinate $z$ is the same as in the Cartesian system - the vertical distance up the axis, with $z=0$ being the $xy$-plane.  See Figure \ref. \\
+Cylindrical coordinates are useful for describing many solids that are symmetric around an axis.  The solid is three dimensional, and so we use the coordinates $(r,\theta,z)$ for points in this solid.  In short, the radius $r$ and angle $\theta$ are the same as in polar coordinates, with $r$ being the distance out from axis of symmetry and $\theta$ being the angle around the axis, with the positive $x$-axis being the direction of $\theta = 0$ as usual. The coordinate $z$ is the same as in the Cartesian system - the vertical distance up the axis, with $z=0$ being the $xy$-plane.  See Figure \ref{fig:fig_cylindrical_spherical_cylindrical}. \\
+
+\mfigure[scale=0.6]{.3}{Cylindrical coordinates for a point}{fig:fig_cylindrical_spherical_cylindrical}{figures/fig_cylindrical_spherical_cylindrical}
 
 The conversions between cylindrical and Cartesian coordinates are given as follows, which follows from our previous study of polar coordinates.\\
 
@@ -20,18 +22,24 @@ to convert to cylindrical coordinates.\\
 
 As mentioned, certain surfaces and solids are conveniently described using cylindrical coordinates. For example, consider the solid half-cylinder $D$ of radius $1$ centered on the $z$-axis with the bottom on the $xy$-plane and the top at $z = 3$.  If the half-cylinder is above the first two quadrants of the $xy$-plane, then any point in the cylinder has a $\theta$ coordinate between $0$ and $\pi$.  Therefore the coordinates that describe this solid are
 $$0 \leq r \leq 1, \: 0 \leq \theta \leq \pi, \: 0 \leq z \leq 3.$$
-This half-cylinder is shown in Figure \ref. \\
+This half-cylinder is shown in Figure \ref{fig:fig_cylindrical_spherical_halfcylinder}. \\
+
+\mfigure[scale=0.5]{.6}{Half cylinder}{fig:fig_cylindrical_spherical_halfcylinder}{figures/fig_cylindrical_spherical_halfcylinder}
+
+
 
 Surfaces and solids described using Cartesian coordinates can also be written using cylindrical coordinates, and vice versa, using our conversion formulas above.\\
 
-\example{ex_cylsurface}{}{Consider the surface described by $z=r^2$ in cylindrical coordinates.  Write the equation for this surface in Cartesian coordinates and identify the surface.}{We know that $r^2 = x^2 + y^2$, and so we can write $z = x^2 + y^2$.  This is a paraboloid with vertex at the origin opening up. See Figure \ref. \\
+\example{ex_cylsurface}{}{Consider the surface described by $z=r^2$ in cylindrical coordinates.  Write the equation for this surface in Cartesian coordinates and identify the surface.}{We know that $r^2 = x^2 + y^2$, and so we can write $z = x^2 + y^2$.  This is a paraboloid with vertex at the origin opening up. See Figure \ref{fig:fig_cylindrical_spherical_z_equals_r_squared}. \\
 }\\
 
-
+\mfigure[scale=0.6]{.3}{$z=r^2$}{fig:fig_cylindrical_spherical_z_equals_r_squared}{figures/fig_cylindrical_spherical_z_equals_r_squared}
 
 When integrating over a solid $D$ described with cylindrical coordinates, one would evaluate a triple integral $\displaystyle\iiint_D f(x,y,z) \: dV$, but using $dr$, $d\theta$, and $dz$ instead of $dx$, $dy$, and $dz$.  The differential of volume $dV$ would be $$dV = r \: dr \: d\theta \: dz$$ since we are working with the same two coordinates $r$ and $\theta$ from polar coordinates and the third coordinate is the same as in the Cartesian system.  This is the volume of the curved box in Figure \ref.  In other words, the integral above becomes
 $$\displaystyle\iiint_D f(x,y,z) \: dV = \displaystyle\iiint_D f(r\cos\theta,r\sin\theta,z) \: r \: dr \: d\theta \: dz$$
 where each occurrence of $x$ and $y$ in the integrand has been converted to cylindrical coordinates.  The bounds on each integral would be the corresponding bounds on $r$, $\theta$, and $z$ that describe the solid $D$, and we can integrate in any appropriate order.\\
+
+
 
 \example{ex_cylindervolume}{}{Compute the volume of the half-cylinder $D$ described previously, for $0 \leq r \leq 1$, $0 \leq \theta \leq \pi$, $0 \leq z \leq 3$.}{Since we are computing the volume of $D$, the integrand is $f(x,y,z) = 1$ and so
 $$V = \iiint_D 1 \: dV = \iiint_D \: r \: dr \: d\theta \: dz.$$
@@ -40,13 +48,18 @@ $$\int_0^3 \int_0^{\pi} \int_0^1 r \: dr \: d\theta \: dz = \int_0^3 \int_0^{\pi
 which evaluates to a volume of $\frac{3\pi}{2}$ cubic units.\\
 }\\
 
-\example{ex_conevolume}{}{The surface $z = 1 - r$ encloses a conical solid between itself and the $xy$-plane.  Find the volume of this solid as seen in Figure \ref.}{The cone $z = 1-r$ intersects the $xy$-plane ($z = 0$) at a radius of $r = 1$.  This puts the bounds on $r$ as $0 \leq r \leq 1$, and clearly the bounds on $\theta$ would be $0 \leq \theta \leq 2\pi$ since the solid is the full cone.  Since the solid is not a cylinder, at least one of the bounds on $z$ must be non-constant.  At any radius $r$, the height of the solid is bounded between the $xy$-plane and the surface $z = 1-r$.  Therefore the bounds on $z$ are $0 \leq z \leq 1-r$, and we will integrate with respect to $dz$ first.  Therefore the volume is
+
+\mfigure[scale=0.5]{.3}{$z=1-r$}{fig:fig_cylindrical_spherical_z_equals_1_minus_r}{figures/fig_cylindrical_spherical_z_equals_1_minus_r}
+
+
+\example{ex_conevolume}{}{The surface $z = 1 - r$ encloses a conical solid between itself and the $xy$-plane.  Find the volume of this solid as seen in Figure \ref{fig:fig_cylindrical_spherical_z_equals_1_minus_r}.}{The cone $z = 1-r$ intersects the $xy$-plane ($z = 0$) at a radius of $r = 1$.  This puts the bounds on $r$ as $0 \leq r \leq 1$, and clearly the bounds on $\theta$ would be $0 \leq \theta \leq 2\pi$ since the solid is the full cone.  Since the solid is not a cylinder, at least one of the bounds on $z$ must be non-constant.  At any radius $r$, the height of the solid is bounded between the $xy$-plane and the surface $z = 1-r$.  Therefore the bounds on $z$ are $0 \leq z \leq 1-r$, and we will integrate with respect to $dz$ first.  Therefore the volume is
 $$V = \int_{0}^{2\pi} \int_{0}^{1} \int_{0}^{1-r} r \: dz \: dr \: d\theta = 2\pi \int_0^1 (1-r)r \: dr$$
 which evaluates to a volume of $\dfrac{\pi}{3}$ cubic units.\\
 }\\
 
 
-\example{ex_volume02}{}{A solid $D$ is the region inside the cylinder $x^2 + y^2 = 1$, below the plane $z = 2$ and above the paraboloid $z = 1 - x^2 - y^2$, with all distances in meters.  See Figure \ref.  If the density of this solid is 
+
+\example{ex_volume02}{}{A solid $D$ is the region inside the cylinder $x^2 + y^2 = 1$, below the plane $z = 2$ and above the paraboloid $z = 1 - x^2 - y^2$, with all distances in meters.  See Figure \ref{fig:fig_cylindrical_spherical_mass_example}.  If the density of this solid is 
 $$\delta(x,y,z) = \sqrt{x^2 + y^2}$$
 kilograms per cubic meter, determine the mass of this solid.}{As this solid is a cylinder with a paraboloid cut out of the bottom, it makes sense to use cylindrical coordinates here, where the mass is the integral of the density over the solid.  The $z$-coordinates of this solid solid are bounded below by $1-x^2-y^2$ or $1-r^2$, and bounded above by $z=2$.  Therefore the solid $D$ is described by
 $$0 \leq r \leq 1, \: 0 \leq \theta \leq 2\pi, \: 1-x^2-y^2 = 1-r^2 \leq z \leq 2$$
@@ -55,11 +68,15 @@ $$\int_{0}^{1} \int_{0}^{2\pi} \int_{1-r^2}^{2} r^2 \: dz \: d\theta \: dr = 2\p
 kilograms.\\
 }\\
 
+\mfigure[scale=0.5]{.6}{Solid $D$ bounded above by $z=2$, below by $z=1-x^2-y^2$, laterally by $x^2+y^2=1$}{fig:fig_cylindrical_spherical_mass_example}{figures/fig_cylindrical_spherical_mass_example}
+
 \noindent\textbf{\large Triple Integration with Spherical Coordinates}\\
 
 Objects bounded by spheres or cones are more easily described using a different coordinate system called spherical coordinates.  The Earth, for example, is a solid sphere (or near enough). On its surface we use two coordinates - latitude and longitude. To dig inward or fly outward, there is a third coordinate, the distance $\rho$ from the center. This Greek letter \textit{rho} replaces radius $r$ to avoid confusion with cylindrical coordinates. Where $r$ is measured from the $z$-axis, $\rho$ is measured directly from the origin. Thus for any point $(x,y,z)$,
 $$\rho^2 = x^2 + y^2 + z^2$$
-which is the square of the distance between the origin and the point. The angle $\theta$ is the same as in cylindrical coordinates, and it goes from $0$ to $2\pi$ on a full sphere with $\theta = 0$ pointing in the direction of the positive $x$-axis. It is the longitude, which increases as you travel east around the Equator. The angle $\phi$ is new, however. It equals $0$ at the North Pole and $\pi$ (not $2\pi$) at the South Pole. It is the polar angle, measured down from the $z$-axis. The Equator, for example, has a latitude of $0$ degrees but a polar angle of $\phi = \frac{\pi}{2}$ instead. See Figure \ref. 
+which is the square of the distance between the origin and the point. The angle $\theta$ is the same as in cylindrical coordinates, and it goes from $0$ to $2\pi$ on a full sphere with $\theta = 0$ pointing in the direction of the positive $x$-axis. It is the longitude, which increases as you travel east around the Equator. The angle $\phi$ is new, however. It equals $0$ at the North Pole and $\pi$ (not $2\pi$) at the South Pole. It is the polar angle, measured down from the $z$-axis. The Equator, for example, has a latitude of $0$ degrees but a polar angle of $\phi = \frac{\pi}{2}$ instead. See Figure \ref{fig:fig_cylindrical_spherical_spherical}. 
+
+\mfigure[scale=0.5]{.3}{Spherical coordinates $\rho \phi \theta$}{fig:fig_cylindrical_spherical_spherical}{figures/fig_cylindrical_spherical_spherical}
 
 The spherical coordinates of a point $(x,y,z)$ are given by the ordered triple $(\rho, \theta, \phi)$ where $\rho$, $\theta$, and $\phi$ can be restricted to $\rho \geq 0$, $0 \leq \theta \leq 2\pi$, and $0 \leq \phi \leq \pi$.  The relationship between spherical and Cartesian coordinates is illustrated by Figure \ref.  From the triangles, we have
 $$z = \rho \cos\phi \text{ and } r = \rho \sin\phi$$
@@ -87,11 +104,13 @@ describes the solid lower hemisphere of radius $1$, while the bounds
 $$0 \leq \rho \leq 1, \: \:  0 \leq \theta \leq 2\pi, \: \: 0 \leq \phi \leq \dfrac{\pi}{4}$$
 describes a conical solid opening up at a $45$ degree angle with a spherical top.\\
 
-If one is to integrate over a solid $D$ best described in spherical coordinates, such as when finding its volume, one can think of the solid as being divided into spherical boxes or spherical wedges of thickness $d\rho$ and angles $d\theta$ and $d\phi$.  The dimensions of this spherical box, as seen in Figure \ref{}, are $d\rho$, $\rho \: d\phi$ (arc of a circle of radius $\rho$ and angle $d\phi$), and $\rho \: \sin\phi \: d\theta$ (arc of a circle with radius $\rho \: \sin\phi$ and angle $d\theta$). Therefore the approximate volume of the spherical box is
+If one is to integrate over a solid $D$ best described in spherical coordinates, such as when finding its volume, one can think of the solid as being divided into spherical boxes or spherical wedges of thickness $d\rho$ and angles $d\theta$ and $d\phi$.  The dimensions of this spherical box, as seen in Figure \ref{fig:fig_cylindrical_spherical_spherical_box}, are $d\rho$, $\rho \: d\phi$ (arc of a circle of radius $\rho$ and angle $d\phi$), and $\rho \: \sin\phi \: d\theta$ (arc of a circle with radius $\rho \: \sin\phi$ and angle $d\theta$). Therefore the approximate volume of the spherical box is
 $$dV = \rho^2 \: \sin\phi \: d\rho \: d\theta \: d\phi.$$
 To integrate a function $f(x,y,z)$ over a solid $D$ described using spherical coordinates, one would therefore compute
 $$\iiint_D f(x,y,z) \: dA = \iiint_D f(\rho,\theta,\phi) \: \rho^2 \: \sin\phi \: d\rho \: d\theta \: d\phi$$
 where the bounds on $\rho$, $\theta$, and $\phi$ are as appropriate to describe the solid $D$. As a first example of this, we will verify the geometric formula for the volume of a sphere.\\
+
+\mfigure[scale=0.5]{.3}{Spherical box}{fig:fig_cylindrical_spherical_spherical_box}{figures/fig_cylindrical_spherical_spherical_box}
 
 \example{ex_volume03}{}{Determine the volume of a sphere of radius $R$.}{Let $D$ be the sphere of radius $R$ centered at the origin.  Then we can describe $D$ using spherical coordinates as simply all points $(\rho,\theta,\phi)$ where
 $$0 \leq \rho \leq R, \: 0 \leq \theta \leq 2\pi, \: 0 \leq \phi \leq \pi.$$
