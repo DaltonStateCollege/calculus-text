@@ -41,7 +41,11 @@ Evaluate $\ds\int\sin^5x\cos^8x\ dx$.}
 {The power of the sine term is odd, so we rewrite $\sin^5x$ as $$\sin^5x = \sin^4x\sin x = (\sin^2x)^2\sin x = (1-\cos^2x)^2\sin x.$$
 
 Our integral is now $\ds \int (1-\cos^2x)^2\cos^8x\sin x\ dx$. Let $u = \cos x$, hence $du = -\sin x\ dx$. Making the substitution and expanding the integrand gives
-$$\int (1-\cos^2)^2\cos^8x\sin x\ dx = -\int (1-u^2)^2u^8\ du = -\int \big(1-2u^2+u^4\big)u^8\ du = -\int \big(u^8-2u^{10}+u^{12}\big)\ du.$$
+%2017_09_19 Tom Gonzalez $$\int (1-\cos^2)^2\cos^8x\sin x\ dx = -\int (1-u^2)^2u^8\ du = -\int \big(1-2u^2+u^4\big)u^8\ du = -\int \big(u^8-2u^{10}+u^{12}\big)\ du.$$
+\begin{align*}
+\int (1-\cos^2)^2\cos^8x\sin x\ dx &= -\int (1-u^2)^2u^8\ du = -\int \big(1-2u^2+u^4\big)u^8\ du \\
+										&= -\int \big(u^8-2u^{10}+u^{12}\big)\ du.
+\end{align*}
 This final integral is not difficult to evaluate, giving 
 \begin{align*} -\int \big(u^8-2u^{10}+u^{12}\big)\ du &= -\frac19u^9 + \frac2{11}u^{11} - \frac1{13}u^{13} + C \\
 										&=-\frac19\cos^9 x + \frac2{11}\cos^{11} x - \frac1{13}\cos^{13} x + C.
@@ -161,8 +165,8 @@ The same basic strategy applies to integrals of the form $\int \tan^mx\sec^n x\ 
 If the integrand can be manipulated to separate a $\sec^2x$ term with the remaining secant power even, or if a $\sec x\tan x$ term can be separated with the remaining $\tan x$ power even, the Pythagorean Theorem can be employed, leading to a simple substitution. This strategy is outlined in the following Key Idea.
 
 \setboxwidth{130pt}
-%\hskip-145pt
-%\begin{minipage}{\specialboxlength}
+\hskip-145pt
+\begin{minipage}{\specialboxlength}
 \keyidea{idea:trig_int_2}{Integrals Involving Powers of Tangent and Secant}
 {Consider $\ds\int\tan^mx\sec^nx\ dx$, where $m,n$ are nonnegative integers.\index{integration!of trig. powers}
 \begin{enumerate}
@@ -187,7 +191,7 @@ $$\int\tan^mx\ dx = \underbrace{\int\tan^{m-2}\sec^2x\ dx}_{\text{\small apply r
 
 \end{enumerate}
 }
-%\end{minipage}
+\end{minipage}
 \restoreboxwidth
 
 The techniques described in items 1 and 2 of Key Idea \ref{idea:trig_int_2} are relatively straightforward, but the techniques in items 3 and 4 can be rather tedious. A few examples will help with these methods.\\
