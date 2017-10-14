@@ -31,8 +31,10 @@ Work is force times distance moved. In this last example it was negative, becaus
 
 \keyidea{idea:gradient_path_independence}{}
 {
-When $\vec F$ is the gradient of a potential function $f(x, y)$, the work $\int \vec F \cdot \vec T ds$ depends only on the endpoints $P = (x_0,y_0)$ and $Q = (x_1,y_1)$. The work is the change in $f$:
-$$\text{if } \vec F = \partial f \partial x \vec i + \partial f/\partial y \vec j \text{ then } int_C \vec F \cdot \vec T ds = f(Q) - f(P).$$
+When $\vec F$ is the gradient of a potential function $f(x, y)$, the work $\int \vec F \cdot \vec T ds$ depends only on the endpoints $P = (x_0,y_0)$ and $Q = (x_1,y_1)$. The work is the change in $f$: if
+$$\vec F = \partial f \partial x \vec i + \partial f/\partial y \vec j$$
+then
+$$int_C \vec F \cdot \vec T ds = f(Q) - f(P).$$
 }\\
 
 In the above example, the vector field $\vec F$ was the gradient of the potential function $f(x,y) = Mx$, and so the work done would be just $f(-1000,0) - f(1000,0) = -2000M$, as we calculated.  We move on next to a more formal definition of line integrals. \\
