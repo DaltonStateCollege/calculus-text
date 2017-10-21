@@ -73,14 +73,68 @@ which evaluates to $2\pi \left( \sqrt{2} + \ln(1 + \sqrt{2}) \right)$ square uni
 \noindent\textbf{\large Vector Fields and Flux}\\
 
 Given a parametrized surface $S$ over a region $R$ in the $uv$-plane, we have computed the surface area of $S$ as $\iint_S \: dS = \iint_R 1 \: dS$.  An integral of the form $\iint_S f(x,y,z) \: dS$ is called the \textbf{surface integral} of $f(x,y,z)$ over the surface $S$. To evaluate such a surface integral, one would translate $f(x,y,z)$ to a function of $u$ and $v$ by using the parametric equation $x = x(u,v)$, $y = y(u,v)$, and $z = z(u,v)$ for the given surface.  Then multiply this expression by $dS = \left| \vec r_u \times \vec r_v \right| \: du \: dv$ and integrate over the region $R$ in the $uv$-plane to obtain
-$$\iint_S f(x,y,z) \: dS = \iint_R f(x(u,v), y(u,v), z(u,v)) \: \left| \vec r_u \times \vec r_v \right| \: du \: dv.$$
-An example of an application of a surface integral is in computing the flow or flux of a vector field, which we discuss next first for a surface given by a function.\\
+$$\iint_S f(x,y,z) \: dS = \iint_R f(x(u,v), y(u,v), z(u,v)) \: \left| \vec r_u \times \vec r_v \right| \: du \: dv.$$ \\
 
-\definition{defn_flux}{Flux}{Let $z = f(x,y)$ for $(x,y)$ in a region $R$ be a surface $S$, and let $$\vec F(x,y,z) = M(x,y,z) \vec i + N(x,y,z) \vec j + P(x,y,z) \vec k$$ be a vector field. The \textbf{flux} of $\vec F$ across $S$ is  
+\example{ex_surface_int06}{}{Compute the surface integral of $f(x,y,z) = xyz$ over that part of the cylinder $x^2 + y^2 = 1$ above the first quadrant in the $xy$-plane between $z = 0$ and $z = 2$.}{We first need to parametrize the cylinder as we did earlier, to obtain
+$$\vec r(u,v) = \cos u \vec i + \sin u \vec j + v \vec k$$
+for $0 \leq u \leq \frac{\pi}{2}$ and $0 \leq v \leq 2$. Next, we compute $dS$ as before, using
+$$\vec r_u \times \vec r_v = \left| \begin{array}{ccc} \vec i & \vec j & \vec k \\ -\sin u & \cos u & 0 \\ 0 & 0 & 1 \end{array} \right| = \cos u \vec i + \sin u \vec j$$
+This gives
+$$\left| \vec r_u \times \vec r_v \right| = \sqrt{\sin^2 u + \cos^2 u +0} = \sqrt{1} = 1$$
+for our surface. Now to integrate $f(x,y,z)$ over $S$, we change $f$ into a function of $u$ and $v$ by writing
+$$f(x,y,z) = xyz = \cos u  \: \sin u \: v$$
+as in our parametrization.  Therefore the surface integral equals
+$$\iint_S f(x,y,z) \: dS = \int_0^{2} \int_{0}^{\pi/2} \cos u \: \sin u \: v \: du \: dv = \left( \dfrac{1}{2}v^2 \right]_0^2 \left( \dfrac{1}{2}\sin^2 u \right]_0^{\pi/2} = 1.$$
+}\\
+
+An example of an application of a surface integral is in computing the flow or flux of a vector field across a given surface, which we discuss next.  Similarly as before, we will first address the case when the surface can be written in the form $z = f(x,y)$.\\
+
+\definition{defn_flux}{Flux}{Let $z = f(x,y)$ define a surface $S$ for $(x,y)$ in a region $R$ in the $xy$-plane, and let $$\vec F(x,y,z) = M(x,y,z) \vec i + N(x,y,z) \vec j + P(x,y,z) \vec k$$ be a vector field. The \textbf{flux} of $\vec F$ across $S$ is  
 $$\iint_S \vec F \cdot \vec n \: dS = \iint_R -M \dfrac{\partial f}{\partial x} - N\dfrac{\partial f}{\partial y} + P \: dx \: dy$$
 where $\vec n$ is the unit normal vector to the surface. 
 }
 
+Recall that a vector $\vec N$ normal to the surface will be
+$$\vec N = -f_x(x,y) \vec i - f_y(x,y) \vec j + \vec k$$
+and so the unit normal is found by dividing this by its norm
+$$\vec n = \dfrac{\vec N}{|\vec N|} = \dfrac{\vec N}{\sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}}.$$
+Notice that the expression representing $| \vec N |$ is exactly the same as in $dS$, so these will cancel to obtain the right-most definition above. That is,
+\begin{eqnarray*}
+\vec F \cdot \vec n \: dS & = & \dfrac{\vec F \cdot \vec N}{\sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}} \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2} \: dx \: dy \\
+& = & -M \dfrac{\partial f}{\partial x} - N\dfrac{\partial f}{\partial y} + P \: dx \: dy.
+\end{eqnarray*}\\
 
+It is worth noting that we are only considering \emph{orientable} surfaces here, which are surfaces with two sides. In the case of a sphere, for example, there is a normal vector pointing inward and another pointing outward. For a closed surface such as a sphere it is conventional to take the normal vector pointing outward for $\vec n$. That is, we adopt the convention that outward flux is positive. A surface such as a M\"obius strip would not be orientable since it has only one side; a pencil traced along one side around the surface will eventually arrive back at its starting position.\\
+
+\example{ex_surface_int07}{}{Let $\vec F(x,y,z) = x \vec i + y \vec j + z \vec k$ and consider the conical surface $S$ given by $z = f(x,y) = \sqrt{x^2 + y^2}$ for $(x,y)$ within the disk $R$ given by $x^2 + y^2 \leq 4$. Compute the flux of $\vec F$ across this surface.}{As for the above definition, we have $M = x$, $N = y$, and $P = z$.  We also have
+$$f_x(x,y) = \dfrac{x}{\sqrt{x^2 + y^2}} \: \text{ and } \: f_y(x,y) = \dfrac{y}{\sqrt{x^2 + y^2}}$$
+as previously.  Therefore the flux across $S$ is
+$$\iint_S \vec F \cdot \vec n \: dS = \iint_R -\dfrac{x^2}{\sqrt{x^2 + y^2}} - f_y(x,y) = \dfrac{y^2}{\sqrt{x^2 + y^2}} + \sqrt{x^2 + y^2} \: dx \: dy$$
+since $z = \sqrt{x^2 + y^2}$.  Notice that the integrand simplifies to zero, and so the flux across $S$ is equal to zero.  This makes sense since the vector field $\vec F$ goes straight out from the origin, which is along the conical surface.  Therefore there is no flow across $S$ because $\vec F \cdot \vec n = 0$. 
+}\\
+
+Next we address the case when the surface $S$ is given parametrically by a function $\vec r(u,v)$ of two parameters $u$ and $v$ from a region $R$ in the $uv$-plane. For surfaces that fold and twist, the formulas can look more complicated, but often the calculations are simpler. Recall that a small parallelogram piece of the surface $S$ will have area $\left| \vec r_u \times \vec r_v \right| \: du \: dv$.  The vectors $\vec r_u$ and $\vec r_v$ are tangent to the surface along the sides.\\
+
+We now put the cross product to another use, because $\vec F \cdot \vec n \: dS$ involves not only area but \emph{direction} as well. We need the unit vector $\vec n$ to know how much flow goes through.  Since $$\vec n = \frac{\vec N}{| \vec N |} \: \text{ and } \: dS = | \vec N | \: du \: dv,$$ the square root cancels out in $\vec n \: dS$.  This leave the following formula for the flux of a vector field across the surface $S$.\\
+
+\definition{defn_flux_2}{Flux}{Let $\vec r(u,v)$ define a surface $S$ for $(u,v)$ in a region $R$ in the $uv$-plane, and let $$\vec F(x,y,z) = M(x,y,z) \vec i + N(x,y,z) \vec j + P(x,y,z) \vec k$$ be a vector field. The \textbf{flux} of $\vec F$ across $S$ is  
+$$\iint_S \vec F \cdot \vec n \: dS = \iint_S \vec F \cdot \vec N \: du \: dv = \iint_R \vec F \cdot \left( \vec r_u \times \vec r_v \right) \: du \: dv$$
+where $N = \vec r_u \times \vec r_v$ is normal to the surface.
+}
+
+\example{ex_surface_int08}{}{Let $\vec F(x,y,z) = \vec k$ and consider the spherical surface $S$ given by $x^2 + y^2 + z^2 = 9$. Compute the flux of $\vec F$ across the top half of the surface $S$.}{Using spherical coordinates and parameters $u = \phi$ and $v = \theta$, we have
+$$\vec r(u,v) = 3 \sin(u) \cos(v) \vec i + 3 \sin(u) \sin(v) \vec j + 3 \cos(u) \vec k$$
+and so
+\begin{eqnarray*}
+\vec N = \vec r_u \times \vec r_v & = & \left| \begin{array}{ccc} \vec i & \vec j & \vec k \\  3 \cos(u) \cos(v) & 3 \cos(u) \sin(v) & -3\sin(u) \\ -3 \sin(u) \sin(v) & 3 \sin(u) \cos(v) & 0 \end{array} \right| \\
+ & = & 9 \left( \sin^2(u) \cos(v) \vec i + \sin^2(u) \sin(v) \vec j + \cos(u) \sin(u) \vec k \right).
+\end{eqnarray*}
+Taking the dot product with $\vec F = \vec k$ we get
+$$\vec F \cdot \vec N = 9 \cos(u) \sin(u).$$
+Lastly, we integrate on $0 \leq u \leq \frac{\pi}{2}$ and $0 \leq v \leq 2\pi$ to obtain a flux of
+$$\int_0^{2\pi} \int_0^{\pi/2} 9 \cos(u) \sin(u) \: du \: dv = 18 \pi \left( \dfrac{1}{2} \sin^2(u) \right]_0^{\pi/2} = 9 \pi$$
+across the hemisphere.
+}\\
+ 
 
 \printexercises{exercises/14_04_exercises}
