@@ -1,10 +1,10 @@
 \section{Green's Theorem}\label{sec:greens_theorem}
 
-This section contains the Fundamental Theorem of Calculus, extended to two dimensions. The formula was discovered 150 years after Newton and Leibniz, by a self-taught English mathematician named George Green. His theorem connects a double integral over a region $R$ to a line integral along its boundary curve $C$.\\
+This section contains the Fundamental Theorem of Calculus extended to two dimensions. The formula was discovered 150 years after Newton and Leibniz, by a self-taught English mathematician named George Green. His theorem connects a double integral over a region $R$ to a line integral along its boundary curve $C$.\\
 
-In Section \ref{sec:FTC} you learn that the integral of $\dfrac{df}{dx}$ from $x=a$ to $x=b$ equals $f(b) - f (a)$. This connects a one-dimensional integral to a zero-dimensional integral - the boundary only contains two points $a$ and $b$. The value $f(b) - f(a)$ is some kind of a point integral. It is this absolutely crucial idea (to integrate a derivative from information at the boundary) that Green's Theorem extends into two dimensions.\\
+In Section \ref{sec:FTC} you learn that the integral of $\dfrac{df}{dx}$ from $x=a$ to $x=b$ equals $f(b) - f (a)$. This connects a one-dimensional integral to a zero-dimensional integral - the value $f(b) - f(a)$ is some kind of a point integral. It is this absolutely crucial idea (to integrate a derivative from information at the boundary) that extends Green's Theorem into two dimensions.\\
 
-There are two important integrals around a curve $C$. The first is for a force field $\vec F$, and the work done is $\displaystyle\int_C \vec F \cdot \vec T \: ds = \displaystyle\int_C M \: dx + N \: dy.$  The second is for a flow field $\vec F$, and the flux is $\displaystyle\int_C \vec F \cdot \vec n \: dx = \displaystyle\int_C M \: dy - N \: dx$, where $\vec n$ is the normal vector. Green's Theorem handles both, in two dimensions. In three dimensions they split into the Divergence Theorem (Section \ref{sec:div_theorem}) and Stokes' Theorem (Section \ref{sec:stokes_theorem}). Green's Theorem applies to "smooth" functions $M(x, y)$ and $N(x, y)$ with continuous first derivatives in a region containing the region $R$ inside the curve $C$. $M(x,y)$ and $N(x,y)$ will have a specific meaning in applications (to electricity and magnetism or to fluid flow or to mechanics). We capture the central idea first and the applications follow.\\
+There are two important integrals around a curve $C$. The first is for a force field $\vec F$, and the work done is $\displaystyle\int_C \vec F \cdot \vec T \: ds = \displaystyle\int_C M \: dx + N \: dy.$  The second is for a flow field $\vec F$, and the flux is $\displaystyle\int_C \vec F \cdot \vec n \: dx = \displaystyle\int_C M \: dy - N \: dx$, where $\vec n$ is the normal vector. Green's Theorem handles both, in two dimensions. In three dimensions they split into the Divergence Theorem (Section \ref{sec:div_theorem}) and Stokes' Theorem (Section \ref{sec:stokes_theorem}). Green's Theorem applies to "smooth" functions $M(x, y)$ and $N(x, y)$ with continuous first derivatives in a region containing the interior $R$ inside the curve $C$. $M(x,y)$ and $N(x,y)$ will have a specific meaning in applications (to electricity and magnetism or to fluid flow or to mechanics). We capture the central idea first and the applications follow.\\
 
 \theorem{thm:greens_theorem}{Green's Theorem}
 {Suppose the region $R$ is bounded by a simple, closed, piecewise smooth curve $C$ oriented in the counter-clockwise direction. If $M(x,y)$ and $N(x,y)$ have continuous first-order partial derivatives on an open region containing $R$, then
@@ -24,16 +24,16 @@ Consider any vector field $\vec F(x,y) = M \: \vec i + N \: \vec j$ in which $\d
 $$\oint_C \vec F \cdot d\vec r = \oint_C M(x,y) \: dx + N(x,y) \: dy = \iint_R 1 \: dA$$
 which is the area of $R$, or the area enclosed by $C$.  In this way, one can use a line integral to compute area as long as one knows the boundary curve of the region. \\
 
-\example{ex_greenstheorem2}{}{Use the above to compute the area of the ellipse
+\example{ex_greenstheorem2}{}{Using a line integral, compute the area of the ellipse
 $$\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$$
-with semiaxes of length $a$ and $b$ using a line integral.}{See Figure \ref{}.  By the above equation for the ellipse, we can parametrize the ellipse as
+with semiaxes of length $a$ and $b$.}{See Figure \ref{}.  By the above equation for the ellipse, we can parametrize the ellipse as
 $$x = a \cos(t), \: \: y = b \sin(t)$$
-for $0 \leq t \leq 2\pi$.  By computing the line integral of $\vec F(x,y) = x \: \vec j$ around this curve we will arrive at the area of the ellipse by Green's Theorem.  Using $M(x,y) = 0$ and $N(x,y) = x$, we get an area of
+for $0 \leq t \leq 2\pi$.  By computing the line integral of $\vec F(x,y) = x \: \vec j$ around this curve we will arrive at the area of the ellipse by Green's Theorem.  Using $M(x,y) = 0$ and $$N(x,y) = x = a \cos(t),$$ we get an area of
 $$\oint_C \vec F \cdot d\vec r = \oint_C N(x,y) \: dy = \int_0^{2\pi} a \cos(t) \: (b \cos(t)) \: dt = ab \int_0^{2\pi} \cos^2(t) \: dt = ab \pi$$
 square units.
 }\\
 
-\example{ex_greenstheorem3}{}{Compute the line integral $\oint_C x^3 \: dx + xy^2 \: dy$ where $C$ is the triangular curve consisting of line segments connecting $(0,0)$ to $(1,0)$, $(1,0)$ to $(1,1)$, and $(1,1)$ to $(0,0)$.}{Computing this directly would require three different line integrals and three different parametrizations for the line segments.  Instead we employ Green's Theorem and compute a single double integral instead.  Letting $R$ be the triangle inside the curves bounded by $y = 0$ and $y = x$, we get
+\example{ex_greenstheorem3}{}{Compute the line integral $\oint_C x^3 \: dx + xy^2 \: dy$ where $C$ is the triangular curve consisting of line segments connecting $(0,0)$ to $(1,0)$, $(1,0)$ to $(1,1)$, and $(1,1)$ to $(0,0)$.}{Computing this directly would require three different line integrals and three different parametrizations for the line segments.  Instead we employ Green's Theorem and compute a single double integral.  Letting $R$ be the triangle inside the curves bounded by $y = 0$ and $y = x$, we get
 $$\oint_C x^3 \: dx + xy^2 \: dy = \iint_R (y^2 - 0) \: dA = \int_0^1 \int_{0}^{x} y^2 \: dy \: dx = \dfrac{1}{12}.$$
 }\\
 
@@ -43,7 +43,7 @@ Green's Theorem is not easy to prove in general.  We will, however, verify it is
 $$R = \left\{ (x,y) \mid a \leq x \leq b, g_1(x) \leq y \leq g_2(x) \right\}$$
 for some curves $y = g_1(x)$ and $y = g_2(x)$, and
 $$R = \left\{ (x,y) \mid c \leq y \leq d, h_1(y) \leq x \leq h_2(y) \right\}$$
-for some curves $x = h_1(y)$ and $x = h_2(y)$. Other regions which are the union of simple regions can then be done later.\\
+for some curves $x = h_1(y)$ and $x = h_2(y)$. Other regions which are the union of simple regions can then be done with this in hand.\\
 
 For a vector field $\vec F(x,y) = M(x,y) \: \vec i + N(x,y) \vec j$ as above, the idea is to prove that
 $$\oint_C M(x,y) \: dx = \iint_R -\dfrac{\partial M}{\partial y} \: dA$$
@@ -54,7 +54,7 @@ separately. We verify the first and the leave the second, which is very similar,
 Suppose that $R$ is the region given by
 $$\left\{ (x,y) \mid a \leq x \leq b, g(x) \leq y \leq f(x) \right\}$$
 for top curve $y = f(x)$ and bottom curve $y = g(x)$.  In the double integral, first integrate with respect to $y$ to get
-$$\int_{g(x)}^{f(x)} -\dfrac{\partial M}{\partial y} \: dy = \left( -M(x,y) \right]_{y=g(x)}^{y=f(x)} = -M(x,f(x)) + M(x,g(x)).$$
+$$\int_{g(x)}^{f(x)} -\dfrac{\partial M}{\partial y} \: dy = \Big( -M(x,y) \Big]_{y=g(x)}^{y=f(x)} = -M(x,f(x)) + M(x,g(x)).$$
 Integrate with respect to $x$ to yield
 $$-\int_a^b M(x,f(x)) \: dx + \int_a^b M(x,g(x)) \: dx.$$
 The other side of the equation deals with a line integral. For this we get
@@ -71,5 +71,7 @@ $$\oint_C y^2 \: dx + 3xy \: dy = \iint_R 3y - 2y \: dA = \iint_R y \: dA.$$
 Notice that this region can be integrated over easily via polar coordinates.  Therefore
 $$\oint_C y^2 \: dx + 3xy \: dy = \int_0^{\pi} \int_{1}^{2} (r \sin\theta) r \: dr \: d\theta = \dfrac{14}{3}.$$
 }\\
+
+One can consider a region $R$ in the plane as a flat surface in three-dimensional space. Green's Theorem says that we can compute an integral over the surface $R$ by instead computing a line integral around the boundary of the region.  This will hold for more general surfaces in space, and the result that generalizes Green's Theorem is called Stokes' Theorem, discussed in Section \ref{sec:stokes_theorem}.
 
 \printexercises{exercises/14_03_exercises}
