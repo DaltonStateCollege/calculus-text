@@ -1,10 +1,10 @@
 \section{The Divergence Theorem}\label{sec:div_theorem}
 
-Green's Theorem dealt with a closed curve in two-dimensions.  In this section, we look at a closed surface enclosing a solid region.  A surface integral representing the flux through the surface can be written as a triple integral of the enclosed solid.  This is the Divergence Theorem, attributed independently to Gauss and a Russian mathematician Ostrogradsky. First, we define the divergence of a vector field.\\
+Green's Theorem dealt with a closed curve in two dimensions.  In this section, we look at a closed surface enclosing a solid region in three dimensions.  A surface integral representing the flux through the surface can be written as a triple integral of the enclosed solid.  This is the Divergence Theorem, attributed independently to Gauss and a Russian mathematician Ostrogradsky. First, we define the divergence of a vector field.\\
 
 \definition{def:divergence}{Divergence}{Let $$\vec F(x,y,z) = M(x,y,z) \: \vec i + N(x,y,z) \: \vec j + P(x,y,z) \: \vec k$$ be a vector field.  The divergence $\text{div } \vec F$ of the field $\vec F$ is given by
 $$\text{div }\vec F(x,y,z) = \dfrac{\partial M}{\partial x} + \dfrac{\partial N}{\partial y} + \dfrac{\partial P}{\partial z}$$
-which is a real-valued function. One can write this as $\text{div } \vec F = \nabla \cdot \vec F$.
+which is a real-valued function. One can write this as a dot product of $$\nabla = \left\langle \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial y}, \dfrac{\partial}{\partial z} \right\rangle$$ with the vector field $\vec F$, or as $\text{div } \vec F = \nabla \cdot \vec F$.
 }\\
 
 \example{ex_divergence_01}{}{Determine the divergence $\text{div }\vec F$ if the field $\vec F$ is given by $$\vec F(x,y,z) = xz \: \vec i + xyz \: \vec j - y^2 \: \vec k.$$}{We compute
@@ -29,8 +29,8 @@ $$\iint_T \vec F \cdot \vec n \: dS = \int_0^4 \int_0^{2\pi} \int_0^1 (3r \sin\t
 If we think of $\vec F$ as a fluid or gas flow, the flux being a positive value here indicates that the net flow across the surface is directed outward from the cylinder.
 }\\
 
-To see the reasoning behind the Divergence Theorem, consider a small box with center at a point $(x,y,z)$ and edges of length $\Delta x$, $\Delta y$, $\Delta z$.  Out of the top and bottom of the box, the normal vectors are $\vec k$ and $-\vec k$.  The dot product with $\vec F = M \: \vec i + N \: \vec j + P \: \vec k$ is $P$ or $-P$.  So the two fluxes are close to $P(x,y,z + 0.5 \Delta z) \Delta x \: delta y$ and $-P(x,y,z-0.5 \Delta z) \Delta x \: \Delta y$.  When the top is combined with the bottom, the difference of those is $\Delta P$:
-$$\text{net flux upward} \approx \Delta P \: \Delta X \: \Delta y \approx \dfrac{\partial P}{\partial z} \Delta V.$$
+To see the reasoning behind the Divergence Theorem, consider a small box with center at a point $(x,y,z)$ and edges of length $\Delta x$, $\Delta y$, $\Delta z$.  Out of the top and bottom of the box, the normal vectors are $\vec k$ and $-\vec k$.  The dot product with $\vec F = M \: \vec i + N \: \vec j + P \: \vec k$ is $P$ or $-P$.  So the two fluxes are close to $P(x,y,z + 0.5 \Delta z) \Delta x \: \Delta y$ and $-P(x,y,z-0.5 \Delta z) \Delta x \: \Delta y$.  When the top is combined with the bottom, the difference of those is $\Delta P$:
+$$\text{net flux upward} \approx \Delta P \: \Delta x \: \Delta y \approx \dfrac{\partial P}{\partial z} \Delta V.$$
 Similarly, the combined flux on the sides and the front and back will be approximately $\dfrac{\partial P}{\partial y} \Delta V$ and $\dfrac{\partial P}{\partial x} \Delta V$, respectively. Adding the six faces, we reach the key point:
 $$\text{flux out of the box} \approx \left( \dfrac{\partial M}{\partial x} + \dfrac{\partial N}{\partial y} + \dfrac{\partial P}{\partial z} \right) \: \Delta V$$
 which of course is $\left( \text{div } \vec F \right) \: \Delta V$.\\
@@ -39,7 +39,7 @@ Note however that the ratio $\dfrac{\Delta P}{\Delta z}$ is not exactly $\dfrac{
 
 The sum of $\left( \text{div } \vec F \right) \: \Delta V$ over all the boxes approaches $\iiint_D \text{div } \vec F \: dV$.  On the other side of the equation is a sum of fluxes.  There is $\vec F \cdot \vec n \: \Delta S$ out of the top of one box, plus $\vec F \cdot \vec n \: \Delta S$ out the bottom of the box above.  The first has $\vec n = \vec k$ and the second has $\vec n = -\vec k$.  They cancel each other out - the flow goes from box to box.  This happens every two boxes that meet.  The only fluxes to survive are at the outer surface $T$.  The final step, as $\Delta x, \Delta y, \Delta z$ approach zero, gives that those outside terms approach $\iint \vec F \cdot \vec n \: dS$. This would finish the argument for the Divergence Theorem.  A formal proof would be similar to the one done for Green's Theorem.  The reasoning above, however, is probably more useful than the detailed proof.\\
 
-Another example of flux involves \emph{heat flow} and the rate of heat flow across a surface.  Suppose that $T(x,y,z)$ is the temperature at the point $(x,y,z)$ in a substance. Then the \textbf{heat flow} is defined as the vector field
+Another example of flux involves \emph{heat flow} and the rate of heat flow across a surface.  Suppose that $T(x,y,z)$ is the temperature at the point $(x,y,z)$ in a solid or substance. Then the \textbf{heat flow} is defined as the vector field
 $$\vec F = -K \nabla T$$
 where $K$ is a constant called the \textbf{conductivity} of the substance. The rate of heat flow across the surface of a simple solid $D$ in the substance is given by the flux integral
 $$\iint \vec F \cdot \vec n \: dS = -K \iint \nabla T \cdot \vec n \: dS = -K \iiint_D \text{div } \nabla T \: dS$$
