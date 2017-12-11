@@ -2,6 +2,8 @@
 
 In the last section, the Divergence Theorem gave us a generalization of Green's Theorem to a closed surface. In this section we consider a surface which is not closed, and hence has a boundary.  This boundary will be a curve in three-dimensional space. This puts us back in the setting of Green's Theorem - a region bounded by a curve. Stokes' Theorem will be this generalization of Green's Theorem to three-dimensional space. Instead of a region in the plane, the region will be a surface in three-dimensional space.\\
 
+\noindent\textbf{\large Curl}\\
+
 Consider a three-dimensional vector field $$\vec F(x,y,z) = M(x,y,z) \vec i + N(x,y,z) \vec j + P(x,y,z) \vec k$$ In Green's Theorem, the vector field had only two dimensions and the line integral around the curve turned into a double integral of the scalar function $\dfrac{\partial N}{\partial x} - \dfrac{\partial M}{\partial y}$.  In three-dimensions, this function changes to what is known as the \emph{curl} of the vector field. \\
 
 \definition{def:curl}{Curl}{Let $$\vec F(x,y,z) = M(x,y,z) \: \vec i + N(x,y,z) \: \vec j + P(x,y,z) \: \vec k$$ be a vector field.  The curl $\text{curl } \vec F$ of the field $\vec F$ is given by
@@ -34,10 +36,63 @@ Since $f_{yz} = f_{zy}$, $f_{xz} = f_{zx}$, and $f_{xy} = f_{yx}$, we arrive at 
 
 Similarly, if $\vec F$ is the curl of another vector field, say $\vec F = \text{curl } \vec G$, then $\text{div } \vec F = \text{div } \text{curl } \vec G = 0$.  That is, the divergence of a curl field is zero.  We summarize these last two results in the following theorem.
 
-\theorem{thm:Div_Thm}{}{Consider a vector field
-$$\vec F = M(x,y,z) \: \vec i + N(x,y,z) \: \vec j + P(x,y,z) \: \vec k$$ whose components $M$, $N$< and $P$ have continuous partial derivatives within a region containing a simple solid region $D$ whose boundary surface is $T$. Then the flux of $\vec F$ across $T$ equals the triple integral of the divergence $\text{div } \vec F$ inside $D$.  That is,
-$$\iint_T \vec F \cdot \vec n \: dS = \iiint_D \text{div } \vec F \: dV.$$
+\theorem{thm:curl_thm}{}{Consider a vector field $\vec F$. If $\vec F = \nabla f(x,y,z)$ is a conservative vector field, then $\text{curl } \vec F = \vec 0$. If $\vec G$ is another vector field and $\vec F = \text{curl } \vec G$, then $\text{div } \vec F = 0$.
 }\\
 
+While we may think of curl as measuring the spin of a field, we would be incorrect in thinking that a vector field made up of parallel vectors would always have zero for a curl.  The vector field in the next example is such a case, where the parallel vectors have differing lengths.\\
+
+\example{ex_curl_02}{}{Determine the curl of the vector field $\vec F(x,y,z) = z \: \vec i$, in which every vector is parallel to the $x$-axis.}{We compute
+$$\text{curl } \vec F = \left| \begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ &  & \\ z & 0 & 0 \end{array} \right| = \vec j$$
+and so the curl of this vector field is in the direction of the $y$-axis. To make some sense of this, imagine a wheel placed anywhere in the $xz$-plane of this velocity vector field. The velocity at the top of the wheel will be greater than that at the bottom, causing the wheel to spin.  See Figure \ref{}. The axis of rotation is in the direction of the $y$-axis, and this is the curl vector calculated above.
+}\\
+
+\noindent\textbf{\large Stokes' Theorem}\\
+
+Stokes' Theorem will be like Green's Theorem - a line integral equals a surface integral. The line integral is still the work $\displaystyle\oint \vec F \cdot d\vec R$ around a curve.  The surface integral in Green's Theorem is $\displaystyle\iint (N_x - M_y) \: dx \: dy$, with the surface being flat in the $xy$-plane. The normal vector to this surface is therefore $\vec k$, and we recognize $N_x - M_y$ as the $vec k$-component of the curl.  Green's Theorem uses only this component because the normal vector direction is always $\vec k$.  For Stokes' Theorem on a curved surface, we will need all three components of curl as the normal vector is not as simple.\\
+
+\theorem{thm:stokes_thm}{Stokes' Theorem}{Consider a three-dimensional vector field $\vec F(x,y,z)$ and a surface $T$ with closed boundary curve $C$, oriented in the positive direction.  Then
+$$\oint_C \vec F \cdot d\vec R = \iint_T (\text{curl } \vec F) \cdot \vec n \: dS$$
+where $\vec n$ is the unit normal vector of the surface.
+}\\
+
+While this theorem is not easy to visualize, think of the right-hand side above as the sum of the spins along the surface.  The left-hand side is the total circulation (or work) around the boundary $C$.  Notice one simple corollary of this result, however.  If $\vec F$ is conservative (a gradient field) then $\text{curl } \vec F = \vec 0$ and so the work done around the closed curve $C$ is zero, as we know.\\
+
+We next provide a quick argument as to why this theorem is true, leaving out a formal proof.  In Figure \ref{} we see a triangle $ABC$ attached to a triangle $ACD$, creating a surface.  More generally $S$ will be a closed curved surface but two triangles are enough to make the point here.  In the plane of each triangle, Green's Theorem is known and gives us
+$$\oint_{AB+BC+CA} \vec F \cdot d\vec R = \iint_{ABC} \text{curl } \vec F \cdot \vec n_1 \: dS$$
+and
+$$\oint_{AC+CD+DA} \vec F \cdot d\vec R = \iint_{ACD} \text{curl } \vec F \cdot \vec n_2 \: dS.$$
+Now add.  The right sides give the integral of $\text{curl } \vec F \cdot \vec n$ over the two-triangle surface.  On the left side we get the integral over $CA$ canceling the one over $AC$ - the cross cut disappears.  That leaves $AC + BC + CD + DA$, the boundary $C$ of the surface, the left side of Stokes' Theorem. Next we give some examples of Stokes' Theorem in use.\\
+
+\example{ex_stokes_01}{}{Use Stokes' Theorem to compute $\displaystyle\iint_T \text{\curl } \vec F \cdot \vec n \: dS$, if $T$ is the part of the unit sphere $x^2 + y^2 + z^2 = 1$ lying above the $xy$-plane and 
+$$\vec F(x,y,z) = y \: \vec i + x^2 \: \vec j + z \: \vec k$$}{Using Stokes' Theorem, we can change this surface integral to a line integral around the boundary of this hemisphere, which is the unit circle. We use the standard parametrization
+$$\vec r(t) = \cos(t) \: \vec i + \sin(t) \: \vec j + 0 \: \vec k$$
+for the unit circle $C$, where $0 \leq t \leq 2\pi$.  By Stokes' Theorem,
+\begin{eqnarray*}
+\displaystyle\iint_T \text{\curl } \vec F \cdot \vec n \: dS & = & \oint_C \vec F \cdot d\vec r \\
+ & = & \int_0^{2\pi} \left( \sin(t), \cos^2(t), 0 \right) \cdot \left( -\sin(t), \cos(t), 0\right) \: dt \\
+ & = & \int_0^{2\pi} -\sin^2(t) + \cos^3(t) \: dt = -\pi
+\end{eqnarray*}
+In this way, we have avoided computing the curl of the given vector field as well as avoided computing a surface integral by instead computing a line integral.
+}\\
+
+\example{ex_stokes_02}{}{Use Stokes' Theorem to compute $\displaystyle\oint_C \vec F \cdot d\vec r$ where 
+$$\vec F(x,y,z) = -y^2 \: \vec i + x \: \vec j + z^2 \: \vec k$$ and $C$ is the curve of intersection of the plane $z = 2-y$ and the cylinder $x^2 + y^2 = 1$, with the usual counterclockwise orientation.}{Instead of computing a line integral in this case, we will instead compute a surface integral using a surface $T$ that has $C$ as its boundary.  The surface $T$ we will choose is the elliptical region in the plane $z = 2-y$ inside the cylinder $x^2 + y^2 = 1$.  The shadow of this surface down on the $xy$-plane is the unit disc $D$.  And so with $z = 2-y$ we parametrize
+$$\vec r(x,y) = x \: \vec i + y \: \vec j + (2-y) \: vec k$$
+which results in a normal vector
+$$\vec n = \vec r_x \times \vec r_y = \vec j + \vec k$$
+For the curl of $\vec F$, we compute
+$$\text{curl } \vec F = \left|\begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ & & \\ -y^2 & x & z^2 \end{array} \right| = (1-2y) \: \vec k$$
+Therefore by Stokes' Theorem
+\begin{eqnarray*}
+\displaystyle\oint_C \vec F \cdot d\vec r & = & \iint_T \text{curl } \vec F \cdot \vec n \: dS \\
+ & = & \iint_D (0,0,1-2y) \cdot (0,1,1) \: dA \\ 
+ & = & \iint_D 1-2y \: dA \\
+ & = & \int_{0}^{2\pi} \int_0^1 \left( 1 - 2r\sin(\theta)\right) r \: dr \: d\theta \\ 
+ & = & \pi
+\end{eqnarray*}
+In this way, we have avoided having to parametrize the boundary curve $C$ and instead only had to do a surface integral over a surface above the unit disk in the $xy$-plane. 
+}\\
+
+\noindent\textbf{\large Conservative Fields and Potential Funtions}\\
 
 \printexercises{exercises/14_06_exercises}
