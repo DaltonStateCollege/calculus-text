@@ -4,9 +4,9 @@ In the last section, the Divergence Theorem gave us a generalization of Green's 
 
 \noindent\textbf{\large Curl}\\
 
-Consider a three-dimensional vector field $$\vec F(x,y,z) = M(x,y,z) \vec i + N(x,y,z) \vec j + P(x,y,z) \vec k$$ In Green's Theorem, the vector field had only two dimensions and the line integral around the curve turned into a double integral of the scalar function $\dfrac{\partial N}{\partial x} - \dfrac{\partial M}{\partial y}$.  In three-dimensions, this function changes to what is known as the \emph{curl} of the vector field. \\
+Consider a three-dimensional vector field $$\vec F(x,y,z) = M(x,y,z) \vec i + N(x,y,z) \vec j + P(x,y,z) \vec k$$ In Green's Theorem, the vector field had only two dimensions and the line integral around the curve turned into a double integral of the scalar function $\dfrac{\partial N}{\partial x} - \dfrac{\partial M}{\partial y}$.  In three-dimensions, this function changes to what is known as the \emph{curl} of the vector field.\\
 
-\definition{def:curl}{Curl}{Let $$\vec F(x,y,z) = M(x,y,z) \: \vec i + N(x,y,z) \: \vec j + P(x,y,z) \: \vec k$$ be a vector field.  The curl $\text{curl } \vec F$ of the field $\vec F$ is given by
+\definition{def:curl}{Curl}{Let $\vec F(x,y,z) = M(x,y,z) \: \vec i + N(x,y,z) \: \vec j + P(x,y,z) \: \vec k$ be a vector field.  The curl $\text{curl } \vec F$ of the field $\vec F$ is given by
 $$\text{curl }\vec F(x,y,z) = \left( \dfrac{\partial P}{\partial y} - \dfrac{\partial N}{\partial z} \right) \vec i + \left( \dfrac{\partial M}{\partial z} - \dfrac{\partial P}{\partial x} \right) \vec j + \left( \dfrac{\partial N}{\partial x} - \dfrac{\partial M}{\partial y} \right) \vec k$$
 which is a real-valued function. An easier way to remember this is as the cross product of $$\nabla = \left\langle \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial y}, \dfrac{\partial}{\partial z} \right\rangle$$ with the vector field $\vec F$, or as 
 $$\text{curl } \vec F = \nabla \times \vec F = \left| \begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ &  & \\ M & N & P \end{array} \right|$$
@@ -30,7 +30,7 @@ We have spent a significant amount of time talking about conservative vector fie
 Then the curl of $\vec F$ is
 \begin{eqnarray*}
 \text{curl } \vec F & = & \left| \begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ &  & \\ \dfrac{\partial f}{\partial x} & \dfrac{\partial f}{\partial y} & \dfrac{\partial f}{\partial z} \end{array} \right| \\
-& = & \left( \dfrac{\partial}{\partial y} \dfrac{\partial f}{\partial z} - \dfrac{\partial}{\partial z} \dfrac{\partial f}{\partial y} \right) \vec i + \left( \dfrac{\partial}{\partial z} \dfrac{\partial f}{\partial x} - \dfrac{\partial}{\partial x} \dfrac{\partial f}{\partial z} \right) \right) \vec j + \left( \dfrac{\partial}{\partial x} \dfrac{\partial f}{\partial y} - \dfrac{\partial}{\partial y} \dfrac{\partial f}{\partial x} \right) \right) \vec k
+& = & \left( \dfrac{\partial}{\partial y} \dfrac{\partial f}{\partial z} - \dfrac{\partial}{\partial z} \dfrac{\partial f}{\partial y} \right) \vec i + \left( \dfrac{\partial}{\partial z} \dfrac{\partial f}{\partial x} - \dfrac{\partial}{\partial x} \dfrac{\partial f}{\partial z} \right)  \vec j + \left( \dfrac{\partial}{\partial x} \dfrac{\partial f}{\partial y} - \dfrac{\partial}{\partial y} \dfrac{\partial f}{\partial x} \right) \vec k
 \end{eqnarray*}
 Since $f_{yz} = f_{zy}$, $f_{xz} = f_{zx}$, and $f_{xy} = f_{yx}$, we arrive at $\text{curl } \vec F = \vec 0$.  Therefore the curl of any conservative vector field is zero.\\
 
@@ -45,6 +45,39 @@ While we may think of curl as measuring the spin of a field, we would be incorre
 $$\text{curl } \vec F = \left| \begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ &  & \\ z & 0 & 0 \end{array} \right| = \vec j$$
 and so the curl of this vector field is in the direction of the $y$-axis. To make some sense of this, imagine a wheel placed anywhere in the $xz$-plane of this velocity vector field. The velocity at the top of the wheel will be greater than that at the bottom, causing the wheel to spin.  See Figure \ref{}. The axis of rotation is in the direction of the $y$-axis, and this is the curl vector calculated above.
 }\\
+
+\noindent\textbf{\large Conservative Fields and Potential Functions}\\
+
+Recall that a vector field $\vec F(x,y) = M(x,y) \: \vec i + N(x,y) \: \vec j$ in the $xy$-plane is conservative (is a gradient field) whenever $M_y = N_x$, which is equivalent to saying the curl of this vector field is $\vec 0$.  As we saw above, this extends to vector fields in three dimensions.  If $$\vec F(x,y,z) = M(x,y,z) \: \vec i + N(x,y,z) \: \vec j + P(x,y,z) \: \vec k$$ is conservative, then $\text{curl } \vec F(x,y,z) = \vec 0$.  In particular, $\text{curl } \vec F = \vec 0$ means that
+$$M_y = N_x, \: M_z = P_x, \text{ and } N_z = P_y.$$
+These are three equations we can deal with and possibly solve to obtain the potential function $f(x,y,z)$ so that $\vec F = \nabla f$.  Recall now the key properties of conservative vector fields, stated here now for three dimensions.\\
+
+\keyidea{idea:conservative_fields}{}
+{A vector field $\vec F(x,y,z) = M(x,y,z) \: \vec i + N(x,y,z) \: \vec j + P(x,y,z) \: \vec k$ is conservative if it has the following properties:
+\begin{enumerate}
+	\item The work $\displaystyle\oint_C \vec F \cdot d\vec r = 0$ around every closed path in space;
+	\item The value of work $\displaystyle\oint_C \vec F \cdot d\vec r$ depends only on the initial point $P$ and terminal point $Q$, not on the path in space;
+	\item $\vec F$ is a gradient field: there exists a function $f(x,y,z)$ so that $M = f_x$, $N = f_y$, and $P = f_z$;
+	\item The components of $\vec F$ satisfy $M_y = N_x$, $M_z = P_x$, and $N_z = P_y$.
+\end{enumerate}
+A field with one of these properties has all of them.  The fourth one is the quick check for a given vector field.
+}\\
+
+\example{ex_conservative_01}{}{Determine whether or not $$\vec F(x,y,z) = (z-y) \: \vec i + (x-z) \: \vec j + (y-x) \: \vec k$$ is a conservative field.}{We compute the appropriate partial derivatives of the components.  Notice that $M_z = 1$ while $P_x = -1$.  Since these are not equal, the fourth property above fails and so $\vec F$ cannot be the gradient field of a potential function.
+}\\
+
+\example{ex_conservative_02}{}{Determine whether or not $$\vec F(x,y,z) = e^{yz} \: \vec i + xz \: e^{yz} \: \vec j + xy \: e^{yz} \: \vec k$$ is a conservative field. If so, find a potential function $f(x,y,z)$ for this vector field.}{We compute the appropriate partial derivatives of the components. Notice that
+$$M_y = z \: e^{yz} = N_x, \: M_z = xy^2 \: e^{yz} = P_x, \text{ and } N_z = (x + xyz) \: e^{yz} = P_y$$
+and so $\vec F$ is conservative.  To find it potential function, we use the same technique as in Section \ref{sec:line_integrals}.  There is a function $f(x,y,z)$ so that $f_x = e^{yz}$, $f_y = xz \: e^{yz}$, and $f_z = xy \: e^{yz}$.  We start with the first and integrate with respect to $x$, which yields that
+$$f(x,y,z) = x \: e^{yz} + g(y,z)$$
+where $g$ may depend only on $y$ and $z$.  Next take the derivative of this with respect to $y$ and compare with the above $f_y$.  This yields
+$$f_y = xz \: e^{yz} + g_y(y,z) = xz \: e^{yz}$$
+and so $g_y(y,z) = 0$.  This means that $g(y,z) = g(z)$ and can only depend on $z$.  Similarly, the $z$-derivative yields
+$$f_z = xy \: e^{yz} + g'(z) = xy \: e^{yz}$$
+and so $g'(z) = 0$ meaning that $g$ is a constant. Therefore the potential function is $f(x,y,z) = x \: e^{yz} + C$ for any constant $C$.
+}\\
+
+Now that we have worked with curl and see how it relates to conservative fields, we will move on to the last result in this chapter, Stokes' Theorem.\\
 
 \noindent\textbf{\large Stokes' Theorem}\\
 
@@ -63,12 +96,12 @@ and
 $$\oint_{AC+CD+DA} \vec F \cdot d\vec R = \iint_{ACD} \text{curl } \vec F \cdot \vec n_2 \: dS.$$
 Now add.  The right sides give the integral of $\text{curl } \vec F \cdot \vec n$ over the two-triangle surface.  On the left side we get the integral over $CA$ canceling the one over $AC$ - the cross cut disappears.  That leaves $AC + BC + CD + DA$, the boundary $C$ of the surface, the left side of Stokes' Theorem. Next we give some examples of Stokes' Theorem in use.\\
 
-\example{ex_stokes_01}{}{Use Stokes' Theorem to compute $\displaystyle\iint_T \text{\curl } \vec F \cdot \vec n \: dS$, if $T$ is the part of the unit sphere $x^2 + y^2 + z^2 = 1$ lying above the $xy$-plane and 
+\example{ex_stokes_01}{}{Use Stokes' Theorem to compute $\displaystyle\iint_T \text{curl } \vec F \cdot \vec n \: dS$, if $T$ is the part of the unit sphere $x^2 + y^2 + z^2 = 1$ lying above the $xy$-plane and 
 $$\vec F(x,y,z) = y \: \vec i + x^2 \: \vec j + z \: \vec k$$}{Using Stokes' Theorem, we can change this surface integral to a line integral around the boundary of this hemisphere, which is the unit circle. We use the standard parametrization
 $$\vec r(t) = \cos(t) \: \vec i + \sin(t) \: \vec j + 0 \: \vec k$$
 for the unit circle $C$, where $0 \leq t \leq 2\pi$.  By Stokes' Theorem,
 \begin{eqnarray*}
-\displaystyle\iint_T \text{\curl } \vec F \cdot \vec n \: dS & = & \oint_C \vec F \cdot d\vec r \\
+\displaystyle\iint_T \text{curl } \vec F \cdot \vec n \: dS & = & \oint_C \vec F \cdot d\vec r \\
  & = & \int_0^{2\pi} \left( \sin(t), \cos^2(t), 0 \right) \cdot \left( -\sin(t), \cos(t), 0\right) \: dt \\
  & = & \int_0^{2\pi} -\sin^2(t) + \cos^3(t) \: dt = -\pi
 \end{eqnarray*}
@@ -93,6 +126,6 @@ Therefore by Stokes' Theorem
 In this way, we have avoided having to parametrize the boundary curve $C$ and instead only had to do a surface integral over a surface above the unit disk in the $xy$-plane. 
 }\\
 
-\noindent\textbf{\large Conservative Fields and Potential Funtions}\\
+
 
 \printexercises{exercises/14_06_exercises}
