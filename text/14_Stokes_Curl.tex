@@ -43,9 +43,11 @@ Similarly, if $\vec F$ is the curl of another vector field, say $\vec F = \text{
 
 While we may think of curl as measuring the spin of a field, we would be incorrect in thinking that a vector field made up of parallel vectors would always have zero for a curl.  The vector field in the next example is such a case, where the parallel vectors have differing lengths.\\
 
+\mfigure[scale=0.5]{.3}{Velocity field $\mathbf{V} = z \mathbf{i}$}{fig:fig_stokes_curl_wheel}{figures/fig_stokes_curl_wheel}
+
 \example{ex_curl_02}{}{Determine the curl of the vector field $\vec F(x,y,z) = z \: \vec i$, in which every vector is parallel to the $x$-axis.}{We compute
 $$\text{curl } \vec F = \left| \begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ &  & \\ z & 0 & 0 \end{array} \right| = \vec j$$
-and so the curl of this vector field is in the direction of the $y$-axis. To make some sense of this, imagine a wheel placed anywhere in the $xz$-plane of this velocity vector field. The velocity at the top of the wheel will be greater than that at the bottom, causing the wheel to spin.  See Figure \ref{}. The axis of rotation is in the direction of the $y$-axis, and this is the curl vector calculated above.
+and so the curl of this vector field is in the direction of the $y$-axis. To make some sense of this, imagine a wheel placed anywhere in the $xz$-plane of this velocity vector field. The velocity at the top of the wheel will be greater than that at the bottom, causing the wheel to spin.  See Figure \ref{fig:fig_stokes_curl_wheel}. The axis of rotation is in the direction of the $y$-axis, and this is the curl vector calculated above.
 }\\
 
 \noindent\textbf{\large Conservative Fields and Potential Functions}\\
@@ -92,7 +94,9 @@ where $\vec n$ is the unit normal vector of the surface.
 
 While this theorem is not easy to visualize, think of the right-hand side above as the sum of the spins along the surface.  The left-hand side is the total circulation (or work) around the boundary $C$.  Notice one simple corollary of this result, however.  If $\vec F$ is conservative (a gradient field) then $\text{curl } \vec F = \vec 0$ and so the work done around the closed curve $C$ is zero, as we know.\\
 
-We next provide a quick argument as to why this theorem is true, leaving out a formal proof.  In Figure \ref{} we see a triangle $ABC$ attached to a triangle $ACD$, creating a surface.  More generally $S$ will be a closed curved surface but two triangles are enough to make the point here.  In the plane of each triangle, Green's Theorem is known and gives us
+\mfigure[scale=0.5]{.3}{Surface formed by two triangles}{fig:fig_stokes_curl_triangles}{figures/fig_stokes_curl_triangles}
+
+We next provide a quick argument as to why this theorem is true, leaving out a formal proof.  In Figure \ref{fig:fig_stokes_curl_triangles} we see a triangle $ABC$ attached to a triangle $ACD$, creating a surface.  More generally $S$ will be a closed curved surface but two triangles are enough to make the point here.  In the plane of each triangle, Green's Theorem is known and gives us
 $$\oint_{AB+BC+CA} \vec F \cdot d\vec R = \iint_{ABC} \text{curl } \vec F \cdot \vec n_1 \: dS$$
 and
 $$\oint_{AC+CD+DA} \vec F \cdot d\vec R = \iint_{ACD} \text{curl } \vec F \cdot \vec n_2 \: dS.$$
@@ -112,23 +116,21 @@ In this way, we have avoided computing the curl of the given vector field as wel
 
 \example{ex_stokes_02}{}{Use Stokes' Theorem to compute $\displaystyle\oint_C \vec F \cdot d\vec r$ where 
 $$\vec F(x,y,z) = -y^2 \: \vec i + x \: \vec j + z^2 \: \vec k$$ and $C$ is the curve of intersection of the plane $z = 2-y$ and the cylinder $x^2 + y^2 = 1$, with the usual counterclockwise orientation.}{Instead of computing a line integral in this case, we will instead compute a surface integral using a surface $T$ that has $C$ as its boundary.  The surface $T$ we will choose is the elliptical region in the plane $z = 2-y$ inside the cylinder $x^2 + y^2 = 1$.  The shadow of this surface down on the $xy$-plane is the unit disc $D$.  And so with $z = 2-y$ we parametrize
-$$\vec r(x,y) = x \: \vec i + y \: \vec j + (2-y) \: vec k$$
+$$\vec r(x,y) = x \: \vec i + y \: \vec j + (2-y) \: \vec k$$
 which results in a normal vector
 $$\vec n = \vec r_x \times \vec r_y = \vec j + \vec k$$
 For the curl of $\vec F$, we compute
-$$\text{curl } \vec F = \left|\begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ & & \\ -y^2 & x & z^2 \end{array} \right| = (1-2y) \: \vec k$$
+$$\text{curl } \vec F = \left|\begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ & & \\ -y^2 & x & z^2 \end{array} \right| = (1+2y) \: \vec k$$
 Therefore by Stokes' Theorem
 \begin{eqnarray*}
 \displaystyle\oint_C \vec F \cdot d\vec r & = & \iint_T \text{curl } \vec F \cdot \vec n \: dS \\
- & = & \iint_D (0,0,1-2y) \cdot (0,1,1) \: dA \\ 
- & = & \iint_D 1-2y \: dA \\
- & = & \int_{0}^{2\pi} \int_0^1 \left( 1 - 2r\sin(\theta)\right) r \: dr \: d\theta = \pi
+ & = & \iint_D (0,0,1+2y) \cdot (0,1,1) \: dA \\ 
+ & = & \iint_D 1+2y \: dA \\
+ & = & \int_{0}^{2\pi} \int_0^1 \left( 1 + 2r\sin(\theta)\right) r \: dr \: d\theta = \pi
 \end{eqnarray*}
 In this way, we have avoided having to parametrize the boundary curve $C$ and instead only had to do a surface integral over a surface above the unit disk in the $xy$-plane. 
 }\\
 
 In closing, notice how most of the main results in this chapter (Green's Theorem, The Divergence Theorem, Stokes' Theorem) involve an interchange between one type of integral and another, such as a work line integral being equal to a flux surface integral.  Besides being useful theoretically, in certain situations one of these integrals may be easier than the other to compute directly and so we get a computational advantage as well.\\
-
-
 
 \printexercises{exercises/14_06_exercises}

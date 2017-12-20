@@ -14,7 +14,7 @@ those equations don't account for g. We must find equations for the constrained 
 
 What equation describes that point? When the circle touches the line, they are
 tangent. They have the same slope. The perpendiculars to the circle and the line go in
-the same direction. That is the key fact, which you see in Figure \ref{}.The direction
+the same direction. That is the key fact, which you see in Figure \ref{fig:fig_lagrange_first_example}.  The direction
 perpendicular to $f(x,y) = c$ is given by $\nabla f = (f_x,f_y)$. The direction perpendicular to $g(x,y) = k$ is given by $\nabla g = (g_x, g_y)$. The key idea says that those two vectors are
 parallel - one gradient vector is a multiple of the other gradient vector, with a multiplier $\lambda$ that is unknown.  That is, $\nabla f = \lambda \nabla g$.  
 
@@ -55,7 +55,11 @@ In the other case that $\lambda = \frac{1}{4}$, the first equation yields $x = -
 The equations we started with have four simultaneous solutions, at which the circle and ellipse are tangent.  The four points are $(3,0)$, $(-1,0)$, $\left( -\frac{1}{3},\frac{\sqrt{5}}{3}\right)$, and $\left( -\frac{1}{3},-\frac{\sqrt{5}}{3} \right)$.  The four values of $f$ are, respectively, $9$, $1$, $\frac{2}{3}$, and $\frac{2}{3}$. Therefore the maximum value of $f$ on the ellipse is $9$ and the minimum value is $\frac{2}{3}$.
 }
 
+\medskip
+
 Using this method, the system we need to solve includes the equations $f_x = \lambda g_x$, $f_y = \lambda g_y$, and $g = k$, with unknowns $x$, $y$, and $\lambda$.  There is no absolute method for solving this system of equations (unless they are all linear equations, then one can use elimination or Cramer's Rule to solve).  Often, the first two equations yield $x$ and $y$ in terms of $\lambda$, and substituting into $g(x,y) = k$ gives an equation for $\lambda$. This next example illustrates this method when one is maximizing or minimizing a function $f(x,y,z)$ of three variables subject to a constraint $g(x,y,z) = k$. The method is the same except that the equation $\nabla f = \lambda \nabla g$ will yield three equations in the variables $x$, $y$, and $z$, with the fourth equation $g(x,y,z) = k$ creating a system of four equations in four unknowns.
+
+\medskip
 
 \example{ex_lagrange3}{}{Suppose that $20$ square feet of cardboard is to be used to create a rectangular box with an open top. What dimensions will result in a box with the maximum volume?}{If we let $x$, $y$, and $z$ be the dimensions of the box, then the volume is given by $V(x,y,z) = xyz$ which is the function to be maximized.  The constraint in this problem is the amount of cardboard, or surface area, and so
 $$g(x,y,z) = 2xz + 2yz + xy = 20$$
@@ -83,7 +87,7 @@ This gives us $3z^2 = 5$ or $z = \sqrt{\frac{5}{3}}$.  Therefore the dimensions 
 $$x = y = 2\sqrt{\frac{5}{3}} \approx 2.58 \text{ feet, and } z = \sqrt{\frac{5}{3}} \approx 1.29 \text{ feet}.$$
 }
 
-
+\medskip
 
 \noindent\textbf{\large Maximum and Minimum with Two Constraints}\\
 

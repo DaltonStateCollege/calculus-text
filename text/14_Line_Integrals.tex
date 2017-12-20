@@ -32,9 +32,9 @@ Work is force times distance moved. In this last example it was negative, becaus
 \keyidea{idea:gradient_path_independence}{}
 {
 When $\vec F$ is the gradient of a potential function $f(x, y)$, the work $\int \vec F \cdot \vec T ds$ depends only on the endpoints $P = (x_0,y_0)$ and $Q = (x_1,y_1)$. The work is the change in $f$: if
-$$\vec F = \partial f \partial x \vec i + \partial f/\partial y \vec j$$
+$$\vec F = \partial f/\partial x \vec i + \partial f/\partial y \vec j$$
 then
-$$int_C \vec F \cdot \vec T ds = f(Q) - f(P).$$
+$$\int_C \vec F \cdot \vec T ds = f(Q) - f(P).$$
 }\\
 
 In the above example, the vector field $\vec F$ was the gradient of the potential function $f(x,y) = Mx$, and so the work done would be just $f(-1000,0) - f(1000,0) = -2000M$, as we calculated.  We move on next to a more formal definition of line integrals. \\
@@ -121,7 +121,7 @@ $$\vec F(t) = \cos^2(t) \vec i - \cos(t)\sin(t) \vec j$$
 as a function of the parameter $t$.  Computing the work done yields
 $$\int_C M \: dx + N \: dy = \int_0^{\pi/2} \cos^2(t)\left( -\sin(t) \: dt\right) + \cos(t)\sin(t)\left( \cos(t) \: dt\right) = \int_0^{\pi/2} -2\cos^2(t)\sin(t) \: dt$$
 Using a substitution of $u = \cos(t)$ and $du = -\sin(t) \: dt$ gives the work done by $\vec F$ is
-$$2\left( \dfrac{\cos^3(t)}{3} \right]_{0}^{\pi/2} = -\dfrac{2}{3}.$$
+$$2\left[ \dfrac{\cos^3(t)}{3} \right]_{0}^{\pi/2} = -\dfrac{2}{3}.$$
 Note that the work is negative because the particle is moving against the force along its path.
 }\\
 
@@ -131,7 +131,7 @@ Note that the work is negative because the particle is moving against the force 
 When a force field does work on a mass $m$, it normally gives that mass a new velocity.
 Newton's Law is $\vec F = m \vec a = m \dfrac{d \vec v}{dt}$. The work done $\int_C \vec F \cdot d\vec r$ along a path $C$ from $P$ to $Q$ is
 \begin{equation} \int (m \dfrac{d \vec v}{dt}) \cdot (\vec v dt) 
-  = \left( \dfrac{1}{2}m \vec v \cdot \vec v \right]_P^Q
+  = \left[ \dfrac{1}{2}m \vec v \cdot \vec v \right]_P^Q
   = \dfrac{1}{2}m \mid \vec v(Q) \mid^2 - \dfrac{1}{2}m \mid \vec v(P)\mid^2
 \label{workeq1}	
 \end{equation}\\
@@ -145,8 +145,9 @@ work is also the negative change in potential
 
 Comparing \ref{workeq1} with \ref{workeq2}, the combination $\frac{1}{2}m\mid\vec v \mid ^2 + f$ is the same at $P$ and $Q$. The total energy, kinetic plus potential, is \emph{conserved}.\\
 
+\mfigure[scale=0.5]{.3}{The vector field $\mathbf{R}$}{fig:fig_line_integrals_closed_path}{figures/fig_line_integrals_closed_path}
 
-Most of the examples in physics concentrate on special fields in which the work done depends only on the starting and ending points of the path. We now explain what happens when the integral is independent of the path. Suppose you integrate from $P$ to $Q$ on one path, and then back to $P$ on another path. Combined, that is a closed path from containing $P$. See Figure \ref{}. But a backward integral is the negative of a forward integral, since $d\vec r$ switches sign. If the two integrals from $P$ to $Q$ are equal, the integral around the closed path is zero.
+Most of the examples in physics concentrate on special fields in which the work done depends only on the starting and ending points of the path. We now explain what happens when the integral is independent of the path. Suppose you integrate from $P$ to $Q$ on one path, and then back to $P$ on another path. Combined, that is a closed path from containing $P$. See Figure \ref{fig:fig_line_integrals_closed_path}. But a backward integral is the negative of a forward integral, since $d\vec r$ switches sign. If the two integrals from $P$ to $Q$ are equal, the integral around the closed path is zero.
 \begin{align*}
 \oint_C \vec F \cdot d\vec r & = \int_P^Q \vec F \cdot d\vec r + \int_Q^P \vec F \cdot d\vec r \\
  & = \int_P^Q\vec F \cdot d\vec r - \int_P^Q\vec F \cdot d\vec r = 0 \\
