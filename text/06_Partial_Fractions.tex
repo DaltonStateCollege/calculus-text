@@ -108,11 +108,23 @@ $$\int\frac{1}{(x-1)(x+2)^2}\ dx = \frac19\ln|x-1| -\frac19\ln|x+2| +\frac1{3(x+
 %\enlargethispage{\baselineskip}
 \example{ex_pf4}{Integrating using partial fractions}{
 Use partial fraction decomposition to integrate $\ds \int \frac{x^3}{(x-5)(x+3)}\ dx$.}
-{Key Idea \ref{idea:partial_fraction} presumes that the degree of the numerator is less than the degree of the denominator. Since this is not the case here, we begin by using polynomial division to reduce the degree of the numerator. We omit the steps, but encourage the reader to verify that $$\frac{x^3}{(x-5)(x+3)} = x+2+\frac{19x+30}{(x-5)(x+3)}.$$
+{Key Idea \ref{idea:partial_fraction} presumes that the degree of the numerator is less than the degree of the denominator. Since this is not the case here, we begin by using polynomial division to reduce the degree of the numerator.  We divide $x^3$ by $(x-5)(x+3)=x^2-2x-15$.  At each step, divide the leading terms.  We finish when the degree of the remainder is less than the divisor $x^2-2x-15$.
+%Mike Joseph (1/29/2018) added this brief explanation and computation of the polynomial division.  The original text omitted the steps.
+$$
+\begin{array}{rlcccccccr}
+&& x & + &2  \\ \cline{2-10}\vspace{-0.9em}\\
+\multicolumn{1}{r|}{x^2-2x-15} && x^3 & &  &  &  &  & &  \\
+&-( & x^3 & - & 2x^2 & - &  15x &&&)\\ \cline{2-10}\vspace{-0.9em}\\
+&& & & 2x^2 & + & 15x & &   \\ 
+&-( &&  & 2x^2 &- & 4x & - & 30 &)\\ \cline{2-10}\vspace{-0.9em}\\
+&&&&&  & 19x & + & 30   
+\end{array}
+$$
+
+Therefore $$\frac{x^3}{(x-5)(x+3)} = x+2+\frac{19x+30}{(x-5)(x+3)}.$$
 Using Key Idea \ref{idea:partial_fraction}, we can rewrite the new rational function as:
 $$\frac{19x+30}{(x-5)(x+3)} = \frac{A}{x-5} + \frac{B}{x+3}$$ for appropriate values of $A$ and $B$. Clearing denominators, we have 
 
-\mnote{.6}{\textbf{Note:} The values of $A$ and $B$ can be quickly found using the technique described in the margin of Example \ref{ex_pf3}.}
 
 \begin{align*}
 19x+30 &= A(x+3) + B(x-5)\\
@@ -121,6 +133,7 @@ $$\frac{19x+30}{(x-5)(x+3)} = \frac{A}{x-5} + \frac{B}{x+3}$$ for appropriate va
 19&= A+B \\
 30&= 3A-5B.\\
 \intertext{Solving this system of linear equations gives}
+\mnote{.6}{\textbf{Note:} The values of $A$ and $B$ in Example \ref{ex_pf4} can be quickly found using the technique described in the margin of Example \ref{ex_pf3}.}
 125/8 &=A\\
 27/8 &=B.
 \end{align*}
@@ -130,7 +143,7 @@ We can now integrate.
 \int \frac{x^3}{(x-5)(x+3)}\ dx &= \int\left(x+2+\frac{125/8}{x-5}+\frac{27/8}{x+3}\right)\ dx \\
 					&= \frac{x^2}2 + 2x + \frac{125}{8}\ln|x-5| + \frac{27}8\ln|x+3| + C.
 \end{align*}
-\vskip-\baselineskip
+%\vskip-\baselineskip
 }\\
 %\clearpage
 
@@ -169,6 +182,38 @@ Let's start at the beginning and put all of the steps together.
 			&= 5\ln|x+1|+ \ln|x^2+6x+11| -\frac{7}{\sqrt{2}}\tan^{-1}\left(\frac{x+3}{\sqrt{2}}\right)+C.
 \end{align*}\normalsize
 As with many other problems in calculus, it is important to remember that one is not expected to ``see'' the final answer immediately after seeing the problem. Rather, given the initial problem, we break it down into smaller problems that are easier to solve. The final answer is a combination of the answers of the smaller problems.
+%\vskip-\baselineskip
+}\\
+
+\noindent\textbf{\large Substitution Before Partial Fraction Decomposition}%Added by Mike Joseph (1/29/2018)
+\vskip\baselineskip
+
+It should come as no surprise that some integrals are solved by first using another technique such as Substitution or Integration by Parts before Partial Fraction Decomposition.
+
+\example{ex_pf6}{Partial fractions after substitution}{
+Evaluate $\ds \int\frac{1}{2-e^x}\ dx.$}
+{In this integral, we begin with the substitution $u=e^x$.  Then $$du=e^x dx \Rightarrow dx=\frac{1}{e^x}du=\frac{1}{u}du.$$
+
+Thus we can rewrite the integral as $$\int\frac{1}{2-e^x}\ dx=\int\frac{1}{u(2-u)}\ du=\int\frac{-1}{u(u-2)}\ du.$$
+
+Now we decompose the integrand as
+\begin{align*}
+\frac{-1}{u(u-2)} &= \frac{A}{u}+\frac{B}{u-2}. \\
+\intertext{Now clear the denominators.}
+-1&= A(u-2) + Bu\\
+					&= (A+B)u-2A.\\
+\intertext{This implies that:}
+				0&=A+B\\
+				-1 &= -2A\\
+\end{align*}
+Then $A=1/2$ and $B=-1/2$, so the integral becomes
+\begin{align*}
+\int \frac{1}{2-e^x}\ dx &= \int\frac{-1}{u(u-2)}\ du \\
+				&= \int\Big( \frac{1/2}{u}-\frac{1/2}{u-2} \Big)\ du \\
+				&= \frac{1}{2}\ln|u|-\frac{1}{2}\ln|u-2|+C\\
+				&= \frac{1}{2}\ln\big|e^x\big|-\frac{1}{2}\ln\big|e^x-2\big|+C\\
+				&= \frac{x}{2}-\frac{1}{2}\ln\big|e^x-2\big|+C.
+\end{align*}
 }\\
 
 Partial Fraction Decomposition is an important tool when dealing with rational functions. Note that at its heart, it is a technique of algebra, not calculus, as we are rewriting a fraction in a new form. Regardless, it is very useful in the realm of calculus as it lets us evaluate a certain set of ``complicated'' integrals.

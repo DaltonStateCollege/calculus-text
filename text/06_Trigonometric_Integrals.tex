@@ -120,7 +120,7 @@ Letting $u=\sin(2x)$, we have $du = 2\cos(2x)\ dx$, hence
 Putting all the pieces together, we have
 \begin{align*}
 \int \cos^4x\sin^2x\ dx &=\int \frac18\big(1+\cos(2x)-\cos^2(2x)-\cos^3(2x)\big)\ dx \\
-					&= \frac18\Big[x+\frac12\sin(2x)-\frac12\big(x+\frac14\sin(4x)\big)-\frac12\Big(\sin(2x)-\frac13\sin^3(2x)\Big)\Big]+C \\
+					&= \frac18\Big[x+\frac12\sin(2x)-\frac12\Big(x+\frac14\sin(4x)\Big)-\frac12\Big(\sin(2x)-\frac13\sin^3(2x)\Big)\Big]+C \\
 					&=\frac18\Big[\frac12x-\frac18\sin(4x)+\frac16\sin^3(2x)\Big]+C
 \end{align*}
 \vskip-\baselineskip
@@ -134,10 +134,16 @@ The process above was a bit long and tedious, but being able to work a problem s
 Functions that contain products of sines and cosines of differing periods are important in many applications including the analysis of sound waves. Integrals of the form 
 $$\int\sin(mx)\sin(nx)\ dx,\quad \int \cos(mx)\cos(nx)\ dx \quad \text{and}\quad\int \sin(mx)\cos(nx)\ dx$$
 are best approached by first applying the Product to Sum Formulas found in the back cover of this text, namely
+%\begin{align*}
+%\sin(mx)\sin(nx) &= \frac12\Big[\cos\big((m-n)x\big)-\cos\big((m+n)x\big)\Big] \\
+%\cos(mx)\cos(nx) &= \frac12\Big[\cos\big((m-n)x\big)+\cos\big((m+n)x\big)\Big] \\
+%\sin(mx)\cos(nx) &=	\frac12\Big[\sin\big((m-n)x\big)+\sin\big((m+n)x\big)\Big]
+%\end{align*}
+%Mike Joseph 1/20/2018: Changing the above from products just with mx and nx to arbitrary x and y as the identities are stated in the back of the book.  This is for more generality; a integral of a product like sin(3x+\pi/4) sin(3x) would be tackled by converting it to a sum.
 \begin{align*}
-\sin(mx)\sin(nx) &= \frac12\Big[\cos\big((m-n)x\big)-\cos\big((m+n)x\big)\Big] \\
-\cos(mx)\cos(nx) &= \frac12\Big[\cos\big((m-n)x\big)+\cos\big((m+n)x\big)\Big] \\
-\sin(mx)\cos(nx) &=	\frac12\Big[\sin\big((m-n)x\big)+\sin\big((m+n)x\big)\Big]
+\sin(x)\sin(y) &= \frac12\Big[\cos(x-y)-\cos\big(x+y)\Big] \\
+\cos(x)\cos(y) &= \frac12\Big[\cos\big(x-y\big)+\cos\big(x+y\big)\Big] \\
+\sin(x)\cos(y) &=	\frac12\Big[\sin\big(x-y\big)+\sin\big(x+y\big)\Big]
 \end{align*}
 
 \example{ex_trigint4}{Integrating products of $\sin(mx)$ and $\cos(nx)$}{
@@ -148,12 +154,17 @@ Evaluate $\ds\int\sin(5x)\cos(2x)\ dx$.}
 												&= -\frac16\cos(3x) - \frac1{14}\cos(7x) + C
 \end{align*}
 \vskip-\baselineskip
-}\\
+}
+\vspace{0.1 in}\\
+
+%Line below added by Mike Joseph 1/20/2018.
+Integrating more general products of sines and cosines such as $\int \sin\left(3x+\frac{\pi}{4}\right)\sin(3x) dx$ are also best approached by converting to a sum of trigonometric functions.
+
 
 \noindent\textbf{\large Integrals of the form $\ds\int\tan^mx\sec^nx\ dx$.}
 \vskip\baselineskip
 
-When evaluating integrals of the form $\int \sin^mx\cos^nx\ dx$, the Pythagorean Theorem allowed us to convert even powers of sine into even powers of cosine, and vise--versa. If, for instance, the power of sine was odd, we pulled out one $\sin x$ and converted the remaining even power of $\sin x$ into a function using powers of $\cos x$, leading to an easy substitution.
+When evaluating integrals of the form $\int \sin^mx\cos^nx\ dx$, the Pythagorean Theorem allowed us to convert even powers of sine into even powers of cosine, and vice versa. If, for instance, the power of sine was odd, we pulled out one $\sin x$ and converted the remaining even power of $\sin x$ into a function using powers of $\cos x$, leading to an easy substitution.
 
 The same basic strategy applies to integrals of the form $\int \tan^mx\sec^n x\ dx$, albeit a bit more nuanced. The following three facts will prove useful:
 \begin{itemize}
