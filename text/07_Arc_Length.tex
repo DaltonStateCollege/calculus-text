@@ -177,8 +177,8 @@ Find the surface area of the solid formed by revolving $y=\sin x$ on $[0,\pi]$ a
 {The setup is relatively straightforward. Using Key Idea \ref{idea:surface_area}, we have the surface area $SA$ is:
 \begin{align*}
 SA  &=	2\pi\int_0^\pi \sin x\sqrt{1+\cos^2x}\ dx \\
-		&=	-2\pi\frac12\left.\left(\sinh^{-1}(\cos x)+\cos x\sqrt{1+\cos^2x}\right)\right|_0^\pi \\
-		&= 2\pi\left(\sqrt{2}+\sinh^{-1} 1\right) \\
+		&=	-2\pi\frac12\left.\left(\ln\left(\cos x+\sqrt{1+\cos^2 x}\right)+\cos x\sqrt{1+\cos^2x}\right)\right|_0^\pi \\
+		&= 2\pi\left(\sqrt{2}+\ln\left(1+\sqrt{2}\right)\right) \\
 		&\approx 14.42\ \text{units}^2.
 \end{align*}
 The integration step above is nontrivial, utilizing an integration method called Trigonometric Substitution. 
@@ -221,8 +221,8 @@ Find the surface area of the solid formed by revolving the curve $y=x^2$ on $[0,
 	\begin{align*}
 	SA &= 2\pi\int_0^1 x^2\sqrt{1+(2x)^2}\ dx.
 	\intertext{Like the integral in Example \ref{ex_sa1}, this requires Trigonometric Substitution.}
-		&= \left.\frac{\pi}{32}\left(2(8x^3+x)\sqrt{1+4x^2}-\sinh^{-1}(2x)\right)\right|_0^1\\
-		&=\frac{\pi}{32}\left(18\sqrt{5}-\sinh^{-1}2\right)\\
+		&= \left.\frac{\pi}{32}\left(2(8x^3+x)\sqrt{1+4x^2}-\ln\left(2x+\sqrt{1+4x^2}\right)\right)\right|_0^1\\
+		&=\frac{\pi}{32}\left(18\sqrt{5}-\ln\left(2+\sqrt{5}\right)\right)\\
 		&\approx 3.81\ \text{units}^2.
 	\end{align*}
 	The solid formed by revolving $y=x^2$ around the $x$-axis is graphed in Figure \ref{fig:sa2} (a).

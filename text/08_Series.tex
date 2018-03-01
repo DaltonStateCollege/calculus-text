@@ -165,7 +165,7 @@ $$\sum_{n=1}^\infty \frac{1}{(an+b)^p}, \qquad \text{where $p>0$ and $a$, $b$ ar
 Like geometric series, one of the nice things about p--series is that they have easy to determine convergence properties.
 
 \theorem{thm:pseries}{Convergence of General $p$--Series}
-{A general $p$--series $\ds\sum_{n=1}^\infty \frac{1}{(an+b)^p}$ will converge if, and only if, $p>1$.\index{series!p@$p$-series}\index{p@$p$-series}
+{A general $p$--series $\ds\sum_{n=1}^\infty \frac{1}{(an+b)^p}$ converges if and only if $p>1$.\index{series!p@$p$-series}\index{p@$p$-series}
 \index{convergence!of p@of $p$-series}\index{divergence!of p@of $p$-series}
 }
 \mnote{.3}{\textbf{Note:} Theorem \ref{thm:pseries} assumes that $an+b\neq 0$ for all $n$. If $an+b=0$ for some $n$, then of course the series does not converge regardless of $p$ as not all of the terms of the sequence are defined.}
@@ -319,7 +319,7 @@ Before using this theorem, we provide a few ``famous'' series.
 \example{ex_series5}{Evaluating series}{
 Evaluate the given series.\\
 
-\noindent 1. $\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}\big(n^2-n\big)}{n^3}$\qquad 2. $\ds\sum_{n=1}^\infty \frac{1000}{n!}$\qquad 3. $\ds \frac1{16}+\frac1{25}+\frac1{36}+\frac1{49}+\cdots$
+\noindent 1. $\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}\big(n^2-n\big)}{n^3}$\qquad 2. $\ds\sum_{n=1}^\infty \frac{1000}{n!}$\\3. $\ds \frac1{16}+\frac1{25}+\frac1{36}+\frac1{49}+\cdots$ \qquad 4. $\ds \sum_{n=1}^\infty \frac{n^2}{n!}$
 }
 {\begin{enumerate}
 \item	We start by using algebra to break the series apart:
@@ -355,6 +355,17 @@ This is illustrated in Figure \ref{fig:series5}(b). The graph shows how this par
 \frac{\pi^2}{6} - \left(\frac11+\frac14+\frac19\right) &= \sum_{n=4}^\infty \frac1{n^2} \\
 \frac{\pi^2}{6} - \frac{49}{36} &= \sum_{n=4}^\infty \frac1{n^2} \\
 0.2838&\approx \sum_{n=4}^\infty \frac1{n^2} 
+\end{align*}
+
+\item              We manipulate this series to look like the series that involves $e$ in Key Idea \ref{idea:famous_series}.  In the steps below, we twice change relabel $n$ as $n+1$.  Note that $n!=n(n-1)!$.
+\begin{align*}
+\sum_{n=1}^\infty \frac{n^2}{n!} &= \sum_{n=1}^\infty \frac{n}{(n-1)!}\\
+&= \sum_{n=0}^\infty \frac{n+1}{n!}\\
+&= \sum_{n=0}^\infty \frac{n}{n!} + \sum_{n=0}^\infty \frac{1}{n!}\\
+&= \sum_{n=1}^\infty \frac{1}{(n-1)!} + e\\
+&= \sum_{n=0}^\infty \frac{1}{n!} + e\\
+&= e+e\\
+&=2e.
 \end{align*}
 \end{enumerate}
 \vskip-1.5\baselineskip

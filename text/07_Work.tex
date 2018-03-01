@@ -26,9 +26,9 @@ $$W = \int_a^b F(x)\ dx.$$
 A 60m climbing rope is hanging over the side of a tall cliff. How much work is performed in pulling the rope up to the top, where the rope has a mass of 66g/m? 
 %How much work is performed pulling a 60 m climbing rope up a cliff face, where the rope has a mass of 66 g/m?
 }
-{We need to create a force function $F(x)$ on the interval $[0,60]$. To do so, we must first decide what $x$ is measuring: it is the length of the rope still hanging or is it the amount of rope pulled in? As long as we are consistent, either approach is fine. We adopt for this example the convention that $x$ is the amount of rope pulled in. This seems to match intuition better; pulling up the first 10 meters of rope involves $x=0$ to $x=10$ instead of $x=60$ to $x=50$. 
+{We need to create a force function $F(x)$ on the interval $[0,60]$. To do so, we must first decide what $x$ is measuring: is it the length of the rope still hanging or is it the amount of rope pulled in? As long as we are consistent, either approach is fine. We adopt for this example the convention that $x$ is the amount of rope pulled in. This seems to match intuition better; pulling up the first 10 meters of rope involves $x=0$ to $x=10$ instead of $x=60$ to $x=50$. 
 
-As $x$ is the amount of rope pulled in, the amount of rope still hanging is $60-x$. This length of rope has a mass of 66 g/m, or $0.066$ kg/m. The the mass of the rope still hanging is $0.066(60-x)$ kg; multiplying this mass by the acceleration of gravity, 9.8 m/s$^2$, gives our variable force function $$F(x) = (9.8)(0.066)(60-x) = 0.6468(60-x).$$
+As $x$ is the amount of rope pulled in, the amount of rope still hanging is $60-x$. This length of rope has a mass of 66 g/m, or $0.066$ kg/m. Then the mass of the rope still hanging is $0.066(60-x)$ kg; multiplying this mass by the acceleration of gravity, 9.8 m/s$^2$, gives our variable force function $$F(x) = (9.8)(0.066)(60-x) = 0.6468(60-x).$$
 
 Thus the total work performed in pulling up the rope is 
 $$W = \int_0^{60} 0.6468(60-x)\ dx = 1,164.24\ \text{J}.$$
@@ -173,7 +173,7 @@ The distance the water at height $y$ travels is given by $h(y)=3-y$. Thus the to
 %W &= 		\int_{-10}^0 F(y)h(y)\ dy \\
 W	&=	\int_{-10}^0 62.4\pi(1/5y+2)^2(3-y)\ dy\\
 	&=	62.4\pi\int_{-10}^0\left(-\frac1{25}y^3-\frac{17}{25}y^2-\frac85y+12\right)\ dy\\
-	&=  62.2\pi\cdot\frac{220}{3} \approx 14,376 \text{ ft--lb.}	
+	&=  62.4\pi\cdot\frac{220}{3} \approx 14,376 \text{ ft--lb.}	
 \end{align*}
 \vskip-\baselineskip	
 }\\

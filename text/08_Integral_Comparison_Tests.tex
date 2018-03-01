@@ -70,7 +70,7 @@ Theorem \ref{thm:pseries} was given without justification, stating that the gene
 {
 Use the Integral Test to prove that $\ds \sum_{n=1}^\infty \frac1{(an+b)^p}$ converges if, and only if, $p>1$.
 }
-{Consider the integral $\ds\int_1^\infty \frac1{(ax+b)^p}\ dx$; assuming $p\neq 1$,
+{Consider the integral $\ds\int_1^\infty \frac1{(ax+b)^p}\ dx$.  Assume $ax+b\not=0$ for $x\geq1$.  (If $ax+b=0$ for some non-integer $x>1$, then there exists $N$ for which $ax+b=0$ for $x\geq N$, so integrate on $[N,\infty)$ instead.) Assuming $p\neq 1$,
 \begin{align*}
 \int_1^\infty \frac1{(ax+b)^p}\ dx &= \lim_{c\to\infty} \int_1^c \frac1{(ax+b)^p}\ dx \\
 		&= \lim_{c\to\infty} \frac{1}{a(1-p)}(ax+b)^{1-p}\Big|_1^c\\
@@ -107,7 +107,7 @@ Determine the convergence of $\ds\sum_{n=1}^\infty \frac1{3^n+n^2}$.
 }
 {This series is neither a geometric or $p$-series, but seems related. We predict it will converge, so we look for a series with larger terms that converges. (Note too that the Integral Test seems difficult to apply here.)
 
-Since $3^n < 3^n+n^2$, $\ds \frac1{3^n}> \frac1{3^n+n^2}$ for all $n\geq1$. The series $\ds\sum_{n=1}^\infty \frac{1}{3^n}$ is a convergent geometric series; by Theorem \ref{thm:series_direct_compare}, $\ds \sum_{n=1}^\infty \frac1{3^n+n^2}$ converges.
+Since $3^n < 3^n+n^2$, it follows that $\ds \frac1{3^n}> \frac1{3^n+n^2}$ for all $n\geq1$. The series $\ds\sum_{n=1}^\infty \frac{1}{3^n}$ is a convergent geometric series; by Theorem \ref{thm:series_direct_compare}, $\ds \sum_{n=1}^\infty \frac1{3^n+n^2}$ converges.
 }\\
 
 \example{ex_dct2}{Applying the Direct Comparison Test}{
@@ -165,7 +165,7 @@ Instead, we use the Limit Comparison Test and compare with the series $\ds\sum_{
 We know $\ds\sum_{n=1}^\infty \frac1{3^n}$ is a convergent geometric series, hence $\ds\sum_{n=1}^\infty \frac1{3^n-n^2}$ converges as well.
 }\\
 
-As mentioned before, practice helps one develop the intuition to quickly choose a series with which to compare. A general rule of thumb is to pick a series based on the dominant term in the expression of $\{a_n\}$. It is also helpful to note that factorials dominate exponentials, which dominate algebraic functions (e.g., polynomials), which dominate logarithms. In the previous example, the dominant term of $\ds\frac{1}{3^n-n^2}$ was $3^n$, so we compared the series to $\ds \sum_{n=1}^\infty \frac1{3^n}$. It is hard to apply the Limit Comparison Test to series containing factorials, though, as we have not learned how to apply L'H\^opital's Rule to $n!$.\\
+As mentioned before, practice helps one develop the intuition to quickly choose a series with which to compare. A general rule of thumb is to pick a series based on the dominant term in the expression of $\{a_n\}$. It is also helpful to note that among sequences that approach $\infty$ as $n\rightarrow \infty$, factorials dominate exponentials, which dominate algebraic functions (e.g., polynomials), which dominate logarithms. In the previous example, the dominant term of $\ds\frac{1}{3^n-n^2}$ was $3^n$, so we compared the series to $\ds \sum_{n=1}^\infty \frac1{3^n}$. It is hard to apply the Limit Comparison Test to series containing factorials, though, as we have not learned how to apply L'H\^opital's Rule to $n!$.\\
 
 \example{ex_lct3}{Applying the Limit Comparison Test}{
 Determine the convergence of $\ds\sum_{n=1}^\infty \frac{\sqrt{n}+3}{n^2-n+1}$.}

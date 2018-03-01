@@ -107,7 +107,7 @@ Approximate the sum of the following series, accurate to within $0.001$.\\
 	%We can arrive at this approximation another way. 
 	%Part 2 of Theorem \ref{thm:alt_series_approx} states that the sum $L$ lies between successive partial sums. It is straightforward to compute $S_6 \approx 0.899782$, $S_7 \approx 0.9027$ and $S_8\approx 0.9007$. We know the sum must lie between these last two partial sums; since they agree to two places after the decimal, we know $L\approx 0.90$. 
 	
-	\item		We want to find $n$ where $\ln (n)/n < 0.001$. We start by solving $\ln (n)/n = 0.001$ for $n$. This cannot be solved algebraically, so we will use Newton's Method to approximate a solution. 
+	\item		We want to find $n$ where $\ln (n)/n < 0.001$. We start by solving $\ln (n)/n = 0.001$ for $n$. This cannot be solved algebraically (among functions we are familiar with, though there is a function called the Lambert W Function, which basically acts as an inverse of $xe^x$, that can express solutions to this), so we will use Newton's Method to approximate a solution. 
 	
 	Let $f(x) = \ln(x)/x-0.001$; we want to know where $f(x) = 0$. We make a guess that $x$ must be ``large,'' so our initial guess will be $x_1=1000$. Recall how Newton's Method works: given an approximate solution $x_n$, our next approximation $x_{n+1}$ is given by
 	$$x_{n+1} = x_n - \frac{f(x_n)}{\fp(x_n)}.$$
@@ -206,7 +206,7 @@ $$
 \frac12\left(1-\frac12+\frac13-\frac14+\frac15-\frac16+\cdots\right) & = \frac12\ln 2.
 \end{align*}
 
-By rearranging the terms of the series, we have arrived at a different sum! (One could \textit{try} to argue that the Alternating Harmonic Series does not actually converge to $\ln 2$, because rearranging the terms of the series \emph{shouldn't} change the sum. However, the Alternating Series Test proves this series converges to $L$, for some number $L$, and if the rearrangement does not change the sum, then $L = L/2$, implying $L=0$. But the Alternating Series Approximation Theorem quickly shows that $L>0$. The only conclusion is that the rearrangement \emph{did} change the sum.) This is an incredible result.\\
+By rearranging the terms of the series, we have arrived at a different sum! (One could \textit{try} to argue that the Alternating Harmonic Series does not actually converge to $\ln 2$, because rearranging the terms of the series \emph{shouldn't} change the sum. However, the Alternating Series Test proves this series converges to $L$, for some number $L$, and if the rearrangement does not change the sum, then $L = L/2$, implying $L=0$. But the Alternating Series Approximation Theorem quickly shows that $L>0$. The only conclusion is that the rearrangement \emph{did} change the sum.) This is an incredible result.  In fact, if the Harmonic Series $\sum_{n=1}^\infty \frac{1}{n}$ were to converge, then  $\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}$ would be absolutely convergent, so this would violate Theorem~\ref{thm:abs_convergence}.  So we have given another proof for the divergence of the Harmonic Series.\\
 
 We end here our study of tests to determine convergence. The back cover of this text contains a table summarizing the tests that one may find useful. 
 

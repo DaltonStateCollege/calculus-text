@@ -9,7 +9,7 @@ We commonly refer to a set of events that occur one after the other as a \textit
 For instance, the numbers 2, 4, 6, 8, \ldots, form a sequence. The order is important; the first number is 2, the second is 4, etc. It seems natural to seek a formula that describes a given sequence, and often this can be done. For instance, the sequence above could be described by the function $a(n) = 2n$, for the values of $n = 1, 2, \ldots$ To find the 10$^\text{th}$ term in the sequence, we would compute $a(10)$. This leads us to the following, formal definition of a sequence.
 
 \definition{def:sequence}{Sequence}
-{A \textbf{sequence} is a function $a(n)$ whose domain is $\mathbb{N}$. The \textbf{range} of a sequence is the set of all distinct values of $a(n)$.
+{A \textbf{sequence} is a function $a(n)$ whose domain is $\mathbb{N}$ (the set $\{1,2,3,4,\dots\}$ of natural numbers). The \textbf{range} of a sequence is the set of all distinct values of $a(n)$.
 \index{sequences!definition}\\
 
 The \textbf{terms} of a sequence are the values $a(1)$, $a(2)$, \ldots, which are usually denoted with subscripts as $a_1$, $a_2$, \ldots.\\
@@ -24,7 +24,7 @@ A sequence $a(n)$ is often denoted as $\{a_n\}$.}
 
 In general, $n! = n\cdot (n-1)\cdot(n-2)\cdots 2\cdot1$, where $n$ is a natural number.\\
 
-We define $0! = 1$. While this does not immediately make sense, it makes many mathematical formulas work properly.} 
+We define $0! = 1$. This is so that the property $(n+1)!=(n+1)n!$ that holds for $n\geq1$ also holds for $n=0$. This is similar to how the definition of an exponent is extended from positive integers to zero in the natural way.} 
 \clearpage
 \example{ex_seq1}{Listing terms of a sequence}{
 List the first four terms of the following sequences.\\
@@ -51,7 +51,7 @@ We can plot the terms of a sequence with a scatter plot. The ``$x$''-axis is use
 
 \noindent $\ds a_5 = \frac{(-1)^{5(6)/2}}{5^2}=-\frac1{25}$.
 
-\noindent We gave one extra term to begin to show the pattern of signs is ``$-$, $-$, $+$, $+$, $-$, $-$, $\ldots$, due to the fact that the exponent of $-1$ is a special quadratic. This sequence is plotted in Figure \ref{fig:seq1b}(c).
+\noindent We gave one extra term to begin to show the pattern of signs is ``$-$, $-$, $+$, $+$, $-$, $-$, $\ldots$, due to the fact that the exponent of $-1$ is a special quadratic. Note that the sign is $+$ exactly when $n(n+1)$ is divisible by 4, which is exactly when either $n$ or $n+1$ is divisible by 4. This sequence is plotted in Figure \ref{fig:seq1b}(c).
 \mtable{.6}{Plotting sequences in Example \ref{ex_seq1}.}{fig:seq1b}{
 \begin{tabular}{c}
 \myincludegraphics{figures/figseq1a} \\ 
@@ -180,7 +180,7 @@ It seems that  %$\ds \left\{\frac{(-1)^n}{n}\right\}$
 $\{(-1)^n/n\}$ converges to 0 but we lack the formal tool to prove it. The following theorem gives us that tool.
 
 \theorem{thm:abs_val_seq}{Absolute Value Theorem}
-{Let $\{a_n\}$ be a sequence. If $\ds \lim_{n\to\infty} |a_n| = 0$, then $\ds \lim_{n\to\infty} a_n = 0$\index{Absolute Value Theorem}\index{limit!Absolute Value Theorem}\index{sequence!Absolute Value Theorem}
+{Let $\{a_n\}$ be a sequence. Then $\ds \lim_{n\to\infty} |a_n| = 0$ if and only if $\ds \lim_{n\to\infty} a_n = 0$\index{Absolute Value Theorem}\index{limit!Absolute Value Theorem}\index{sequence!Absolute Value Theorem}
 }
 
 \enlargethispage{\baselineskip}
@@ -227,7 +227,7 @@ We continue our study of the limits of sequences by considering some of the prop
 \end{minipage}
 \begin{minipage}[t]{.5\linewidth}
 \begin{enumerate}\addtocounter{enumi}{2}
-\item		$\ds \lim_{n\to\infty} (a_n/b_n) = L/K$, $K\neq 0$
+\item		$\ds \lim_{n\to\infty} (a_n/b_n) = L/K$ when $K\neq 0$
 \item		$\ds \lim_{n\to\infty} c\cdot a_n = c\cdot L$
 \end{enumerate}
 \end{minipage}
@@ -260,11 +260,11 @@ Evaluate the following limits.\\
 There is more to learn about sequences than just their limits. We will also study their range and the relationships terms have with the terms that follow. We start with some definitions describing properties of the range.
 
 \definition{def:bounded}{Bounded and Unbounded Sequences}
-{A sequence $\{a_n\}$ is said to be \textbf{bounded} if there exists real numbers $m$ and $M$ such that $m < a_n < M$ for all $n$ in $\mathbb{N}$.\\
+{A sequence $\{a_n\}$ is said to be \textbf{bounded} if there exists real numbers $m$ and $M$ such that $m \leq a_n \leq M$ for all $n$ in $\mathbb{N}$.\\
 
 A sequence $\{a_n\}$ is said to be \textbf{unbounded} if it is not bounded.\\
 
-A sequence $\{a_n\}$ is said to be \textbf{bounded above} if there exists an $M$ such that $a_n < M$ for all $n$ in $\mathbb{N}$; it is \textbf{bounded below} if there exists an $m$ such that $m<a_n$ for all $n$ in $\mathbb{N}$.
+A sequence $\{a_n\}$ is said to be \textbf{bounded above} if there exists an $M$ such that $a_n \leq M$ for all $n$ in $\mathbb{N}$; it is \textbf{bounded below} if there exists an $m$ such that $m\leq a_n$ for all $n$ in $\mathbb{N}$.
 \index{sequences!boundedness}\index{bounded sequence}\index{unbounded sequence}
 }
 
@@ -277,7 +277,7 @@ Determine the boundedness of the following sequences.\\
 1. $\ds\{a_n\}  = \left\{\frac1n\right\}$ \qquad 2. 	$\{a_n\} = \{2^n\}$ \hfill \null
 }
 {\begin{enumerate}
-\item		The terms of this sequence are always positive but are decreasing, so we have $0<a_n<2$ for all $n$. Thus this sequence is bounded. Figure \ref{fig:seq3}(a) illustrates this.
+\item		The terms of this sequence are always positive but are decreasing, so we have $0\leq a_n\leq 1$ for all $n$. Thus this sequence is bounded. Figure \ref{fig:seq3}(a) illustrates this.
 
 %\mfigure{.55}{A plot of $\{a_n\} = \{1/n\}$ from Example \ref{ex_seq3}.}{fig:seq3a}{figures/figseq3a}
 \mtable{.5}{A plot of $\{a_n\} = \{1/n\}$ and $\{a_n\} = \{2^n\}$ from Example \ref{ex_seq3}.}{fig:seq3}{
@@ -424,7 +424,7 @@ Knowing that a sequence is monotonic can be useful. In particular, if we know th
 
 Consider once again the sequence $\{a_n\} = \{1/n\}$. It is easy to show it is monotonically decreasing and that it is always positive (i.e., bounded below by 0). Therefore we can conclude by Theorem \ref{thm:monotonic_converge} that the sequence converges. We already knew this by other means, but in the following section this theorem will become very useful.
 
-Sequences are a great source of mathematical inquiry. The On-Line Encyclopedia of Integer Sequences (\url{http://oeis.org}) contains thousands of sequences and their formulae. (As of this writing, there are 257,537 sequences in the database.) Perusing this database quickly demonstrates that a single sequence can represent several different ``real life'' phenomena. 
+Sequences are a great source of mathematical inquiry. The On-Line Encyclopedia of Integer Sequences (\url{http://oeis.org}) contains thousands of sequences with formulas when known. (As of this writing, there are 299,701 sequences in the database.  Not all sequences have a known formula.) Perusing this database quickly demonstrates that a single sequence can represent several different ``real life'' phenomena. 
 
 Interesting as this is, our interest actually lies elsewhere. We are more interested in the \emph{sum} of a sequence. That is, given a sequence $\{a_n\}$, we are very interested in $a_1+a_2+a_3+\cdots$. Of course, one might immediately counter with ``Doesn't this just add up to `infinity'?'' Many times, yes, but there are many important cases where the answer is no. This is the topic of \emph{series}, which we begin to investigate in the next section.
 
