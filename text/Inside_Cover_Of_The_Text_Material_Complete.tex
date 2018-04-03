@@ -588,7 +588,7 @@ $x=r/s$, where $r$ is a factor of $a_0$ and $s$ is a factor of $a_n$.\\
 \vskip\baselineskip
 
 \noindent \textbf{\large Factoring by Grouping}\\
-$ac x^3 + adx^2 + bcx + bd = ax^2(cs+d)+b(cx+d)=(ax^2+b)(cx+d)$\\
+$ac x^3 + adx^2 + bcx + bd = ax^2(cx+d)+b(cx+d)=(ax^2+b)(cx+d)$\\
 \vskip\baselineskip
 
 \noindent \textbf{\large Arithmetic Operations}\\
@@ -702,13 +702,16 @@ Telescoping Series &\rule[-15pt]{0pt}{33pt} $\displaystyle{\sum^\infty_{n=1}{(b_
 
 $p$-Series & \rule[-15pt]{0pt}{33pt}$\displaystyle{\sum^\infty_{n=1}{\frac{1}{(an+b)^p}}}$ & $p>1$ & $p\leq 1$ & \\ \hline
 
-Integral Test & \rule[-20pt]{0pt}{40pt}$\displaystyle{\sum^\infty_{n=0}{a_n}}$ & \rule[-15pt]{0pt}{40pt}\parbox{1in}{\centering$\displaystyle \int_1^\infty a(n)\ dn$\\[3pt] is convergent} & \parbox{1in}{\centering$\displaystyle \int_1^\infty a(n)\ dn$\\[3pt] is divergent} & \parbox{1.2in}{$a_n = a(n)$ must be continuous}\\ \hline
+Integral Test & \rule[-20pt]{0pt}{40pt}$\displaystyle{\sum^\infty_{n=0}{a_n}}$ & \rule[-15pt]{0pt}{40pt}\parbox{1in}{\centering$\displaystyle \int_1^\infty a(n)\ dn$\\[3pt] is convergent} & \parbox{1in}{\centering$\displaystyle \int_1^\infty a(n)\ dn$\\[3pt] is divergent} & \parbox{1.2in}{$a_n = a(n)$ must be positive, continuous, and decreasing.}\\ \hline
 
 Direct Comparison & \rule[-30pt]{0pt}{65pt}$\displaystyle{\sum^\infty_{n=0}{a_n}}$ & \parbox{1in}{\centering$\displaystyle \sum_{n=0}^\infty b_n $\\[3pt] converges and \\[3pt] $0\leq a_n\leq b_n$}%
-& \parbox{1in}{\centering$\displaystyle \sum_{n=0}^\infty b_n $\\[3pt] diverges and \\[3pt] $0\leq b_n\leq a_n$} & \\ \hline
+& \parbox{1in}{\centering $\displaystyle \sum_{n=0}^\infty b_n$\\[3pt] diverges and \\[3pt] $0\leq b_n\leq a_n$} & $\{a_n\}$ must be positive\\\hline
 
-Limit Comparison & \rule[-30pt]{0pt}{65pt}$\displaystyle{\sum^\infty_{n=0}{a_n}}$ & \parbox{1.3in}{\centering$\displaystyle \sum_{n=0}^\infty b_n $\\[3pt] converges and \\[3pt] $\displaystyle \lim_{n\to\infty} a_n/b_n  \geq 0$}%
-& \parbox{1in}{\centering$\displaystyle \sum_{n=0}^\infty b_n $\\[3pt] diverges and \\[3pt] $\displaystyle \lim_{n\to\infty} a_n/b_n > 0$}  & \parbox{1.5in}{\centering Also diverges if\\[3pt] $\displaystyle \lim_{n\to\infty} a_n/b_n=\infty$}\\ \hline
+Limit Comparison & \rule[-30pt]{0pt}{65pt}$\displaystyle{\sum^\infty_{n=0}{a_n}}$ & \parbox{1.3in}{\centering$\displaystyle \sum_{n=0}^\infty b_n $\\[3pt] converges and \\[3pt] $\displaystyle \lim_{n\to\infty} a_n/b_n  \geq 0$ (but not $\infty$)}%
+& \parbox{1in}{\centering$\displaystyle \sum_{n=0}^\infty b_n$\\[3pt] diverges and \\[3pt] $\displaystyle \lim_{n\to\infty} a_n/b_n > 0$ (or $\infty$)}  & \parbox{1.5in}{\centering $\{a_n\}$ must be positive}\\ \hline
+
+Alternating Series & \rule[-30pt]{0pt}{65pt}$\displaystyle{\sum^\infty_{n=0}{(-1)^n a_n}}$ or $\displaystyle{\sum^\infty_{n=0}{(-1)^{n+1} a_n}}$& \parbox{1.3in}{\centering $a_n$ positive, decreasing, and $\lim\limits_{n\rightarrow\infty}a_n=0$}%
+& & \parbox{1.5in}{\centering Can't be used to show divergence, though if $\lim\limits_{n\rightarrow\infty}a_n\not=0$, it diverges by the $n$th-Term test.}\\ \hline
 
 Ratio Test & \rule[-30pt]{0pt}{65pt}$\displaystyle{\sum^\infty_{n=0}{a_n}}$ &%
  \parbox{1.3in}{\centering$\displaystyle \lim_{n\to\infty} \frac{a_{n+1}}{a_n}  < 1$}%
