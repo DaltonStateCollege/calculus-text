@@ -144,10 +144,12 @@ To find the point where the tangent line has a slope of $-2$, we set $t=-2$. Thi
 
 We sometimes chose the parameter to accurately model physical behavior.\\
 
-\example{ex_pareq6}{Converting from rectangular to parametric}{
-An object is fired from a height of 0ft and lands 6 seconds later, 192ft away. Assuming ideal projectile motion, the height, in feet, of the object can be described by $h(x) = -x^2/64+3x$, where $x$ is the distance in feet from the initial location. (Thus $h(0) = h(192) = 0$ft.) Find parametric equations $x=f(t)$, $y=g(t)$ for the path of the projectile where $x$ is the horizontal distance the object has traveled at time $t$ (in seconds) and $y$ is the height at time $t$.
+\example{ex_pareq6}{Motion of a projectile}{
+An object is fired from a height of 0ft and lands 6 seconds later, 192ft away.
+%Assuming ideal projectile motion, the height, in feet, of the object can be described by $h(x) = -x^2/64+3x$, where $x$ is the distance in feet from the initial location. (Thus $h(0) = h(192) = 0$ft.)
+Find parametric equations $x=f(t)$, $y=g(t)$ for the path of the projectile where $x$ is the horizontal distance the object has traveled at time $t$ (in seconds) and $y$ is the height at time $t$.
 }
-{Physics tells us that the horizontal motion of the projectile is linear; that is, the horizontal speed of the projectile is constant. Since the object travels 192ft in 6s, we deduce that the object is moving horizontally at a rate of 32ft/s, giving the equation $x=32t$. As $y=-x^2/64+3x$, we find $y= -16t^2+96t$. We can quickly verify that $y\primeskip''=-32$ft/s$^2$, the acceleration due to gravity, and that the projectile reaches its maximum at $t=3$, halfway along its path.
+{Physics tells us that the horizontal motion of the projectile is linear; that is, the horizontal speed of the projectile is constant. Since the object travels 192ft in 6s, we deduce that the object is moving horizontally at a rate of $\frac{192 \mathrm{ft}}{6 \mathrm{s}} = 32$ft/s, giving the equation $x=32t$.  For the vertical motion, $y''=-32$ ft/s, which is Earth's gravitational constant.  Therefore, $y'=-32t+v_0$.  Since the projectile begins on the ground and reaches the ground 6 seconds later, the maximum height is reached after 3 seconds.  At this point $t=3$, the vertical velocity is 0 as it changes direction.  Plugging into the $y'$ equation, we obtain $0=-32(3)+v_0$, so $v_0=96$ ft/s.  Since $y'=-32t+96$, it follows that $y=-16t^2+96t+h_0$.  Since the initial height $h_0=0$, $y=-16t^2+96t$.
 
 These parametric equations make certain determinations about the object's location easy: 2 seconds into the flight the object is at the point $\big(x(2),y(2)\big) = \big(64,128\big)$. That is, it has traveled horizontally 64ft and is at a height of 128ft, as shown in Figure \ref{fig:pareq6}.
 \mfigure{.8}{Graphing projectile motion in Example \ref{ex_pareq6}.}{fig:pareq6}{figures/figpareq6}
