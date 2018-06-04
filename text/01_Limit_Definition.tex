@@ -159,7 +159,7 @@ We have also picked $\delta$ to be smaller than ``necessary.'' We could get by w
 
 \mfigure{.8}{Choosing $\delta = \epsilon/5$ in Example \ref{ex_compute_lim2}.}{fig:limit_eover5}{figures/figlimit_proof2a}
 
-In summary, given $\epsilon > 0$, set $\delta=\leq\epsilon/5$.  Then $|x - 2| < \delta$ implies 
+In summary, given $\epsilon > 0$, set $\delta$ to be any positive number $\leq \epsilon/5$.  Then $|x - 2| < \delta$ implies 
 $|x^2 - 4|< \epsilon$ (i.e. $|y - 4|< \epsilon$) as desired.  This shows that $\displaystyle \lim_{x\rightarrow 2} x^2 = 4 $. Figure \ref{fig:limit_eover5} gives a visualization of this; by restricting $x$ to values within $\delta = \epsilon/5$ of 2, we see that $f(x)$ is within $\epsilon$ of $4$.
 }\\
 
@@ -245,7 +245,7 @@ x^2+x-1 &< 5 &\text{which implies that}\notag\\
 \end{align}
  So we set $\delta \leq \epsilon/5$. This ends our scratch--work, and we begin the formal proof (which also helps us understand why this was a good choice of $\delta$).
 
-Given $\epsilon$, let $\delta \leq \epsilon/5$. We want to show that when $|x-1|<\delta$, then $|(x^3-2x)-(-1)|<\epsilon$. We start with $|x-1|<\delta$:
+Given $\epsilon>0$, let $\delta \leq \epsilon/5$. We want to show that whenever $|x-1|<\delta$, then $|(x^3-2x)-(-1)|<\epsilon$. We start with $|x-1|<\delta$:
 \begin{align*}
 |x-1| &< \delta \\
 |x-1| &< \frac{\epsilon}5\\
