@@ -118,13 +118,13 @@ where any of the coefficients may be 0 except for $a_n$ and $b_m$.
 \begin{enumerate}
 \item If $n=m$, then $\ds\lim_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = \frac{a_n}{b_m}$.
 \item If $n<m$, then $\ds\lim_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = 0$.
-\item If $n>m$, then $\ds\lim_{x\rightarrow\infty} f(x)$ and $\lim_{x\rightarrow-\infty} f(x)$ are both infinite.
+\item If $n>m$, then $\ds\lim_{x\rightarrow\infty} f(x)$ and $\lim_{x\rightarrow-\infty} f(x)$ are both infinite ($\infty$ or $-\infty$).
 \end{enumerate}
 }
 
 We can see why this is true.  If the highest power of $x$ is the same in both the numerator and denominator (i.e. $n=m$), we will be in a situation like the example above, where we will divide by $x^n$ and in the limit all the terms will approach 0 except for $a_nx^n/x^n$ and $b_mx^m/x^n$. Since $n=m$, this will leave us with the limit $a_n/b_m$.  If $n<m$, then after dividing through by $x^m$, all the terms in the numerator will approach 0 in the limit, leaving us with $0/b_m$ or 0.  If $n>m$, and we try dividing through by $x^n$, we end up with all the terms in the denominator tending toward 0, while the $x^n$ term in the numerator does not approach 0.  This is indicative of some sort of infinite limit.
 
-Intuitively, as $x$ gets very large, all the terms in the numerator are small in comparison to $a_nx^n$, and likewise all the terms in the denominator are small compared to $b_nx^m$.  If $n=m$, looking only at these two important terms, we have $(a_nx^n)/(b_nx^m)$.  This reduces to $a_n/b_m$.  If $n<m$, the function behaves like $a_n/(b_mx^{m-n})$, which tends toward 0.  If $n>m$, the function behaves like $a_nx^{n-m}/b_m$, which will tend to either $\infty$ or $-\infty$ depending on the values of $n$, $m$, $a_n$, $b_m$ and whether you are looking for $\lim_{x\rightarrow\infty} f(x)$ or $\lim_{x\rightarrow-\infty} f(x)$.
+Intuitively, as $x$ gets very large (approaches $\infty$ or $-\infty$), all the terms in the numerator are small in comparison to $a_nx^n$, and likewise all the terms in the denominator are small compared to $b_nx^m$.  If $n=m$, looking only at these two important terms, we have $(a_nx^n)/(b_nx^m)$.  This reduces to $a_n/b_m$.  If $n<m$, the function behaves like $a_n/(b_mx^{m-n})$, which tends toward 0.  If $n>m$, the function behaves like $a_nx^{n-m}/b_m$, which will tend to either $\infty$ or $-\infty$ depending on the values of $n$, $m$, $a_n$, $b_m$ and whether you are looking for $\lim_{x\rightarrow\infty} f(x)$ or $\lim_{x\rightarrow-\infty} f(x)$.
 
 With care, we can quickly evaluate limits at infinity for a large number of functions by considering the largest powers of $x$. For instance, consider again $\ds\lim_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}},$ graphed in Figure \ref{fig:hzasy}(b). When $x$ is very large, $x^2+1 \approx x^2$. Thus $$\sqrt{x^2+1}\approx \sqrt{x^2} = |x|,\quad \text{and}\quad \frac{x}{\sqrt{x^2+1}} \approx \frac{x}{|x|}.$$ This expression is 1 when $x$ is positive and $-1$ when $x$ is negative. Hence we get asymptotes of $y=1$ and $y=-1$, respectively.\\
 
@@ -178,7 +178,7 @@ Use Theorem \ref{thm:lim_rational_fn_at_infty} to evaluate each of the following
 	\end{tabular}
 	}
 	
-	\item		The highest power of $x$ is in the numerator so the limit will be $\infty$ or $-\infty$.  To see which, consider only the dominant terms from the numerator and denominator, which are $x^2$ and $-x$.  The expression in the limit will behave like $x^2/(-x) = -x$ for large values of $x$.  Therefore, the limit is $-\infty$. See Figure \ref{fig:hzasy3}(c).
+	\item		The highest power of $x$ is in the numerator so the limit will be $\infty$ or $-\infty$.  To see which, consider only the dominant (leading) terms from the numerator and denominator, which are $x^2$ and $-x$.  The expression in the limit will behave like $x^2/(-x) = -x$ for large values of $x$.  Therefore, the limit is $-\infty$. See Figure \ref{fig:hzasy3}(c).
 	
 	%\mfigure{.3}{Visualizing $\ds\lim_{x\rightarrow\infty}\frac{x^2-1}{3-x}$.}{fig:hzasy7}{figures/fighzasy7}
 	\end{enumerate}
@@ -196,6 +196,65 @@ Here are some important facts on limits of transcendental functions involving in
 \item $\ds \lim_{x \to -\infty} \tan^{-1}(x) = -\frac{\pi}{2}$ and $\ds \lim_{x \to \infty} \tan^{-1}(x) = \frac{\pi}{2}$
 \end{enumerate}
 }
+
+A table of values is great for understanding the concept of a limit.  The following example, however, illustrates why a table cannot be used to prove a limit.  Rather, determining a limit must be done analytically.
+
+\example{ex_hzasy4}{A limit for which a table may be misleading}{
+Use Theorem \ref{thm:lim_transcendental_fn_involving_infty} to evaluate $\ds\lim_{x\rightarrow\infty}\frac{226}{355}\tan^{-1}(x)$.
+}
+{The table in Figure~\ref{fig:ex_hzasy4} suggests that the limit is 1.  However, since we can only plug in finite numbers, this is not a proof of this limit.  Using Theorem \ref{thm:lim_transcendental_fn_involving_infty},
+\begin{align*}
+\lim_{x\rightarrow\infty}\frac{226}{355}\tan^{-1}(x)&=\frac{226}{355}\lim_{x\rightarrow\infty}\tan^{-1}(x)\\
+&=\frac{226}{355}\cdot\frac{\pi}{2}\\
+&=\frac{113\pi}{355}.
+\end{align*}
+From this computation, we see that $\lim_{x\rightarrow\infty}\frac{226}{355}\tan^{-1}(x)$ is not 1, but rather $113\pi/355\approx 0.999999915$, also a plausible answer based on the table.
+\mtable{.73}{Using this table to compute the limit in Example \ref{ex_hzasy4} suggests the limit is 1.  However, the limit is not 1 as we determine analytically.}{fig:ex_hzasy4}{%
+\begin{tabular}{cc}
+		$x$ & $\frac{226}{355}\tan^{-1}(x)$ \\ \hline
+		\rule{0pt}{11pt} 10 & 0.9365489 \\
+		100 & 0.9936339 \\
+		1000 & 0.9993633\\
+		10000 & 0.9999362\\
+		100000 & 0.9999935\\
+		1000000 & 0.9999993\\
+		\end{tabular} \\[10pt]
+}
+\vskip -\baselineskip
+}\\
+
+The following theorem states that forms like ``$1/\infty$'' or ``$0/\infty$'' are 0.  Basically, it says that if the numerator of a function approaches a number, whereas the denominator approaches $\pm\infty$, then the limit is 0.
+
+\theorem{thm:lim_num_divided_by_infty}{Limit of a Function Whose Denominator Approaches Infinity}
+{Let $L$ be a real number.
+\begin{enumerate}
+\item If $\ds\lim\limits_{x\rightarrow\infty}f(x)=L$ and $\ds\lim\limits_{x\rightarrow\infty}g(x)=\pm\infty$, then $\ds\lim\limits_{x\rightarrow\infty}\frac{f(x)}{g(x)}=0$.
+\item If $\ds\lim\limits_{x\rightarrow-\infty}f(x)=L$ and $\ds\lim\limits_{x\rightarrow-\infty}g(x)=\pm\infty$, then $\ds\lim\limits_{x\rightarrow-\infty}\frac{f(x)}{g(x)}=0$.
+\end{enumerate}
+}
+
+\example{ex_hzasy5}{Finding limits of rational functions}{
+Use Theorem \ref{thm:lim_num_divided_by_infty} to evaluate each of the following limits.
+
+\noindent\begin{minipage}[t]{.5\textwidth}
+\begin{enumerate}
+\item		$\displaystyle\lim_{x\rightarrow\infty}\frac{1}{x+e^x}$
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.5\textwidth}
+\begin{enumerate}\addtocounter{enumi}{1}
+\item		$\displaystyle\lim_{x\rightarrow\infty}\frac{\cos x}{x+e^x}$
+\end{enumerate}
+\end{minipage}
+}
+{
+	\begin{enumerate}
+	\item		Clearly the limit of the numerator is $\ds\lim\limits_{x\rightarrow\infty}1=1$.  For the denominator, $\ds\lim\limits_{x\rightarrow\infty}x+e^x=\infty$ as it is the sum of two functions that approach $\infty$.  Using Theorem \ref{thm:lim_num_divided_by_infty}, $$\lim_{x\rightarrow\infty}\frac{1}{x+e^x}=0.$$
+
+\item For the numerator, $\ds\lim\limits_{x\rightarrow\infty}\cos x$ does not exist because $\cos x$ oscillates between $-1$ and $1$ as $x$ approaches infinity.  So Theorem \ref{thm:lim_num_divided_by_infty} cannot be used directly.  However, $\cos x$ is bounded between two numbers, so we can use the Squeeze Theorem.  Note that $-1\leq \cos x \leq 1$ for all real numbers $x$.  Then $\ds\lim_{x\rightarrow\infty}\frac{1}{x+e^x}=0$ by part 1.  For the same reason, $\ds\lim_{x\rightarrow\infty}\frac{-1}{x+e^x}=0$.  Using the Squeeze Theorem,  $$\lim_{x\rightarrow\infty}\frac{\cos x}{x+e^x}=0.$$
+	\end{enumerate}
+\vskip -\baselineskip
+}\\
 
 \clearpage
 \vskip 2\baselineskip
@@ -224,7 +283,7 @@ These are just two quick examples of why we are interested in limits. Many stude
 
 %\end{document}
 
-%Do both limits to infinity, limits resulting in “infinity”.
+%Do both limits to infinity, limits resulting in ï¿½infinityï¿½.
 %Define more clearly indeterminate form.
 %Thm: Rules about limits involving infinity
 %Thm: Something about the limits as x ? 8 and rational functions? 

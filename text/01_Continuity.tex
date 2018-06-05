@@ -31,7 +31,7 @@ Let $f$ be defined as shown in Figure \ref{fig_continuous1}. Give the interval(s
 We conclude that $f$ is continuous at every point of $(0,3)$ except at $x=1$. Therefore $f$ is continuous on $(0,1)\cup(1,3)$.}\\
 
 \example{ex_contint2}{Finding intervals of continuity}{
-The \textit{floor function},\index{floor function} $f(x) = \lfloor x \rfloor$, returns the largest integer smaller than the input $x$. (For example, $f(\pi) = \lfloor \pi \rfloor = 3$.) The graph of $f$ in Figure \ref{fig:continuous2} demonstrates why this is often called a ``step function.'' \\
+The \textit{floor function},\index{floor function} $f(x) = \lfloor x \rfloor$, returns the largest integer less than the input $x$. (For example, $f(\pi) = \lfloor \pi \rfloor = 3$.) The graph of $f$ in Figure \ref{fig:continuous2} demonstrates why this is often called a ``step function.'' \\
 
 \noindent Give the intervals on which $f$ is continuous.
 
@@ -115,7 +115,7 @@ The following functions are continuous on their domains. \index{continuous funct
 \item		$\ds f(x) = \sin x$\addtocounter{enumi}{1}
 \item		$\ds f(x) =  \tan x$\addtocounter{enumi}{1}
 \item		$\ds f(x) =  \sec x$\addtocounter{enumi}{1}
-\item		$\ds f(x) =  \ln x$\addtocounter{enumi}{1}
+\item		$\ds f(x) =  \log_a x$ ($a>0, a\not=1$)\addtocounter{enumi}{1}
 \item		$\ds f(x) =  a^x$ ($a>0$)
 \end{enumerate}
 \end{minipage}
@@ -156,7 +156,7 @@ State the interval(s) on which each of the following functions is continuous.
 	\mfigure{.7}{A graph of $f$ in Example \ref{ex_cont_funct}(1).}{fig_continuous3}{figures/figContinuous3}
 			\item		The functions $y=x$ and $y=\sin x$ are each continuous everywhere, hence their product is, too.
 			\item		Theorem \ref{thm:continuous_functions} states that $f(x) = \tan x$ is continuous ``on its domain.'' Its domain includes all real numbers except odd multiples of $\pi/2$. Thus $f(x) = \tan x$ is continuous on $$\ldots \left(-\frac{3\pi}{2},-\frac{\pi}2\right),\ \left(-\frac{\pi}2,\frac{\pi}2\right),\ \left(\frac{\pi}2,\frac{3\pi}2\right),\ldots,$$ or, equivalently, on $D = \{x\in \mathbb{R}\ |\ x\neq n\cdot \frac{\pi}2,\ $n$\ \text{is an odd integer} \}.$
-			\item		The domain of $y = \sqrt{x}$ is $[0,\infty)$. The range of $y=\ln x$ is $(-\infty,\infty)$, but if we restrict its domain to $[1,\infty)$ its range is $[0,\infty)$. So restricting $y = \ln x$ to the domain of $[1,\infty)$ restricts its output is $[0,\infty)$, on which $y = \sqrt{x}$ is defined. Thus the domain of $f(x) = \sqrt{\ln x}$ is $[1,\infty)$.
+			\item		The domain of $y = \sqrt{x}$ is $[0,\infty)$. The range of $y=\ln x$ is $(-\infty,\infty)$, but if we restrict its domain to $[1,\infty)$ its range is $[0,\infty)$. So restricting $y = \ln x$ to the domain of $[1,\infty)$ restricts its output is $[0,\infty)$, on which $y = \sqrt{x}$ is defined. Thus the domain of $f(x) = \sqrt{\ln x}$ is $[1,\infty)$.  Using Theorem \ref{thm:continuous_functions} and the Theorem \ref{thm:continuity_algebra} for composition of functions, $f(x) = \sqrt{\ln x}$ is continuous on its domain of $[1,\infty)$
 			\end{enumerate}
 \vskip -\baselineskip
 }\\

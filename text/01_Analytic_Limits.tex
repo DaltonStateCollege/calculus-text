@@ -114,7 +114,7 @@ Let $c$ be a real number in the domain of the given function and let $n$ be a po
 \begin{minipage}[t]{.33\specialboxlength}
 \begin{enumerate}\addtocounter{enumi}{6}
 \item		$\ds \lim_{x\to c} a^x = a^c$ ($a>0$)
-\item		$\ds \lim_{x\to c} \ln x = \ln c$
+\item		$\ds \lim_{x\to c} \log_a x = \log_a c$
 \item		$\ds \lim_{x\to c} \sqrt[n]{x} = \sqrt[n]{c}$\end{enumerate}
 \end{minipage}
 }
@@ -254,7 +254,7 @@ then $(x-c)$ is a factor of both $g(x)$ and $f(x)$. One can then use algebra to 
 \example{ex_limit_allbut1}{Evaluating a limit using Theorem \ref{thm:limit_allbut1}}
 {Evaluate $\ds \lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15}$.}
 {We begin by applying Theorem \ref{thm:lim_continuous} and substituting 3 for $x$. This returns the familiar indeterminate form of ``0/0''. %\zerooverzero. 
-Since the numerator and denominator are each polynomials, we know that $(x-3)$ is factor of each. Using whatever method is most comfortable to you, factor out $(x-3)$ from each (using polynomial division, synthetic division, a computer algebra system, etc.). We find that $$\frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15} = \frac{(x-3)(x^2+x-2)}{(x-3)(2 x^2+9 x-5)}.$$ We can cancel the $(x-3)$ terms as long as $x\neq 3$. Using Theorem \ref{thm:limit_allbut1} we conclude:
+Since the numerator and denominator are each polynomials, we know that $(x-3)$ is factor of each. Using whatever method is most comfortable to you, factor out $(x-3)$ from each (using polynomial division, synthetic division, etc.). We find that $$\frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15} = \frac{(x-3)(x^2+x-2)}{(x-3)(2 x^2+9 x-5)}.$$ We can cancel the $(x-3)$ terms as long as $x\neq 3$. Using Theorem \ref{thm:limit_allbut1} we conclude:
 		\begin{align*}
 		\lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15} &= \lim_{x\to 3}\frac{(x-3)(x^2+x-2)}{(x-3)(2 x^2+9 x-5)} \\
 																															&=	\lim_{x\to 3} \frac{(x^2+x-2)}{(2 x^2+9 x-5)}\\
@@ -262,7 +262,26 @@ Since the numerator and denominator are each polynomials, we know that $(x-3)$ i
 		\end{align*}
 \vskip -\baselineskip
 }\\
-																															
+
+In the following example, the function involves square roots.  We describe an algebra trick used to get the necessary cancellation in order to compute the limit.\\
+
+\example{ex_limit_sqrt_conj}{Evaluating a limit by multiplying numerator and denominator by a conjugate expression}
+{Evaluate $\ds \lim_{x\to 1} \frac{\sqrt{3x-2}-\sqrt{x}}{x-1}$.}
+{The numerator is not a polynomial, so we cannot factor the expression.  However, to get rid of the ``$0/0$'' problem, we would like to cancel a factor in the numerator and denominator.  The numerator contains square roots, so we use an algebra trick where we first multiply the numerator and denominator by the conjugate of the numerator.  The conjugate of $\sqrt{3x-2}-\sqrt{x}$ is formed by changing the sign between the square roots between '$+$' and '$-$'.  In this case the conjugate is $\sqrt{3x-2}+\sqrt{x}$.  (If the denominator contained square root(s) instead, we would multiply by the denominator's conjugate instead.)  Therefore
+\begin{align*}
+\lim_{x\to 1} \frac{\sqrt{3x-2}-\sqrt{x}}{x-1} &= \lim_{x\to 1} \frac{\sqrt{3x-2}-\sqrt{x}}{x-1}\cdot \frac{\sqrt{3x-2}+\sqrt{x}}{\sqrt{3x-2}+\sqrt{x}}\\
+&=\lim_{x\to 1} \frac{\left(\sqrt{3x-2}-\sqrt{x}\right)\left(\sqrt{3x-2}+\sqrt{x}\right)}{(x-1)\left(\sqrt{3x-2}+\sqrt{x}\right)}\\
+&=\lim_{x\to 1} \frac{\left(\sqrt{3x-2}\right)^2-\left(\sqrt{x}\right)^2}{(x-1)\left(\sqrt{3x-2}+\sqrt{x}\right)}\\
+&=\lim_{x\to 1} \frac{3x-2-x}{(x-1)\left(\sqrt{3x-2}+\sqrt{x}\right)}\\
+&=\lim_{x\to 1} \frac{2x-2}{(x-1)\left(\sqrt{3x-2}+\sqrt{x}\right)}\\
+&=\lim_{x\to 1} \frac{2(x-1)}{(x-1)\left(\sqrt{3x-2}+\sqrt{x}\right)}\\
+&=\lim_{x\to 1} \frac{2}{\sqrt{3x-2}+\sqrt{x}}\\
+&=\lim_{x\to 1} \frac{2}{\sqrt{3(1)-2}+\sqrt{1}}\\
+&=\lim_{x\to 1} \frac{2}{1+1}\\
+&=1.
+\end{align*}
+\vskip -\baselineskip
+}\\																														
 
 
 We end this section by revisiting a limit first seen in Section \ref{sec:limit_intro}, a limit of a difference quotient. Let $f(x) = -1.5x^2+11.5x$; we approximated the limit $\ds \lim_{h\to 0}\frac{f(1+h)-f(1)}{h}\approx 8.5.$ We formally evaluate this limit in the following example.\\
