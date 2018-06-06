@@ -31,9 +31,8 @@ indeterminate form. So we employ a limit, as we did in Section \ref{sec:limit_in
 
 We can approximate the value of this limit numerically with small values of $h$ as seen in Figure \ref{table:falling}. It looks as though the velocity is approaching $-64$ ft/s. Computing the limit directly gives
 		\begin{align*}\lim_{h\to 0} \frac{f(2+h)-f(2)}{h} &= \lim_{h\to 0}\frac{-16(2+h)^2+150 - (-16(2)^2+150)}{h} \\
-																											&=	\lim_{h\to 0}\frac{-64h-16h^2}{h} \\
-																											&= \lim_{h\to 0}-64 -16h \\
-																											&=-64.
+&= \lim_{h\to 0}\frac{-16\left(4+4h+h^2\right)+150 - (-64+150)}{h}\\
+&= \lim_{h\to 0}\frac{-64-64h-16h^2+150 -86}{h}\\																									&=	\lim_{h\to 0}\frac{-64h-16h^2}{h} \\																									&= \lim_{h\to 0}-64 -16h \\																									&=-64.
 		\end{align*}
 		
 \mtable{.5}{Approximating the instantaneous velocity with average velocities over a small time period $h$.}{table:falling}%
@@ -96,6 +95,8 @@ Let $f(x) = 3x^2+5x-7$. Find:
 					\begin{align*}
 						\fp(1) &=	\lim_{h\to 0} \frac{f(1+h)-f(1)}{h} \\
 										&=	\lim_{h\to 0} \frac{3(1+h)^2+5(1+h)-7 - (3(1)^2+5(1)-7)}{h}\\
+										&=	\lim_{h\to 0} \frac{3\left(1+2h+h^2\right)+5+5h-7 - 1}{h}\\
+										&=	\lim_{h\to 0} \frac{3+6h+3h^2+5+5h-7 - 1}{h}\\
 					%\end{align*}
 					%\begin{align*}
 										&=	\lim_{h\to 0} \frac{3h^2+11h}{h}\\
@@ -108,6 +109,8 @@ Let $f(x) = 3x^2+5x-7$. Find:
 					\begin{align*}
 					\fp(3) &=	\lim_{h\to 0} \frac{f(3+h)-f(3)}{h} \\
 									&=	\lim_{h\to 0} \frac{3(3+h)^2+5(3+h)-7 - (3(3)^2+5(3)-7)}{h} \\
+									&=	\lim_{h\to 0} \frac{3\left(9+6h+h^2\right)+15+5h-7 - 35}{h} \\
+									&=	\lim_{h\to 0} \frac{27+18h+3h^2+15+5h-7 - 35}{h} \\
 									&=	\lim_{h\to 0} \frac{3h^2+23h}{h}\\
 									&= \lim_{h\to 0} 3h+23 \\
 									&= 23.
@@ -149,6 +152,7 @@ One type of function that does not benefit from a tangent--line approximation is
 	\begin{align*}
 	\fp(1) &=	\lim_{h\to 0}\frac{f(1+h)-f(1)}{h} \\
 					&=	\lim_{h\to 0} \frac{3(1+h)+5 - (3+5)}{h}\\
+					&=	\lim_{h\to 0} \frac{3+3h+5 - 8}{h}\\
 					&=	\lim_{h\to 0} \frac{3h}{h}\\
 					&=	\lim_{h\to 0} 3\\
 					&= 3.
@@ -219,6 +223,8 @@ Let $f(x) = 3x^2+5x-7$ as in Example \ref{ex_derv_point1}. Find $\fp(x)$.}
 	\begin{align*}
 	\fp(x) &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h} \\
 					&=	\lim_{h\to 0} \frac{3(x+h)^2+5(x+h)-7-(3x^2+5x-7)}{h}\\
+					&=	\lim_{h\to 0} \frac{3\left(x^2+2xh+h^2\right)+5x+5h-7-(3x^2+5x-7)}{h}\\
+					&=	\lim_{h\to 0} \frac{3x^2+6xh+3h^2+5x+5h-7-3x^2-5x+7}{h}\\
 					&=	\lim_{h\to 0} \frac{3h^2 +6xh+5h}{h}\\
 					&= \lim_{h\to 0} 3h+6x+5\\
 					&= 6x+5
@@ -232,7 +238,8 @@ Let $\ds f(x) = \frac{1}{x+1}$. Find $\fp(x)$.}
 	\begin{align*}
 		\fp(x) 	&= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}\\
 						&=	\lim_{h\to 0} \frac{\frac{1}{x+h+1}-\frac{1}{x+1}}{h} \intertext{Now find common denominator then subtract; pull $1/h$ out front to facilitate reading.}
-						&= \lim_{h\to 0} \frac{1}{h}\cdot\left(\frac{x+1}{(x+1)(x+h+1)} - \frac{x+h+1}{(x+1)(x+h+1)}\right)\\
+&=	\lim_{h\to 0} \frac{1}{h}\left(\frac{1}{x+h+1}-\frac{1}{x+1}\right)\\						
+&= \lim_{h\to 0} \frac{1}{h}\cdot\left(\frac{x+1}{(x+1)(x+h+1)} - \frac{x+h+1}{(x+1)(x+h+1)}\right)\\
 						&=	\lim_{h\to 0} \frac 1h\cdot\left(\frac{x+1-(x+h+1)}{(x+1)(x+h+1)}\right)\\
 	%\end{align*}%\\
 	%\begin{align*}
@@ -256,7 +263,7 @@ Find the derivative of $f(x) = \sin x$.}
 						&= \lim_{h\to 0} \frac{\sin x(\cos h-1) + \cos x\sin h}{h} & & \text{\scriptsize (split into two fractions)}\\
 						&= \lim_{h\to 0} \left(\frac{\sin x(\cos h-1)}{h} + \frac{\cos x\sin h}{h}\right) & & \left(\parbox{130pt}{\scriptsize use $\ds \lim_{h\to 0} \frac{\cos h-1}{h} = 0$ and $\ds \lim_{h\to 0} \frac{\sin h}{h} = 1$}\right)\\
 						&=	\sin x\cdot 0 + \cos x \cdot 1 \\
-						&= \cos x\ !
+						&= \cos x
 		\end{align*}
 		\normalsize
 We have found that when $f(x) = \sin x$, $\fp(x) = \cos x$. This should be somewhat surprising; the result of a tedious limit process and the sine function is a nice function. Then again, perhaps this is not entirely surprising. The sine function is periodic -- it repeats itself on regular intervals. Therefore its rate of change also repeats itself on the same regular intervals. We should have known the derivative would be periodic; we now know exactly which periodic function it is.
