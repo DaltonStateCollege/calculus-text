@@ -34,56 +34,52 @@
 %\begin{document}
 \noindent\textbf{\large Differentiation Rules}\\
 \footnotesize
-\noindent\begin{minipage}[t]{.20\linewidth}
+\noindent\begin{minipage}[t]{.33\linewidth}
 \begin{enumerate}
 \item \deriv{cx}{c}
-\item	\deriv{u\pm v}{u'\pm v'}
-\item	\deriv{u\cdot v}{uv'+ u'v}
-\item	\deriv{\frac uv}{\frac{vu'-uv'}{v^2}}
-\item	\deriv{u(v)}{u'(v)v'}
+\item	\deriv{f(x)\pm g(x)}{\fp(x)\pm g\primeskip'(x)}
+\item	\deriv{f(x)\cdot g(x)}{f'(x)g(x)+f(x)g'(x)}
+\item	\deriv{\frac{f(x)}{g(x)}}{\frac{g(x)f'(x)-f(x)g'(x)}{g(x)^2}}
+\item	\deriv{f(g(x))}{f'(g(x)g'(x)}
 \item	\deriv{c}{0}
 \item	\deriv{x}{1}
 \item	\deriv{x^n}{nx^{n-1}}
 \item	\deriv{e^x}{e^x}
-\end{enumerate}
-\end{minipage}
-\begin{minipage}[t]{.23\linewidth}
-\begin{enumerate}\addtocounter{enumi}{9}
 \item	\deriv{a^x}{\ln a\cdot a^x}
 \item	\deriv{\ln x}{\frac{1}{x}}
-\item	\deriv{\log_a x}{\frac{1}{\ln a}\cdot \frac1x}
+\item	\deriv{\log_a x}{\frac{1}{\ln (a)x}}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.33\linewidth}
+\begin{enumerate}\addtocounter{enumi}{12}
 \item	\deriv{\sin x}{\cos x}
 \item	\deriv{\cos x}{-\sin x}
-\item	\deriv{\csc x}{-\csc x\cot x}
-\item	\deriv{\sec x}{\sec x\tan x}
 \item	\deriv{\tan x}{\sec^2 x}
 \item	\deriv{\cot x}{-\csc^2 x}
-\end{enumerate}
-\end{minipage}
-\begin{minipage}[t]{.25\linewidth}
-\begin{enumerate}\addtocounter{enumi}{18}
+\item	\deriv{\sec x}{\sec x\tan x}
+\item	\deriv{\csc x}{-\csc x\cot x}
 \item	\deriv{\sin^{-1}x}{\frac{1}{\sqrt{1-x^2}}}
 \item	\deriv{\cos^{-1}x}{\frac{-1}{\sqrt{1-x^2}}}
-\item	\deriv{\csc^{-1}x}{\frac{-1}{|x|\sqrt{x^2-1}}}
-\item	\deriv{\sec^{-1}x}{\frac{1}{|x|\sqrt{x^2-1}}}
 \item	\deriv{\tan^{-1}x}{\frac{1}{1+x^2}}
 \item	\deriv{\cot^{-1}x}{\frac{-1}{1+x^2}}
-\item	\deriv{\cosh x}{\sinh x}
-\item \deriv{\sinh x}{\cosh x}
-\item \deriv{\tanh x}{\sech^2 x}
+\item	\deriv{\sec^{-1}x}{\frac{1}{|x|\sqrt{x^2-1}}}
+\item	\deriv{\csc^{-1}x}{\frac{-1}{|x|\sqrt{x^2-1}}}
 \end{enumerate}
 \end{minipage}
-\begin{minipage}[t]{.25\linewidth}
-\begin{enumerate}\addtocounter{enumi}{27}
+\begin{minipage}[t]{.33\linewidth}
+\begin{enumerate}\addtocounter{enumi}{24}
+\item \deriv{\sinh x}{\cosh x}
+\item	\deriv{\cosh x}{\sinh x}
+\item \deriv{\tanh x}{\sech^2 x}
+\item	\deriv{\coth x}{-\csch^2 x}
 \item \deriv{\sech x}{-\sech x\tanh x}
 \item	\deriv{\csch x}{-\csch x\coth x}
-\item	\deriv{\coth x}{-\csch^2 x}
-\item	\deriv{\cosh^{-1}x}{\frac1{\sqrt{x^2-1}}}
 \item	\deriv{\sinh^{-1}x}{\frac1{\sqrt{x^2+1}}}
-\item	\deriv{\sech^{-1}x}{\frac{-1}{x\sqrt{1-x^2}}}
-\item	\deriv{\csch^{-1}x}{\frac{-1}{|x|\sqrt{1+x^2}}}
+\item	\deriv{\cosh^{-1}x}{\frac1{\sqrt{x^2-1}}}
 \item	\deriv{\tanh^{-1}x}{\frac1{1-x^2}}
 \item	\deriv{\coth^{-1}x}{\frac1{1-x^2}}
+\item	\deriv{\sech^{-1}x}{\frac{-1}{x\sqrt{1-x^2}}}
+\item	\deriv{\csch^{-1}x}{\frac{-1}{|x|\sqrt{1+x^2}}}
 \end{enumerate}
 \end{minipage}
 \vskip4\baselineskip
@@ -102,22 +98,22 @@ $\ n\neq -1$
 \item	\myint{e^x}{e^x+C}
 \item	\myint{a^x}{\frac{1}{\ln a}\cdot a^x+C}
 \item	\myint{\frac{1}{x}}{\ln |x| + C}
-\item	\myint{\cos x}{\sin x+C}
 \item	\myint{\sin x}{-\cos x+C}
+\item	\myint{\cos x}{\sin x+C}
 \end{enumerate}
 \end{minipage}
 \begin{minipage}[t]{.31\linewidth}
 \begin{enumerate}\addtocounter{enumi}{10}
 \item	\myint{\tan x}{-\ln |\cos x|+C}
+\item	\myint{\cot x}{\ln |\sin x|+C}
 \item	\myint{\sec x}{\ln |\sec x+\tan x|+C}
 \item	\myint{\csc x}{-\ln |\csc x+\cot x|+C}
-\item	\myint{\cot x}{\ln |\sin x|+C}
 \item	\myint{\sec^2 x}{\tan x+C}
 \item	\myint{\csc^2x}{-\cot x+C}
 \item	\myint{\sec x\tan x}{\sec x+C}
 \item	\myint{\csc x\cot x}{-\csc x+C}
-\item	\myint{\cos^2x}{\frac12x+\frac14\sin\big(2x\big)+C}
 \item	\myint{\sin^2x}{\frac12x-\frac14\sin\big(2x\big)+C}
+\item	\myint{\cos^2x}{\frac12x+\frac14\sin\big(2x\big)+C}
 \item	\myint{\frac{1}{x^2+a^2}}{\frac1a\tan^{-1}\left(\frac xa\right)+C}
 \end{enumerate}
 \end{minipage}
@@ -125,8 +121,8 @@ $\ n\neq -1$
 \begin{enumerate}\addtocounter{enumi}{21}
 \item	\myint{\frac{1}{\sqrt{a^2-x^2}}}{\sin^{-1}\left(\frac xa\right)+C}
 \item	\myint{\frac{1}{x\sqrt{x^2-a^2}}}{\frac1a\sec^{-1}\left(\frac{|x|}{a}\right)+C}
-\item	\myint{\cosh x}{\sinh x+C}
 \item	\myint{\sinh x}{\cosh x+C}
+\item	\myint{\cosh x}{\sinh x+C}
 \item	\myint{\tanh x}{\ln(\cosh x)+C}
 \item	\myint{\coth x}{\ln |\sinh  x|+C}
 \item	\myint{\frac{1}{\sqrt{x^2-a^2}}}{\ln\big|x+\sqrt{x^2-a^2}\big|+C}
@@ -297,9 +293,9 @@ $\ds \tan^2x = \frac{1-\cos 2x}{1+\cos 2x}$
 $\sin(-x) = -\sin x$\vskip 5pt
 $\cos (-x) = \cos x$\vskip 5pt
 $\tan (-x) = -\tan x$\vskip 5pt
-$\csc(-x) = -\csc x$\vskip 5pt
-$\sec (-x) = \sec x$\vskip 5pt
 $\cot (-x) = -\cot x$\vskip 5pt
+$\sec (-x) = \sec x$\vskip 5pt
+$\csc(-x) = -\csc x$\vskip 5pt
 \end{minipage}
 
 \vskip \baselineskip

@@ -107,7 +107,7 @@ Approximate the sum of the following series, accurate to within $0.001$.\\
 	%We can arrive at this approximation another way. 
 	%Part 2 of Theorem \ref{thm:alt_series_approx} states that the sum $L$ lies between successive partial sums. It is straightforward to compute $S_6 \approx 0.899782$, $S_7 \approx 0.9027$ and $S_8\approx 0.9007$. We know the sum must lie between these last two partial sums; since they agree to two places after the decimal, we know $L\approx 0.90$. 
 	
-	\item		We want to find $n$ where $\ln (n)/n < 0.001$. We start by solving $\ln (n)/n = 0.001$ for $n$. This cannot be solved algebraically (among functions we are familiar with, though there is a function called the Lambert W Function, which basically acts as an inverse of $xe^x$, that can express solutions to this), so we will use Newton's Method to approximate a solution. 
+	\item		We want to find $n$ where $\ln (n)/n < 0.001$. We start by solving $\ln (n)/n = 0.001$ for $n$. This cannot be solved algebraically (in terms of elementary functions), so we will use Newton's Method to approximate a solution. 
 	
 	Let $f(x) = \ln(x)/x-0.001$; we want to know where $f(x) = 0$. We make a guess that $x$ must be ``large,'' so our initial guess will be $x_1=1000$. Recall how Newton's Method works: given an approximate solution $x_n$, our next approximation $x_{n+1}$ is given by
 	$$x_{n+1} = x_n - \frac{f(x_n)}{\fp(x_n)}.$$

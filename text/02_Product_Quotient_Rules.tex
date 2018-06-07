@@ -5,7 +5,7 @@ The previous section showed that, in some ways, derivatives behave nicely. The C
 We begin with the Product Rule.
 
 \theorem{thm:ProductRule}{Product Rule}
-{Let $f$ and $g$ be differentiable functions on an open interval $I$.\index{Power Rule!differentiation}\index{derivative!Product Rule} Then $fg$ is a differentiable function on $I$, and $$\frac{d}{dx}\Big(f(x)g(x)\Big) = f(x)g\primeskip'(x) + \fp(x)g(x).$$}
+{Let $f$ and $g$ be differentiable functions on an open interval $I$.\index{Power Rule!differentiation}\index{derivative!Product Rule} Then $fg$ is a differentiable function on $I$, and $$\frac{d}{dx}\Big(f(x)g(x)\Big) =\fp(x)g(x) + f(x)g\primeskip'(x).$$}
 
 \sword{Important:} $\ds\frac{d}{dx}\Big(f(x)g(x)\Big) \neq \fp(x)g\primeskip'(x)$! While this answer is simpler than the Product Rule, it is wrong. 
 
@@ -13,9 +13,9 @@ We practice using this new rule in an example, followed by an example that demon
 
 \example{ex_prod1}{Using the Product Rule}{
 Use the Product Rule to compute the derivative of $y=5x^2\sin x$. Evaluate the derivative at $x=\pi/2$.}
-{To make our use of the Product Rule explicit, let's set $f(x) = 5x^2$ and $g(x) = \sin x$. We easily compute/recall that $\fp(x) = 10x$ and $g\primeskip'(x) = \cos x$. Employing the rule, we have $$\frac{d}{dx}\Big(5x^2\sin x\Big) = 5x^2\cos x + 10x\sin x.$$
+{To make our use of the Product Rule explicit, let's set $f(x) = 5x^2$ and $g(x) = \sin x$. We easily compute/recall that $\fp(x) = 10x$ and $g\primeskip'(x) = \cos x$. Employing the rule, we have $$\frac{d}{dx}\Big(5x^2\sin x\Big) = 10x\sin x + 5x^2\cos x.$$
 
-At $x=\pi/2$, we have $$y\primeskip'(\pi/2) = 5\left(\frac{\pi}{2}\right)^2\cos \left(\frac{\pi}2\right) + 10\frac{\pi}2 \sin\left(\frac{\pi}{2}\right) = 5\pi.$$ We graph $y$ and its tangent line at $x=\pi/2$, which has a slope of $5\pi$, in Figure \ref{fig:5xsquaredsinx}. While this does not \textit{prove} that the Product Rule is the correct way to handle derivatives of products, it helps validate its truth.
+At $x=\pi/2$, we have $$y\primeskip'(\pi/2) = 10\frac{\pi}2 \sin\left(\frac{\pi}{2}\right) + 5\left(\frac{\pi}{2}\right)^2\cos \left(\frac{\pi}2\right) = 5\pi.$$ We graph $y$ and its tangent line at $x=\pi/2$, which has a slope of $5\pi$, in Figure \ref{fig:5xsquaredsinx}. While this does not \textit{prove} that the Product Rule is the correct way to handle derivatives of products, it helps validate its truth.
 \mfigure{.5}{A graph of $y = 5x^2\sin x$ and its tangent line at $x=\pi/2$.}{fig:5xsquaredsinx}{figures/fig5xsquaredsinx}
 }\\
 
@@ -32,7 +32,8 @@ Use the definition of the derivative to prove Theorem \ref{thm:ProductRule}.}
 																	&=	\lim_{h\to0} \frac{\Big(f(x+h)g(x+h)-f(x+h)g(x)\Big)+\Big(f(x+h)g(x)-f(x)g(x)\Big)}{h}\\
 																	&=	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}\quad\parbox{100pt}{\small (factor)}\\
 																	&=\lim_{h\to0} f(x+h)\frac{g(x+h)-g(x)}{h}+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}g(x)\quad\parbox{100pt}{\small (apply limits)}\\
-																	&=f(x)g\primeskip'(x) + \fp(x)g(x)
+																	&=f(x)g\primeskip'(x) + \fp(x)g(x)\\
+&=\fp(x)g(x)+f(x)g\primeskip'(x)
 		\end{align*}
 		\normalsize
 \vskip-\baselineskip
@@ -42,11 +43,12 @@ It is often true that we can recognize that a theorem is true through its proof 
 
 \example{ex_prod2}{Exploring alternate derivative methods}{
 Let $y = (x^2+3x+1)(2x^2-3x+1)$. Find $y\primeskip'$ two ways: first, by expanding the given product and then taking the derivative, and second, by applying the Product Rule. Verify that both methods give the same answer.}
-{We first expand the expression for $y$; a little algebra shows that $y = 2x^4+3x^3-6x^2+1$. It is easy to compute $y\primeskip'$; $$y\primeskip' = 8x^3+9x^2-12x.$$
+{We first expand the expression for $y$; algebraic expansion shows that $y = 2x^4-3x^3+x^2+6x^3-9x^2+3x+2x^2-3x+1= 2x^4+3x^3-6x^2+1$. It is easy to compute $y\primeskip'$; $$y\primeskip' = 8x^3+9x^2-12x.$$
 
 Now apply the Product Rule. 
-			\begin{align*}y\primeskip' &= (x^2+3x+1)(4x-3)+(2x+3)(2x^2-3x+1) \\
-			&= \big(4x^3+9x^2-5x-3\big) + \big(4x^3-7x+3\big)\\
+			\begin{align*}y\primeskip' &= (2x+3)(2x^2-3x+1)+(x^2+3x+1)(4x-3) \\
+			&= \big(4x^3-6x^2+2x+6x^2-9x+3\big) + \big(4x^3-3x^2+12x^2-9x+4x-3\big)\\
+			&= \big(4x^3-7x+3\big) + \big(4x^3+9x^2-5x-3\big)\\
 			& = 8x^3+9x^2-12x.
 			\end{align*}
 
@@ -58,12 +60,12 @@ The uninformed usually assume that ``the derivative of the product is the produc
 }
 {We have a product of three functions while the Product Rule only specifies how to handle a product of two functions. Our method of handling this problem is to simply group the latter two functions together, and consider $y = x^3\big(\ln x\cos x\big)$. Following the Product Rule, we have
 \begin{align*}
-\yp &= (x^3)\big(\ln x\cos x\big)' + 3x^2\big(\ln x\cos x\big)
+\yp &= 3x^2\big(\ln x\cos x\big)+(x^3)\frac{d}{dx}\big(\ln x\cos x\big)
 \intertext{To evaluate $\big(\ln x\cos x\big)'$, we apply the Product Rule again:}
-		&= (x^3)\big(\ln x(-\sin x) + \frac1x\cos x\big)+ 3x^2\big(\ln x\cos x\big)\\
-		&= x^3\ln x(-\sin x) + x^3\frac1x\cos x+ 3x^2\ln x\cos x
+		&= 3x^2\big(\ln x\cos x\big) + (x^3)\left(\ln x(-\sin x) + \frac1x\cos x\right)\\
+		&=3x^2\ln x\cos x + x^3\ln x(-\sin x) + x^3\frac1x\cos x\\
 \end{align*} 
-Recognize the pattern in our answer above: when applying the Product Rule to a product of three functions, there are three terms added together in the final derivative. Each terms contains only one derivative of one of the original functions, and each function's derivative shows up in only one term. It is straightforward to extend this pattern to finding the derivative of a product of 4 or more functions.
+Recognize the pattern in our answer above: when applying the Product Rule to a product of three functions, there are three terms added together in the final derivative. Each terms contains only one derivative of one of the original functions, and each function's derivative shows up in only one term.  In generality, this gives $$\frac{d}{dx}\big(f(x)g(x)h(x)\big)=f\primeskip'(x)g(x)h(x)+f(x)g\primeskip'(x)h(x)+f(x)g(x)h\primeskip'(x).$$ It is straightforward to extend this pattern to finding the derivative of a product of 4 or more functions.  It is up to the reader whether or not to remember this shortcut or do it the long way above.
 }\\
 
 We consider one more example before discussing another derivative rule.\\
@@ -78,8 +80,8 @@ Find the derivatives of the following functions.
 }
 {Recalling that the derivative of $\ln x$ is $1/x$, we use the Product Rule to find our answers.
 		\begin{enumerate}
-		\item	$\ds \frac{d}{dx}\Big(x\ln x\Big) = x\cdot 1/x + 1\cdot \ln x = 1+\ln x$. 
-		\item Using the result from above, we compute $$\ds \frac{d}{dx}\Big(x\ln x-x\Big) = 1+\ln x-1 = \ln x.$$ 
+		\item	$\ds \frac{d}{dx}\Big(x\ln x\Big) = 1\cdot \ln x + x\cdot 1/x = \ln x + 1$. 
+		\item Using the result from above, we compute $$\ds \frac{d}{dx}\Big(x\ln x-x\Big) = \ln x + 1 -1 = \ln x.$$ 
 		\end{enumerate}
 This seems significant; if the natural log function $\ln x$ is an important function (it is), it seems worthwhile to know a function whose derivative is $\ln x$. We have found one. (We leave it to the reader to find another; a correct answer will be \textit{very} similar to this one.)
 }\\
@@ -139,16 +141,16 @@ We include this result in the following theorem about the derivatives of the tri
 		\end{minipage}
 }
 
-To remember the above, it may be helpful to keep in mind that the derivatives of the trigonometric functions that start with ``c'' have a minus sign in them.\\
+To remember the above, it is helpful to keep the following pattern in mind.  The derivatives of the ``cofunctions'' ($\cos x, \cot x, \csc x$) are the derivatives of $\sin x, \tan x, \sec x$, except that functions have been changed between ``co-'' and ``not co-'', and a minus sign in front.  For example, suppose one remembers that the derivative of $\sec x$ is $\sec x \tan x$.  Then the derivative of $\csc x$ is formed by changing secant to cosecant, and tangent to cotangent, and putting a minus sign in front.  Thus, remembering the derivatives of all six trigonometric functions can be done by remembering the derivatives of $\sin x, \tan x, \sec x$ and this pattern.\\
 
 \example{ex_prod_quot}{Exploring alternate derivative methods}{
 In Example \ref{ex_quot1} the derivative of $\ds f(x) = \frac{5x^2}{\sin x}$ was found using the Quotient Rule. Rewriting $f$ as $f(x) = 5x^2\csc x$, find $\fp$ using Theorem \ref{thm:deriv_trig} and verify the two answers are the same.}
 {We found in Example \ref{ex_quot1} that the $\ds \fp(x) = \frac{10x\sin x - 5x^2\cos x}{\sin^2 x}$. We now find $\fp$ using the Product Rule, considering $f$ as $f(x) = 5x^2\csc x$.
 		\begin{align*}
 		\fp(x) &= \frac{d}{dx}\Big(5x^2\csc x\Big) \\
-					&=	\parbox{140pt}{$5x^2(-\csc x\cot x) + 10x\csc x$} \text{\small (now rewrite trig functions)}\\
-					&= 5x^2\cdot \frac{-1}{\sin x}\cdot \frac{\cos x}{\sin x} + \frac{10x}{\sin x}\\
-					&=	\parbox{140pt}{$\ds\frac{-5x^2\cos x}{\sin ^2x}+\frac{10x}{\sin x}$} \text{\small (get common denominator)}\\
+					&=	\parbox{140pt}{$10x\csc x + 5x^2(-\csc x\cot x)$} \text{\small (now rewrite trig functions)}\\
+					&= \frac{10x}{\sin x} - 5x^2\cdot \frac{1}{\sin x}\cdot \frac{\cos x}{\sin x}\\
+					&=	\parbox{140pt}{$\ds \frac{10x}{\sin x} - \ds\frac{5x^2\cos x}{\sin ^2x}$} \text{\small (get common denominator)}\\
 					&= \frac{10x\sin x - 5x^2\cos x}{\sin^2x}
 		\end{align*}
 Finding $\fp$ using either method returned the same result. At first, the answers looked different, but some algebra verified they are the same. In general, there is not one final form that we seek; the immediate result from the Product Rule is fine. Work to ``simplify\primeskip'' your results into a form that is most readable and useful to you.

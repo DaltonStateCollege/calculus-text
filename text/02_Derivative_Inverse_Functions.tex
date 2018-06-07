@@ -27,22 +27,26 @@ Consider:
 We have discovered a relationship between $\fp$ and $g\primeskip'$ in a mostly graphical way. We can realize this relationship analytically as well. Let $y = g(x)$, where again $g = f\primeskip^{-1}$. We want to find $\ds y\primeskip'$. Since $y = g(x)$, we know that $f(y) = x$. Using the Chain Rule and Implicit Differentiation, take the derivative of both sides of this last equality.
 		\begin{align*}
 			\frac{d}{dx}\Big(f(y)\Big) &= \frac{d}{dx}\Big(x\Big) \\
-			\fp(y)\cdot y\primeskip' &= 1\\
-			y\primeskip' &= \frac{1}{\fp(y)}\\
-			y\primeskip' &= \frac{1}{\fp(g(x))}
+			\fp(y)\cdot \frac{dy}{dx} &= 1\\
+			\frac{dy}{dx} &= \frac{1}{\fp(y)}\\
+			\frac{dy}{dx} &= \frac{1}{\fp(g(x))}
 		\end{align*}
 		
 This leads us to the following theorem.
 
+\setboxwidth{110pt}
+\noindent\hskip-110pt\begin{minipage}{1.2\linewidth}
 \theorem{thm:deriv_inverse_functions}{Derivatives of Inverse Functions}
 {Let $f$ be differentiable and one to one on an open interval $I$, where $\fp(x) \neq 0$ for all $x$ in $I$, let $J$ be the range of $f$ on $I$, let $g$ be the inverse function of $f$, and let $f(a) = b$ for some $a$ in $I$. Then $g$ is a differentiable function on $J$, and in particular,
 	
 %	\begin{center}
 \hskip-7pt	\begin{tabular}{ccc}
-	1. $\ds \left(f\primeskip^{-1}\right)'(b)=g\primeskip'(b) = \frac{1}{\fp(a)}$ &\hskip 4pt and \hskip 4pt&  2. $\ds \left(f\primeskip^{-1}\right)'(x)=g\primeskip'(x) = \frac{1}{\fp(g(x))}$
+	$\ds \left(f\primeskip^{-1}\right)'(b)=g\primeskip'(b) = \frac{1}{\fp(a)}$ &\hskip 4pt and \hskip 4pt&  $\ds \left(f\primeskip^{-1}\right)'(x)=g\primeskip'(x) = \frac{1}{\fp(g(x))}=\frac{1}{\fp\big(f\primeskip^{-1}(x)\big)}.$
 	\end{tabular}
 %	\end{center}
 }
+\end{minipage}
+\restoreboxwidth
 
 The results of Theorem \ref{thm:deriv_inverse_functions} are not trivial; the notation may seem confusing at first. Careful consideration, along with examples, should earn understanding.
 
@@ -75,7 +79,7 @@ In order to make $y=\sin x$ one to one, we restrict its domain to $[-\pi/2,\pi/2
 
 %\mfigure{.35}{Graphs of $\sin x$ and $\sin^{-1}x$}{fig:inverse4b}{figures/figinverse4}
 
-In Figure \ref{fig:inverse4} we see $f(x) = \sin x$ and $f\primeskip^{-1} = \sin^{-1} x$ graphed on their respective domains. The line tangent to $\sin x$ at the point $(\pi/3, \sqrt{3}/2)$ has slope $\cos \pi/3 = 1/2$. The slope of the corresponding point on $\sin^{-1}x$, the point $(\sqrt{3}/2,\pi/3)$, is $$\frac{1}{\sqrt{1-(\sqrt{3}/2)^2}} = \frac{1}{\sqrt{1-3/4}} = \frac{1}{\sqrt{1/4}} = \frac{1}{1/2}=2,$$ verifying yet again that at corresponding points, a function and its inverse have reciprocal slopes.\\
+In Figure \ref{fig:inverse4} we see $f(x) = \sin x$ and $f\primeskip^{-1}(x) = \sin^{-1} x$ graphed on their respective domains. The line tangent to $\sin x$ at the point $(\pi/3, \sqrt{3}/2)$ has slope $\cos \pi/3 = 1/2$. The slope of the corresponding point on $\sin^{-1}x$, the point $(\sqrt{3}/2,\pi/3)$, is $$\frac{1}{\sqrt{1-(\sqrt{3}/2)^2}} = \frac{1}{\sqrt{1-3/4}} = \frac{1}{\sqrt{1/4}} = \frac{1}{1/2}=2,$$ verifying yet again that at corresponding points, a function and its inverse have reciprocal slopes.\\
 
 Using similar techniques, we can find the derivatives of all the inverse trigonometric functions. In Figure \ref{fig:domain_trig} we show the restrictions of the domains of the standard trigonometric functions that allow them to be invertible.\\
 
@@ -89,9 +93,9 @@ Function & Domain & Range &\parbox[b]{40pt}{\centering Inverse Function} & Domai
 \rule{0pt}{12pt} $\sin x$ & $[-\pi/2, \pi/2]$ & $[-1,1]$&$\sin^{-1} x$ & $[-1,1]$ & $[-\pi/2, \pi/2]$ \\
 \rule{0pt}{12pt}$\cos x$ & $[0,\pi]$ & $[-1,1]$&$\cos^{-1}(x)$ & $[-1,1]$ & $[0,\pi]$ \\
 \rule{0pt}{12pt}$\tan x$ & $(-\pi/2,\pi/2)$ & $(-\infty,\infty)$&$\tan^{-1}(x)$ & $(-\infty,\infty)$ & $(-\pi/2,\pi/2)$	\\
-\rule{0pt}{12pt} $\csc x$ & $[-\pi/2,0)\cup (0, \pi/2]$ & $(-\infty,-1]\cup [1,\infty)$&$\csc^{-1} x$ & $(-\infty,-1]\cup [1,\infty)$ & $[-\pi/2,0)\cup (0, \pi/2]$  \\
+\rule{0pt}{12pt}$\cot x$ & $(0,\pi)$ & $(-\infty,\infty)$&$\cot^{-1}(x)$ &  $ (-\infty,\infty)$ & $(0,\pi)$\\
 \rule{0pt}{12pt}$\sec x$ & $[0,\pi/2)\cup (\pi/2,\pi]$ & $(-\infty,-1]\cup [1,\infty)$&$\sec^{-1}(x)$ & $(-\infty,-1]\cup [1,\infty)$ & $[0,\pi/2)\cup (\pi/2,\pi]$ \\
-\rule{0pt}{12pt}$\cot x$ & $(0,\pi)$ & $(-\infty,\infty)$&$\cot^{-1}(x)$ &  $ (-\infty,\infty)$ & $(0,\pi)$	
+\rule{0pt}{12pt} $\csc x$ & $[-\pi/2,0)\cup (0, \pi/2]$ & $(-\infty,-1]\cup [1,\infty)$&$\csc^{-1} x$ & $(-\infty,-1]\cup [1,\infty)$ & $[-\pi/2,0)\cup (0, \pi/2]$  \\	
 \end{tabular}
 \captionsetup{type=figure}
 \caption{Domains and ranges of the trigonometric and inverse trigonometric functions.}\label{fig:domain_trig}
@@ -138,15 +142,15 @@ Function & Domain & Range &\parbox[b]{40pt}{\centering Inverse Function} & Domai
 \noindent	\begin{minipage}{.5\specialboxlength}\small
 	\begin{enumerate}
 	\item		$\ds \frac{d}{dx}\big(\sin^{-1}(x)\big) = \frac{1}{\sqrt{1-x^2}}$ 
-	\item		$\ds \frac{d}{dx}\big(\sec^{-1}(x)\big) = \frac{1}{|x|\sqrt{x^2-1}}$
 	\item		$\ds \frac{d}{dx}\big(\tan^{-1}(x)\big) = \frac{1}{1+x^2}$
+	\item		$\ds \frac{d}{dx}\big(\sec^{-1}(x)\big) = \frac{1}{|x|\sqrt{x^2-1}}$
 	\end{enumerate}
 	\end{minipage}
 	\begin{minipage}{.5\specialboxlength}\small
 	\begin{enumerate}\addtocounter{enumi}{3}
 	\item		$\ds \frac{d}{dx}\big(\cos^{-1}(x)\big) = -\frac{1}{\sqrt{1-x^2}}$ 
-	\item		$\ds \frac{d}{dx}\big(\csc^{-1}(x)\big) = -\frac{1}{|x|\sqrt{x^2-1}}$
 	\item		$\ds \frac{d}{dx}\big(\cot^{-1}(x)\big) = -\frac{1}{1+x^2}$
+	\item		$\ds \frac{d}{dx}\big(\csc^{-1}(x)\big) = -\frac{1}{|x|\sqrt{x^2-1}}$
 	\end{enumerate}\index{derivative!inverse trig.}
 	\normalsize
 	\end{minipage}
@@ -169,7 +173,7 @@ Use Theorem \ref{thm:deriv_inverse_functions} to compute $\ds \frac{d}{dx}\big(\
 
 %\vskip\baselineskip
 
-In this chapter we have defined the derivative, given rules to facilitate its computation, and given the derivatives of a number of standard functions. We restate the most important of these in the following theorem, intended to be a reference for further work.
+We restate the derivative rules in the following theorem, intended to be a reference for further work.
 
 \theorem{thm:deriv_glossary}{Glossary of Derivatives of Elementary Functions}
 {Let $u$ and $v$ be differentiable functions, and let $a$, $c$ and $n$ be real numbers, $a>0$, $n\neq 0$. \\
@@ -177,38 +181,40 @@ In this chapter we have defined the derivative, given rules to facilitate its co
 \noindent%
 	\begin{minipage}{.5\specialboxlength}
 	\begin{enumerate}
-	\item		$\frac{d}{dx}\big(cu\big) = cu'$\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(u\cdot v\big) = uv'+u'v$\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(u(v)\big) = u'(v)v'$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(cf(x)\big) = c\fp(x)$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(f(x)g(x)\big) = \fp(x)g(x)+f(x)g\primeskip'(x)$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(f(g(x))\big) = \fp(g(x)) g\primeskip'(x)$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(x\big) = 1$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(e^x\big) = e^x$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(\ln x\big) = \frac{1}{x}$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(\sin x\big) = \cos x$\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(\csc x\big) = -\csc x\cot x$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(\tan x\big) = \sec^2x$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\sec x\big) = \sec x\tan x$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(\sin^{-1}x\big) = \frac{1}{\sqrt{1-x^2}}$\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(\csc^{-1}x\big) = -\frac{1}{|x|\sqrt{x^2-1}}$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(\tan^{-1}x\big) = \frac{1}{1+x^2}$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\sec^{-1}x\big) = \frac{1}{|x|\sqrt{x^2-1}}$\addtocounter{enumi}{1}
 	\end{enumerate}
 \normalsize
 \end{minipage}
 \begin{minipage}{.5\specialboxlength}
 	\begin{enumerate}\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(u\pm v\big) = u'\pm v'$\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(\frac uv\big) = \frac{u'v-uv'}{v^2}$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(f(x)\pm g(x)\big) = \fp(x)\pm g\primeskip'(x)'$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\frac{f(x)}{g(x)}\big) = \frac{g(x)\fp(x)-f(x)g\primeskip'(x)}{g(x)^2}$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(c\big) = 0$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(x^n\big) = nx^{n-1}$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(a^x\big) = \ln a\cdot a^x$\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(\log_a x\big) = \frac{1}{\ln a}\cdot\frac{1}{x}$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\log_a x\big) = \frac{1}{\ln(a)x}$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(\cos x\big) = -\sin x$\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(\sec x\big) = \sec x\tan x$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(\cot x\big) = -\csc^2x$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\csc x\big) = -\csc x\cot x$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(\cos^{-1}x\big) = -\frac{1}{\sqrt{1-x^2}}$\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(\sec^{-1}x\big) = \frac{1}{|x|\sqrt{x^2-1}}$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(\cot^{-1}x\big) = -\frac{1}{1+x^2}$
+	\item		$\frac{d}{dx}\big(\csc^{-1}x\big) = -\frac{1}{|x|\sqrt{x^2-1}}$\addtocounter{enumi}{1}
 	\end{enumerate}
 \normalsize
 \end{minipage}
-}
+}\\
+
+There are a lot of rules to learn and remember for taking derivatives.  However, just like when learning how to spell or the meanings of vocabulary rules, etc.\ the best way to learn the derivative rules is to get used to them through practice.
 
 \printexercises{exercises/02_07_exercises}
