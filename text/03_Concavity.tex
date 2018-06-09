@@ -175,9 +175,9 @@ The first derivative of a function gave us a test to find if a critical value co
 \begin{enumerate}
 \item If $\fpp(c)>0$, then $f$ has a local minimum at $(c,f(c))$.
 \item If $\fpp(c)<0$, then $f$ has a local maximum at $(c,f(c))$.
+\item If $\fpp(c)=0$, then the test is inconclusive.
 \end{enumerate}
 }
-
 
 
 %\myincludegraphics[scale=.7]{apex-second-derivative_img9}
@@ -190,6 +190,8 @@ Let $f(x)=100/x + x$.  Find the critical points of $f$ and use the Second Deriva
 }\\
 
 \mfigure{.78}{A graph of $f(x)$ in Example \ref{ex_conc4}. The second derivative is evaluated at each critical point. When the graph is concave up, the critical point represents a local minimum; when the graph is concave down, the critical point represents a local maximum.}{fig:conc4}{figures/figconc4}
+
+Both the First Derivative Test and the Second Derivative Test are used to determine if there is a relative maximum, a relative minimum, or neither, at a given critical value.  If one wishes, the First Derivative Test can always be used for this.  The Second Derivative Test, on the other hand, cannot be used to determine any useful information if $\fpp(c)=0$ or if $\fpp(c)$ is undefined (the latter of which includes all critical points for which $\fp(c)$ is undefined).  For example, both $f(x)=x^3$ and $f(x)=x^4$ have a critical number at $c=0$.  For both of these functions, $\fpp(0)=0$ which tells us no information.  In the case of $f(x)=x^3$, there is neither a relative minimum or maximum at $0$, whereas $f(x)=x^4$ has a relative minumum at $x=0$.  Even in cases where the Second Derivative Test can be used, it may be tedious to compute the second derivative a function if not needed.
 
 We have been learning how the first and second derivatives of a function relate information about the graph of that function. We have found intervals of increasing and decreasing, intervals where the graph is concave up and down, along with the locations of relative extrema and inflection points. In Chapter \ref{chapter:limits} we saw how limits explained asymptotic behavior. In the next section we combine all of this information to produce accurate sketches of functions.
 %\myincludegraphics[scale=.7]{apex-second-derivative_img10}
