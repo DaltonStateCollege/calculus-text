@@ -26,7 +26,7 @@ Make a note about our definition: we refer to \textit{an} antiderivative of $f$,
 Knowing one antiderivative of $f$ allows us to find infinitely more, simply by adding a constant. Not only does this give us \textit{more} antiderivatives, it gives us \textit{all} of them.
 
 \theorem{thm:antideriv_const}{Antiderivative Forms}
-{Let $F(x)$ and $G(x)$ be antiderivatives of $f(x)$. Then there exists a constant $C$ such that $$G(x) = F(x) + C.$$
+{Suppose $f(x)$ is a continuous function on an interval $I$.  Let $F(x)$ and $G(x)$ be antiderivatives of $f(x)$ on $I$. Then there exists a constant $C$ such that $$G(x) = F(x) + C.$$
 }
 
 Given a function $f$ and one of its antiderivatives $F$, we know \textit{all} antiderivatives of $f$ have the form $F(x) + C$ for some constant $C$. Using Definition \ref{def:antider}, we can say that $$\int f(x) \ dx = F(x) + C.$$
@@ -44,6 +44,7 @@ Figure \ref{fig:anti1} shows the typical notation of the indefinite integral. Th
 The function we want to find an antiderivative of is called the \textit{integrand}. It contains the differential of the variable we are integrating with respect to. The $\int$ symbol and the differential $dx$ are not ``bookends'' with a function sandwiched in between; rather, the symbol $\int$ means ``find all antiderivatives of what follows,'' and the function $f(x)$ and $dx$ are multiplied together; the $dx$ does not ``just sit there.''
 
 Let's practice using this notation.\\
+\clearpage
 
 \example{ex_anti2}{Evaluating indefinite integrals}{
 Evaluate $\displaystyle \int \sin x\ dx.$}
@@ -113,12 +114,13 @@ Common Differentiation Rules\rule[-2pt]{0pt}{1pt}
 \item $\frac{d}{dx}\big(\sin x \big) = \cos x$\myrule
 \item $\frac{d}{dx}\big(\cos x \big) = -\sin x$\myrule
 \item $\frac{d}{dx}\big(\tan x \big) = \sec^2 x$\myrule
-\item $\frac{d}{dx}\big(\csc x \big) = -\csc x\cot x$\myrule
-\item $\frac{d}{dx}\big(\sec x \big) = \sec x\tan x$\myrule
 \item $\frac{d}{dx}\big(\cot x \big) = -\csc^2 x$\myrule
+\item $\frac{d}{dx}\big(\sec x \big) = \sec x\tan x$\myrule
+\item $\frac{d}{dx}\big(\csc x \big) = -\csc x\cot x$\myrule
 \item $\frac{d}{dx}\big(e^ x \big) = e^x$\myrule
 \item $\frac{d}{dx}\big(a^x \big) = \ln a\cdot a^x$\myrule
 \item $\frac{d}{dx}\big(\ln x \big) = \frac1 x$\myrule
+\item $\frac{d}{dx}\big(\tan^{-1} x \big) = \frac{1}{1+x^2}$\myrule
 \end{enumerate}
 \end{minipage}
 \begin{minipage}[t]{.55\specialboxlength}
@@ -134,12 +136,13 @@ Common Indefinite Integral Rules\rule[-2pt]{0pt}{1pt}
 \item $\int \cos x\ dx = \sin x+C$\myrule
 \item $\int \sin x\ dx = -\cos x+C$\myrule
 \item $\int \sec^2 x\ dx = \tan x+C$\myrule
-\item $\int \csc x\cot  x\ dx = -\csc x+C$\myrule
-\item $\int \sec x\tan x\ dx = \sec x+C$\myrule
 \item $\int \csc^2 x\ dx = -\cot x+C$\myrule
+\item $\int \sec x\tan x\ dx = \sec x+C$\myrule
+\item $\int \csc x\cot  x\ dx = -\csc x+C$\myrule
 \item $\int e^x\ dx = e^x+C$\myrule
 \item $\int a^x\ dx = \frac{1}{\ln a}\cdot a^x+C$\myrule
 \item $\int \frac{1}x\ dx = \ln |x|+C$\myrule
+\item $\int \frac{1}{1+x^2}\ dx = \tan^{-1} x+C$\myrule
 \end{enumerate}
 \end{minipage}%\\
 %
@@ -214,7 +217,7 @@ We highlight a few important points from Theorem \ref{thm:indef_alg}:
 		\end{quote}
 		When taking a derivative using the Power Rule, we \textbf{first} \textit{multiply} by the power, then \textbf{second} \textit{subtract} 1 from the power. To find the antiderivative, do the opposite things in the opposite order: \textbf{first} \textit{add} one to the power, then \textbf{second} \textit{divide} by the power.
 			\end{enumerate}
-		\item		Note that Rule \#14 incorporates the absolute value of $x$. The exercises will work the reader through why this is the case; for now, know the absolute value is important and cannot be ignored.
+		\item		Note that Rule \#14 incorporates the absolute value of $x$. Exercise~\ref{exer:05_01_ex_39} will work the reader through why this is the case; for now, know the absolute value is important and cannot be ignored.
 \end{itemize}
 
 \enlargethispage{\baselineskip}
@@ -222,7 +225,7 @@ We highlight a few important points from Theorem \ref{thm:indef_alg}:
 \noindent\textbf{\large Initial Value Problems}
 \vskip\baselineskip
 
-In Section \ref{sec:basic_diff_rules} we saw that the derivative of a position function gave a velocity function, and the derivative of a velocity function describes  acceleration.\index{initial value problem} We can now go ``the other way:'' the antiderivative of an acceleration function gives a velocity function, etc. While there is just one derivative of a given function, there are infinite antiderivatives. Therefore we cannot ask ``What is \textit{the} velocity of an object whose acceleration is $-32$ft/s$^2$?'', since there is more than one answer. 
+In Section \ref{sec:interp_deriv} we saw that the derivative of a position function gave a velocity function, and the derivative of a velocity function describes  acceleration.\index{initial value problem} We can now go ``the other way:'' the antiderivative of an acceleration function gives a velocity function, etc. While there is just one derivative of a given function, there are infinitely many antiderivatives. Therefore we cannot ask ``What is \textit{the} velocity of an object whose acceleration is $-32$ft/s$^2$?'', since there is more than one answer. 
 
 We can find \textit{the} answer if we provide more information with the question, as done in the following example. Often the additional information comes in the form of an \textit{initial value}, a value of the function that one knows beforehand.\\
 
