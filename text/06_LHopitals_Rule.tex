@@ -6,7 +6,7 @@ Our treatment of limits exposed us to ``0/0'', an indeterminate form. If $\ds \l
 
 Other indeterminate forms exist; they are: %Limits may seeming evaluate to
  $\infty/\infty$, $0\cdot\infty$, $\infty-\infty$, $0^0$, $1^\infty$ and $\infty^0$. %, expressions which have no inherent value. 
- Just as ``0/0'' does not mean ``divide 0 by 0,'' the expression ``$\infty/\infty$'' does not mean ``divide infinity by infinity.'' Instead, it means ``a quantity is growing without bound and is being divided by another quantity that is growing without bound.'' We cannot determine from such a statement what value, if any, results in the limit. Likewise, ``$0\cdot \infty$'' does not mean ``multiply zero by infinity.'' Instead, it means ``one quantity is shrinking to zero, and is being multiplied by a quantity that is growing without bound.'' We cannot determine from such a description what the result of such a limit will be.
+ Just as ``0/0'' does not mean ``divide 0 by 0,'' the expression ``$\infty/\infty$'' does not mean ``divide infinity by infinity.'' Instead, it means ``a quantity is growing without bound and is being divided by another quantity that is growing without bound.'' (Technically, $\infty$ means $\pm\infty$ in these indeterminate forms, so $\infty/-\infty$, $-\infty/\infty$, and $-\infty/-\infty$ are all indeterminate, and considered a form of ``$\infty/\infty$''.)  We cannot determine from such a statement what value results in the limit, or even if the limit exists. Likewise, ``$0\cdot \infty$'' does not mean ``multiply zero by infinity.'' Instead, it means ``one quantity is shrinking to zero, and is being multiplied by a quantity that is growing without bound.'' We cannot determine from such a description what the result of such a limit will be.
 
 This section introduces l'H\^opital's Rule, a method using derivatives to resolve limits that produce the indeterminate forms 0/0 and $\infty/\infty$. We'll also show how algebraic manipulation can be used to convert other indeterminate expressions into one of these two forms so that our new rule can be applied.
 
@@ -36,8 +36,8 @@ Evaluate the following limits, using l'H\^opital's Rule as needed.
 \end{minipage}
 }
 {\begin{enumerate}
-\item		We proved this limit is 1 in Example \ref{ex_limit_sinx_prove} using the Squeeze Theorem. Here we use l'H\^opital's Rule to show its power.
-$$\lim_{x\to0}\frac{\sin x}x \stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}} \ }{=} \lim_{x\to0} \frac{\cos x}{1}=1.$$
+\item		We proved this limit is 1 in Example~\ref{ex_limit_sinx_prove} using the Squeeze Theorem. Here we use l'H\^opital's Rule to show its power.
+$$\lim_{x\to0}\frac{\sin x}x \stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}} \ }{=} \lim_{x\to0} \frac{\cos x}{1}=1.$$  We actually needed to know the value of this limit to prove that the derivative of $\sin x$ is $\cos x$, a fact we used in this computation.  Therefore, we did need the geometric argument in Example~\ref{ex_limit_sinx_prove} to first prove this.  However, since we now know the derivative of $\sin x$ is $\cos x$, we need not remember the value of this limit as we can now determine it with l'H\^opital's Rule.
 
 \item	\hfill $\ds \lim_{x\to 1}\frac{\sqrt{x+3}-2}{1-x} 	 \stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}} \ }{=} \lim_{x \to 1} \frac{\frac12(x+3)^{-1/2}}{-1} =-\frac 14.$\hfill\null 
 
@@ -160,7 +160,7 @@ $\ds \lim_{x\to c} f(x) = \lim_{x\to c} e^{\ln(f(x))} = e\,^L.$ \index{limit!ind
 }
 %\end{minipage}
 %\restoreboxwidth
-\clearpage
+%\clearpage
 
 \example{ex_LHR4}{Using l'H\^opital's Rule with indeterminate forms involving exponents }
 {Evaluate the following limits.
