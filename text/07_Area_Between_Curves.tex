@@ -51,7 +51,8 @@ This Key Idea will make more sense after we have had a chance to use it several 
 
 \section{Area Between Curves}\label{sec:ABC}
 
-We are often interested in knowing the area of a region. Forget momentarily that we addressed this already in Section  \ref{chapter:integration}.\ref{sec:FTC} and approach it instead using the technique described in Key Idea \ref{idea:app_of_defint}. 
+We are often interested in knowing the area of a region. Forget momentarily that we addressed this already in Section %\ref{chapter:integration}.
+\ref{sec:FTC} and approach it instead using the technique described in Key Idea \ref{idea:app_of_defint}. 
 
 Let $Q$ be the area of a region bounded by continuous functions $f$ and $g$. If we break the region into many subregions, we have an obvious equation:
 
@@ -80,7 +81,7 @@ $$\int_a^b \big(f(x)-g(x)\big)\ dx.$$
 Find the area of the region bounded by $f(x) = \sin x+2$, $g(x) = \frac12\cos (2x)-1$, $x=0$ and $x=4\pi$, as shown in Figure \ref{fig:abc1}.}
 {The graph verifies that the upper boundary of the region is given by $f$ and the lower bound is given by $g$. Therefore the area of the region is the value of the integral
 \begin{align*} 
-\int_0^{4\pi} \big(f(x)- g(x)\big)\ dx & = \int_0^{4\pi} \Big(\sin x+2 - \big(\frac12\cos (2x)-1\big)\Big)\ dx \\
+\int_0^{4\pi} \big(f(x)- g(x)\big)\ dx & = \int_0^{4\pi} \left(\sin x+2 - \left(\frac12\cos (2x)-1\right)\right)\ dx \\
 		&= -\cos x -\frac14\sin(2x)+3x\Big|_0^{4\pi}\\
 		&=	12\pi \approx 37.7\ \text{units}^2.
 \end{align*}
@@ -126,7 +127,7 @@ Figure \ref{fig:abc3b} shows the region with the boundaries relabeled. A differe
 The area is found by integrating the above function with respect to $y$ with the appropriate bounds. We determine these by considering the $y$-values the region occupies. It is bounded below by $y=2$, and bounded above by $y=3$. That is, both the ``top'' and ``bottom'' functions exist on the $y$ interval $[2,3]$. Thus
 \begin{align*}
 \text{Total Area} &= \int_2^3 \big(\sqrt{3-y}+1 - (y-2)^2\big)\ dy \\
-			&= \Big(-\frac23(3-y)^{3/2}+y-\frac13(y-2)^3\Big)\Big|_2^3 \\
+			&= \left(-\frac23(3-y)^{3/2}+y-\frac13(y-2)^3\right)\Big|_2^3 \\
 			&= 4/3.
 \end{align*}
 \vskip-\baselineskip
@@ -140,7 +141,7 @@ Compute the area of the regions bounded by the lines
 \noindent $y=x+1$, $y=-2x+7$ and $y=-\frac12x+\frac52$, as shown in Figure \ref{fig:abc4}.}
 {Recognize that there are two ``top'' functions to this region, causing us to use two definite integrals.
 \begin{align*}
-\text{Total Area} &= \int_1^2\big((x+1)-(-\frac12x+\frac52)\big)\ dx + \int_2^3\big((-2x+7)-(-\frac12x+\frac52)\big)\ dx \\
+\text{Total Area} &= \int_1^2\left((x+1)-\left(-\frac12x+\frac52\right)\right)\ dx + \int_2^3\left((-2x+7)-\left(-\frac12x+\frac52\right)\right)\ dx \\
 						&= 3/4+3/4\\
 						&=3/2.
 \end{align*}
@@ -149,7 +150,7 @@ We can also approach this by converting each function into a function of $y$. Th
 
 The ``top'' function is always $x=\frac{7-y}2$ while there are two ``bottom'' functions. Being mindful of the proper integration bounds, we have
 \begin{align*}
-\text{Total Area} &= \int_1^2\big(\frac{7-y}2 - (5-2y)\big)\ dy + \int_2^3\big(\frac{7-y}2-(y-1)\big)\ dy \\
+\text{Total Area} &= \int_1^2\left(\frac{7-y}2 - (5-2y)\right)\ dy + \int_2^3\left(\frac{7-y}2-(y-1)\right)\ dy \\
 			&= 3/4 + 3/4\\
 			&= 3/2.
 \end{align*}
