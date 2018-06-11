@@ -1,4 +1,4 @@
-\section{Improper Integration}\label{sec:improper_integration}
+\section{Improper Integrals}\label{sec:improper_integration}
 
 We begin this section by considering the following definite integrals:
 \begin{itemize}
@@ -31,7 +31,7 @@ In this section we consider integrals where one or both of the above conditions 
 %\begin{minipage}{\specialboxlength}
 \definition{def:imp_int1}{\parbox[t]{210pt}{Improper Integrals with Infinite Bounds; Converge, Diverge}}
 {\begin{enumerate}
-\item		Let $f$ be a continuous function on $[a,\infty)$. Define \index{integration!improper}\index{improper integration}\index{convergence!of improper int.}\index{divergence!of improper int.}
+\item		Let $f$ be a continuous function on $[a,\infty)$. Define \index{integration!improper}\index{improper integral}\index{convergence!of improper int.}\index{divergence!of improper int.}
 $$\int_a^\infty f(x)\ dx \quad \text{to be}\quad \lim_{b\to\infty}\int_a^b f(x)\ dx.$$
 
 \item		Let $f$ be a continuous function on $(-\infty,b]$. Define
@@ -116,7 +116,7 @@ A graph of the area defined by this integral is given in Figure \ref{fig:impint1
 
 The previous section introduced l'H\^opital's Rule, a method of evaluating limits that return indeterminate forms. It is not uncommon for the limits resulting from improper integrals to need this rule as demonstrated next.\\
 
-\example{ex_impint2}{Improper integration and l'H\^opital's Rule}{
+\example{ex_impint2}{Improper integrals and l'H\^opital's Rule}{
 Evaluate the improper integral $\ds \int_1^\infty \frac{\ln x}{x^2}\ dx.$}
 {This integral will require the use of Integration by Parts. Let $u = \ln x$ and $dv = 1/x^2\ dx$. Then
 \mfigure{.8}{A graph of $f(x) = \frac{\ln x}{x^2}$ in Example \ref{ex_impint2}.}{fig:impint2}{figures/figeximpint2}
@@ -137,11 +137,11 @@ Evaluate the improper integral $\ds \int_1^\infty \frac{\ln x}{x^2}\ dx.$}
 \noindent \textbf{\large Improper Integrals with Infinite Range}
 \vskip\baselineskip
 
-We have just considered definite integrals where the interval of integration was infinite. We now consider another type of improper integration, where the range of the integrand is infinite.
+We have just considered definite integrals where the interval of integration was infinite. We now consider another type of improper integral, where the range of the integrand is infinite.
 
 
-\definition{def:imp_int2}{Improper Integration with Infinite Range}
-{Let $f(x)$ be a continuous function on $[a,b]$ except at $c$, $a\leq c\leq b$, where $x=c$ is a vertical asymptote of $f$. Define\index{integration!improper}\index{improper integration}
+\definition{def:imp_int2}{Improper Integrals with Infinite Range}
+{Let $f(x)$ be a continuous function on $[a,b]$ except at $c$, $a\leq c\leq b$, where $x=c$ is a vertical asymptote of $f$. Define\index{integration!improper}\index{improper integral}
 $$\int_a^b f(x)\ dx = \lim_{t\to c^-}\int_a^t f(x)\ dx + \lim_{t\to c^+}\int_t^b f(x)\ dx.$$
 %The integral converges if both limits exist and diverges otherwise.
 } 
@@ -192,7 +192,7 @@ Oftentimes we are interested in knowing simply whether or not an improper integr
 
 Our first tool is to understand the behavior of functions of the form $\ds \frac1{x\hskip1pt ^p}$.\\
 
-\example{ex_impint4}{Improper integration of $1/x^p$}{
+\example{ex_impint4}{Improper integrals of $1/x^p$}{
 Determine the values of $p$ for which $\ds \int_1^\infty \frac1{x\hskip1pt ^p}\ dx$ converges.}
 {We begin by integrating and then evaluating the limit.
 \begin{align*}
@@ -210,16 +210,16 @@ Our analysis shows that if $p>1$, then $\ds\int_1^\infty \frac1{x\hskip1pt ^p}\ 
 Figure \ref{fig:impint4} graphs $y=1/x$ with a dashed line, along with graphs of $y=1/x^p$, $p<1$, and $y=1/x^q$, $q>1$. Somehow the dashed line forms a dividing line between convergence and divergence. %A function of the form $1/x^q$ will be under the dashed line on $[1,\infty)$ when $q>1$. Even if $q$ is ``very close'' to 1, the difference will be enough to force convergence.
 }\\
 
-The result of Example \ref{ex_impint4} provides an important tool in determining the convergence of other integrals. A similar result is proved in the exercises about improper integrals of the form $\ds \int_0^1\frac1{x\hskip1pt ^p}\ dx$. These results are summarized in the following Key Idea.
+The result of Example \ref{ex_impint4} provides an important tool in determining the convergence of other integrals. A similar result is proved in the exercises about improper integrals of the form $\ds \int_0^1\frac1{x\hskip1pt ^p}\ dx$.  It can be similarly shown that replacing the bound 1 with any positive real number in these integrals does \textbf{not} change if it converges or diverges (though it can change what the integral converges to).  These results are summarized in the following Key Idea.
 
 
 \setboxwidth{80pt}%
 %\hskip-95pt%
 %\begin{minipage}{\specialboxlength}
-\keyidea{idea:impint1}{Convergence of Improper Integrals $\ds \int_1^\infty\frac1{x\hskip1pt ^p}\ dx$ and $\ds \int_0^1\frac1{x\hskip1pt ^p}\ dx$.}
+\keyidea{idea:impint1}{Convergence of Improper Integrals $\ds \int_a^\infty\frac1{x\hskip1pt ^p}\ dx$ and $\ds \int_0^b\frac1{x\hskip1pt ^p}\ dx$}
 {\begin{enumerate}
-\item		The improper integral $\ds \int_1^\infty\frac1{x\hskip1pt ^p}\ dx$ converges when $p>1$ and diverges when $p\leq 1.$\index{convergence!of improper int.}\index{divergence!of improper int.}
-\item		The improper integral $\ds \int_0^1\frac1{x\hskip1pt ^p}\ dx$ converges when $p<1$ and diverges when $p\geq 1.$
+\item		For $a>0$, the improper integral $\ds \int_a^\infty\frac1{x\hskip1pt ^p}\ dx$ converges when $p>1$ and diverges when $p\leq 1.$\index{convergence!of improper int.}\index{divergence!of improper int.}
+\item		For $b>0$, the improper integral $\ds \int_0^b\frac1{x\hskip1pt ^p}\ dx$ converges when $p<1$ and diverges when $p\geq 1.$
 \end{enumerate}
 }
 %\end{minipage}
@@ -228,8 +228,8 @@ The result of Example \ref{ex_impint4} provides an important tool in determining
 
 A basic technique in determining convergence of improper integrals is to compare an integrand whose convergence is unknown to an integrand whose convergence is known. We often use integrands of the form $1/x\hskip1pt ^p$ to compare to as their convergence on certain intervals is known. This is described in the following theorem.
 
-\mnote{.49}{\textbf{Note:} We used the upper and lower bound of ``1'' in Key Idea \ref{idea:impint1} for convenience. It can be replaced by any $a$ where $a>0$. 
-}
+%\mnote{.49}{\textbf{Note:} We used the upper and lower bound of ``1'' in Key Idea \ref{idea:impint1} for convenience. It can be replaced by any $a$ where $a>0$. 
+%}
 
 %\setboxwidth{30pt}%
 %\hskip-45pt%
