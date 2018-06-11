@@ -89,7 +89,7 @@ $\ds \int\sin^5x\big(1-4\sin^2x+6\sin^4x-4\sin^6x+\sin^8x\big)\cos x\ dx =$% \\
    x)}{49152}+\frac{\cos (8 x)}{4096}-\frac{\cos (10 x)}{81920}-\frac{\cos (12
    x)}{24576}-\frac{\cos (14 x)}{114688},$$\normalsize
 which clearly has a different form than our answer in Example \ref{ex_trigint2}, which is
-$$g(x)=\frac16\sin^6 x-\frac12\sin^8 x+\frac35\sin^{10} x-\frac13\sin^{12} x+\frac{1}{14}\sin^{14} x.$$ Figure \ref{fig:trigint2} shows a graph of $f$ and $g$; they are clearly not equal, but they differ \emph{only by a constant}. That is $g(x) = f(x) + C$ for some constant $C$. So we have two different antiderivatives of the same function, meaning both answers are correct.  The answer \textit{Mathematica}\textsuperscript{\textregistered} gives is determined by using the Product to Sum identities repeatedly to rewrite the integrand without powers. \\%We leave it to the reader to recognize why both answers are correct.\\
+$$g(x)=\frac16\sin^6 x-\frac12\sin^8 x+\frac35\sin^{10} x-\frac13\sin^{12} x+\frac{1}{14}\sin^{14} x.$$ Figure \ref{fig:trigint2} shows a graph of $f$ and $g$; they are clearly not equal, but they differ \emph{only by a constant}. That is $g(x) = f(x) + C$ for some constant $C$. So we have two different antiderivatives of the same function, meaning both answers are correct.\\  %The answer \textit{Mathematica}\textsuperscript{\textregistered} gives is determined by using the Product to Sum identities repeatedly to rewrite the integrand without powers. \\%We leave it to the reader to recognize why both answers are correct.\\
 \enlargethispage{\baselineskip}
 
 \mfigure{.65}{A plot of $f(x)$ and $g(x)$ from Example \ref{ex_trigint2} and the Technology Note.}{fig:trigint2}{figures/figtrigint2}
@@ -164,13 +164,13 @@ Integrating more general products of sines and cosines such as $\int \sin\left(3
 \noindent\textbf{\large Integrals of the form $\ds\int\tan^mx\sec^nx\ dx$.}
 \vskip\baselineskip
 
-When evaluating integrals of the form $\int \sin^mx\cos^nx\ dx$, the Pythagorean Theorem allowed us to convert even powers of sine into even powers of cosine, and vice versa. If, for instance, the power of sine was odd, we pulled out one $\sin x$ and converted the remaining even power of $\sin x$ into a function using powers of $\cos x$, leading to an easy substitution.
+When evaluating integrals of the form $\int \sin^mx\cos^nx\ dx$, the Pythagorean Identity allowed us to convert even powers of sine into even powers of cosine, and vice versa. If, for instance, the power of sine was odd, we pulled out one $\sin x$ and converted the remaining even power of $\sin x$ into a function using powers of $\cos x$, leading to an easy substitution.
 
 The same basic strategy applies to integrals of the form $\int \tan^mx\sec^n x\ dx$, albeit a bit more nuanced. The following three facts will prove useful:
 \begin{itemize}
 \item $\frac{d}{dx}(\tan x) = \sec^2x$, 
 \item $\frac{d}{dx}(\sec x) = \sec x\tan x$ , and 
-\item	$1+\tan^2x = \sec^2x$ (the Pythagorean Theorem).
+\item	$1+\tan^2x = \sec^2x$ (from the Pythagorean Identity).
 \end{itemize}
 
 If the integrand can be manipulated to separate a $\sec^2x$ term with the remaining secant power even, or if a $\sec x\tan x$ term can be separated with the remaining $\tan x$ power even, the Pythagorean Theorem can be employed, leading to a simple substitution. This strategy is outlined in the following Key Idea.
