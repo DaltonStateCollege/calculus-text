@@ -89,7 +89,7 @@ $\ds \int\sin^5x\big(1-4\sin^2x+6\sin^4x-4\sin^6x+\sin^8x\big)\cos x\ dx =$% \\
    x)}{49152}+\frac{\cos (8 x)}{4096}-\frac{\cos (10 x)}{81920}-\frac{\cos (12
    x)}{24576}-\frac{\cos (14 x)}{114688},$$\normalsize
 which clearly has a different form than our answer in Example \ref{ex_trigint2}, which is
-$$g(x)=\frac16\sin^6 x-\frac12\sin^8 x+\frac35\sin^{10} x-\frac13\sin^{12} x+\frac{1}{14}\sin^{14} x.$$ Figure \ref{fig:trigint2} shows a graph of $f$ and $g$; they are clearly not equal, but they differ \emph{only by a constant}. That is $g(x) = f(x) + C$ for some constant $C$. So we have two different antiderivatives of the same function, meaning both answers are correct. \\%We leave it to the reader to recognize why both answers are correct.\\
+$$g(x)=\frac16\sin^6 x-\frac12\sin^8 x+\frac35\sin^{10} x-\frac13\sin^{12} x+\frac{1}{14}\sin^{14} x.$$ Figure \ref{fig:trigint2} shows a graph of $f$ and $g$; they are clearly not equal, but they differ \emph{only by a constant}. That is $g(x) = f(x) + C$ for some constant $C$. So we have two different antiderivatives of the same function, meaning both answers are correct.  The answer \textit{Mathematica}\textsuperscript{\textregistered} gives is determined by using the Product to Sum identities repeatedly to rewrite the integrand without powers. \\%We leave it to the reader to recognize why both answers are correct.\\
 \enlargethispage{\baselineskip}
 
 \mfigure{.65}{A plot of $f(x)$ and $g(x)$ from Example \ref{ex_trigint2} and the Technology Note.}{fig:trigint2}{figures/figtrigint2}
@@ -176,7 +176,7 @@ The same basic strategy applies to integrals of the form $\int \tan^mx\sec^n x\ 
 If the integrand can be manipulated to separate a $\sec^2x$ term with the remaining secant power even, or if a $\sec x\tan x$ term can be separated with the remaining $\tan x$ power even, the Pythagorean Theorem can be employed, leading to a simple substitution. This strategy is outlined in the following Key Idea.
 
 \setboxwidth{130pt}
-\hskip-145pt
+%\hskip-145pt
 \begin{minipage}{\specialboxlength}
 \keyidea{idea:trig_int_2}{Integrals Involving Powers of Tangent and Secant}
 {Consider $\ds\int\tan^mx\sec^nx\ dx$, where $m,n$ are nonnegative integers.\index{integration!of trig. powers}
@@ -195,7 +195,7 @@ where $u = \sec x$ and $du = \sec x\tan x\ dx$.
 
 \item If $n$ is odd and $m$ is even, then $m=2k$ for some integer $k$. Convert $\tan^mx $ to $(\sec^2x-1)^k$. Expand the new integrand and use Integration By Parts, with $dv = \sec^2x\ dx$.
 
-\item		If $m$ is even and $n=0$, rewrite $\tan^mx$ as
+\item		If $m\geq 2$ and $n=0$, rewrite $\tan^mx$ as
 $$\tan^mx = \tan^{m-2}x\tan^2x = \tan^{m-2}x(\sec^2x-1) = \tan^{m-2}\sec^2x-\tan^{m-2}x.$$
 So
 $$\int\tan^mx\ dx = \underbrace{\int\tan^{m-2}\sec^2x\ dx}_{\text{\small apply rule \#1}}\quad - \underbrace{\int\tan^{m-2}x\ dx}_{\text{\small apply rule \#4 again}}.$$
@@ -207,7 +207,7 @@ $$\int\tan^mx\ dx = \underbrace{\int\tan^{m-2}\sec^2x\ dx}_{\text{\small apply r
 
 The techniques described in items 1 and 2 of Key Idea \ref{idea:trig_int_2} are relatively straightforward, but the techniques in items 3 and 4 can be rather tedious. A few examples will help with these methods.\\
 
-\clearpage
+%\clearpage
 
 \example{ex_trigint5}{Integrating powers of tangent and secant}{
 Evaluate $\ds\int \tan^2x\sec^6x\ dx$.}
