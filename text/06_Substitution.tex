@@ -1,10 +1,10 @@
-%Computing antiderivatives is generally more difficult than computing derivatives. As an example, finding the derivative of $f(x) = x^2\sin x$ is simple but we do not yet know how to find an antiderivative of $f$. Worse, we can find the derivative of $y=e^{x^2}$, but its antiderivatives \textit{cannot} be written in terms of elementary functions.
-%
-%Despite this latter difficulty, there are still broad classes of functions for which we can find antiderivatives. This chapter is dedicated to learning techniques to enable us to compute the antiderivatives of a wide variety of functions.
+Computing antiderivatives is generally more difficult than computing derivatives. As an example, finding the derivative of $f(x) = x^2\sin x$ is simple but we do not yet know how to find an antiderivative of $f$. Worse, we can find the derivative of $y=e^{x^2}$, but its antiderivatives \textit{cannot} be written in terms of elementary functions.
 
-The previous chapter introduced the antiderivative and connected it to signed areas under a curve through the Fundamental Theorem of Calculus. The next chapter explores more applications of definite integrals than just area. As evaluating definite integrals will become important, we will want to find antiderivatives of a variety of functions.
+Despite this latter difficulty, there are still broad classes of functions for which we can find antiderivatives. This section and the following chapter are dedicated to learning techniques to enable us to compute the antiderivatives of a wide variety of functions.
 
-This chapter is devoted to exploring techniques of antidifferentiation. While not every function has an antiderivative in terms of elementary functions (a concept introduced in the section on Numerical Integration), we can still find antiderivatives of a wide variety of functions.
+%The previous chapter introduced the antiderivative and connected it to signed areas under a curve through the Fundamental Theorem of Calculus. The next chapter explores more applications of definite integrals than just area. As evaluating definite integrals will become important, we will want to find antiderivatives of a variety of functions.
+
+%This chapter is devoted to exploring techniques of antidifferentiation. While not every function has an antiderivative in terms of elementary functions (a concept introduced in the section on Numerical Integration), we can still find antiderivatives of a wide variety of functions.
 
 
 \section{Substitution}\label{sec:substitution}
@@ -88,7 +88,7 @@ Thus $\int \sin (7x-4)\ dx = -\frac17\cos(7x-4)+C$. Our next example can use Key
 \example{ex_sub3}{Integrating by substituting a linear function}{Evaluate $\ds \int \frac{7}{-3x+1}\ dx$.}
 {View this a composition of functions $f(g(x))$, where $f(x) = 7/x$ and $g(x) = -3x+1$. Employing our understanding of substitution, we let $u = -3x+1$, the inside function. Thus $du = -3dx$. The integrand lacks a $-3$; hence divide the previous equation by $-3$ to obtain $-du/3 = dx$. We can now evaluate the integral through substitution.
 \begin{align*}
-	\int \frac{7}{-3x+1}\ dx &=	\int \frac{7}{u}\frac{du}{-3} \\
+	\int \frac{7}{-3x+1}\ dx &=	\int \frac{7}{u}\cdot\frac{du}{-3} \\
 												&= \frac{-7}3\int \frac{du}{u} \\
 												&=	\frac{-7}3\ln |u| + C\\
 												&=-\frac73\ln|-3x+1| + C.
@@ -204,12 +204,14 @@ We can use similar techniques to those used in Examples \ref{ex_sub6} and \ref{e
 \end{minipage}
 \begin{minipage}{.55\specialboxlength}\small
 	\begin{enumerate}\addtocounter{enumi}{3}
-	\item		$\ds \int \csc x \ dx = -\ln|\csc x+\cot x| +C$
-	\item		$\ds\int \sec x\ dx = \ln|\sec x+\tan x| + C$
 	\item		$\ds \int \cot x\ dx = \ln|\sin x|+C$
+	\item		$\ds\int \sec x\ dx = \ln|\sec x+\tan x| + C$
+	\item		$\ds \int \csc x \ dx = -\ln|\csc x+\cot x| +C$
 \end{enumerate}
 \end{minipage}
 }
+
+The same type of trick can be used to help remember the antiderivatives of the six trigonometric functions as for the derivatives.  If one remembers the antiderivatives of $\sin x$, $\tan x$, and $\sec x$, then the antiderivative of the corresponding ``cofunction'' is found by changing between ``co-'' and ``not co-'', and toggling the minus sign in front.  For example, suppose we know the antiderivative of $\sec x$ is $\ln|\sec x+\tan x| + C$.  Then the antiderivative of $\csc x$ is formed by changing secant to cosecant, tangent to cotangent, and putting a minus sign in front.  Unlike derivative rules, however, note the ``cofunctions'' are \textbf{not} always the ones whose antiderivatives have the minus sign in the front.\\
 
 We explore one more common trigonometric integral.\\
 
@@ -219,7 +221,7 @@ Evaluate $\ds \int \cos^2x\ dx$.}
 %with $\cos x$ inside the $x^2$ function. 
 However, setting $u = \cos x$ means $du = -\sin x\ dx$, which we do not have in the integral. Another technique is needed.
 
-The process we'll employ is to use a Power Reducing formula for $\cos^2x$ (perhaps consult the back of this text for this formula), which states 
+The process we'll employ is to use a trigonometric identity for $\cos^2x$ (perhaps consult the back of this text for this formula), which states 
 	$$\cos ^2x = \frac{1+\cos(2x)}{2}.$$
 	The right hand side of this equation is not difficult to integrate. We have:
 \begin{align*}
@@ -243,9 +245,20 @@ It is common to be reluctant to manipulate the integrand of an integral; at firs
 Evaluate $\ds\int \frac{x^3+4x^2+8x+5}{x^2+2x+1}\ dx$.}
 {One may try to start by setting $u$ equal to either the numerator or denominator; in each instance, the result is not workable. 
 
-When dealing with rational functions (i.e., quotients made up of polynomial functions), it is an almost universal rule that everything works better when the degree of the numerator is less than the degree of the denominator. Hence we use polynomial division.
+When dealing with rational functions (i.e., quotients made up of polynomial functions), it is an almost universal rule that everything works better when the degree of the numerator is less than the degree of the denominator. Hence we use polynomial division.  At each step, divide the leading terms.  We finish when the degree of the remainder is less than the degree of the divisor $x^2+2x+1$.
+%Mike Joseph (6/10/2018) added this brief explanation and computation of the polynomial division.  The original text omitted the steps.
+$$
+\begin{array}{rlcccccccr}
+&& x & + &2  \\ \cline{2-10}\vspace{-0.9em}\\
+\multicolumn{1}{r|}{x^2+2x+1} && x^3 & +& 4x^2 &+  &8x  &+  &5 &  \\
+&-( & x^3 & + & 2x^2 & + &  x &&&)\\ \cline{2-10}\vspace{-0.9em}\\
+&& & & 2x^2 & + & 7x & +&5   \\ 
+&-( &&  & 2x^2 &+ & 4x & + & 2 &)\\ \cline{2-10}\vspace{-0.9em}\\
+&&&&&  & 3x & + & 3 
+\end{array}
+$$
 
-We skip the specifics of the steps, but note that when $x^2+2x+1$ is divided into $x^3+4x^2+8x+5$, it goes in $x+2$ times with a remainder of $3x+3$. Thus 
+So when $x^2+2x+1$ is divided into $x^3+4x^2+8x+5$, it goes in $x+2$ times with a remainder of $3x+3$. Thus 
 	$$\frac{x^3+4x^2+8x+5}{x^2+2x+1} = x+2 + \frac{3x+3}{x^2+2x+1}.$$
 Integrating $x+2$ is simple. The fraction can be integrated by setting $u = x^2+2x+1$, giving $du = (2x+2)\ dx$. This is very similar to the numerator. Note that $du/2 = (x+1)\ dx$ and then consider the following:
 \begin{align*}
@@ -255,7 +268,7 @@ Integrating $x+2$ is simple. The fraction can be integrated by setting $u = x^2+
 					&= \frac12x^2+2x+C_1 + \frac32\ln|u| + C_2 \rule[-13pt]{0pt}{5pt}\\
 					&= \frac12x^2+2x+\frac32\ln|x^2+2x+1| + C.
 \end{align*}
-In some ways, we ``lucked out'' in that after dividing, substitution was able to be done. In later sections we'll develop techniques for handling rational functions where substitution is not directly feasible.
+In some ways, we ``lucked out'' in that after dividing, substitution was able to be done. In Section~\ref{sec:partial_fraction} we'll develop techniques for handling rational functions where substitution is not directly feasible.
 }\\
 
 \example{ex_sub11}{Integration by alternate methods}{
