@@ -147,7 +147,7 @@ $$W \approx \sum_{i=1}^n W_i = \sum_{i=1}^n 6240\pi\Delta y_i(35-y_i).$$
 This is a Riemann sum. Taking the limit as the subinterval length goes to 0 gives 
 \begin{align*}
 W 	&=	\int_0^{30} 6240\pi(35-y)\ dy \\
-		&=  (6240\pi\left(35y-1/2y^2\right)\Big|_0^{30} \\
+		&=  6240\pi\left(35y-\frac{1}{2}y^2\right)\Big|_0^{30} \\
 		&= 	11,762,123 \ \text{ft--lb}\\
 		&\approx  1.176 \times 10^7 \ \text{ft--lb}.
 \end{align*}
@@ -192,10 +192,10 @@ $$W_t = 62.4\int_3^6 500(8-y)\ dy = 327,600 \text{ ft--lb}.$$
 
 The bottom region lies in the $y$-interval of $[0,3]$; we need to compute the length of the differential element in this interval.
 
-One end of the differential element is at $x=0$ and the other is along the line segment joining the points $(10,0)$ and $(15,3)$. The equation of this line is $y= 3/5(x-10)$; as we will be integrating with respect to $y$, we rewrite this equation as $x=5/3y+10$. So the length of the differential element is a difference of $x$-values: $x=0$ and $x=5/3y+10$, giving a length of $x=5/3y+10$. 
+One end of the differential element is at $x=0$ and the other is along the line segment joining the points $(10,0)$ and $(15,3)$. The equation of this line is $y= \frac{3}{5}(x-10)$; as we will be integrating with respect to $y$, we rewrite this equation as $x=\frac{5}{3}y+10$. So the length of the differential element is a difference of $x$-values: $x=0$ and $x=\frac{5}{3}y+10$, giving a length of $x=\frac{5}{3}y+10$. 
 
-Again, as the pool is 20 ft wide, this differential element  represents a thin slice of water with volume $V(y) = 20\cdot(5/3y+10)\cdot dy$; the height function is the same as before at $h(y)=8-y$. The work performed in emptying this part of the pool is
-$$W_b = 62.4\int_0^3 20(5/3y+10)(8-y)\ dy = 299,520\ \text{ft--lb}.$$
+Again, as the pool is 20 ft wide, this differential element represents a thin slice of water with volume $V(y) = 20\cdot\left(\frac{5}{3}y+10\right)\cdot dy$; the height function is the same as before at $h(y)=8-y$. The work performed in emptying this part of the pool is
+$$W_b = 62.4\int_0^3 20\left(\frac{5}{3}y+10\right)(8-y)\ dy = 299,520\ \text{ft--lb}.$$
 The total work in empyting the pool is 
 $$W = W_b+W_t = 327,600+299,520 = 627,120\ \text{ft--lb}.$$		
 Notice how the emptying of the bottom of the pool performs almost as much work as emptying the top. The top portion travels a shorter distance but has more water. In the end, this extra water produces more work.
