@@ -1,6 +1,6 @@
 \section{Parametric Equations}\label{sec:param_eqs}
 
-We are familiar with sketching  shapes, such as parabolas, by following this basic procedure:
+We are familiar with sketching shapes, such as parabolas, by following this basic procedure:
 
 \begin{center}
 \begin{tikzpicture}[>=latex]
@@ -98,7 +98,7 @@ It is not difficult to show that the curves in Examples \ref{ex_pareq1} and \ref
 These examples begin to illustrate the powerful nature of parametric equations. Their graphs are far more diverse than the graphs of functions produced by ``$y=f(x)$'' functions.
 }\\
 
-\noindent\textbf{Technology Note:} Most graphing utilities can graph functions given in parametric form. Often the word ``parametric'' is abbreviated as ``PAR'' or ``PARAM'' in the  options. The user usually needs to determine the graphing window (i.e, the minimum and maximum $x$- and $y$-values), along with the values of $t$ that are to be plotted. The user is often prompted to give a $t$ minimum, a $t$ maximum, and a ``$t$-step'' or ``$\Delta t$.'' Graphing utilities effectively plot parametric functions just as we've shown here: they plots lots of points. A smaller $t$-step plots more points, making for a smoother graph (but may take longer). In Figure \ref{fig:pareq1}, the $t$-step is 1; in Figure \ref{fig:pareq2}, the $t$-step is $\pi/4$.\\
+\noindent\textbf{Technology Note:} Most graphing utilities can graph functions given in parametric form. Often the word ``parametric'' is abbreviated as ``PAR'' or ``PARAM'' in the  options. The user usually needs to determine the graphing window (i.e, the minimum and maximum $x$- and $y$-values), along with the values of $t$ that are to be plotted. The user is often prompted to give a $t$ minimum, a $t$ maximum, and a ``$t$-step'' or ``$\Delta t$.'' Graphing utilities effectively plot parametric functions just as we've shown here: they plot lots of points. A smaller $t$-step plots more points, making for a smoother graph (but may take longer). In Figure \ref{fig:pareq1}, the $t$-step is 1; in Figure \ref{fig:pareq2}, the $t$-step is $\pi/4$.\\
 
 One nice feature of parametric equations is that their graphs are easy to shift. While this is not too difficult in the ``$y=f(x)$'' context, the resulting function can look rather messy. (Plus, to shift to the right by two, we replace $x$ with $x-2$, which is counter--intuitive.) The following example demonstrates this.\\
 
@@ -134,7 +134,7 @@ Solving this system is not trivial but involves only algebra. Using the quadrati
 \noindent\textbf{\large Converting between rectangular and parametric equations}
 \vskip \baselineskip
 
-It is sometimes useful to rewrite equations in rectangular form (i.e., $y=f(x)$) into parametric form, and vice--versa. Converting from rectangular to parametric can be very simple: given $y=f(x)$, the parametric equations $x=t$, $y=f(t)$ produce the same graph. As an example, given $y=x^2$, the parametric equations $x=t$, $y=t^2$ produce the familiar parabola. However, other parametrizations can be used. The following example demonstrates one possible alternative.\\
+It is sometimes useful to rewrite equations in rectangular form (i.e., $y=f(x)$) into parametric form, and vice--versa. Converting from rectangular to parametric can be very simple: given $y=f(x)$, the parametric equations $x=t$, $y=f(t)$ produce the same graph. As an example, given $y=x^2$, the parametric equations $x=t$, $y=t^2$ produce the familiar parabola. However, other parameterizations can be used. The following example demonstrates one possible alternative.\\
 
 \example{ex_pareq5}{Converting from rectangular to parametric}{
 Consider $y=x^2$. Find parametric equations $x=f(t)$, $y=g(t)$ for the parabola where $t=\frac{dy}{dx}$. That is, $t=a$ corresponds to the point on the graph whose tangent line has slope $a$.}
@@ -155,7 +155,33 @@ These parametric equations make certain determinations about the object's locati
 \mfigure{.8}{Graphing projectile motion in Example \ref{ex_pareq6}.}{fig:pareq6}{figures/figpareq6}
 }\\
 
-It is  sometimes necessary to convert given parametric equations into rectangular form. This can be decidedly more difficult, as some ``simple'' looking parametric equations can have very ``complicated'' rectangular equations. This conversion is often referred to as ``eliminating the parameter,'' as we are looking for a relationship between $x$ and $y$ that does not involve the parameter $t$.\\
+To determine if a point $(x,y)$ lies on a given parametric curve, we solve the two equations to find a corresponding $t$-value that satisfies both equations.  The number of such $t$-value(s) determines how many times the curve goes through the given point.  This is illustrated in the next examples.\\
+
+\example{ex_pareq_t1}{Determine if a point lies on a parametric curve}{
+Determine whether the following points lie on the parametric curve described by $x=t^2+1$ and $y=t^3+3t^2-4t$.  If so, determine the corresponding $t$-values.\\
+
+\noindent$\ds 1.\;\;\;\;\;(4,3) \qquad 2.\;\;\;\;\;(2,0)\qquad 3.\;\;\;\;\;(5,12)$
+}
+{\begin{enumerate}
+\item For this point $(4,3)$, we solve the equations $x=t^2+1=4$ and $y=t^3+3t^2-4t=3$ to determine if there is a single $t$-value that satisfies both equations simultaneously.  The quadratic equation $t^2+1=4$ is much easier to solve than the cubic equation.  It has solutions $t=\pm\sqrt{3}$.  Now rather than solve the cubic equation, we plug $t=\pm\sqrt{3}$ into $t^3+3t^2-4t$ to see if either value gives $y=3$.
+\begin{align*}
+t=-\sqrt{3}\hspace{0.23 in}&\Rightarrow\hspace{0.23 in} \left(-\sqrt{3}\right)^3+3\left(-\sqrt{3}\right)^2-4\left(-\sqrt{3}\right)=9+\sqrt{3}\not=3\\
+t=\sqrt{3}\hspace{0.23 in}&\Rightarrow\hspace{0.23 in} \left(\sqrt{3}\right)^3+3\left(\sqrt{3}\right)^2-4\left(\sqrt{3}\right)=9-\sqrt{3}\not=3\\
+\end{align*}
+Since no $t$-value satisfies both equations $x=t^2+1=4$ and $y=t^3+3t^2-4t=3$, the point $(4,3)$ does not lie on the parametric curve.
+
+\item For this point $(2,0)$, we solve the equations $x=t^2+1=2$ and $y=t^3+3t^2-4t=0$.  The equation $t^2+1=2$ has the solutions $t=\pm1$, while $t^3+3t^2-4t=0$ is easily solved by factoring: $t(t+4)(t-1)=0$ gives $t=-4,0,1$.  As $t=1$ is a solution to both equations, the point $(2,0)$ is on the curve, at $t=1$.
+
+\item  For this point $(5,12)$, we solve the equations $x=t^2+1=5$ and $y=t^3+3t^2-4t=12$.  The equation $t^2+1=5$ has the solutions $t=\pm2$.  Now we plug $t=\pm2$ into $t^3+3t^2-4t$ to see if either value gives $y=12$.
+\begin{align*}
+t=-2\hspace{0.23 in}&\Rightarrow\hspace{0.23 in} \left(-2\right)^3+3\left(-2\right)^2-4\left(-2\right)=12\\
+t=2\hspace{0.23 in}&\Rightarrow\hspace{0.23 in} \left(2\right)^3+3\left(2\right)^2-4\left(2\right)=12\\
+\end{align*}
+Both $t=-2$ and $t=2$ satisfy both equations.  Therefore, the curve goes through the point $(5,12)$ twice: once at $t=-2$ and once at $t=2$.
+\end{enumerate}
+}\\
+
+It is sometimes necessary to convert given parametric equations into rectangular form. This can be decidedly more difficult, as some ``simple'' looking parametric equations can have very ``complicated'' rectangular equations. This conversion is often referred to as ``eliminating the parameter,'' as we are looking for a relationship between $x$ and $y$ that does not involve the parameter $t$.\\
 
 \example{ex_pareq7}{Eliminating the parameter}{
 Find a rectangular equation for the curve described by $$ x= \frac{1}{t^2+1}\quad \text{and}\quad y=\frac{t^2}{t^2+1}.$$ }
@@ -274,7 +300,7 @@ We see at $t=2$ both $x\primeskip'$ and $y\primeskip'$ are 0; thus $C$ is not sm
 
 If a curve is not smooth at $t=t_0$, it means that $x\primeskip'(t_0)=y\primeskip'(t_0)=0$ as defined. This, in turn, means that rate of change of $x$ (and $y$) is 0; that is, at that instant, neither $x$ nor $y$ is changing. If the parametric equations describe the path of some object, this means the object is at rest at $t_0$. An object at rest can make a ``sharp'' change in direction, whereas moving objects tend to change direction in a ``smooth'' fashion.
 
-One should be careful to note that a ``sharp corner'' does not have to occur when a curve is not smooth. For instance, one can verify that $x=t^3$, $y=t^6$ produce the familiar $y=x^2$ parabola. However, in this parametrization, the curve is not smooth. A particle traveling along the parabola according to the given parametric equations comes to rest at $t=0$, though no sharp point is created.\\
+One should be careful to note that a ``sharp corner'' does not have to occur when a curve is not smooth. For instance, one can verify that $x=t^3$, $y=t^6$ produce the familiar $y=x^2$ parabola. However, in this parameterization, the curve is not smooth. A particle traveling along the parabola according to the given parametric equations comes to rest at $t=0$, though no sharp point is created.\\
 
 Our previous experience with cusps taught us that a function was not differentiable at a cusp. This can lead us to wonder about derivatives in the context of parametric equations and the application of other calculus concepts. Given a curve defined parametrically, how do we find the slopes of tangent lines? Can we determine concavity? We explore these concepts and more in the next section.
 

@@ -17,7 +17,7 @@ $$\frac{dy}{dx} = \frac{g\primeskip'(t)}{\fp(t)}.$$
 We use this to define the tangent line.
 
 \definition{def:tangent_par}{Tangent and Normal Lines}
-{Let a curve $C$ be parametrized by $x=f(t)$ and $y=g(t)$, where $f$ and $g$ are differentiable functions on some interval $I$ containing $t=t_0$. The \textbf{tangent line} to $C$ at $t=t_0$ is the line through $\big(f(t_0),g(t_0)\big)$ with slope $m=g\primeskip'(t_0)/\fp(t_0)$, provided $\fp(t_0)\neq 0$.\\
+{Let a curve $C$ be parameterized by $x=f(t)$ and $y=g(t)$, where $f$ and $g$ are differentiable functions on some interval $I$ containing $t=t_0$. The \textbf{tangent line} to $C$ at $t=t_0$ is the line through $\big(f(t_0),g(t_0)\big)$ with slope $m=g\primeskip'(t_0)/\fp(t_0)$, provided $\fp(t_0)\neq 0$.\\
 
 The \textbf{normal line} to $C$ at $t=t_0$ is the line through $\big(f(t_0),g(t_0)\big)$ with slope $m=-\fp(t_0)/g\primeskip'(t_0)$, provided $g\primeskip'(t_0)\neq 0$.\index{tangent line}\index{normal line}\index{parametric equations!tangent line}\index{parametric equations!normal line}
 }
@@ -26,8 +26,8 @@ The definition leaves two special cases to consider. When the tangent line is ho
 
 	
 \begin{enumerate}
-	\item If the tangent line at $t=t_0$ has a slope of 0, the normal line to $C$ at $t=t_0$ is the line $x=f(t_0)$.
-	\item		If the normal line at $t=t_0$ has a slope of 0, the tangent line to $C$ at $t=t_0$ is the line $x=f(t_0)$.
+	\item If the tangent line at $t=t_0$ has a slope of 0, the normal line to $C$ at $t=t_0$ is the vertical line $x=f(t_0)$.
+	\item		If the normal line at $t=t_0$ has a slope of 0, the tangent line to $C$ at $t=t_0$ is the vertical line $x=f(t_0)$.
 	\end{enumerate}
 	
 \example{ex_parcalc1}{Tangent and Normal Lines to Curves}{
@@ -198,7 +198,7 @@ $$L = \int_{t_1}^{t_2} \sqrt{\fp(t)^2+g\primeskip'(t)^2}\ dt.$$
 As before, these integrals are often not easy to compute. We start with a simple example, then give  another where we approximate the solution.\\
 
 \example{ex_parcalc6}{Arc Length of a Circle}{
-Find the arc length of the circle parametrized by $x=3\cos t$, $y=3\sin t$ on $[0,3\pi/2]$. 
+Find the arc length of the circle parameterized by $x=3\cos t$, $y=3\sin t$ on $[0,3\pi/2]$. 
 }
 {By direct application of Theorem \ref{thm:arc_length_parametric}, we have
 \begin{align*}
@@ -214,7 +214,7 @@ This should make sense; we know from geometry that the circumference of a circle
 \example{ex_parcalc7}{Arc Length of a Parametric Curve}{
 The graph of the parametric equations $x=t(t^2-1)$, $y=t^2-1$ crosses itself as shown in Figure \ref{fig:parcalc7}, forming a ``teardrop.'' Find the arc length of the teardrop.
 }
-{We can see by the parametrizations of $x$ and $y$ that when $t=\pm 1$, $x=0$ and $y=0$. This means we'll integrate from $t=-1$ to $t=1$. Applying Theorem \ref{thm:arc_length_parametric}, we have
+{We can see by the parameterizations of $x$ and $y$ that when $t=\pm 1$, $x=0$ and $y=0$. This means we'll integrate from $t=-1$ to $t=1$. Applying Theorem \ref{thm:arc_length_parametric}, we have
 \begin{align*}
 L 	&= \int_{-1}^1\sqrt{(3t^2-1)^2+(2t)^2}\ dt\\
 		&=	\int_{-1}^1 \sqrt{9t^4-2t^2+1} \ dt.
@@ -223,6 +223,18 @@ Unfortunately, the integrand does not have an antiderivative expressible by elem
 \mfigure{.45}{A graph of the parametric equations in Example \ref{ex_parcalc7}, where the arc length of the teardrop is calculated.}{fig:parcalc7}{figures/figparcalc7}
 }\\
 \clearpage
+
+\example{ex_parcalc_new}{Arc Length of a Parametric Curve}{
+Determine the length of the graph of the parametric equations $x=20/t$, $y=t^{3/2}$ from the point $(20,1)$ to the point $(5,8)$.
+}
+{In this problem, we need to determine the $t$-value(s) for the given points, as in the previous section.  For the point $(20,1)$, solving $x=20/t=20$ gives $t=1$.  We plug this into $y=t^{3/2}=1^{3/2}=1$, confirming the point is on the curve at $t=1$.  Similarly, we can determine the point $(5,8)$ corresponds to $t=4$.  So we'll integrate from $t=1$ to $t=4$. Applying Theorem \ref{thm:arc_length_parametric}, we have
+\begin{align*}
+L 	&= \int_{1}^{4}\sqrt{\left(-\frac{20}{t^2}\right)^2+\left(\frac{3}{2}t^{1/2}\right)^2}\ dt\\
+		&=	\int_{1}^{4}\sqrt{\frac{400}{t^4}+\frac{9}{4}t} \ dt.
+\end{align*}
+This integrand does not have an antiderivative expressible by elementary functions, but a computer approximates this integral as $17.6087$.
+}\\
+
 %\enlargethispage{2\baselineskip}
 \noindent\textbf{\large Surface Area of a Solid of Revolution}\\
 

@@ -67,7 +67,7 @@ It is useful to recognize both the rectangular (or, Cartesian) coordinates of a 
 {Given the polar point $P(r,\theta)$, the rectangular coordinates are determined by $$x=r\cos \theta\qquad y=r\sin \theta.$$
 
 Given the rectangular coordinates $(x,y)$, the polar coordinates are determined by
-$$ r^2=x^2+y^2\qquad \tan \theta = \frac yx.$$
+$$ r^2=x^2+y^2\qquad \tan \theta = \frac yx\text{ (for }x\not=0\text{).}$$
 }
 
 \example{ex_polar2}{Converting Between Polar and Rectangular Coordinates}{
@@ -104,13 +104,13 @@ $$ r^2=x^2+y^2\qquad \tan \theta = \frac yx.$$
 		$$1^2+2^2 = r^2 \qquad \tan \theta = \frac{2}{1}.$$
 		The first equation tells us that $r=\sqrt{5}$. Using the inverse tangent function, we find
 		$$\tan \theta = 2 \quad \Rightarrow \quad \theta = \tan^{-1} 2 \approx 1.11\approx 63.43^\circ.$$
-		Thus polar coordinates of $(1,2)$ are $P(\sqrt{5},1.11)$.
+		Thus polar coordinates of $(1,2)$ are $P\left(\sqrt{5},\tan^{-1} 2\right)$.
 		\item		To convert $(-1,1)$ to polar coordinates, we form the equations 
 		$$(-1)^2+1^2=r^2 \qquad \tan \theta = \frac{1}{-1}.$$
 		Thus $r=\sqrt{2}$. We need to be careful in computing $\theta$: using the inverse tangent function, we have $$\tan\theta = -1 \quad \Rightarrow \quad \theta = \tan^{-1}(-1) = -\pi/4 = -45^\circ.$$
-		This is not the angle we desire. The range of $\tan^{-1}x $ is $(-\pi/2,\pi/2)$; that is, it returns angles that lie in the $1^\text{st}$ and $4^\text{th}$ quadrants. To find locations in the $2^\text{nd}$  and $3^\text{rd}$ quadrants, add $\pi$ to the result of $\tan^{-1}x$. So  $\pi+(-\pi/4)$ puts the angle at $3\pi/4$. Thus the polar point is $P(\sqrt{2},3\pi/4)$.
+		This is not the angle we desire. The range of $\tan^{-1}x $ is $(-\pi/2,\pi/2)$; that is, it returns angles that lie in the $1^\text{st}$ and $4^\text{th}$ quadrants. To find locations in the $2^\text{nd}$  and $3^\text{rd}$ quadrants, add $\pi$ to the result of $\tan^{-1}x$. So  $\pi+(-\pi/4)$ puts the angle at $3\pi/4$. Thus the polar point is $P\left(\sqrt{2},3\pi/4\right)$.
 		
-		An alternate method is to use the angle $\theta$ given by arctangent, but change the sign of $r$. Thus we could also refer to $(-1,1)$ as\\ $P(-\sqrt{2},-\pi/4)$.
+		An alternate method is to use the angle $\theta$ given by arctangent, but change the sign of $r$. Thus we could also refer to $(-1,1)$ as\\ $P\left(-\sqrt{2},-\pi/4\right)$.
 	\end{enumerate}
 These points are plotted in Figure \ref{fig:polar2} (b). The polar system is drawn lightly under the rectangular grid with rays to demonstrate the angles used.
 \end{enumerate}
@@ -289,7 +289,7 @@ Convert from polar to rectangular.
 	\vskip-\baselineskip
 }\\
 
-Some curves have very simple polar equations but rather complicated rectangular ones. For instance, the equation $r=1+\cos\theta$ describes a \textit{cardiod} (a shape important the sensitivity of microphones, among other things; one is graphed in the gallery in the Lima\c con section). It's rectangular form is not nearly as simple; it is the implicit equation
+Some curves have very simple polar equations but rather complicated rectangular ones. For instance, the equation $r=1+\cos\theta$ describes a \textit{cardioid} (a shape important the sensitivity of microphones, among other things; one is graphed in the gallery in the Lima\c con section). It's rectangular form is not nearly as simple; it is the implicit equation
 $x^4+y^4+2x^2y^2-2xy^2-2x^3-y^2=0.$ The conversion is not ``hard,'' but takes several steps, and is left as a problem in the Exercise section.\\
 
 \noindent\textbf{\Large Gallery of Polar Curves}\\
@@ -301,12 +301,15 @@ There are a number of basic and ``classic'' polar curves, famous for their beaut
 \setlength{\gallerywidth}{(0pt+\marginparwidth+\textwidth)/4}
 \vskip \baselineskip
 \noindent\hskip-\marginparwidth\hskip-25pt
+\hskip 155pt
 \rule{25pt+\marginparwidth+\textwidth}{1pt}\\
 
 \noindent\hskip-\marginparwidth\hskip-25pt
+\hskip 155pt
 \textbf{\large Lines}\\
 
 \noindent\hskip-\marginparwidth\hskip-30pt
+\hskip 155pt
 \begin{tabular}{p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}}
 \textbf{Through the origin:} & \textbf{Horizontal line:} & \textbf{Vertical line:} & \textbf{Not through origin:} \\[5pt]
 $\theta = \alpha$ & $r=a\csc\theta$ & $r=a\sec\theta$ & $\ds r=\frac{b}{\sin\theta-m\cos\theta}$ \\[10pt]
@@ -330,7 +333,7 @@ $r=a\cos \theta$ & $r=a\sin\theta$ & $r=a$ & $r=\theta$\\
 
 \noindent\hskip-5pt%
 \begin{tabular}{p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}}
-\textbf{With inner loop:} & \textbf{Cardiod:} & \textbf{Dimpled:} & \textbf{Convex:} \\[5pt]
+\textbf{With inner loop:} & \textbf{Cardioid:} & \textbf{Dimpled:} & \textbf{Convex:} \\[5pt]
 $\ds \frac ab < 1$ & $\ds \frac ab=1$ & $\ds 1<\frac ab <2$ & $\ds \frac ab>2$ \\[10pt]
 \myincludegraphics[scale=.9]{figures/figpolarlimacon1} & \myincludegraphics[scale=.9]{figures/figpolarlimacon2} & \myincludegraphics[scale=.9]{figures/figpolarlimacon3} & \myincludegraphics[scale=.9]{figures/figpolarlimacon4}
 \end{tabular}\\
@@ -342,7 +345,7 @@ $\ds \frac ab < 1$ & $\ds \frac ab=1$ & $\ds 1<\frac ab <2$ & $\ds \frac ab>2$ \
 \enlargethispage{20\baselineskip}
 \noindent\hskip-5pt%
 \begin{tabular}{p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}p{\gallerywidth}}
-%\textbf{With inner loop:} & \textbf{Cardiod:} & \textbf{Dimpled:} & \textbf{Convex:} \\[5pt]
+%\textbf{With inner loop:} & \textbf{Cardioid:} & \textbf{Dimpled:} & \textbf{Convex:} \\[5pt]
 $r=a\cos (2\theta)$ & $r=a\sin(2\theta)$ & $r=a\cos (3\theta)$ & $r=a\sin (3\theta)$ \\[10pt]
 \myincludegraphics[scale=.9]{figures/figpolarrose1} & \myincludegraphics[scale=.9]{figures/figpolarrose2} & \myincludegraphics[scale=.9]{figures/figpolarrose4} & \myincludegraphics[scale=.9]{figures/figpolarrose3}
 \end{tabular}\\

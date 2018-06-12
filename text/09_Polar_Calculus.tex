@@ -116,23 +116,23 @@ This is a Riemann sum. By taking the limit of the sum as $n\to\infty$, we find t
 %\clearpage
 
 \theorem{thm:polar_area}{Area of a Polar Region}
-{Let $f$ be continuous and non-negative on $[\alpha,\beta]$, where $0\leq \beta-\alpha\leq 2\pi$. The area  $A$ of the region bounded by the curve $r=f(\theta)$ and the lines $\theta=\alpha$ and $\theta=\beta$ is 
+{Let $f$ be continuous  on $[\alpha,\beta]$, for which the region bounded by $r=f(\theta)$ and the lines $\theta=\alpha$ and $\theta=\beta$ does not overlap itself. The area  $A$ of the region bounded by the curve $r=f(\theta)$ and the lines $\theta=\alpha$ and $\theta=\beta$ is 
 $$
 A \ =\  \frac12\int_\alpha^\beta f(\theta)^2 \ d\theta\  =\  \frac12\int_\alpha^\beta r^{\,2} \ d\theta$$
 }
 
-The theorem states that $0\leq \beta-\alpha\leq 2\pi$. This ensures that region does not overlap itself, which would give a result that does not correspond directly to the area.\\
+If the region overlapped itself, the area would be counted multiple times, which would not give the true area.\\
 
 \example{ex_polcalc3}{Area of a polar region}{
 Find the area of the circle defined by $r=\cos \theta$. (Recall this circle has radius $1/2$.)}
-{This is a direct application of Theorem \ref{thm:polar_area}. The circle is traced out on $[0,\pi]$, leading to the integral
+{This is a direct application of Theorem \ref{thm:polar_area}. The circle is traced out exactly once on $[0,\pi]$, leading to the integral
 \begin{align*}
 \text{Area} &= \frac12\int_0^\pi \cos^2\theta\ d  \theta \\
 						&= \frac12\int_0^\pi \frac{1+\cos(2\theta)}{2}\ d\theta\\
-						&= \frac14\big(\theta +\frac12\sin(2\theta)\big)\Bigg|_0^\pi\\
+						&= \frac14\left(\theta +\frac12\sin(2\theta)\right)\Bigg|_0^\pi\\
 						&= \frac14\pi.
 \end{align*}
-Of course, we already knew the area of a circle with radius $1/2$. We did this example to demonstrate that the area formula is correct.
+Of course, we already knew the area of a circle with radius $1/2$. We did this example to demonstrate that the area formula is correct.  The interval $[0,\pi]$ is very important, as choosing $[0,2\pi]$ would give the circle traced out twice (thus double the area).
 }\\
 
 \mnote{.7}{\textbf{Note:} Example \ref{ex_polcalc3} requires the use of the integral $\ds\int \cos^2\theta\ d\theta$. This is handled well by using the power reducing formula as found in the back of this text. Due to the nature of the area formula, integrating $\cos^2\theta$ and $\sin^2\theta$ is required often. We offer here these indefinite integrals as a time--saving measure.\\
@@ -141,8 +141,8 @@ $$\int\sin^2\theta\ d\theta = \frac12\theta-\frac14\sin(2\theta)+C$$
 }
 
 \example{ex_polcalc4}{Area of a polar region}{
-Find the area of the cardiod $r=1+\cos\theta$ bound between $\theta=\pi/6$ and $\theta=\pi/3$, as shown in Figure \ref{fig:polcalc4}.
-\mfigure{.3}{Finding the area of the shaded region of a cardiod in Example \ref{ex_polcalc4}.}{fig:polcalc4}{figures/figpolcalc4}
+Find the area of the cardioid $r=1+\cos\theta$ bound between $\theta=\pi/6$ and $\theta=\pi/3$, as shown in Figure \ref{fig:polcalc4}.
+\mfigure{.3}{Finding the area of the shaded region of a cardioid in Example \ref{ex_polcalc4}.}{fig:polcalc4}{figures/figpolcalc4}
 }
 {This is again a direct application of Theorem \ref{thm:polar_area}. 
 \begin{align*}
@@ -163,7 +163,7 @@ $$\text{Area}\ = \ \frac12\int_\alpha^\beta r_2^{\,2}\ d\theta - \frac12\int_\al
 \mfigure{.6}{Illustrating area bound between two polar curves.}{fig:polarea3}{figures/figpolarea3}
 
 \keyidea{idea:area_between_polar}{Area Between Polar Curves}
-{The area $A$ of the region bounded by $r_1=f_1(\theta)$ and $r_2=f_2(\theta)$, $\theta=\alpha$ and $\theta=\beta$, where $f_1(\theta)\leq f_2(\theta)$ on $[\alpha,\beta]$, is
+{The area $A$ of the non-overlapping region bounded by $r_1=f_1(\theta)$ and $r_2=f_2(\theta)$, $\theta=\alpha$ and $\theta=\beta$, where $f_1(\theta)\leq f_2(\theta)$ on $[\alpha,\beta]$, is
 $$A = \frac12\int_\alpha^\beta \big(r_2^{\,2}-r_1^{\,2}\big)\ d\theta.$$
 }
 
@@ -182,8 +182,8 @@ Thus we integrate $\frac12\big((3\cos\theta)^2-(1+\cos\theta)^2\big)$ on $[-\pi/
 \begin{align*}
 \text{Area} &= \frac12\int_{-\pi/3}^{\pi/3} \big((3\cos\theta)^2-(1+\cos\theta)^2\big)\ d\theta\\
 		&= \frac12\int_{-\pi/3}^{\pi/3} \big( 8\cos^2\theta-2\cos\theta-1\big)\ d\theta \\
-		&= \big(2\sin(2\theta) - 2\sin\theta+3\theta\big)\Bigg|_{-\pi/3}^{\pi/3}\\
-		&= 2\pi.
+		&= \frac{1}{2}\big(2\sin(2\theta) - 2\sin\theta+3\theta\big)\Bigg|_{-\pi/3}^{\pi/3}\\
+		&= \pi.
 \end{align*}
 Amazingly enough, the area between these curves has a ``nice'' value.
 }\\
@@ -225,8 +225,8 @@ $$L = \int_\alpha^\beta \sqrt{\fp(\theta)^2+f(\theta)^2}\ d\theta = \int_\alpha^
 }
 
 \example{ex_polcalc7}{Arc length of a lima\c con}{
-Find the arc length of the lima\c con $r=1+2\sin t$.}
-{With $r=1+2\sin t$, we have $r\,' = 2\cos t$. The lima\c con is traced out once on $[0,2\pi]$, giving us our bounds of integration. Applying Key Idea \ref{idea:polar_arclength}, we have
+Find the arc length of the lima\c con $r=1+2\sin \theta$.}
+{With $r=1+2\sin \theta$, we have $r\,' = 2\cos \theta$. The lima\c con is traced out once on $[0,2\pi]$, giving us our bounds of integration. Applying Key Idea \ref{idea:polar_arclength}, we have
 \begin{align*}
 L 	&= \int_0^{2\pi} \sqrt{(2\cos\theta)^2+(1+2\sin\theta)^2}\ d\theta \\
 		&=	\int_0^{2\pi} \sqrt{4\cos^2\theta+4\sin^2\theta +4\sin\theta+1}\ d\theta\\
