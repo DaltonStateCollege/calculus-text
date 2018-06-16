@@ -101,7 +101,7 @@ x^2+2x+y^2-4y+z^2-6z&=2 \\
 The sphere is centered at $(-1,2,3)$ and has a radius of 4.
 }\\
 
-The equation of a sphere is an example of an implicit function defining a surface in space. In the case of a sphere, the variables $x$, $y$ and $z$ are all used. We now consider situations where surfaces are defined where one or two of these variables are absent.\\
+The equation of a sphere is an example of an implicit relation defining a surface in space. In the case of a sphere, the variables $x$, $y$ and $z$ are all used. We now consider situations where surfaces are defined where one or two of these variables are absent.\\
 
 \noindent\textbf{\large Introduction to Planes in Space}\\
 
@@ -138,29 +138,29 @@ This, in fact, gives us an equation that describes this plane: $z=0$. Likewise, 
 %the $x$-$z$ plane
 %\end{tabular} 
 %}
-\noindent\begin{minipage}{\textwidth}
+\begin{minipage}{\textwidth}
 \begin{tabular}{ccc}
-\myincludegraphicsthree{width=95pt,3Dmenu,activate=onclick,deactivate=onclick,
+\myincludegraphicsthree{width=65pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.004,
 3Dc2c=4 4 2,
 3Dcoo=0 0 0,
 3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=4mm 5mm 4mm 5mm,clip=true}{figures/figspacexy}&
-\myincludegraphicsthree{width=95pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=.9,trim=4mm 5mm 4mm 5mm,clip=true}{figures/figspacexy}&
+\myincludegraphicsthree{width=65pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.004,
 3Dc2c=4 4 2,
 3Dcoo=0 0 0,
 3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=4mm 5mm 4mm 5mm,clip=true}{figures/figspaceyz}&
-\myincludegraphicsthree{width=95pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=.9,trim=4mm 5mm 4mm 5mm,clip=true}{figures/figspaceyz}&
+\myincludegraphicsthree{width=65pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.004,
 3Dc2c=4 4 2,
 3Dcoo=0 0 0,
 3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=4mm 5mm 4mm 5mm,clip=true}{figures/figspacexz}\\
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=.9,trim=4mm 5mm 4mm 5mm,clip=true}{figures/figspacexz}\\
 %\myincludegraphics[scale=1.25,trim=4mm 5mm 4mm 5mm,clip=true]{figures/figspacexy}\\[-10pt]
 the $x$-$y$ plane &
 the $y$-$z$ plane &
@@ -201,6 +201,12 @@ Sketch the region defined by the inequalities $-1\leq y\leq 2$.}
 The equation $x=1$ obviously lacks the $y$ and $z$ variables, meaning it defines points where the $y$ and $z$ coordinates can take on any value. Now consider the equation $x^2+y^2=1$ \emph{in space.} In \emph{the plane}, this equation describes a circle of radius 1, centered at the origin. In space, the $z$ coordinate is not specified, meaning it can take on any value. In Figure \ref{fig:spacecylinder1} (a), we show part of the graph of the equation $x^2+y^2=1$ by sketching 3 circles: the bottom one has a constant $z$-value of $-1.5$, the middle one has a $z$-value of 0 and the top circle has a $z$-value of 1. By plotting \emph{all} possible $z$-values, we get the  surface shown in Figure \ref{fig:spacecylinder1} (b). 
 This surface looks like a ``tube,'' or a ``cylinder''; mathematicians call this surface a \textbf{cylinder} for an entirely different reason.\\
 
+\definition{def:cylinder}{Cylinder}
+{Let $C$ be a curve in a plane and let $L$ be a line not parallel to $C$. A \textbf{cylinder} is the set of all lines parallel to $L$ that pass through $C$. The curve $C$ is the \textbf{directrix} of the cylinder, and the lines are the \textbf{rulings}.\index{cylinder}\index{directrix}
+}
+
+In this text, we consider curves $C$ that lie in planes parallel to one of the coordinate planes, and lines $L$ that are perpendicular to these planes, forming \textbf{right cylinders}. Thus the directrix can be defined using equations involving 2 variables, and the rulings will be parallel to the axis of the 3$^\text{rd}$ variable.
+
 \mtable{.7}{Sketching $x^2+y^2=1$.}{fig:spacecylinder1}{%
 \begin{tabular}{c}
 \myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
@@ -221,12 +227,6 @@ This surface looks like a ``tube,'' or a ``cylinder''; mathematicians call this 
 (b)
 \end{tabular}
 }
-
-\definition{def:cylinder}{Cylinder}
-{Let $C$ be a curve in a plane and let $L$ be a line not parallel to $C$. A \textbf{cylinder} is the set of all lines parallel to $L$ that pass through $C$. The curve $C$ is the \textbf{directrix} of the cylinder, and the lines are the \textbf{rulings}.\index{cylinder}\index{directrix}
-}
-
-In this text, we consider curves $C$ that lie in planes parallel to one of the coordinate planes, and lines $L$ that are perpendicular to these planes, forming \textbf{right cylinders}. Thus the directrix can be defined using equations involving 2 variables, and the rulings will be parallel to the axis of the 3$^\text{rd}$ variable.
 
 In the example preceding the definition, the curve $x^2+y^2=1$ in the $x$-$y$ plane is the directrix and the rulings are lines parallel to the $z$-axis. (Any circle shown in Figure \ref{fig:spacecylinder1} can be considered a directrix; we simply choose the one where $z=0$.) Sample rulings can also be viewed in part (b) of the figure. More examples will help us understand this definition.\\
 
@@ -285,29 +285,29 @@ Graph the cylinder following cylinders.
 	
 	\item		We can view the equation $x=\sin z$ as a sine curve that exists in the $x$-$z$ plane, as shown in Figure \ref{fig:space4b} (a). The rules are parallel to the $y$ axis as the variable $y$ does not appear in the equation $x=\sin z$; some of these are shown in part (b). The surface is shown in part (c) of the figure. 
 	
-	\begin{center}
+\begin{center}
 \begin{tabular}{ccc}
-\myincludegraphicsthree{height=90pt,3Dmenu,activate=onclick,deactivate=onclick,
+\myincludegraphicsthree{height=65pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0045,
 3Dc2c=4 4 3,
 3Dcoo=0 0 0,
 3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true}{figures/figspace4d} &
-\myincludegraphicsthree{height=90pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=.9,trim=5mm 5mm 5mm 5mm,clip=true}{figures/figspace4d} &
+\myincludegraphicsthree{height=65pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0045,
 3Dc2c=4 4 3,
 3Dcoo=0 0 0,
 3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true}{figures/figspace4e} 
-&\myincludegraphicsthree{height=90pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=.9,trim=5mm 5mm 5mm 5mm,clip=true}{figures/figspace4e} 
+&\myincludegraphicsthree{height=65pt,3Dmenu,activate=onclick,deactivate=onclick,
 3Droll=0,
 3Dortho=0.0045,
 3Dc2c=4 4 3,
 3Dcoo=0 0 0,
 3Droo=150,
-3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true}{figures/figspace4f}\\[-10pt]
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=.9,trim=5mm 5mm 5mm 5mm,clip=true}{figures/figspace4f}\\[-10pt]
 (a) & (b) & (c)
 \end{tabular}
 \captionsetup{type=figure}
@@ -801,7 +801,7 @@ Sketch the quadric surface defined by the given equation.\\[5pt]
 }
 {\begin{enumerate}
 	\item $\ds y=\frac{x^2}{4}+\frac{z^2}{16}$:\\[5pt]
-	We first identify the quadric by pattern--matching with the equations given previously. Only two surfaces have equations where one variable is raised to the first power, the elliptic paraboloid and the hyperbolic paraboloid. In the latter case, the other variables have different signs, so we conclude that this describes a hyperbolic paraboloid. As the variable with the first power is $y$, we note the paraboloid opens along the $y$-axis. 
+	We first identify the quadric by pattern--matching with the equations given previously. Only two surfaces have equations where one variable is raised to the first power, the elliptic paraboloid and the hyperbolic paraboloid. In the latter case, the other variables have different signs, so we conclude that this describes an elliptic paraboloid. As the variable with the first power is $y$, we note the paraboloid opens along the $y$-axis. 
 	
 	To make a decent sketch by hand, we need only draw a few traces. In this case, the traces $x=0$ and $z=0$ form parabolas that outline the shape.
 	

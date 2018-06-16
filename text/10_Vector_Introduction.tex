@@ -124,9 +124,9 @@ As vectors convey magnitude and direction information, the sum of vectors also c
 \end{quotation}
 
 This idea is sketched in Figure \ref{fig:vect2b}, where the initial point of $\vec v$ is the terminal point of $\vec u$. This is known as the ``Head to Tail Rule'' of adding vectors. Vector addition is very important. For instance, if the vectors $\vec u$ and $\vec v$ represent forces acting on a body, the sum $\vec u+\vec v$ gives the resulting force. Because of various physical applications of vector addition, the sum $\vec u+\vec v$ is often referred to as the \sword{resultant vector}, or just the ``resultant.''\index{vectors!resultant}\index{Parallelogram Law}\index{vectors!Parallelogram Law}\index{Head To Tail Rule}\index{vectors!Head To Tail Rule}\index{vectors!zero vector}
-\mfigure{.75}{Illustrating how to add vectors using the Head to Tail Rule and Parallelogram Law.}{fig:vect2b}{figures/figvect2b}
 
 Analytically, it is easy to see that $\vec u+\vec v = \vec v+\vec u$. Figure \ref{fig:vect2b} also gives a graphical representation of this, using gray vectors. Note that the vectors $\vec u$ and $\vec v$, when arranged as in the figure, form a parallelogram. Because of this, the Head to Tail Rule is also known as the Parallelogram Law: the vector $\vec u+\vec v$ is defined by forming the parallelogram defined by the vectors $\vec u$ and $\vec v$; the initial point of $\vec u+\vec v$ is the common initial point of parallelogram, and the terminal point of the sum is the common terminal point of the parallelogram.
+\mfigure{.75}{Illustrating how to add vectors using the Head to Tail Rule and Parallelogram Law.}{fig:vect2b}{figures/figvect2b}
 
 While not illustrated here, the Head to Tail Rule and Parallelogram Law hold for vectors in $\mathbb{R}^3$ as well.
 
@@ -189,7 +189,7 @@ Our examples have illustrated key principles in vector algebra: how to add and s
 	\item \parbox{150pt}{$(c+d)\vec v = c\vec v+d\vec v$}Distributive Property
 	\item \parbox{150pt}{$0\vec v = \vec 0$}
 	\item	\parbox{150pt}{$\norm{c\vec v} = |c|\cdot\norm{\vec v}$}\label{thm:norm_prop}
-	\item	$\vnorm u = 0$ if, and only if, $\vecu = \vec 0$.  \label{thm:zero_norm}
+	\item	$\vnorm u = 0$ if and only if $\vecu = \vec 0$.  \label{thm:zero_norm}
 \end{enumerate}
 }
 
@@ -266,7 +266,7 @@ A similar construction in $\mathbb{R}^3$ shows that the terminal points all lie 
 
 \item A vector $\vec u$ in $\mathbb{R}^2$ is a unit vector if, and only if, its component form is $\la \cos\theta,\sin\theta\ra$ for some angle $\theta$.
 \index{unit vector!properties}\index{vectors!unit vector}
-	\item		A vector $\vec u$ in $\mathbb{R}^3$ is a unit vector if, and only if, its component form is $\la \sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta\ra$ for some angles $\theta$ and $\varphi$.
+	\item		A vector $\vec u$ in $\mathbb{R}^3$ is a unit vector if, and only if, its component form is $\la \sin\varphi\cos\theta,\sin\varphi\sin\theta,\cos\varphi\ra$ for some angles $\theta$ and $\varphi$.
 \end{enumerate}
 }
 
@@ -295,7 +295,7 @@ The sum of the entries in the first component is 0, and the sum of the entries i
 m_1\cos120^\circ + m_2\cos45^\circ &=0 \\
 m_1\sin120^\circ + m_2\sin45^\circ &=50
 \end{align*}
-This is a simple 2-equation, 2-unkown system of linear equations. We leave it to the reader to verify that the solution is 
+This is a simple 2-equation, 2-unknown system of linear equations. We leave it to the reader to verify that the solution is 
 $$m_1=50(\sqrt{3}-1) \approx 36.6;\qquad m_2=\frac{50\sqrt{2}}{1+\sqrt{3}} \approx 25.88.$$
 
 It might seem odd that the sum of the forces applied to the chains is more than 50lb. We leave it to a physics class to discuss the full details, but offer this short explanation. Our equations were established so that the \textit{vertical} components of each force sums to 50lb, thus supporting the weight. Since the chains are at an angle, they also pull against each other, creating an ``additional'' horizontal force while holding the weight in place.
@@ -333,7 +333,7 @@ Unit vectors were very important in the previous calculation; they allowed us to
 							&= \la 4,-5,2\ra
 							\end{aligned}$\hfill\null
 \end{enumerate}
-These two examples demonstrate that converting between component form and the standard unit vectors is rather straightforward. Many mathematicians prefer component form, and it is the preferred notation in this text. Many engineers prefer using the standard unit vectors, and many engineering text use that notation.
+These two examples demonstrate that converting between component form and the standard unit vectors is rather straightforward. Many mathematicians prefer component form, and it is the preferred notation in this text. Many engineers prefer using the standard unit vectors, and many engineering texts use that notation.
 }\\
 
 \example{ex_vect8}{Finding Component Force}{
