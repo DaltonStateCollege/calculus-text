@@ -102,7 +102,7 @@ Each representation has its own advantages, depending on the context. We summari
 	\item	The \textbf{parametric equations} of the line are
 	$$x = x_0+at, \quad y=y_0+bt, \quad z = z_0+ct .$$
 	\item	The \textbf{symmetric equations} of the line are
-	$$\frac{x-x_0}{a} = \frac{y-y_0}{b}=\frac{z-z_0}{c}.$$
+	$$\frac{x-x_0}{a} = \frac{y-y_0}{b}=\frac{z-z_0}{c}$$ when $a,b,c\not=0$.
 \end{enumerate}
 }
 
@@ -132,6 +132,9 @@ $$ \frac{-1-2}{-1} \stackrel{?}{=} \frac{6-3}{1} \stackrel{?}{=} \frac{6-1}{2} \
 We see that $Q$ does not lie on the line as it did not satisfy the symmetric equations.
 }\\
 
+Note that the symmetric equations given in Definition~\ref{def:lines} only allow for the case where $a,b,c$ are all nonzero.  This is because of the denominators.  However, we can modify this a bit when one or more of $a,b,c$ are zero.  For example, consider the line whose parametric equations are
+$$x = 5+4t,\quad y = 3,\quad z = -2+t.$$  This line lies in the plane $y=3$.  So we can define this line using the equations $$y=3 \text{and }\ds \frac{x-5}{4}=\frac{z+2}{1}$$ together.  The second equation comes from the usual symmetric equations formula for $x$ and $z$.  This pair is called the symmetric equations for this particular line.\\
+
 \example{ex_lines6}{Finding the equation of a line through two points}{
 Find the parametric equations of the line through the points $P=(2,-1,2)$ and $Q = (1,3,-1)$.}
 {Recall the statement made at the beginning of this section: to find the equation of a line, we need a point and a direction. We have \emph{two} points; either one will suffice. The direction of the line can be found by the vector with initial point $P$ and terminal point $Q$: $\vv{PQ} = \la -1,4,-3\ra$.
@@ -147,7 +150,7 @@ $$\ell: \quad x= 2-t\quad y=-1+4t \quad z=2-3t.$$
 3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25}{.6}{A graph of the line in Example \ref{ex_lines6}.}{fig:lines6}{figures/figlines6}
 %\mfigure[scale=1.25]{.6}{A graph of the line in Example \ref{ex_lines6}.}{fig:lines6}{figures/figlines6}
 
-A graph of the points and line are given in Figure \ref{fig:lines6}. Note how in the given parametrization of the line, $t=0$ corresponds to the point $P$, and $t=1$ corresponds to the point $Q$. This relates to the understanding of the vector equation of a line described in Figure \ref{fig:lines_eq}. The parametric equations ``start'' at the point $P$, and $t$ determines how far in the direction of $\vv{PQ}$ to travel. When $t=0$, we travel 0 lengths of $\vv{PQ}$; when $t=1$, we travel one length of $\vv{PQ}$, resulting in the point $Q$.
+A graph of the points and line are given in Figure \ref{fig:lines6}. Note how in the given parameterization of the line, $t=0$ corresponds to the point $P$, and $t=1$ corresponds to the point $Q$. This relates to the understanding of the vector equation of a line described in Figure \ref{fig:lines_eq}. The parametric equations ``start'' at the point $P$, and $t$ determines how far in the direction of $\vv{PQ}$ to travel. When $t=0$, we travel 0 lengths of $\vv{PQ}$; when $t=1$, we travel one length of $\vv{PQ}$, resulting in the point $Q$.
 }\\
 
 \noindent \textbf{\large Parallel, Intersecting and Skew Lines}\\
@@ -224,7 +227,7 @@ $$\frac{(-0.7)-2.8}{-2.9} \stackrel{?}{=} \frac{(4.2)-10.15}{-4.93} \stackrel{?}
 3Droo=150,
 3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=2mm 0mm 0mm 0mm,clip=true}{.35}{Graphing the lines in Example \ref{ex_lines3}.}{fig:lines3}{figures/figlines3}
 %\mfigure[scale=1.25,trim=2mm 0mm 0mm 0mm,clip=true]{.35}{Graphing the lines in Example \ref{ex_lines3}.}{fig:lines3}{figures/figlines3}
-The point $P_1$ lies on both lines, so we conclude they are the same line, just parametrized differently. Figure \ref{fig:lines3} graphs this line along with the points and vectors described by the parametric equations. Note how $\vec d_1$ and $\vec d_2$ are parallel, though point in opposite directions (as indicated by their unit vectors above). 
+The point $P_1$ lies on both lines, so we conclude they are the same line, just parameterized differently. Figure \ref{fig:lines3} graphs this line along with the points and vectors described by the parametric equations. Note how $\vec d_1$ and $\vec d_2$ are parallel, though point in opposite directions (as indicated by their unit vectors above). 
 }\\
 
 \noindent\textbf{\large Distances}\\
@@ -264,7 +267,7 @@ The following Key Idea restates these two distance formulas.
 	\item Let $P$ be a point on a line $\ell$ that is parallel to $\vec d$. The distance $h$ from a point $Q$ to the line $\ell$ is:
 	\index{distance!between point and line}\index{distance!between lines}\index{lines!distances between}
 	$$h =\frac{\norm{\vv{PQ}\times \vec d}}{\vnorm{d}}.$$
-	\item	Let $P_1$ be a point on line $\ell_1$ that is parallel to $\vec d_1$, and let $P_2$ be a point on line $\ell_2$ parallel to $\vec d_2$, and let $\vec c = \vec d_1\times \vec d_2$, where lines $\ell_1$ and $\ell_2$ are not parallel. The distance $h$ between the two lines is:
+	\item	Let $P_1$ be a point on line $\ell_1$ that is parallel to $\vec d_1$, and let $P_2$ be a point on line $\ell_2$ parallel to $\vec d_2$.  Also, let $\vec c = \vec d_1\times \vec d_2$, where lines $\ell_1$ and $\ell_2$ are not parallel. The distance $h$ between the two lines is:
 	$$h=\frac{|\vv{P_1P_2}\cdot \vec c|}{\vnorm c}.$$
 \end{enumerate}
 }
@@ -283,7 +286,7 @@ The point $Q$ is approximately $1.852$ units from the line $\vec\ell(t)$.
 \example{ex_lines5}{Finding the distance between lines}{
 Find the distance between the lines $$\ell_1: \begin{array}{ccc} x&=&1+3t \\ y&=&2-t\\z&=&t\end{array}\qquad\qquad \ell_2:\begin{array}{ccc} x&=&-2+4s\\y&=&3+s\\z&=&5+2s.\end{array}$$
 }
-{These are the sames lines as given in Example \ref{ex_lines2}, where we showed them to be skew. The equations allow us to identify the following points and vectors:
+{These are the same lines as given in Example \ref{ex_lines2}, where we showed them to be skew. The equations allow us to identify the following points and vectors:
 $$P_1 = (1,2,0)\quad P_2 = (-2,3,5) \quad \Rightarrow \quad \vv{P_1P_2} = \la -3,1,5\ra.$$
 $$\vec d_1 = \la 3,-1,1\ra \quad \vec d_2 = \la 4,1,2\ra \quad \Rightarrow \quad \vec c = \vec d_1\times \vec d_2 = \la -3,-2,7\ra.$$
 From Key Idea \ref{idea:line_distance} we have the distance $h$ between the two lines is

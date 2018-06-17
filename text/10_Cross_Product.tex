@@ -7,7 +7,7 @@ Given two non--parallel, nonzero vectors $\vec u$ and $\vec v$ in space, it is v
 \definition{def:cross_product}{Cross Product}
 {Let $\vec u =\la u_1,u_2,u_3\ra$ and $\vec v = \la v_1,v_2,v_3\ra$ be vectors in $\mathbb{R}^3$. The \textbf{cross product of $\vec u$ and $\vec v$}, denoted $\crossp uv$, is the vector
 \index{vectors!cross product}\index{cross product!definition}
-$$\crossp uv = \la u_2v_3-u_3v_2,-(u_1v_3-u_3v_1),u_1v_2-u_2v_1\ra.$$
+$$\crossp uv = \la u_2v_3-u_3v_2,u_3v_1-u_1v_3,u_1v_2-u_2v_1\ra.$$
 }
 
 This definition can be a bit cumbersome to remember. After an example we will give a convenient method for computing the cross product. For now, careful examination of the products and differences given in the definition should reveal a pattern that is not too difficult to remember. (For instance, in the first component only 2 and 3 appear as subscripts; in the second component, only 1 and 3 appear as subscripts. Further study reveals the order in which they appear.)
@@ -18,7 +18,7 @@ Let's practice using this definition by computing a cross product.\\
 Let $\vec u = \la 2,-1,4\ra$ and $\vec v = \la 3,2,5\ra$. Find $\crossp uv$, and verify that it is orthogonal to both $\vec u$ and $\vec v$.
 }
 {Using Definition \ref{def:cross_product}, we have
-$$\crossp uv = \la (-1)5-(4)2,-\big((2)5-(4)3\big), (2)2-(-1)3\ra = \la -13,2,7\ra.$$ 
+$$\crossp uv = \la (-1)5-(4)2,(4)3-(2)5, (2)2-(-1)3\ra = \la -13,2,7\ra.$$ 
 (We encourage the reader to compute this product on their own, then verify their result.)
 
 \enlargethispage{2\baselineskip}
@@ -81,8 +81,8 @@ It is not coincidence that $\crossp vu = -(\crossp uv)$ in the preceding example
 \begin{enumerate}
 	\item \parbox{167pt}{$\crossp uv = -(\crossp vu)$} Anticommutative Property
 	\item	\begin{enumerate}
-		\item \parbox{145pt}{$(\vec u+\vec v)\times \vecw = \crossp uw+\crossp vw$} Distributive Properties
-		\item	$\vec u \times (\vec v+\vec w) = \crossp uv+\crossp uw$
+		\item \parbox{145pt}{$(\vec u\pm\vec v)\times \vecw = \crossp uw\pm \crossp vw$} Distributive Properties
+		\item	$\vec u \times (\vec v\pm \vec w) = \crossp uv\pm \crossp uw$
 	\end{enumerate}
 	\item		$c(\crossp uv) = (c\vecu) \times \vec v = \vecu \times (c\vecv)$
 	\item		\begin{enumerate}
@@ -90,7 +90,7 @@ It is not coincidence that $\crossp vu = -(\crossp uv)$ in the preceding example
 		\item	$(\crossp uv)\cdot \vecv = 0$
 	\end{enumerate}
 	\item		$\crossp uu = \vec 0$
-	\item		$\crossp u0 = \vec 0$
+	\item		$\crossp u0 = \crossp 0u = \vec 0$
 	\item		\parbox{167pt}{$\vecu \cdot (\vecv\times\vecw) = (\crossp uv)\cdot \vecw$} Triple Scalar Product
 \end{enumerate}
 }
@@ -152,12 +152,13 @@ Another wonderful property of the cross product, as defined, is that it follows 
 3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true}{.5}{Illustrating the Right Hand Rule of the cross product.}{fig:crossp_rhr}{figures/figcrossp_rhr}
 %\mfigure[scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true]{.5}{Illustrating the Right Hand Rule of the cross product.}{fig:crossp_rhr}{figures/figcrossp_rhr}
 
+There is another equivalent way to use the right hand rule that some may find easier.  If you point your right thumb in the direction of $\vec u$ and the remaining fingers of your right hand in the direction of $\vec v$, then the palm side of your right hand will face in the direction of $\crossp uv$.
 \vskip\baselineskip
 \noindent\textbf{\large Applications of the Cross Product}\\
 
 There are a number of ways in which the cross product is useful in mathematics, physics and other areas of science beyond ``just'' finding a vector perpendicular to two others. We highlight a few here.\index{cross product!applications}\\
 \enlargethispage{\baselineskip}
-\clearpage\enlargethispage{2\baselineskip}
+%\clearpage\enlargethispage{2\baselineskip}
 
 \noindent\textbf{Area of a Parallelogram}\\
 
@@ -284,13 +285,13 @@ A lever of length 2ft makes an angle with the horizontal of $45^\circ$. Find the
 	
 	\item		Our lever arm can still be represented by $\vec \ell = \la \sqrt2,\sqrt2\ra$. As our force vector makes a $60^\circ$ angle with $\vec \ell$, we can see (referencing the right hand side of the figure) that $\vec F$ makes a $-15^\circ$ angle with the horizontal. Thus 
 	\begin{align*}
-	\vec F = 10\la \cos-15^\circ,\sin-15^\circ\ra &= \la \frac{5(1+\sqrt3)}{\sqrt2},-\frac{5(1+\sqrt3)}{\sqrt2}\ra \\
+	\vec F = 10\la \cos-15^\circ,\sin-15^\circ\ra &= \la \frac{5\left(\sqrt{6} + \sqrt{2}\right)}{2},-\frac{5\left(\sqrt{6} - \sqrt{2}\right)}{2},0\ra \\
 	&\approx \la 9.659,-2.588\ra.\end{align*}
 	
 	We again make the third component 0 and take the cross product to find the torque:
 	\begin{align*}
 	\vec\tau &= \crossp \ell F\\
-					&= \la \sqrt2,\sqrt2,0\ra \times  \la \frac{5(1+\sqrt3)}{\sqrt2},-\frac{5(1+\sqrt3)}{\sqrt2},0\ra\\
+					&= \la \sqrt2,\sqrt2,0\ra \times  \la \frac{5\left(\sqrt{6} + \sqrt{2}\right)}{2},-\frac{5\left(\sqrt{6} - \sqrt{2}\right)}{2},0\ra\\
 					&= \la 0,0,-10\sqrt3\ra\\
 					&\approx \la 0,0,-17.321\ra.
 	\end{align*}

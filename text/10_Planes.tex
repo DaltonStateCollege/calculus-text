@@ -23,7 +23,7 @@ This gives us way of writing an equation describing the plane. Let $P=(x_0,y_0,z
 \vv{PQ}\cdot\vec n &= 0 \notag\\
 				\la x-x_0,y-y_0,z-z_0\ra\cdot \la a,b,c\ra &=0\notag\\
 				a(x-x_0)+b(y-y_0)+c(z-z_0) &=0 \label{eq:planes1}
-\intertext{Equation \eqref{eq:planes1} defines an \emph{implicit} function describing the plane. More algebra produces:}
+\intertext{Equation \eqref{eq:planes1} defines an \emph{implicit} relation describing the plane. More algebra produces:}
 ax+by+cz &= ax_0+by_0+cz_0. \notag
 \intertext{The right hand side is just a number, so we replace it with $d$:}
 ax+by+cz &= d\label{eq:planes2}.
@@ -146,7 +146,7 @@ The planes and line are graphed in Figure \ref{fig:planes4}.
 \example{ex_planes5}{Finding the intersection of a plane and a line}{
 Find the point of intersection, if any, of the line $\ell(t) = \la 3,-3,-1\ra +t\la-1,2,1\ra$ and the plane with equation in general form $2x+y+z=4$.
 }
-{The equation of the plane shows that the vector $\vec n = \la 2,1,1\ra$ is a normal vector to the plane, and the equation of the line shows that the line moves parallel to $\vec d = \la -1,2,1\ra$. Since these are not orthogonal, we know there is a point of intersection. (If there were orthogonal, it would mean that the plane and line were parallel to each other, either never intersecting or the line was in the plane itself.)
+{The equation of the plane shows that the vector $\vec n = \la 2,1,1\ra$ is a normal vector to the plane, and the equation of the line shows that the line moves parallel to $\vec d = \la -1,2,1\ra$. Since these are not orthogonal, we know there is a point of intersection. (If they were orthogonal, it would mean that the plane and line were parallel to each other, either never intersecting or the line was in the plane itself.)
 
 To find the point of intersection, we need to find a $t$ value such that $\ell(t)$ satisfies the equation of the plane. Rewriting the equation of the line with parametric equations will help:
 $$\ell(t) = \left\{\begin{aligned} x&= 3-t\\ y&=-3+2t\\ z&= -1+t \end{aligned}\right..$$

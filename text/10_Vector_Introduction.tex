@@ -88,7 +88,7 @@ Now that we have defined vectors, and have created a nice notation by which to d
 
 \definition{def:vector_algebra}{Vector Algebra}
 {\begin{enumerate}
-	\item Let $\vec u = \la u_1,u_2\ra$ and $\vec v = \la v_1,v_2\ra$ be vectors in $\mathbb{R}^2$, and let $c$ be a scalar. \index{vectors!algebra of}
+	\item Let $\vec u = \la u_1,u_2\ra$ and $\vec v = \la v_1,v_2\ra$ be vectors in $\mathbb{R}^2$, and let $c$ be a \textbf{scalar} (a real number or a variable expression that represents a real number). \index{vectors!algebra of}
 				\begin{enumerate}
 					\item The addition, or sum, of the vectors $\vec u$ and $\vec v$ is the vector
 					$$\vec u+\vec v = \la u_1+v_1, u_2+v_2\ra.$$
@@ -175,6 +175,8 @@ As we suspected, $2\vec v$ is twice as long as $\vec v$.
 
 The \textbf{zero vector} is the vector whose initial point is also its terminal point. It is denoted by $\vec 0$. Its component form, in $\mathbb{R}^2$, is $\la 0,0\ra$; in $\mathbb{R}^3$, it is $\la 0,0,0\ra$. Usually the context makes is clear whether $\vec 0$ is referring to a vector in the plane or in space.
 
+For any vector $\vec v$ in $\mathbb{R}^2$ or $\mathbb{R}^3$, the vector $(-1) \vec v$ is denoted by $-\vec v$.  The vector $-\vec v$ has the same magnitude as $\vec v$ but points in the \emph{opposite} direction.
+
 Our examples have illustrated key principles in vector algebra: how to add and subtract vectors and how to multiply vectors by a scalar. The following theorem states formally the properties of these operations.
 \clearpage
 
@@ -185,11 +187,11 @@ Our examples have illustrated key principles in vector algebra: how to add and s
 	\item \parbox{150pt}{$(\vec u+\vec v)+\vec w = \vec u+(\vec v+\vec w)$}Associative Property
 	\item \parbox{150pt}{$\vec v+\vec 0 = \vec v$}Additive Identity
 	\item \parbox{150pt}{$(cd)\vec v= c(d\vec v)$}
-	\item \parbox{150pt}{$c(\vec u+\vec v) = c\vec u+c\vec v$}Distributive Property
-	\item \parbox{150pt}{$(c+d)\vec v = c\vec v+d\vec v$}Distributive Property
+	\item \parbox{150pt}{$c(\vec u\pm\vec v) = c\vec u\pm c\vec v$}Distributive Property
+	\item \parbox{150pt}{$(c\pm d)\vec v = c\vec v\pm d\vec v$}Distributive Property
 	\item \parbox{150pt}{$0\vec v = \vec 0$}
 	\item	\parbox{150pt}{$\norm{c\vec v} = |c|\cdot\norm{\vec v}$}\label{thm:norm_prop}
-	\item	$\vnorm u = 0$ if and only if $\vecu = \vec 0$.  \label{thm:zero_norm}
+	\item	$\vnorm u = 0$ if and only if $\vec u = \vec 0$.  \label{thm:zero_norm}
 \end{enumerate}
 }
 
