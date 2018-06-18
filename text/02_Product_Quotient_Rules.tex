@@ -39,7 +39,7 @@ Use the definition of the derivative to prove Theorem \ref{thm:ProductRule}.}
 \vskip-\baselineskip
 }\\
 
-It is often true that we can recognize that a theorem is true through its proof yet somehow doubt its applicability to real problems. In the following example, we compute the derivative of a product of functions in two ways to verify that the Product Rule is indeed ``right.''\\
+It is often true that we can recognize that a theorem is true through its proof yet somehow doubt its applicability to real problems. In the following example, we compute the derivative of a product of functions in two ways to verify that the Product Rule is indeed ``correct.''\\
 
 \example{ex_prod2}{Exploring alternate derivative methods}{
 Let $y = (x^2+3x+1)(2x^2-3x+1)$. Find $y\primeskip'$ two ways: first, by expanding the given product and then taking the derivative, and second, by applying the Product Rule. Verify that both methods give the same answer.}
@@ -156,36 +156,7 @@ In Example \ref{ex_quot1} the derivative of $\ds f(x) = \frac{5x^2}{\sin x}$ was
 Finding $\fp$ using either method returned the same result. At first, the answers looked different, but some algebra verified they are the same. In general, there is not one final form that we seek; the immediate result from the Product Rule is fine. Work to ``simplify\primeskip'' your results into a form that is most readable and useful to you.
 }\\
 
-The Quotient Rule gives other useful results, as show in the next example.\\
-
-\example{ex_deriv_power}{Using the Quotient Rule to expand the Power Rule}{
-Find the derivatives of the following functions. 
-		\begin{enumerate}
-		\item		$\ds f(x) = \frac{1}{x}$
-		\item		$\ds f(x)= \frac{1}{x^n}$, where $n>0$ is an integer.
-		\end{enumerate}
-}
-{We employ the Quotient Rule.
-		\begin{enumerate}
-		\item		$\ds \fp(x) = \frac{x\cdot 0 - 1\cdot 1}{x^2} = -\frac{1}{x^2}$.
-		\item		$\ds \fp(x) = \frac{x^n\cdot 0 - 1\cdot nx^{n-1}}{(x^n)^2} = -\frac{nx^{n-1}}{x^{2n}} = -\frac{n}{x^{n+1}}.$
-		\end{enumerate}
-\vskip-\baselineskip
-}\\
-
-The derivative of $\ds y=\frac{1}{x^n}$ turned out to be rather nice. It gets better. Consider:
-\begin{align*} \frac{d}{dx}\left(\frac{1}{x^n}\right) &= \parbox{60pt}{$\ds\frac{d}{dx}\Big(x^{-n}\Big)$} \text{\small (apply result from Example \ref{ex_deriv_power})}\\
-									&= \parbox{60pt}{$\ds-\frac{n}{x^{n+1}}$}\text{\small (rewrite algebraically)} \\
-									&= -nx^{-(n+1)} \\
-									&= -nx^{-n-1}.
-	\end{align*}
-This is reminiscent of the Power Rule: multiply by the power, then subtract 1 from the power. We now add to our previous Power Rule, which had the restriction of $n>0$.
-
-\theorem{thm:PowerRule}{Power Rule with Integer Exponents}
-{Let $f(x) = x^n$, where $n\neq 0$ is an integer.\index{derivative!Power Rule}\index{Power Rule!differentiation} Then $$\fp(x) = n\cdot x^{n-1}.$$
-}
-
-Taking the derivative of many functions is relatively straightforward. It is clear (with practice) what rules apply and in what order they should be applied. Other functions present multiple paths; different rules may be applied depending on how the function is treated. One of the beautiful things about calculus is that there is not ``the'' right way; each path, when applied correctly, leads to the same result, the derivative. We demonstrate this concept in an example.\\
+Taking the derivative of many functions is relatively straightforward. It is clear (with practice) what rules apply and in what order they should be applied. Other functions present multiple paths; different rules may be applied depending on how the function is treated. One of the beautiful things about calculus is that there is not ``the'' correct way; each path, when applied correctly, leads to the same result, the derivative. We demonstrate this concept in an example.\\
 
 %\enlargethispage{2\baselineskip}
 \example{ex_multiple_deriv}{Exploring alternate derivative methods}{
@@ -206,7 +177,7 @@ Verify that all three methods give the same result.}
 							&= \frac{x^2-1}{x^2} = 1-\frac{1}{x^2},
 			\end{align*}
 			the same result as above.
-	\item		As $x\neq 0$, we can divide through by $x$ first, giving $\ds f(x) = x-3+\frac{1}x$. Now apply the Power Rule. $$\fp(x) = 1-\frac{1}{x^2},$$  the same result as before.
+	\item		We can divide through by $x$ first, giving $\ds f(x) = x-3+\frac{1}x$. Now apply the Power Rule. $$\fp(x) = 1-\frac{1}{x^2},$$  the same result as before.
 	\end{enumerate}
 \vskip-\baselineskip
 }\\

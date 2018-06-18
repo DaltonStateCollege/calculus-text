@@ -26,15 +26,15 @@ We apply the same process to the $y^3$ term.
 $$\frac{d}{dx}\Big(y^3\Big) = \frac{d}{dx}\Big((y)^3\Big) = 3(y)^2\cdot \frac{dy}{dx}.$$
 %Similarly, the derivative of $y^3$ is $3y^2y\primeskip'$.  
 Putting this together with the right hand side, we have
-$$\cos(y)y\frac{dy}{dx}+3y^2\frac{dy}{dx} = -3x^2.$$
-Now solve for $y\frac{dy}{dx}$.
+$$\cos(y)\frac{dy}{dx}+3y^2\frac{dy}{dx} = -3x^2.$$
+Now solve for $\frac{dy}{dx}$.
 		\begin{align*}
-		\cos(y)y\frac{dy}{dx}+3y^2\frac{dy}{dx} 	&= -3x^2.\\
+		\cos(y)\frac{dy}{dx}+3y^2\frac{dy}{dx} 	&= -3x^2.\\
 		\big(\cos y+3y^2\big)\frac{dy}{dx}&=	-3x^2\\
 		\frac{dy}{dx}&=	\frac{-3x^2}{\cos y+3y^2}
 		\end{align*}
 
-The reason that the $x$ terms and $y$ terms are treated differently is that, for example, a derivative $\frac{d}{dx}\left(y^3\right)$ represents a rate of change; how fast is $y^3$ changing per unit $x$.  The operator $\frac{d}{dx}$ means to take the derivative \textit{with respect to} $x$.  If we were taking the derivative $\frac{d}{dy}\left(y^3\right)$ with respect to $y$, the answer would be $3y^2$.  However, instead $\frac{d}{dx}\left(y^3\right)=3y^2\frac{dy}{dx}$ because the variable in $y^3$ and the variable $x$ we are the derivative do not match, so the Chain Rule is needed.\\
+The reason that the $x$ terms and $y$ terms are treated differently is that, for example, a derivative $\frac{d}{dx}\left(y^3\right)$ represents a rate of change; how fast is $y^3$ changing per unit $x$.  The operator $\frac{d}{dx}$ means to take the derivative \textit{with respect to} $x$.  If we were taking the derivative $\frac{d}{dy}\left(y^3\right)$ with respect to $y$, the answer would be $3y^2$.  However, instead $\frac{d}{dx}\left(y^3\right)=3y^2\frac{dy}{dx}$ because the variable in $y^3$ and the variable $x$ we are taking the derivative with respect to do not match.  So, the Chain Rule is needed.\\
 
 The equation for $\frac{dy}{dx}$ above probably seems unusual for it contains both $x$ and $y$ terms. How is it to be used? We'll address that next.}\\
 
@@ -66,7 +66,7 @@ Again, the reason why we need the $\frac{dy}{dx}$ for $y$ terms but not $x$ term
 Given the implicitly defined equation $y^3+x^2y^4=1+2x$, find $\frac{dy}{dx}$.}
 {We will take the implicit derivatives term by term. The derivative of $y^3$ is $3y^2y\primeskip'$.  
 
-The second term, $x^2y^4$, is a little tricky.  It requires the Product Rule as it is the product of two expressions: $x^2$ and $y^4$.  Its derivative is $\ds 2xy^4 + x^2\left(4y^3y\frac{dy}{dx}\right)$.  The second part of this expression requires a $\frac{dy}{dx}$ because we are taking the derivative of a $y$ term.  The second part does not require it because we are taking the derivative of $x^2$.  
+The second term, $x^2y^4$, is a little tricky.  It requires the Product Rule as it is the product of two expressions: $x^2$ and $y^4$.  Its derivative is $\ds 2xy^4 + x^2\left(4y^3\frac{dy}{dx}\right)$.  The second part of this expression requires a $\frac{dy}{dx}$ because we are taking the derivative of a $y$ term.  The second part does not require it because we are taking the derivative of $x^2$.  
 
 The derivative of the right hand side is easily found to be $2$. In all, we get:
 $$3y^2\frac{dy}{dx} + 4x^2y^3\frac{dy}{dx} + 2xy^4 = 2.$$
@@ -76,7 +76,7 @@ $$3y^2\frac{dy}{dx} + 4x^2y^3\frac{dy}{dx} = 2-2xy^4.$$
 Factor out $\frac{dy}{dx}$ from the left side and solve to get
 $$\frac{dy}{dx} = \frac{2-2xy^4}{3y^2+4x^2y^3}.$$
 
-To confirm the validity of our work, let's find the equation of a tangent line to this relation at a point. It is easy to confirm that the point $(0,1)$ lies on the graph of this relation. At this point, $\left.\frac{dy}{dx}\right|_{(0,1)} = 2/3$. So the equation of the tangent line is $y = 2/3(x-0)+1$. The relation and its tangent line are graphed in Figure \ref{fig:implicit4}.
+To confirm the validity of our work, let's find the equation of a tangent line to this relation at a point. It is easy to confirm that the point $(0,1)$ lies on the graph of this relation. At this point, $\left.\frac{dy}{dx}\right|_{(0,1)} = 2/3$. So the equation of the tangent line is $y = \frac{2}{3}(x-0)+1$. The relation and its tangent line are graphed in Figure \ref{fig:implicit4}.
 
 \mfigure{.8}{A graph of the implicitly defined equation $y^3+x^2y^4=1+2x$ along with its tangent line at the point $(0,1)$.}{fig:implicit4}{figures/figimplicit4}
 
@@ -122,55 +122,52 @@ Quite a few ``famous'' curves have equations that are given implicitly.  We can 
 \example{ex_implicit7}{Finding slopes of tangent lines to a circle}{
 Find the slope of the tangent line to the circle $x^2+y^2=1$ at the point $(1/2, \sqrt{3}/2)$.}
 {%\myincludegraphics[scale=.4]{text/apex-implicit_differentiation1.png}
-Taking derivatives, we get $2x+2y\frac{dy}{dx}=0$.  Solving for $\frac{dy}{dx}$  gives: $$\ds y\frac{dy}{dx} = \frac{-x}{y}.$$ 
+Taking derivatives, we get $2x+2y\frac{dy}{dx}=0$.  Solving for $\frac{dy}{dx}$  gives: $$\ds \frac{dy}{dx} = \frac{-x}{y}.$$ 
 This is a clever formula. Recall that the slope of the line through the origin and the point $(x,y)$ on the circle will be $y/x$. We have found that the slope of the tangent line to the circle at that point is the opposite reciprocal of $y/x$, namely, $-x/y$. Hence these two lines are always perpendicular.
 
 At the point $(1/2, \sqrt{3}/2)$, we have the tangent line's slope as
 $$\left.\frac{dy}{dx}\right|_{(1/2, \sqrt{3}/2)} = \frac{-1/2}{\sqrt{3}/2} = \frac{-1}{\sqrt{3}} \approx -0.577.$$
 
 A graph of the circle and its tangent line at $(1/2,\sqrt{3}/2)$ is given in Figure \ref{fig:implicit7}, along with a thin dashed line from the origin that is perpendicular to the tangent line. (It turns out that all normal lines to a circle pass through the center of the circle.)
-\mfigure{.5}{The unit circle with its tangent line at $(1/2,\sqrt{3}/2)$.}{fig:implicit7}{figures/figimplicit7}
+\mfigure{.8}{The unit circle with its tangent line at $(1/2,\sqrt{3}/2)$.}{fig:implicit7}{figures/figimplicit7}
 }\\
 
-This section has shown how to find the derivatives of implicitly defined equations, whose graphs include a wide variety of interesting and unusual shapes. Implicit differentiation can also be used to further our understanding of ``regular'' differentiation. 
+%This section has shown how to find the derivatives of implicitly defined equations, whose graphs include a wide variety of interesting and unusual shapes. Implicit differentiation can also be used to further our understanding of ``regular'' differentiation. 
 
-One hole in our current understanding of derivatives is this: what is the derivative of the square root function? That is, $$\frac{d}{dx}\big(\sqrt{x}\big) = \frac{d}{dx}\big(x^{1/2}\big) = \text{?}$$
+%One hole in our current understanding of derivatives is this: what is the derivative of the square root function? That is, $$\frac{d}{dx}\big(\sqrt{x}\big) = \frac{d}{dx}\big(x^{1/2}\big) = \text{?}$$
 
-We allude to a possible solution, as we can write the square root function as a power function with a rational (or, fractional) power. We are then tempted to apply the Power Rule and obtain $$\frac{d}{dx}\big(x^{1/2}\big) = \frac12x^{-1/2} = \frac{1}{2\sqrt{x}}.$$
+%We allude to a possible solution, as we can write the square root function as a power function with a rational (or, fractional) power. We are then tempted to apply the Power Rule and obtain $$\frac{d}{dx}\big(x^{1/2}\big) = \frac12x^{-1/2} = \frac{1}{2\sqrt{x}}.$$
 
-The trouble with this is that the Power Rule was initially defined only for positive integer powers, $n>0$. While we did not justify this at the time, generally the Power Rule is proved using something called the Binomial Theorem, which deals only with positive integers. The Quotient Rule allowed us to extend the Power Rule to negative integer powers. Implicit Differentiation allows us to extend the Power Rule to rational powers, as shown below.
+%The trouble with this is that the Power Rule was initially defined only for positive integer powers, $n>0$. While we did not justify this at the time, generally the Power Rule is proved using something called the Binomial Theorem, which deals only with positive integers. The Quotient Rule allowed us to extend the Power Rule to negative integer powers. Implicit Differentiation allows us to extend the Power Rule to rational powers, as shown below.
 
-Let $y = x^{m/n}$, where $m$ and $n$ are integers with no common factors (so $m=2$ and $n=5$ is fine, but $m=2$ and $n=4$ is not). We can rewrite this explicit function implicitly as $y^n = x^m$. Now apply implicit differentiation.
+%Let $y = x^{m/n}$, where $m$ and $n$ are integers with no common factors (so $m=2$ and $n=5$ is fine, but $m=2$ and $n=4$ is not). We can rewrite this explicit function implicitly as $y^n = x^m$. Now apply implicit differentiation.
 
-\begin{align*}
-y &= x^{m/n} \\
-y^n &= x^m \\
-\frac{d}{dx}\big(y^n\big) &= \frac{d}{dx}\big(x^m\big) \\
-n\cdot y^{n-1}\cdot \frac{dy}{dx} &= m\cdot x^{m-1} \\
-\frac{dy}{dx} 	&= \frac{m}{n} \frac{x^{m-1}}{y^{n-1}} \quad \mbox{\small (now substitute $x^{m/n}$ for $y$)} \\
- 		&= \frac{m}{n} \frac{x^{m-1}}{(x^{m/n})^{n-1}} \quad \mbox{\small (apply lots of algebra)}\\
-%		&= \frac{m}{n} \frac{x^{m-1}}{x^{m(n-1)/n}} \\
-%		&=	\frac{m}n	x^{(m-1)-m(n-1)/n} \\
-%		&=	\frac{m}n x^{((m-1)n-m(n-1))/n} \\
-		&= \frac{m}n x^{(m-n)/n}\rule{0pt}{18pt}\\
-		&= \frac{m}n x^{m/n -1}.\rule{0pt}{18pt}
-\end{align*}
+%\begin{align*}
+%y &= x^{m/n} \\
+%y^n &= x^m \\
+%\frac{d}{dx}\big(y^n\big) &= \frac{d}{dx}\big(x^m\big) \\
+%n\cdot y^{n-1}\cdot \frac{dy}{dx} &= m\cdot x^{m-1} \\
+%\frac{dy}{dx} 	&= \frac{m}{n} \frac{x^{m-1}}{y^{n-1}} \quad \mbox{\small (now substitute $x^{m/n}$ for $y$)} \\
+% 		&= \frac{m}{n} \frac{x^{m-1}}{(x^{m/n})^{n-1}} \quad \mbox{\small (apply lots of algebra)}\\
+%		&= \frac{m}n x^{(m-n)/n}\rule{0pt}{18pt}\\
+%		&= \frac{m}n x^{m/n -1}.\rule{0pt}{18pt}
+%\end{align*}
 
-The above derivation is the key to the proof extending the Power Rule to rational powers. Using limits, we can extend this once more to include \textit{all} powers, including irrational powers, giving the following theorem.
+%The above derivation is the key to the proof extending the Power Rule to rational powers. Using limits, we can extend this once more to include \textit{all} powers, including irrational powers, giving the following theorem.
 
-\theorem{thm:finalpower}{Power Rule for Differentiation}
-{Let $f(x) = x^n$, where $n\neq 0$ is a real number. Then $f$ is a differentiable function, and $\fp(x) = n\cdot x^{n-1}$.\index{derivative!Power Rule}\index{Power Rule!differentiation}
-}
+%\theorem{thm:finalpower}{Power Rule for Differentiation}
+%{Let $f(x) = x^n$, where $n\neq 0$ is a real number. Then $f$ is a differentiable function, and $\fp(x) = n\cdot x^{n-1}$.\index{derivative!Power Rule}\index{Power Rule!differentiation}
+%}
 
-This theorem allows us to say the derivative of $x^\pi$ is $\pi x^{\pi -1}$. 
+%This theorem allows us to say the derivative of $x^\pi$ is $\pi x^{\pi -1}$. 
 
-We now apply this final version of the Power Rule in the next example, the second investigation of a ``famous'' curve.\\
+%We now apply this final version of the Power Rule in the next example, the second investigation of a ``famous'' curve.\\
 
 \example{ex_implicit8}{Using the Power Rule}{
 Find the slope of $x^{2/3}+y^{2/3}=8$ at the point $(8,8)$.}
 {This is a particularly interesting curve called an \emph{astroid}.  It is the shape traced out by a point on the edge of a circle that is rolling around inside of a larger circle, as shown in Figure \ref{fig:implicit9}.
 
-\mfigure{.8}{An astroid, traced out by a point on the smaller circle as it rolls inside the larger circle.}{fig:implicit9}{figures/figimplicit9}
+\mfigure{.575}{An astroid, traced out by a point on the smaller circle as it rolls inside the larger circle.}{fig:implicit9}{figures/figimplicit9}
 
 %\myincludegraphics[scale=.4]{text/apex-implicit_differentiation2.png}
 
@@ -183,7 +180,7 @@ To find the slope of the astroid at the point $(8,8)$, we take the derivative im
 \end{align*}
 
 Plugging in $x=8$ and $y=8$, we get a slope of $-1$. The astroid, with its tangent line at $(8,8)$, is shown in Figure \ref{fig:implicit8}.
-\mfigure{.55}{An astroid with a tangent line.}{fig:implicit8}{figures/figimplicit8}
+\mfigure{.35}{An astroid with a tangent line.}{fig:implicit8}{figures/figimplicit8}
 }\\
 
 \noindent\textbf{\large Implicit Differentiation and the Second Derivative}

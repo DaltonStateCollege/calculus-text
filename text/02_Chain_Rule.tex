@@ -76,10 +76,10 @@ Finally, when $y = (1-x)^4$, we have $f(x)= x^4$ and $g(x) = (1-x)$. Thus $\fp(x
 Example \ref{ex_chain2} demonstrated a particular pattern: when $f(x)=x^n$, then $y\primeskip' =n\cdot (g(x))^{n-1}\cdot g\primeskip'(x)$. This  is called the Generalized Power Rule.\\
 
 
-\theorem{thm:gen_power_rule}{Generalized Power Rule}{Let $g(x)$ be a differentiable function and let $n\neq 0$ be an integer.\index{derivative!Generalized Power Rule}\index{Generalized Power Rule} Then $$\frac{d}{dx}\Big(g(x)^n\Big) = n\cdot \big(g(x)\big)^{n-1}\cdot g\primeskip'(x).$$
+\theorem{thm:gen_power_rule}{Generalized Power Rule}{Let $g(x)$ be a differentiable function and let $n$ be a real number.\index{derivative!Generalized Power Rule}\index{Generalized Power Rule} Then $$\frac{d}{dx}\Big(g(x)^n\Big) = n\cdot \big(g(x)\big)^{n-1}\cdot g\primeskip'(x).$$
 }
 
-This allows us to quickly find the derivative of functions like $y = (3x^2-5x+7+\sin x)^{20}$. While it may look intimidating, the Generalized Power Rule states that $$y\primeskip' = 20(3x^2-5x+7+\sin x)^{19}\cdot (6x-5+\cos x).$$
+This allows us to quickly find the derivative of functions like $$y = \left(3x^2-5x+7+\sin x\right)^{20}.$$ While it may look intimidating, the Generalized Power Rule states that $$y\primeskip' = 20\left(3x^2-5x+7+\sin x\right)^{19}\cdot (6x-5+\cos x).$$
 
 Treat the derivative--taking process step--by--step. In the example just given, first multiply by 20, then rewrite the inside of the parentheses, raising it all to the 19$^{\text{th}}$ power. Then think about the derivative of the expression inside the parentheses, and multiply by that.
 
@@ -96,10 +96,10 @@ Find the derivatives of the following functions:
 %			\item		$y= e^{3x}$
 			\end{enumerate}
 			\end{minipage}
-			\begin{minipage}[t]{.3\textwidth}
+			\begin{minipage}[t]{.39\textwidth}
 			\begin{enumerate}\addtocounter{enumi}{1}
 %			\item		$y = \sin{2x}$\addtocounter{enumi}{1}
-			\item		$y= \ln (4x^3-2x^2)$
+			\item		$y= \ln \left(4x^3-2x^2\right)$
 			\end{enumerate}
 			\end{minipage}
 	\begin{minipage}[t]{.3\textwidth}
@@ -111,10 +111,10 @@ Find the derivatives of the following functions:
 {\begin{enumerate}
 		\item		Consider $y = \sin 2x$. Recognize that this is a composition of functions, where $f(x) = \sin x$ and $g(x) = 2x$. Thus $$y\primeskip' = \fp(g(x))\cdot g\primeskip'(x) = \cos (2x)\cdot 2 = 2\cos 2x.$$
 		
-		\item		Recognize that $y = \ln (4x^3-2x^2)$ is the composition of $f(x) = \ln x$ and $g(x) = 4x^3-2x^2$. Also, recall that $$\frac{d}{dx}\Big(\ln x\Big) = \frac{1}{x}.$$ This leads us to:
-		$$y\primeskip' = \frac{1}{4x^3-2x^2} \cdot (12x^2-4x) = \frac{12x^2-4x}{4x^3-2x^2}= \frac{4x(3x-1)}{2x(2x^2-x)} = \frac{2(3x-1)}{2x^2-x}.$$
+		\item		Recognize that $y = \ln \left(4x^3-2x^2\right)$ is the composition of $f(x) = \ln x$ and $g(x) = 4x^3-2x^2$. Also, recall that $$\frac{d}{dx}\Big(\ln x\Big) = \frac{1}{x}.$$ This leads us to:
+		$$y\primeskip' = \frac{1}{4x^3-2x^2} \cdot \left(12x^2-4x\right) = \frac{12x^2-4x}{4x^3-2x^2}= \frac{4x(3x-1)}{2x(2x^2-x)} = \frac{2(3x-1)}{2x^2-x}.$$
 		
-		\item		Recognize  that $y = e^{-x^2}$ is the composition of $f(x) = e^x$ and $g(x) = -x^2$. Remembering that $\fp(x) = e^x$, we have $$y\primeskip' = e^{-x^2}\cdot (-2x) = (-2x)e^{-x^2}.$$
+		\item		Recognize  that $y = e^{-x^2}$ is the composition of $f(x) = e^x$ and $g(x) = -x^2$. Remembering that $\fp(x) = e^x$, we have $$y\primeskip' = e^{-x^2}\cdot (-2x) = -2x e^{-x^2}.$$
 	\end{enumerate}
 \vskip-\baselineskip
 }\\
@@ -130,7 +130,7 @@ The tangent line is sketched along with $f$ in Figure \ref{fig:chain7}.
 }\\
 
 The Chain Rule is used often in taking derivatives. Because of this, one can become familiar with the basic process and learn  patterns that facilitate finding derivatives quickly. For instance, $$\frac{d}{dx}\Big(\ln (\text{anything})\Big) = \frac{1}{\text{anything}}\cdot (\text{anything})' = \frac{(\text{anything})'}{\text{anything}}.$$
-A concrete example of this is $$\frac{d}{dx}\Big(\ln(3x^{15}-\cos x+e^x)\Big) = \frac{45x^{14}+\sin x+e^x}{3x^{15}-\cos x+e^x}.$$ While the derivative may  look intimidating at first, look for the pattern. The denominator is the same as what was inside the natural log function; the  numerator is simply its derivative.
+A concrete example of this is $$\frac{d}{dx}\Big(\ln\big(3x^{15}-\cos x+e^x\big)\Big) = \frac{45x^{14}+\sin x+e^x}{3x^{15}-\cos x+e^x}.$$ While the derivative may  look intimidating at first, look for the pattern. The denominator is the same as what was inside the natural log function; the  numerator is simply its derivative.
 
 This pattern recognition process can be applied to lots of functions. In general, instead of writing ``anything'', we use $u$ as a generic function of $x$. We then say $$\frac{d}{dx}\Big(\ln u\Big) = \frac{u\primeskip'}{u}.$$
 The following is a short list of how the Chain Rule can be quickly applied to familiar functions.
@@ -158,14 +158,14 @@ Find the derivatives of the following functions. \\
 {
 \begin{enumerate}
 \item		We must use the Product and Chain Rules. Do not think that you must be able to ``see'' the whole answer immediately; rather, just proceed step--by--step.
-		$$\fp(x) = x^5\big(6x^2\cos 2x^3\big) + 5x^4\big(\sin 2x^3\big)= 6x^7\cos2x^3+5x^4\sin 2x^3.$$
+		$$\fp(x) = \big(6x^2\cos 2x^3\big)x^5 + 5x^4\big(\sin 2x^3\big)= 6x^7\cos2x^3+5x^4\sin 2x^3.$$
 \item		We must employ the Quotient Rule along with the Chain Rule. Again, proceed step--by--step.
 \begin{align*}
-\fp(x) = \frac{e^{-x^2}\big(15x^2\big) - 5x^3\big((-2x)e^{-x^2}\big)}{\big(e^{-x^2}\big)^2} &=\frac{e^{-x^2}\big(10x^4+15x^2\big)}{e^{-2x^2}}\\
+\fp(x) = \frac{e^{-x^2}\big(15x^2\big) - 5x^3\left((-2x)e^{-x^2}\right)}{\big(e^{-x^2}\big)^2} &=\frac{e^{-x^2}\big(10x^4+15x^2\big)}{e^{-2x^2}}\\
  &= e^{x^2}\big(10x^4+15x^2\big).
 \end{align*}
 \end{enumerate}
-\vskip-2\baselineskip
+%\vskip-2\baselineskip
 }\\
 
 A key to correctly working these problems is to break the problem down into smaller, more manageable pieces. For instance, when using the Product and Chain Rules together, just consider the first part of the Product Rule at first: $f(x)g\primeskip'(x)$. Just rewrite $f(x)$, then find $g\primeskip'(x)$. Then move on to the $\fp(x)g(x)$ part. Don't attempt to figure out both parts at once.
@@ -175,13 +175,13 @@ Likewise, using the Quotient Rule, approach the numerator in two steps and handl
 We can also employ the Chain Rule itself several times, as shown in the next example.\\
 
 \example{ex_chain6}{Using the Chain Rule multiple times}{
-Find the derivative of $y = \tan^5(6x^3-7x)$.}
-{Recognize that we have the $g(x)=\tan(6x^3-7x)$ function ``inside'' the $f(x)=x^5$ function; that is, we have $y = \big(\tan(6x^3-7x)\big)^5$. We begin using the Generalized Power Rule; in this first step, we do not fully compute the derivative. Rather, we are approaching this step--by--step.
-$$y\primeskip' = 5\big(\tan(6x^3-7x)\big)^4\cdot g\primeskip'(x).$$
-We now find $g\primeskip'(x)$. We again need the Chain Rule; $$g\primeskip'(x) = \sec^2(6x^3-7x)\cdot(18x^2-7).$$ Combine this with what we found above to give
+Find the derivative of $y = \tan^5\left(6x^3-7x\right)$.}
+{Recognize that we have the $g(x)=\tan\left(6x^3-7x\right)$ function ``inside'' the $f(x)=x^5$ function; that is, we have $y = \left(\tan\left(6x^3-7x\right)\right)^5$. We begin using the Generalized Power Rule; in this first step, we do not fully compute the derivative. Rather, we are approaching this step--by--step.
+$$y\primeskip' = 5\left(\tan\left(6x^3-7x\right)\right)^4\cdot g\primeskip'(x).$$
+We now find $g\primeskip'(x)$. We again need the Chain Rule; $$g\primeskip'(x) = \sec^2\left(6x^3-7x\right)\cdot\left(18x^2-7\right).$$ Combine this with what we found above to give
 \begin{align*}
-y\primeskip' &= 5\big(\tan(6x^3-7x)\big)^4\cdot\sec^2(6x^3-7x)\cdot(18x^2-7)\\ 
-&= (90x^2-35)\sec^2(6x^3-7x)\tan^4(6x^3-7x).
+y\primeskip' &= 5\left(\tan\left(6x^3-7x\right)\right)^4\cdot\sec^2\left(6x^3-7x\right)\cdot\left(18x^2-7\right)\\ 
+&= \left(90x^2-35\right)\sec^2\left(6x^3-7x\right)\tan^4\left(6x^3-7x\right).
 \end{align*}
 
 This function is frankly a ridiculous function, possessing no real practical value. It is very difficult to graph, as the tangent function has many vertical asymptotes and $6x^3-7x$ grows so very fast. The important thing to learn from this is that the derivative can be found. In fact, it is not ``hard;'' one must take several simple steps and be careful to keep track of how to apply each of these steps.%However, just to demonstrate that this is the proper derivative, we have plotted the tangent line to the function, along with $y$, in FIGURE. The derivative gives the correct slope.
@@ -237,40 +237,23 @@ The reader is highly encouraged to look at each term and recognize why it is the
 %$C^{\, \prime}(x) = e^{-x^2}(15x^2  -  10x^4)$.  We probably would make these simplifications because they look nicer, they are easer to calculate with, and it is easier to take further derivatives as necessary.\\
 %\\
 
-The Chain Rule also has theoretic value. That is, it can be used to find the derivatives of functions that we have not yet learned as we do in the following example.\\
+The Chain Rule also has theoretic value.  In Section~\ref{sec:basic_diff_rules}, we stated that the derivative of $y=a^x$ is $y\primeskip'=\ln a\cdot a^x$.  However, we only proved the derivative for $e^x$ using the derivative definition. In the following example, we use the derivative rule for $y=e^x$ to prove the rule for $y=a^x$, where $a>0$.\\
 
-\example{ex_chain8}{The Chain Rule and exponential functions}{
-Use the Chain Rule to find the derivative of $y= a^x$ where $a>0$, $a\neq 1$ is constant.}
-{We only know how to find the derivative of one exponential function: $y = e^x$; this problem is asking us to find the derivative of functions such as $y = 2^x$. 
-
-This can be accomplished by rewriting $a^x$ in terms of $e$.  Recalling that $e^x$ and $\ln x$ are inverse functions, we can write
+\example{ex_chain8}{Using the Chain Rule to prove $\frac{d}{dx}(a^x)=\ln a \cdot a^x$}{
+Use the Chain Rule to find the derivative of $y= a^x$ where $a>0$ is constant.}
+{ This can be accomplished by rewriting $a^x$ in terms of $e$.  Recalling that $e^x$ and $\ln x$ are inverse functions, we can write
 $$
-a = e^{\ln a} \quad \text{and so } \quad y = a^x = e^{\ln (a^x)}.
-$$  
-
-By the exponent property of logarithms, we can ``bring down'' the power to get 
-
-$$
-y = a^x = e^{x (\ln a)}.
+a = e^{\ln a} \quad \text{and so } \quad y = a^x = \left(e^{\ln a}\right)^x = e^{x (\ln a)}.
 $$
 
-The function is now the composition $y=f(g(x))$, with $f(x) = e^x$ and $g(x) = x(\ln a)$.  Since $\fp(x) = e^x$ and $g\primeskip'(x) = \ln a$, the Chain Rule  gives 
+The function is now the composition $y=f(g(x))$, with $f(x) = e^x$ and $g(x) = x(\ln a)$.  Since $\fp(x) = e^x$ and $g\primeskip'(x) = \ln a$, the Chain Rule gives 
 
 $$
-y\primeskip' = e^{x (\ln a)} \cdot \ln a.
+y\primeskip' = e^{x (\ln a)} \cdot \ln a = a^x\cdot \ln a.
 $$
-Recall that the $e^{x(\ln a)}$ term on the right hand side is just $a^x$, our original function. Thus, the derivative contains the original function itself. We have
-$$
-y\primeskip' = y \cdot \ln a = a^x\cdot \ln a.
-$$
-The Chain Rule, coupled with the derivative rule of $e^x$, allows us to find the derivatives of all exponential functions.
 }\\
-
-The previous example produced a result worthy of its own ``box.''
-
-\theorem{thm:exponentials}{Derivatives of Exponential Functions}
-{Let $f(x)=a^x$, for $a>0, a\neq 1$.\index{derivative!exponential functions} Then $f$ is differentiable for all real numbers and $$\fp(x) = \ln a\cdot a^x.$$
-}
+%The Chain Rule, coupled with the derivative rule of $e^x$, allows us to find the derivatives of all exponential functions.
+%}\\
 
 %{\bf Hard Examples:} For constants $a$ and $\nu,$ find the derivatives of 
 %\begin{eqnarray*}

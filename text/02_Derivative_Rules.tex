@@ -14,36 +14,50 @@ Let's abstract once more. Let's find the derivative of the general quadratic fun
 		
 So if $y = 6x^2+11x-13$, we can immediately compute $y\primeskip' = 12x+11$. \\
 
-In this section (and in some sections to follow) we will learn some of what mathematicians have already discovered about the derivatives of certain functions and how derivatives interact with arithmetic operations. We start with a theorem.
+In this section (and in some sections to follow) we will learn some of what mathematicians have already discovered about the derivatives of certain functions and how derivatives interact with arithmetic operations.\\
 
-%\setboxwidth{110pt}
-%\noindent\hskip-110pt
-%\begin{minipage}{\specialboxlength}
-\theorem{thm:deriv_common}{Derivatives of Common Functions}{
-		\begin{enumerate}
-		\item		\sword{Constant Rule:}\index{derivative!Constant Rule} 
-		
-		$\ds \frac{d}{dx}\big( c\big) = 0$, where $c$ is a constant.%\addtocounter{enumi}{1}
-\item		\sword{Power Rule:}\index{derivative!Power Rule}\index{Power Rule!differentiation}
-		
-		$\ds \frac{d}{dx}\left(x^n\right) = nx^{n-1}$, where $n$ is an integer, $n>0$%.\addtocounter{enumi}{1}
-		\item		$\ds \frac{d}{dx}(\sin x) = \cos x$%\addtocounter{enumi}{1}
-		\item		$\ds \frac{d}{dx}(\cos x) = -\sin x$%\addtocounter{enumi}{1}
-		\item		$\ds \frac{d}{dx}\left(e^x\right) = e^x$
-		\item		$\ds \frac{d}{dx}(\ln x) = \frac{1}{x}$
-		\end{enumerate}\index{derivative!basic rules}
+\noindent\textbf{\large Power Rule}\\
+
+From the rule above, if $f(x)=x^2$, then $f(x)=1x^2+0x+0$, so $\fp(x) = 2x+0=2x$.  Now we will do two more examples for derivatives of functions of the form $y=x^n$ to see if we notice a pattern.
+
+Let's find the derivative of $f(x) = x^4$.  Again using the derivative definition, we have 
+\begin{align*}
+		\fp(x) 	&=	\lim_{h\to 0}\frac{(x+h)^4 - x^4}{h} \\
+						&=	\lim_{h\to 0} \frac{x^4+4x^3h + 6x^2h^2 + 4xh^3 + h^4 - x^4}{h} \\
+						&=	\lim_{h\to 0} 4x^3 + 6x^2h + 4xh^2 + h^3\\
+						&= 4x^3.
+		\end{align*}
+
+And now we will try an example with a negative $n$.  If $\ds f(x)=\frac{1}{x} = x^{-1}$, then
+\begin{align*}
+		\fp(x) 	&= \lim_{h\to 0} \frac{\frac{1}{x+h}-\frac{1}{x}}{h}\\
+&=	\lim_{h\to 0} \frac{1}{h}\left(\frac{1}{x+h}-\frac{1}{x}\right)\\						
+&= \lim_{h\to 0} \frac{1}{h}\cdot\left(\frac{x}{x(x+h)} - \frac{x+h}{x(x+h)}\right)\\
+						&=	\lim_{h\to 0} \frac 1h\cdot\left(\frac{x-(x+h)}{x(x+h)}\right)\\
+	%\end{align*}%\\
+	%\begin{align*}
+						&=	\lim_{h\to 0} \frac1h\cdot\left(\frac{-h}{x(x+h)}\right)\\
+						&=	\lim_{h\to 0} \frac{-1}{x(x+h)} \\
+						&= \frac{-1}{x^2}
+	\end{align*}
+
+So we have the following.
+\begin{align*}
+\frac{d}{dx}\left(x^2\right) &= 2x = 2x^1\\
+\frac{d}{dx}\left(x^4\right) &= 4x^3\\
+\frac{d}{dx}\left(x^{-1}\right) &= \frac{-1}{x^2} = -1x^{-2}
+\end{align*}
+
+This suggests a pattern for the derivatives of Power Functions (of the form $y=x^n$): multiply by the power, then subtract 1 from the power.  This holds in general, even when $n$ is not an integer (such as $x^{1/2}$ or $x^\pi$).  We will not prove this in general, as there are tedious details involved.
+
+\theorem{thm:finalpower}{Power Rule for Differentiation}
+{Let $f(x) = x^n$, where $n$ is a real number. Then $\fp(x) = n\cdot x^{n-1}$.\index{derivative!Power Rule}\index{Power Rule!differentiation}
 }
-%\end{minipage}
-%\restoreboxwidth
-
-This theorem starts by stating an intuitive fact: constant functions have no rate of change as they are \textit{constant}. Therefore their derivative is 0 (they change at the rate of 0). The theorem then states some fairly amazing things. The Power Rule states that the derivatives of Power Functions (of the form $y=x^n$) are very straightforward: multiply by the power, then subtract 1 from the power. We see something incredible about the function $y=e^x$: it is its own derivative. We also see a new connection between the sine and cosine functions. 
-
-One special case of the Power Rule is when $n=1$, i.e., when $f(x) = x$. What is $\fp(x)$? According to the Power Rule, $$\fp(x) = \frac{d}{dx}\big(x\big) = \frac{d}{dx}\big(x^1\big) = 1\cdot x^0 = 1.$$ In words, we are asking ``At what rate does $f$ change with respect to $x$?'' Since $f$ \textit{is} $x$, we are asking ``At what rate does $x$ change with respect to $x$?'' The answer is: 1. They change at the same rate.\\
 
 \enlargethispage{1\baselineskip}
 Let's practice using this theorem.\\
 
-\example{ex_deriv_rule1}{Using Theorem \ref{thm:deriv_common} to find, and use, derivatives}
+\example{ex_deriv_rule1}{Using the Power Rule to find and use derivatives}
 {Let $f(x)=x^3$. 
 
 		%\noindent\begin{minipage}[t]{.5\textwidth}
@@ -73,9 +87,93 @@ Let's practice using this theorem.\\
 		\end{enumerate}
 \vskip-1.5\baselineskip
 }\\
-%\clearpage
 
-Theorem \ref{thm:deriv_common} gives useful information, but we will need much more. For instance, using the theorem, we can easily find the derivative of $y=x^3$, but it does not tell how to compute the derivative of $y=2x^3$, $y=x^3+\sin x$ nor $y=x^3\sin x$. The following theorem helps with the first two of these examples (the third is answered in the next section).
+One special case of the Power Rule is when $n=1$, i.e., when $f(x) = x$. What is $\fp(x)$? According to the Power Rule, $$\fp(x) = \frac{d}{dx}\big(x\big) = \frac{d}{dx}\big(x^1\big) = 1\cdot x^0 = 1.$$ In words, we are asking ``At what rate does $f$ change with respect to $x$?'' Since $f$ \textit{is} $x$, we are asking ``At what rate does $x$ change with respect to $x$?'' The answer is: 1. They change at the same rate.
+
+Note that we can use the Power Rule to determine derivatives of functions that are not typically written in the form $y=x^n$.  Recall that $x^{m/n}$ means $\sqrt[n]{x^m}$.  We use this to determine the derivative of $f(x)=\sqrt{x}$ in the next example.\\
+
+\example{ex_deriv_rule1a}{Using the Power Rule to find and use derivatives}
+{Let $f(x)=\sqrt{x}$. 
+
+		%\noindent\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}
+		\item		Find $\fp(x)$.
+		\item		Find the equation of the line tangent to the graph of $f$ at $x=16$. 
+%		\end{enumerate}
+%		\end{minipage}
+%		\begin{minipage}[t]{.5\textwidth}
+%		\begin{enumerate}
+		\item		Use the tangent line to approximate $\sqrt{19}$ and $\sqrt{50}$.  Determine how far off the approximations are.
+		\end{enumerate}
+%		\end{minipage}
+}
+{	\begin{enumerate}
+\enlargethispage{\baselineskip}
+		\item		To use the Power Rule, we first rewrite the function in an equivalent form $f(x)=\sqrt{x}=x^{1/2}$.  Then the Power Rule states that if $$ \fp(x) = \frac{1}{2}x^{1/2-1}=\frac{1}{2}x^{-1/2}.$$  We can simplify $$\fp(x)= \frac{1}{2}x^{-1/2}=\frac{1}{2x^{1/2}}=\frac{1}{2\sqrt{x}}.$$
+
+		\item		To find the equation of the line tangent to the graph of $f$ at $x=16$, we again need a point and the slope. The point is $(16,f(16))=(16,4)$. The slope is $\ds \fp(16)= \frac{1}{2\sqrt{16}}=\frac{1}{8}$.
+Thus the tangent line has equation $$y = \frac{1}{8}(x-16)+ 4.$$
+		
+		\item		We can use the tangent line to approximate $$\sqrt{19}\approx \frac{1}{8}(19-16)+4 = 4.375$$ and $$\sqrt{50}\approx \frac{1}{8}(50-16)+4 = 8.25$$  From a calculator, we see that $\sqrt{19}\approx 4.359$ but $\sqrt{50}\approx 7.071$.  The tangent line gives a good approximation of $\sqrt{19}$, and a poor approximation of $\sqrt{50}$.  This is what we expect.  We used the tangent line at $x=16$, so the farther $x$ is from 16, the worse we expect the approximation to be.
+		\end{enumerate}
+\vskip-1.5\baselineskip
+}\\
+
+\noindent\textbf{\large Derivatives of Common Functions}\\
+
+In Section~\ref{sec:derivative}, we found that the derivative of $\sin x$ is $\cos x$.  That proof was a bit tricky, using a special limit that was not straightforward to prove.  There are many rules.  We begin with the derivatives of some of the most common functions in mathematics.\\
+
+%\setboxwidth{110pt}
+%\noindent\hskip-110pt
+%\begin{minipage}{\specialboxlength}
+\theorem{thm:deriv_common}{Derivatives of Common Functions}{
+		\begin{enumerate}
+		\item		\sword{Constant Rule:}\index{derivative!Constant Rule} 
+		$\ds \frac{d}{dx}\big( c\big) = 0$, where $c$ is a constant.%\addtocounter{enumi}{1}
+\item		\sword{Power Rule:}\index{derivative!Power Rule}\index{Power Rule!differentiation}	
+		$\ds \frac{d}{dx}\left(x^n\right) = nx^{n-1}$%.\addtocounter{enumi}{1}
+		\item		$\ds \frac{d}{dx}(\sin x) = \cos x$%\addtocounter{enumi}{1}
+		\item		$\ds \frac{d}{dx}(\cos x) = -\sin x$%\addtocounter{enumi}{1}
+		\item		$\ds \frac{d}{dx}\left(e^x\right) = e^x$
+		\item		$\ds \frac{d}{dx}\left(a^x\right) = \ln a\cdot a^x$, where $a>0$.
+		\item		$\ds \frac{d}{dx}(\ln x) = \frac{1}{x}$
+		\end{enumerate}\index{derivative!basic rules}
+}
+%\end{minipage}
+%\restoreboxwidth
+
+This theorem starts by stating an intuitive fact: constant functions have no rate of change as they are \textit{constant}.
+
+We see something incredible about the function $y=e^x$: it is its own derivative.  But why does this function's derivative \textbf{not}
+match up with the Power Rule's answer $xe^{x-1}$?  Recall that the derivative represents the function's rate of change as the variable $x$ changes.  So we cannot use the Power Rule when the variable is in the exponent.
+
+Also we see here what really makes the number $e$ special, and one of the most important numbers in mathematics.  Many students have an easier time wrapping their head around a function such as $y=2^x$ as opposed to $y=e^x$.  However, $e$ is ``natural'' from the perspective of rates of change.  Not only is $e^x$ its own derivative, but also the derivative of $f(x)=2^x$ is $\fp(x)=\ln 2\cdot 2^x$.  This has the number $e$ in it, in the form of log base $e$.
+The derivative rule for $y=e^x$ can be remembered as a special case of the $y=a^x$ rule, since $\ln e=1$.  However,
+the base $e$ for exponential and logarithmic appears far more often than any other base, and the function $y=e^x$ is encountered far more often.
+Any exponential function can be rewritten in terms of any base.  For example, $2=e^{\ln 2}$, so $2^x=\left(e^{\ln 2}\right)^x = e^{\ln(2) x}$.
+In Section~\ref{sec:chainrule}, we will use this to prove the formula for $\frac{d}{dx}(a^x)$ from that of $e^x$.
+In exponential growth and decay models, it is common and simpler to work only in the base $e$.
+
+Note that, from this rule, $\frac{d}{dx}(1^x)=\ln 1\cdot 1^x = 0\cdot 1^x = 0$.  This makes sense because $1^x$ always equals 1, so it is a constant function.
+
+In the next example, we prove $e^x$ is its own derivative.  Note that this proof uses the fact that $\ds \lim_{x\to 0} \frac{e^x - 1}{x}=1$ from Theorem~\ref{thm:special_limits} in Section~\ref{sec:limit_analytically}, another special property of the number $e$.\\
+
+\example{ex_deriv_e}{Proving the derivative of $f(x)=e^x$ is $\fp(x)=e^x$}{
+Verify from the definition that the derivative of $f(x)=e^x$ is $\fp(x)=e^x$.}
+{		%\small
+		\begin{align*}
+		\fp(x) &= \lim_{h\to 0} \frac{e^{x+h}-e^x}{h}\\ %& & %\left(\text{ \parbox{70pt}{\centering Use rules of exponents.}}\right) \\
+						&= \lim_{h\to 0} \frac{e^x e^h - e^x}{h}\\ %& & \\
+						&= \lim_{h\to 0} \frac{e^x \left(e^h - 1 \right)}{h}\\% & & %\text{\scriptsize We can factor out $e^x$ from the limit, since it does not have $h$ in it.)}\\
+						&=e^x \lim_{h\to 0} \frac{e^h - 1}{h}\\ %& & \left(\parbox{70pt}{ Use $\ds \lim_{h\to 0} \frac{e^h-1}{h} = 1$}\right)\\
+						&=	e^x \cdot 1 \\
+						&= e^x
+		\end{align*}
+		%\normalsize
+}\\
+
+
+Theorem \ref{thm:deriv_common} gives useful information, but we will need much more. For instance, using the theorem, we can easily find the derivative of $y=x^3$, but it does not tell how to compute the derivative of $y=2x^3$, $y=x^3+\sin x$ nor $y=x^3\sin x$. The following theorem helps with the first two of these examples (the third is more complicated and is answered in the next section).
 \enlargethispage{\baselineskip}
 
 \theorem{thm:deriv_prop}{Properties of the Derivative}
@@ -92,14 +190,51 @@ Theorem \ref{thm:deriv_common} gives useful information, but we will need much m
 	\end{enumerate}
 }
 
-Theorem \ref{thm:deriv_prop} allows us to find the derivatives of a wide variety of functions. It can be used in conjunction with the Power Rule to find the derivatives of any polynomial. Recall in Example \ref{ex_deriv1} that we found, using the limit definition, the derivative of $f(x) = 3x^2+5x-7$. We can now find its derivative without expressly using limits:
+Theorem \ref{thm:deriv_prop} allows us to find the derivatives of a wide variety of functions. It can be used in conjunction with the Power Rule to find the derivatives of any polynomial. Recall in Example \ref{ex_deriv1} that we found, using the limit definition, the derivative of $f(x) = 3x^2+5x-7$. We can now find its derivative without expressly using limits.\\
+
+\example{ex_deriv_added1}{Using the Sum/Difference and the Constant Multiple Rules}{
+Determine the derivative of $f(x) = 3x^2+5x-7$.}
+{
 		\begin{align*}
 		\frac{d}{dx}\Big(3x^2+5x+7\Big) &= 3\frac{d}{dx}\Big(x^2\Big) + 5\frac{d}{dx}\Big(x\Big) + \frac{d}{dx}\Big(7\Big) \\
 																		&= 3\cdot 2x+5\cdot 1+ 0\\
 																		&= 6x+5.
 		\end{align*}
 
-We were a bit pedantic here, showing every step. Normally we would do all the arithmetic and steps in our head and readily find $\ds \frac{d}{dx}\Big(3x^2+5x+7\Big) = 6x+5.$\\
+We were a bit pedantic here, showing every step. Normally we would do all the arithmetic and steps in our head and readily find $\ds \frac{d}{dx}\Big(3x^2+5x+7\Big) = 6x+5.$
+}\\
+
+The next example has components that students often confuse at first.\\
+
+\example{ex_deriv_added2}{Using the Sum/Difference Rule}{
+Determine the derivative of $f(x) = x^3 + e^x + e^3 - 5^x$.}
+{
+This function $f(x)$ is composed by adding and subtracting four different functions.  Note that $\ds \frac{d}{dx}\left(x^3\right)=3x^2$ by the Power Rule.
+Then $\ds \frac{d}{dx}\left(e^x\right)=e^x$.  Note, however, that $e^2$ is neither a power function, nor an exponential function.  It is a constant function.  Yes, $e^2$ is just a number; the variable $x$ does not appear in it at all.  So  $\ds \frac{d}{dx}\left(e^2\right)=0$.
+Lastly,  $\ds \frac{d}{dx}\left(5^x\right)=\ln 5\cdot 5^x$.  Putting this together,
+		\begin{align*}
+		\frac{d}{dx}\Big(x^3 + e^x + e^3 - 5^x\Big) &= \frac{d}{dx}\Big(x^3\Big) + \frac{d}{dx}\Big(e^x\Big) + \frac{d}{dx}\Big(e^2\Big) +\frac{d}{dx}\Big(5^x\Big) \\
+																		&= 3x^2+e^x+0+\ln 5\cdot 5^x\\
+																		&= 3x^2+e^x+\ln 5\cdot 5^x.
+		\end{align*}
+Again, we usually do the steps in our head and just write the answer.
+}\\
+
+In the next example, we must first rewrite the function in an equivalent (not necessarily simpler) form in order to use the rules we know.
+
+\example{ex_deriv_added3}{Using the Sum/Difference and the Constant Multiple Rules}{
+Determine the derivative of $\ds f(x) = \frac{(3x-1)^2}{x^2}$.}
+{The rules we know allow us to take derivatives of sums and differences of functions, and constant multiples.  We know the derivative of $x^2$ is $2x$, but we cannot just plug in $3x-1$ in for $x$ to get the derivative of $(3x-1)^2$.  Additionally, we cannot divide the derivatives of the numerator and denominator, the way we can for sums and differences.  In the upcoming sections, we will learn how to handle products, quotients, and compositions of functions.  That will allow us to take derivatives of a wider class of functions.  For now, though, we must rewrite $f(x)$ to apply the rules we know:
+\begin{align*}
+f(x)&=\frac{(3x-1)^2}{x^2}\\
+&=\frac{9x^2-6x+1}{x^2}\\
+&=9-\frac{6}{x}+\frac{1}{x^2}\\
+&=9-6x^{-1}+x^{-2}.
+\end{align*}
+
+Therefore,$$\fp(x)=0-6\left(-1x^{-2}\right)+\left(-2x^{-3}\right)=\frac{6}{x^2}-\frac{2}{x^3}.$$
+Even when we learn more rules to handle quotients and compositions of functions, this will be the fastest way to compute this particular function's derivative.  Notice the way the solution is written.  We use equal signs between expressions that are equal, when we rewrote the function in another form.  However, we did \textbf{not} write an equal sign between the function and it's derivative.  We labeled the functions $f(x)$ and $\fp(x)$; these functions are different.
+}\\
 
 \example{ex_der2}{Using the tangent line to approximate a function value}{
 Let $f(x) = \sin x + 2x+1$. Approximate $f(3)$ using an appropriate tangent line.}
@@ -155,6 +290,7 @@ Find the first four derivatives of the following functions:
 	\noindent\begin{minipage}[t]{.5\textwidth}
 	\begin{enumerate}\addtocounter{enumi}{2}
 	\item		$f(x) = 5e^x$
+	\item		$f(x) = 5^x$
 	\end{enumerate}
 	\end{minipage}
 }
@@ -164,6 +300,7 @@ Find the first four derivatives of the following functions:
 	\item		We employ Theorem \ref{thm:deriv_common} repeatedly.
 	$$\fp(x) = \cos x;\qquad \fp'(x) = -\sin x;\qquad \fp''(x) = -\cos x;\qquad f\,^{(4)}(x) = \sin x.$$ Note how we have come right back to $f(x)$ again. (Can you quickly figure what $f\,^{(23)}(x)$ is?)
 	\item		Employing Theorem \ref{thm:deriv_common} and the Constant Multiple Rule, we can see that $$\fp(x) = \fp'(x) = \fp''(x) = f\,^{(4)}(x) = 5e^x.$$
+	\item 		From Theorem \ref{thm:deriv_common}, $\fp(x)=\ln 5 \cdot 5^x$.  Then to take the derivative again, we use the Constant Multiple Rule, $\fp'(x) = \ln 5 \left(\ln 5 \cdot 5^x\right) = (\ln 5)^2 5^x$.  Continuing, we get $\fp''(x) =  (\ln 5)^3 5^x$ and $\fp'''(x) =  (\ln 5)^4 5^x$.
 	\end{enumerate}
 \vskip-1.5\baselineskip
 }
@@ -183,6 +320,6 @@ We started this chapter with amusement--park riders free--falling with position 
 
 It can be difficult to consider the meaning of the third, and higher order, derivatives. The third derivative is ``the rate of change of the rate of change of the rate of change of $f$.'' That is essentially meaningless to the uninitiated. In the context of our position/velocity/acceleration example, the third derivative is the ``rate of change of acceleration,'' commonly referred to as ``jerk.'' 
 
-Make no mistake: higher order derivatives have great importance even if their practical interpretations are hard (or ``impossible'') to understand. The mathematical topic of \textit{series} makes extensive use of higher order derivatives.
+Make no mistake: higher order derivatives have great importance even if their practical interpretations are hard (or ``impossible'') to understand at the moment. The mathematical topic of \textit{series} makes extensive use of higher order derivatives.
 
 \printexercises{exercises/02_03_exercises}

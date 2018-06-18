@@ -173,16 +173,20 @@ Use Theorem \ref{thm:deriv_inverse_functions} to compute $\ds \frac{d}{dx}\big(\
 
 %\vskip\baselineskip
 
-We restate the derivative rules in the following theorem, intended to be a reference for further work.
+%We restate the derivative rules in the following theorem, intended to be a reference for further work.
 
 \theorem{thm:deriv_glossary}{Glossary of Derivatives of Elementary Functions}
-{Let $u$ and $v$ be differentiable functions, and let $a$, $c$ and $n$ be real numbers, $a>0$, $n\neq 0$. \\
+{Let $u$ and $v$ be differentiable functions, and let $a$, $c$ and $n$ be real numbers, $a>0$. \\
 
 \noindent%
+\begin{enumerate}
+	\item		$\frac{d}{dx}\big(cf(x)\big) = c\fp(x)$%\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(f(x)\pm g(x)\big) = \fp(x)\pm g\primeskip'(x)$%\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(f(x)g(x)\big) = \fp(x)g(x)+f(x)g\primeskip'(x)$%\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\frac{f(x)}{g(x)}\big) = \frac{g(x)\fp(x)-f(x)g\primeskip'(x)}{g(x)^2}$%\addtocounter{enumi}{1}
+\end{enumerate}
 	\begin{minipage}{.5\specialboxlength}
-	\begin{enumerate}
-	\item		$\frac{d}{dx}\big(cf(x)\big) = c\fp(x)$\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(f(x)g(x)\big) = \fp(x)g(x)+f(x)g\primeskip'(x)$\addtocounter{enumi}{1}
+	\begin{enumerate}\addtocounter{enumi}{4}
 	\item		$\frac{d}{dx}\big(f(g(x))\big) = \fp(g(x)) g\primeskip'(x)$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(x\big) = 1$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(e^x\big) = e^x$\addtocounter{enumi}{1}
@@ -197,9 +201,7 @@ We restate the derivative rules in the following theorem, intended to be a refer
 \normalsize
 \end{minipage}
 \begin{minipage}{.5\specialboxlength}
-	\begin{enumerate}\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(f(x)\pm g(x)\big) = \fp(x)\pm g\primeskip'(x)'$\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(\frac{f(x)}{g(x)}\big) = \frac{g(x)\fp(x)-f(x)g\primeskip'(x)}{g(x)^2}$\addtocounter{enumi}{1}
+	\begin{enumerate}\addtocounter{enumi}{5}
 	\item		$\frac{d}{dx}\big(c\big) = 0$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(x^n\big) = nx^{n-1}$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(a^x\big) = \ln a\cdot a^x$\addtocounter{enumi}{1}
@@ -208,13 +210,14 @@ We restate the derivative rules in the following theorem, intended to be a refer
 	\item		$\frac{d}{dx}\big(\cot x\big) = -\csc^2x$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(\csc x\big) = -\csc x\cot x$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(\cos^{-1}x\big) = -\frac{1}{\sqrt{1-x^2}}$\addtocounter{enumi}{1}
-	\item		$\frac{d}{dx}\big(\cot^{-1}x\big) = -\frac{1}{1+x^2}$
+	\item		$\frac{d}{dx}\big(\cot^{-1}x\big) = -\frac{1}{1+x^2}$\addtocounter{enumi}{1}
 	\item		$\frac{d}{dx}\big(\csc^{-1}x\big) = -\frac{1}{|x|\sqrt{x^2-1}}$\addtocounter{enumi}{1}
 	\end{enumerate}
 \normalsize
 \end{minipage}
 }\\
 
+We restated the derivative rules in the previous theorem, intended to be a reference for further work.
 There are a lot of rules to learn and remember for taking derivatives.  However, just like when learning how to spell or the meanings of vocabulary rules, etc.\ the best way to learn the derivative rules is to get used to them through practice.
 
 \printexercises{exercises/02_07_exercises}
