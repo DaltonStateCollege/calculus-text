@@ -12,11 +12,11 @@ Currently, our vector--valued functions have defined points with a parameter $t$
 \end{tabular}
 }
 
-Now consider Figure \ref{fig:vvfarc_intro1}(b), where the same graph is parametrized by a different variable $s$.  Points corresponding to $s=0$ through $s=6$ are plotted. The arc length of the graph between each adjacent pair of points is 1. We can view this parameter $s$ as distance; that is, the arc length of the graph from $s=0$ to $s=3$ is 3, the arc length from $s=2$ to $s=6$ is 4, etc. If one wants to find the point 2.5 units from an initial location (i.e., $s=0$), one would compute $\vec r(2.5)$. This parameter $s$ is very useful, and is called the \textbf{arc length parameter}.\index{arc length parameter}\index{arc length}
+Now consider Figure \ref{fig:vvfarc_intro1}(b), where the same graph is parameterized by a different variable $s$.  Points corresponding to $s=0$ through $s=6$ are plotted. The arc length of the graph between each adjacent pair of points is 1. We can view this parameter $s$ as distance; that is, the arc length of the graph from $s=0$ to $s=3$ is 3, the arc length from $s=2$ to $s=6$ is 4, etc. If one wants to find the point 2.5 units from an initial location (i.e., $s=0$), one would compute $\vec r(2.5)$. This parameter $s$ is very useful, and is called the \textbf{arc length parameter}.\index{arc length parameter}\index{arc length}
 
 How do we find the arc length parameter? 
 
-Start with any parametrization of $\vec r$. We can compute the arc length of the graph of $\vec r$ on the interval $[0,t]$ with $$\text{arc length } = \int_0^t\norm{\vec r\,'(u)}\ du.$$ We can turn this into a function: as $t$ varies, we find the arc length $s$ from $0$ to $t$. This function is
+Start with any parameterization of $\vec r$. We can compute the arc length of the graph of $\vec r$ on the interval $[0,t]$ with $$\text{arc length } = \int_0^t\norm{\vec r\,'(u)}\ du.$$ We can turn this into a function: as $t$ varies, we find the arc length $s$ from $0$ to $t$. This function is
 \begin{equation}
 s(t) = \int_0^t \norm{\vec r\,'(u)}\ du.\label{eq:vvfarc}
 \end{equation}
@@ -24,7 +24,7 @@ s(t) = \int_0^t \norm{\vec r\,'(u)}\ du.\label{eq:vvfarc}
 This establishes a relationship between $s$ and $t$. Knowing this relationship explicitly, we can rewrite $\vec r(t)$ as a function of $s$: $\vec r(s)$. We demonstrate this in an example.\\
 
 \example{ex_vvfarc1}{Finding the arc length parameter}{
-Let $\vec r(t) = \la 3t-1,4t+2\ra$. Parametrize $\vec r$ with the arc length parameter $s$.}
+Let $\vec r(t) = \la 3t-1,4t+2\ra$. parameterize $\vec r$ with the arc length parameter $s$.}
 {Using Equation \eqref{eq:vvfarc}, we write
 $$s(t) = \int_0^t \norm{\vec r\,'(u)}\ du.$$
 We can integrate this, explicitly finding a relationship between $s$ and $t$:
@@ -88,7 +88,7 @@ We derive this number in the following way. Consider Figure \ref{fig:curvaturein
 $$\kappa = \snorm{\frac{d\vec T}{ds}} = \snorm{\vec T\,'(s)}.$$
 }\\
 
-If $\vec r(s)$ is parametrized by the arc length parameter, then 
+If $\vec r(s)$ is parameterized by the arc length parameter, then 
 $$\vec T(s) = \frac{\vrp(s)}{\norm{\vrp(s)}} \quad \text{and}\quad \vec N(s) = \frac{\vec T\,'(s)}{\norm{\vec T\,'(s)}}.$$
 Having defined $\norm{\vec T\,'(s)} =\kappa$, we can rewrite the second equation as
 \begin{equation}\vec T\,'(s) = \kappa\vec N(s).\label{eq:curvature}
@@ -99,7 +99,7 @@ We use  Definition \ref{def:curvature}  to find the curvature of the line in Exa
 
 \example{ex_curvature1}{Finding the curvature of a line}
 {Use Definition \ref{def:curvature} to find the curvature of $\vrt = \la 3t-1,4t+2\ra$.}
-{In Example \ref{ex_vvfarc1}, we found that the arc length parameter was defined by $s=5t$, so $\vec r(s) =\la 3t/5-1, 4t/5+2\ra$ parametrized $\vec r$ with the arc length parameter. To find $\kappa$, we need to find $\vec T\,'(s)$. 
+{In Example \ref{ex_vvfarc1}, we found that the arc length parameter was defined by $s=5t$, so $\vec r(s) =\la 3t/5-1, 4t/5+2\ra$ parameterized $\vec r$ with the arc length parameter. To find $\kappa$, we need to find $\vec T\,'(s)$. 
 \begin{align*}
 \vec T(s) &= \vrp(s)\quad \text{(recall this is a unit vector)}\\
 				&= \la 3/5, 4/5\ra.

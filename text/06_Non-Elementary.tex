@@ -1,0 +1,301 @@
+\section{Exploring Functions Defined as Integrals (Optional)}\label{sec:nonelem}
+
+We have explored many integration techniques in this chapter and the previous one. We learned Substitution, which ``undoes'' the Chain Rule of differentiation, as well as Integration by Parts, which ``undoes'' the Product Rule. We learned specialized techniques for handling trigonometric functions as well as the method of Partial Fraction Decomposition.  Additionally, we have needed several algebra techniques for integrating certain functions, such as long polynomial division and completing the square.  All techniques effectively have this goal in common: rewrite the integrand in a new way so that the integration step is easier to see and implement. 
+
+As stated before, integration is, in general, hard.  When computing derivatives, there can always be a systematic process used.  When one encounters division of functions, the Quotient Rule may be used.  Sometimes it is faster and easier to simplify the function, such as $\ds f(x)=\frac{x^2+3}{x}$, by distributing the division.  With this method, the Quotient Rule may be avoided to take the derivative, but the point is that we \emph{can} use the Quotient Rule whenever we encounter function division.  To integrate this function, on the other hand, we absolutely need to distribute the division first.  For integration, we have many ``techniques'' instead of ``rules''.  Finding an antiderivative of a function is a puzzle, not a systematic process.
+
+Consider a not-so-complicated integral such as $\int \sqrt{\tan x}\ dx$.  It turns out that
+
+\begin{footnotesize}
+$$
+\int \sqrt{\tan x}\ dx = \frac{\sqrt{2}}{4} \ln \left(   \frac{\tan x -\sqrt{2\tan x} + 1}{\tan x +\sqrt{2\tan x} + 1}  \right)
++\frac{\sqrt{2}}{2} \tan^{-1} \left(1+2\sqrt{\tan x} \right)
+-\frac{\sqrt{2}}{2} \tan^{-1} \left(1-2\sqrt{\tan x} \right)
++C.
+$$
+\end{footnotesize}
+
+This answer is surprisingly complicated for integrating a simple function.  To arrive at this, one first uses the substitution $u=\tan x$ and a trigonometric identity to rewrite the integrand as a rational function.  Then, one uses partial fraction decomposition, by first factoring
+$u^4+1$ as $\left(u^2 + \sqrt{2} u +1\right) \left(u^2 - \sqrt{2} u +1\right)$.  Not only is it far from straightforward to factor $u^4+1$, but $\sqrt{2}$ also appears in the coefficients, leading to an ugly answer.
+
+Since we do not have any ``rules'' that always work for integrating products, it may not be surprising that there are some functions, in fact many, that do \textbf{not} have antiderivatives expressible in terms of \textit{elementary functions}.  ``Elementary functions'' is a term used to describe the functions most often encountered in mathematics.  These include polynomials, exponential, logarithmic, trigonometric inverse trigonometric functions, as well as sums, differences, products, quotients, and compositions of these.  Some basic antiderivatives that cannot be expressed in terms of elementary functions include the following.
+
+$$\int e^{-x^2}\ dx \quad\quad\quad \int \frac{\sin x}{x}\ dx\quad\quad\quad \int \sin(\sin x)\ dx$$
+
+One might wonder whether it is truly impossible to express these antiderivatives in terms of elementary functions, or if they may be unsolved puzzles where no one has found the correct technique yet.  This is natural to think, as one might think $\sqrt{\tan x}$ does not have an elementary antiderivative if no one had thought to combine all the steps.  Also $\int \sec x\ dx$ involved a strange substitution we do not expect students to come up with on their own.  What if no one had thought of a trigonometric substitution?  Could there be another technique no one has come up with yet to tackle other hard integrals?
+
+Possibly surprisingly, it actually has been proven that antiderivatives of the above functions, and many more, cannot be expressed in terms of elementary functions.  These proofs come from a branch of mathematics called Differential Galois Theory, which is far beyond the scope of this text.  The point is that it is easy to write a function whose antiderivative is impossible to write in terms of elementary functions, and even when a function does have an antiderivative expressible by elementary functions, it may be really hard to discover what it is. The powerful computer algebra system \textit{Mathematica}\textsuperscript{\textregistered} has approximately 1,000 pages of code dedicated to integration, and also has the functions described in this section programmed in. 
+
+Recall that from the Fundamental Theorem of Calculus, Part 1, given a continuous function $f(x)$, the function $\int_a^x f(t)\ dt$ is an antiderivative of $f(x)$.  Then in Section~\ref{sec:numerical_integration}, we discussed techniques for approximating integrals, which is often necessary for functions without elementary antiderivatives.  Now that we have learned integration techniques, we emphasize the need to define new functions as integrals.  We will explore a small handful of these functions to gain an understanding as to how such functions operate.  Such functions appear in formulas in the sciences.  Despite being more difficult to grasp, they act just like other functions we have studied.
+
+\noindent\textbf{\large Error Functions}
+
+The \textbf{error function} $\erf x$ and \textbf{imaginary error function} $\erfi x$ are important in statistical theory.  Calculators and computer algebra systems vary between having neither, one, or both of these functions programmed.
+
+\definition{def:def_erf}{Error Function and Imaginary Error Function}
+{The \textbf{error function} is $$\erf(x) = \frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2}\ dt.$$\index{error function}\index{imaginary error function}
+The \textbf{imaginary error function} is $$\erfi(x) = \frac{2}{\sqrt{\pi}} \int_0^x e^{t^2}\ dt.$$
+}
+
+The variable $t$ in the definitions is just a dummy variable used to express the integral.  For example, $\erf 1 = \frac{2}{\sqrt{\pi}} \int_0^1 e^{-t^2}\ dt$ is the area between the $t$-axis and the graph of $y=\frac{2}{\sqrt{\pi}} e^{-t^2}$ from $t=0$ to $t=1$.  We use the variable $t$ to draw this area, but the calculation is just a number.  This area is drawn in Figure~\ref{fig:erf1}.  It is approximately $0.84270079$, but it is expressed in exact form as $\erf 1$.
+
+\mfigure[scale=0.7]{.64}{Showing $\erf 1$ as an area.}{fig:erf1}{figures/erf1.png}
+
+From the Fundamental Theorem of Calculus, Part 1 (and the Constant Multiple Rule),
+$$\frac{d}{dx} (\erf x) = \frac{2}{\sqrt{\pi}}e^{-x^2} \text{ and } \frac{d}{dx} (\erfi x) = \frac{2}{\sqrt{\pi}}e^{x^2}.$$
+
+A couple things may seem strange.  Why do the definitions contain $\ds \frac{2}{\sqrt{\pi}}$?  It turns out that the improper integral $\ds \int_0^\infty e^{-x^2}$ converges to $\sqrt{\pi}/2$.  (To prove this, one has to use a certain double integral over two variables.  We will just accept this on faith.)  So the function $\erf x$ is defined so that $\lim\limits_{x\to \infty} \erf x = 1$.  This function is vary closely tied to the \textbf{normal distribution}
+$$\frac{1}{\sqrt{2\pi} \sigma}e^{-(x-\mu)^2/(2\sigma^2)}$$ in probability and statistics (where $\mu$ and $\sigma$ represent the mean and standard deviation, respectively).  Probability theory involves integration, though we wil not go into more details.  In a statistics, one may learn that in a normal distribution, 68\% of data points lie within 1 standard deviation of the mean, 95\% within 2 standard deviations, and 99.7\% within 3 standard deviations.  These values are actually the following.
+$$\erf\left(\frac{1}{\sqrt{2}}\right)\approx 0.6827\quad\quad\quad \erf\left(\frac{2}{\sqrt{2}}\right)\approx 0.9545
+\quad\quad\quad \erf\left(\frac{3}{\sqrt{2}}\right)\approx 0.9973$$
+
+The name ``error function'' comes from this connection with statistical error.  The name ``imaginary error function'' is from the identity $\erf(xi)=\erfi(x) i$, though we do not know how to make sense of this fact since we have not discussed calculus in complex numbers.
+
+Below are the graphs of $\erf x$, $\erfi x$, and their derivatives for comparison.\\\vskip \baselineskip
+
+\vskip \baselineskip
+\noindent\hskip-155pt\begin{minipage}{1.5\textwidth}%\centering
+\myincludegraphics[scale=0.65]{figures/erf_composite}
+\captionsetup{type=figure}%
+\caption{The error functions and their derivatives.}\label{fig:erf_composite}
+\end{minipage}\\
+\vskip \baselineskip
+
+There are a few key characteristics of $\erf x$ and $\erfi x$ we can quickly observe.
+\begin{itemize}
+\item They are both increasing functions on $(-\infty,\infty)$.  This is easy to explain since their derivatives are always positive.
+\item Both graphs go through the origin.  This is also easy to explain since $$\erf 0 =\frac{2}{\sqrt{\pi}}\int_0^0 e^{-x^2}\ dx = \frac{2}{\sqrt{\pi}}\cdot 0 =0 \text{ and }
+\erfi 0 =\frac{2}{\sqrt{\pi}}\int_0^0 e^{x^2}\ dx = 0.$$
+\item The functions are both odd.  That is, $\erf(-x)=-\erf x$ and $\erfi(-x)=-\erfi x$ for any real number $x$.  This can be explained by the symmetry of their derivatives.
+\end{itemize}
+
+So $\ds \frac{d}{dx}(\erf x)=\frac{2}{\sqrt{\pi}} e^{-x^2}$.  How do we come up with an antiderivative of $e^{-x^2}$ without the $\ds \frac{2}{\sqrt{\pi}}$ coefficient?
+We just multiply by a constant!  Note that $$\frac{d}{dx}\left(\frac{\sqrt{\pi}}{2}\erf x\right)=\frac{\sqrt{\pi}}{2}\left(\frac{2}{\sqrt{\pi}} e^{-x^2}\right) = e^{-x^2}$$ and thus $$\int e^{-x^2}\ dx = \frac{\sqrt{\pi}}{2}\erf x +C.$$
+
+We can do something similar for integrals of $e^{x^2}$.  We will soon see that by defining these two functions, we can express many more antiderivatives in terms of them.  We summarize the key properties of the error functions in the theorem below.
+
+\theorem{thm:erf_properties}{Basic Properties of Error Functions}
+{\begin{center}
+\begin{tabular}{lllll}
+$\ds \frac{d}{dx} \left( \erf x \right) = \frac{2}{\sqrt{\pi}} e^{-x^2}$ &&&& $\ds \frac{d}{dx} \left( \erfi x \right) = \frac{2}{\sqrt{\pi}} e^{x^2}$\\\\
+$\ds \int e^{-x^2}\ dx =  \frac{\sqrt{\pi}}{2}\erf x +C$ &&&& $\ds \int e^{x^2}\ dx =  \frac{\sqrt{\pi}}{2}\erfi x +C$\\\\
+$\erf 0 =0$ &&&& $\erfi 0 = 0$\\\\
+$\ds \lim_{x\to -\infty} \erf x = -1$ &&&& $\ds \lim_{x\to -\infty} \erfi x = -\infty$\\\\
+$\ds \lim_{x\to \infty} \erf x = 1$ &&&& $\ds \lim_{x\to \infty} \erfi x = \infty$\\\\
+$\erf(-x) = -\erf x$ &&&& $\erfi(-x) = -\erfi x$\\\\
+\end{tabular}
+\end{center}
+$\erf x$ has a domain of $(-\infty,\infty)$ and range of $(-1,1)$\\\\
+$\erfi x$ has a domain of $(-\infty,\infty)$ and range of $(-\infty,\infty)$
+}\\\clearpage
+
+In the next example, the integrand has a function that looks similar to $e^{x^2}$ so the answer can be written in exact form in terms of the imaginary error function.\\
+
+\example{ex_erf_int1}{Integral whose solution can be expressed in terms of an error function}{
+Evaluate $\ds\int_1^5 e^{9x^2}\ dx$}
+{We recognize the integrand as being like $e^{x^2}$ except with a 9 in it.  If we rewrite the integrand as $e^{(3x)^2}$, we see we can use $u=3x$, $du=3dx$.  So $du/3=dx$.  Remembering to change the bounds, we obtain:
+
+\begin{align*}
+\int_1^5 e^{9x^2} \ dx &=	\int_1^5 e^{(3x)^2} \ dx \\
+								&= \frac{1}{3}\int_3^{15} e^{u^2} \ du \\
+								&= \frac{1}{3} \cdot \frac{\sqrt{\pi}}{2} \erfi u\;\Big|_3^{15} \\
+								&= \frac{\sqrt{\pi}}{6}\big(\erfi 15 - \erfi 3\big)
+\end{align*}
+With technology, we can approximate this answer as $5.7941\times 10^{95}$, a huge number because the integrand grows extremely quickly.
+}\\
+
+One might naively expect that we would have to define yet another function as an antiderivative of $\erf x$.  This is not the case, however.  Using integration by parts, we can express an antiderivative of $\erf x$ in terms of itself.\\
+
+\example{ex_erf_int2}{Integrating $\erf x$}
+{Evaluate $\displaystyle \int \erf x\,dx$.}
+{We use Integration by Parts.  The LIATE mnemonic is just for elementary functions.  However, as with logarithms and inverse trigonometric functions, the derivative of $\erf x$ is much simpler than itself.\\
+
+\noindent\begin{minipage}{\textwidth}
+\noindent\begin{minipage}[t]{.45\textwidth}
+%\centering
+\vskip-10pt
+\begin{align*}
+u&= \erf x & v&=\text{?}\\
+du&= \text{?} & dv&=dx
+\end{align*}
+\end{minipage}\begin{minipage}[t]{.1\textwidth}\centering\vskip15pt$\Rightarrow$\end{minipage}
+\begin{minipage}[t]{.45\textwidth}
+\vskip-10pt
+\begin{align*}
+u&= \erf x& v&=x\\
+du&= \frac{2}{\sqrt{\pi}} e^{-x^2}\ dx & dv&=dx
+\end{align*}
+\end{minipage}
+\captionsetup{type=figure}%
+\caption{Setting up Integration by Parts.}\label{fig:erf_int2}
+\end{minipage}\\
+\vskip\baselineskip
+Putting this all together in the Integration by Parts formula, we obtain:
+\begin{align*}
+\int \erf x\,dx &= x\erf x - \int x\left(\frac{2}{\sqrt{\pi}} e^{-x^2}\right)\,dx\\
+&= x\erf x - \frac{2}{\sqrt{\pi}} \int xe^{-x^2}\ dx\\
+&= x\erf x + \frac{e^{-x^2}}{\sqrt{\pi}} +C
+\end{align*}
+where we used Substitution in the final step.  We can check that this is indeed an antiderivative by taking the derivative.  Everything is normal, we of course need to use the Product Rule on $x \erf x$.
+
+\begin{align*}
+\frac{d}{dx} \left( x\erf x + \frac{e^{-x^2}}{\sqrt{\pi}}\right)
+&= 1 \erf x + x\cdot \frac{2}{\sqrt{\pi}} e^{-x^2} + \frac{-2xe^{-x^2}}{\sqrt{\pi}}\\
+&=\erf x.
+\end{align*}
+\vskip-15pt
+}\\
+
+We do three more examples of antiderivatives that cannot be expressed in terms of elementary functions, but can be expressed in terms of error functions.\\
+
+\example{ex_erf_int3}{Integrating a function}
+{Evaluate $\int e^{x^2+2x}\ dx$}
+{If not for the $2x$ in the exponent, we would be able to state the answer immediately from Theorem~\ref{thm:erf_properties}.  This suggests completing the square in the exponent, which is how we will proceed.
+\begin{align*}
+\int e^{x^2+2x}\ dx &= \int e^{x^2+2x+1 - 1}\ dx\\
+&= \int e^{(x+1)^2 - 1}\ dx\\
+&= \int \frac{e^{(x+1)^2}}{e} \ dx\\
+&= \frac{\sqrt{\pi}}{2e} \erfi(x+1) +C.
+\end{align*}
+}\\\clearpage
+
+\example{ex_erf_int4}{Integrating a function}
+{Evaluate $\int e^{2x} \erfi x \ dx$}
+{This is a product of functions, suggesting integration by parts.  Again, while it makes no sense to use ``LIATE'', it is still ideal to avoid the exponential when picking $u$, so that $du$ is simpler than $u$.  So we will pick $u=\erfi x$.
+
+\noindent\begin{minipage}{\textwidth}
+\noindent\begin{minipage}[t]{.45\textwidth}
+%\centering
+\vskip-10pt
+\begin{align*}
+u&= \erfi x & v&=\text{?}\\
+du&= \text{?} & dv&=e^{2x}\ dx
+\end{align*}
+\end{minipage}\begin{minipage}[t]{.1\textwidth}\centering\vskip15pt$\Rightarrow$\end{minipage}
+\begin{minipage}[t]{.45\textwidth}
+\vskip-10pt
+\begin{align*}
+u&= \erfi x & v&= \frac{1}{2} e^{2x}\\
+du&=\frac{2}{\sqrt{\pi}} e^{x^2}\ dx  & dv&=e^{2x}\ dx
+\end{align*}
+\end{minipage}
+\captionsetup{type=figure}%
+\caption{Setting up Integration by Parts.}\label{fig:erf_int4}
+\end{minipage}\\
+
+Integrating by Parts,
+\begin{align*}  \int e^{2x} \erfi x \ dx &= \frac{1}{2} e^{2x} \erfi x - \int\frac{1}{2} e^{2x} \cdot \frac{2}{\sqrt{\pi}} e^{x^2}  \ dx
+\\&=  \frac{1}{2} e^{2x} \erfi x - \frac{1}{\sqrt{\pi}} \int  e^{x^2+2x}\ dx\end{align*}
+by rules of exponents.  Now we recognize the last integral as being the one in Example~\ref{ex_erf_int3}, from which we obtain our final answer.
+
+\begin{align*}
+\int e^{2x} \erfi x \ dx &= \frac{1}{2} e^{2x} \erfi x - \int \frac{1}{\sqrt{\pi}} e^{x^2+2x}\ dx\\
+&= \frac{1}{2} e^{2x} \erfi x - \frac{1}{2e} \erfi(x+1) +C.
+\end{align*}
+}\\
+
+\example{ex_erf_int5}{Integrating a function}
+{Evaluate $\ds \int \frac{e^{-x}}{\sqrt{\pi x}}\ dx$}
+{If we expect to use the functions in this section, we expect to have $e$ raised to $\pm$ something squared.  The existence of a square root in the integrand also suggests using the substitution $u=\sqrt{x}$.  Then we have $$du = \frac{1}{2\sqrt{x}} dx \Rightarrow \frac{2}{\sqrt{\pi}}du = \frac{1}{\sqrt{\pi x}} dx.$$  Thus,
+$$\int \frac{e^{-x}}{\sqrt{\pi x}}\ dx = \frac{2}{\sqrt{\pi}} \int e^{-u^2}\ du = \erf u+ C = \erf\sqrt{x} + C.$$
+}\\\clearpage
+
+Before we move to exploring other functions, we compute a limit.  We remind ourselves that we can use L'H\^{o}pital's Rule on several new limits, if they yield the appropriate indeterminate form.  The one below is type $0\cdot\infty$.\\
+
+\example{ex_erf_LHop}{A limit involving $\erf x$}
+{Evaluate $\ds \lim_{x\to \infty} (1-\erf x) e^x$}
+{We note from Theorem~\ref{thm:erf_properties} that $\lim_{x\to\infty} 1-\erf x = 1-1 =0$, so this limit is of the form $0\cdot \infty$.  The easiest way to rewrite this as a quotient to use L'H\^{o}pital's Rule is below.
+\begin{align*}
+\lim_{x\to \infty} (1-\erf x) e^x &=
+\lim_{x\to \infty} \frac{1-\erf x}{1/e^x} \\&=
+\lim_{x\to \infty} \frac{1-\erf x}{e^{-x}} \\&
+\stackrel{\ \text{ by LHR \rule[-5pt]{0pt}{3pt}} \ }{=}
+\lim_{x\to \infty} \frac{-\frac{2}{\sqrt{\pi}}e^{-x^2}}{-e^{-x}}\\&=
+\lim_{x\to \infty} \frac{2}{\sqrt{\pi}} e^{x-x^2}\\&=0.
+\end{align*}
+}\\
+
+
+\noindent\textbf{\large Inverse Error Functions}\\
+
+Both $\erf x$ and $\erfi x$ are one-to-one functions, as they are increasing.  Therefore, we can define their inverse functions $\erf^{-1} x$ and $\erfi^{-1} x$.\\
+
+\definition{def:def_inv_erf}{Inverse Error Function and Inverse Imaginary Error Function}
+{\begin{enumerate}
+\item For $-1<x<1$, let $\erf^{-1} x$ denote the unique number $y$ for which $\erf y = x$.  The function $\erf^{-1} x$ is called the \textbf{inverse error function}.
+\item For any real number $x$, let $\erfi^{-1} x$ denote the unique number $y$ for which $\erfi y = x$.  The function $\erfi^{-1} x$ is called the \textbf{inverse imaginary error function}.
+\end{enumerate}
+}\\
+
+We said before that $\erf 1 \approx 0.8427$.  So $\erf^{-1}(0.8427) \approx 1$.  Suppose we wish to determine, for a normal distribution, how many standard deviations from the mean we expect half of the data to be within.  This involves solving the equation $\erf\left(x/\sqrt{2}\right) = 0.5$.  The solution is $x=\sqrt{2}\erf^{-1}(0.5)\approx 0.6745$.  This approximation came from a computer algebra system in which $\erf^{-1}$ is programmed.  This means that roughly half of the data points are within $0.6745$ standard deviations of the mean.
+
+We can use Theorem~\ref{thm:deriv_inverse_functions} from Section~\ref{sec:deriv_inverse_function} to determine that
+$$\frac{d}{dx}\left(\erf^{-1} x\right) = \frac{1}{\frac{2}{\sqrt{\pi}}e^{-\erf^{-1}(x)^2}} = \frac{\sqrt{\pi}}{2} e^{\erf^{-1}(x)^2}.$$
+
+However, what about the integral of $\erf^{-1} x$?  As typical, that is more difficult to compute than the derivative.  We tackle this in the following example.
+
+\example{ex_inverf_int}{Antiderivatives of $\erf^{-1} x$}
+{Evaluate $\ds \int \erf^{-1} x \ dx$.}
+{There is not really a big hint as to how to approach this, as is often typical of integration.  One might take the approach that we did for integrating $\erf x$ and use Integration by Parts.  However, the fastest way is to use the Substitution $u= \erf^{-1} x$.  Then $$ du = \frac{\sqrt{\pi}}{2} e^{\erf^{-1}(x)^2} dx = \frac{\sqrt{\pi}}{2} e^{u^2} dx.$$  This implies $dx = \frac{2}{\sqrt{\pi}} e^{-u^2} du$, so
+\begin{align*}
+\ds \int \erf^{-1} x \ dx &= \frac{2}{\sqrt{\pi}}\int ue^{-u^2} du\\
+&= -\frac{1}{\sqrt{\pi}} e^{-u^2} +C\\
+&= -\frac{1}{\sqrt{\pi}} e^{-\erf^{-1}(x)^2} +C.
+\end{align*}
+}\\
+
+We can do the same for $\erfi^{-1} x$.  The derivatives and antiderivatives of inverse error functions are summarized in the following theorem.
+
+\theorem{thm:inv_erf_deriv}{Derivatives and Antiderivatives of $\erf^{-1} x$ and $\erfi^{-1} x$}
+{ The functions $\erf^{-1} x$ and $\erfi^{-1} x$ are differentiable on their domains.  Their derivatives and antiderivatives are below.
+\begin{enumerate}
+\item $\ds \frac{d}{dx} \left(\erf^{-1} x\right) = \frac{\sqrt{\pi}}{2} e^{\erf^{-1}(x)^2}$
+\item $\ds \frac{d}{dx} \left(\erfi^{-1} x\right) = \frac{\sqrt{\pi}}{2} e^{-\erfi^{-1}(x)^2}$
+\item $\ds \int \erf^{-1} x \ dx = -\frac{1}{\sqrt{\pi}} e^{-\erf^{-1}(x)^2} +C$
+\item $\ds \int \erfi^{-1} x \ dx = \frac{1}{\sqrt{\pi}} e^{\erfi^{-1}(x)^2} +C$
+\end{enumerate}
+}\\
+
+\noindent\textbf{\large Sine Integral Function}\\
+
+We consider one more function, defined as an antiderivative of $\ds \frac{\sin x}{x}$.\\
+
+\definition{def:def_Si}{Sine Integral}
+{The \textbf{sine integral} is the function $$\Si(x) = \int_0^x \frac{\sin t}{t}\ dt.$$
+}\\
+
+Something may seem a bit strange with this definition.  The integrand $\frac{\sin t}{t}$ is not defined at $t=0$, which is one of the bounds.  This may suggest that, no matter what $x$-value is plugged in, $\Si(x)$ refers to an improper integral.  However, this is not the case.  Recall that $\ds \lim_{x\to 0} \frac{\sin x}{x} = 1$.  Since this limit exists, the discontinuity $\frac{\sin x}{x}$ has at $x=0$ is removable.  When computing area under the curve, we can ignore the hole.  The graph of $\ds y=\frac{\sin x}{x}$ is shown in Figure~\ref{fig:sinc}.
+
+\vskip \baselineskip
+\noindent\begin{minipage}{\textwidth}\centering
+\myincludegraphics[scale=0.567]{figures/sinc}
+\captionsetup{type=figure}%
+\caption{The function $y=\sin(x)/x$.}\label{fig:sinc}
+\end{minipage}\\
+\vskip \baselineskip
+
+And now in Figure~\ref{fig:si}, we show the graph of $\Si(x)$.  It has a rather unusual shape compared to other functions we have seen.
+
+\vskip \baselineskip
+\noindent\begin{minipage}{\textwidth}\centering
+\myincludegraphics[scale=0.51]{figures/si}
+\captionsetup{type=figure}%
+\caption{The function $y=\Si(x)$.}\label{fig:si}
+\end{minipage}\\
+\vskip \baselineskip
+
+One noticeable characteristic it has many relative extrema.  By putting together previous concepts in this text, and an understanding of what the $\Si(x)$ function means, one can easily describe the $x$-values of the relative extrema.  This is done in one of the exercises.
+
+Another interesting characteristic is that it appears as $x\to\infty$ and $x\to-\infty$, the graph settles more and more on a single value.  But what value?  It turns out that $$\lim_{x\to\infty} \Si(x) = \int_0^\infty \frac{\sin x}{x}\ dx = \frac{\pi}{2} \text{ and } \lim_{x\to-\infty} \Si(x) = \int_0^{-\infty} \frac{\sin x}{x}\ dx = -\frac{\pi}{2}.$$  However, we have not yet learned any technique that can be used to prove this.  It involves rewriting the integral as a double integral first.  In fact, it is far from straightforward to even show those integrals converge at all.
+
+It is not the case that the particular functions explored in this section are more important than other functions defined as integrals.  Rather, the significance of this section is to gain an understanding for how such functions operate, and also to realize that (despite the abstract definitions) they operate just like every other differentiable function.  There are many more functions defined as integrals.  The computer algebra system \textit{Mathematica}\textsuperscript{\textregistered} includes many more, such as the logarithmic integral, cosine integral, dilogarithm, trilogarithm, elliptic integrals, and Fresnel integrals.  In Section~\ref{sec:taylor_series}, there will be a series of challenging exercises in which one can explore the dilogarithm.  %Furthermore, there are many simple functions such as $\sin(\sin x)$, $x^x$, and $\sqrt{x+\sqrt{x}}$ that do not have antiderivatives expressible in terms of the ``named'' functions, likely since the need has not arisen in applications to mathematics, physics, astronomy, chemistry, etc.
+
+While elementary functions are defined based solely on being easier to describe and appear most often, other mathematical functions arise in numerous various applications.
+One of the most famous unsolved problems in mathematics is the Riemann Hypothesis, which involves the Riemann Zeta Function.  That function is not defined in terms of integral, and cannot be defined with the material in this text.  However, the Riemann Hypothesis has applications to number theory, specifically the distribution of prime numbers, which in turn is very important in cryptography (theory of codes).  Due to its significance, the Riemann Hypothesis was chosen by the Clay Mathematical Institute to be one of the Millennium Prize Problems.  Anyone that proves (or disproves) it can earn an award of 1,000,000 US dollars!
+
+Do not let the complexity of integrals discourage you. There is great value in learning integration techniques, as they allow one to manipulate an integral in ways that can illuminate a concept for greater understanding. The next chapter stresses the uses of integration. We generally do not find antiderivatives for antiderivative's sake, but rather because they provide the solution to some type of problem. The following chapter introduces us to a number of different problems whose solution is provided by integration.
+
+
+
+%\printexercises{exercises/06_09_exercises}
+
