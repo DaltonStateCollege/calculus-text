@@ -21,7 +21,7 @@ This example illustrates some interesting concepts that we explore in this secti
 \definition{def:series}{Infinite Series, $n^\text{th}$ Partial Sums, Convergence, Divergence}
 {Let $\{a_n\}$ be a sequence.
 \begin{enumerate}
-\item		The sum $\ds \sum_{n=1}^\infty a_n$ is an \textbf{infinite series} (or, simply \textbf{series}).
+\item		The sum $\ds \sum_{n=1}^\infty a_n$ is an \textbf{infinite series} (or simply \textbf{series}).
 \item		Let $\ds S_n = \sum_{i=1}^n a_i$\,; the sequence $\{S_n\}$ is the sequence of \textbf{$n^\text{th}$ partial sums} of $\{a_n\}$.
 \item		If the sequence $\{S_n\}$ converges to $L$, we say the series $\ds \sum_{n=1}^\infty a_n$ \textbf{converges} to $L$, and we write $\ds \sum_{n=1}^\infty a_n = L$.
 \item		If the sequence $\{S_n\}$ diverges, the series $\ds \sum_{n=1}^\infty a_n$ \textbf{diverges}.
@@ -106,7 +106,7 @@ $$\sum_{n=0}^\infty r^n = \frac{1}{1-r}.$$
 }
 
 According to Theorem \ref{thm:geom_series}, the series 
-$$\ds\sum_{n=0}^\infty \frac{1}{2^n} =\sum_{n=0}^\infty \left(\frac 12\right)^2= 1+\frac12+\frac14+\cdots$$ converges as $r=1/2$, and $\ds \sum_{n=0}^\infty \frac{1}{2^n} = \frac{1}{1-1/2} = 2.$ This concurs with our introductory example; while there we got a sum of 1, we skipped the first term of 1.\\
+$$\ds\sum_{n=0}^\infty \frac{1}{2^n} =\sum_{n=0}^\infty \left(\frac 12\right)^n= 1+\frac12+\frac14+\cdots$$ converges as $r=1/2$, and $\ds \sum_{n=0}^\infty \frac{1}{2^n} = \frac{1}{1-1/2} = 2.$ This concurs with our introductory example; while there we got a sum of 1, we skipped the first term of 1.\\
 %\clearpage
 
 \enlargethispage{2\baselineskip}
@@ -148,66 +148,30 @@ The partial sums of this series are plotted in Figure \ref{fig:series2}(a). Note
 \vskip-\baselineskip
 }\\
 
-\noindent\textbf{\large $p$--Series}\\
+\noindent\textbf{\large The Harmonic Series}\\
 
-Another important type of series is the \emph{p-series}.
+The series $$ \sum\limits_{n=1}^\infty \frac{1}{n}=1 + \frac12 + \frac13 + \frac14 + \frac15 + \frac16+\frac17+\frac18+\frac19+\cdots$$ is called the \emph{Harmonic Series} because of its relationship to \emph{harmonics} in the study of music and sound.  Even though the terms being added are approaching 0, this series diverges, as the sequence of partial sums approaches $\infty$, as we prove in the following example.\\
 
-\definition{def:pseries}{$p$--Series, General $p$--Series}
-{\begin{enumerate}
-\item	A \textbf{$p$--series} is a series of the form $$\sum_{n=1}^\infty \frac{1}{n^p}, \qquad \text{where $p>0$.}$$
-
-\item	A \textbf{general $p$--series} is a series of the form 
-\index{series!p@$p$-series}\index{p@$p$-series}
-$$\sum_{n=1}^\infty \frac{1}{(an+b)^p}, \qquad \text{where $p>0$ and $a$, $b$ are real numbers.}$$
-\end{enumerate}
-}
-
-Like geometric series, one of the nice things about p--series is that they have easy to determine convergence properties.
-
-\theorem{thm:pseries}{Convergence of General $p$--Series}
-{A general $p$--series $\ds\sum_{n=1}^\infty \frac{1}{(an+b)^p}$ converges if and only if $p>1$.\index{series!p@$p$-series}\index{p@$p$-series}
-\index{convergence!of p@of $p$-series}\index{divergence!of p@of $p$-series}
-}
-\mnote{.3}{\textbf{Note:} Theorem \ref{thm:pseries} assumes that $an+b\neq 0$ for all $n$. If $an+b=0$ for some $n$, then of course the series does not converge regardless of $p$ as not all of the terms of the sequence are defined.}
-
-\example{ex_series6}{Determining convergence of series}{
-Determine the convergence of the following series.\\
-
-\noindent\begin{minipage}[t]{.33\linewidth}
-\begin{enumerate}
-\item		$\ds\sum_{n=1}^\infty \frac{1}{n}$
-\item		$\ds\sum_{n=1}^\infty \frac{1}{n^2}$
-\end{enumerate}
-\end{minipage}
-\begin{minipage}[t]{.33\linewidth}
-\begin{enumerate}\addtocounter{enumi}{2}
-\item		$\ds\sum_{n=1}^\infty \frac{1}{\sqrt{n}}$
-\item		$\ds\sum_{n=1}^\infty \frac{(-1)^n}{n}$
-\end{enumerate}
-\end{minipage}\begin{minipage}[t]{.33\linewidth}
-\begin{enumerate}\addtocounter{enumi}{4}
-\item		$\ds\sum_{n=11}^\infty \frac{1}{(\frac12n-5)^3}$
-\item		$\ds\sum_{n=1}^\infty \frac{1}{2^n}$
-\end{enumerate}
-\end{minipage}
-}
-{\begin{enumerate}
-\item		This is a $p$--series with $p=1$. By Theorem \ref{thm:pseries}, this series diverges. 
-
-This series is a famous series, called the \emph{Harmonic Series}, so named because of its relationship to \emph{harmonics} in the study of music and sound. 
-
-\item		This is a $p$--series with $p=2$. By Theorem \ref{thm:pseries}, it converges. Note that the theorem does not give a formula by which we can determine \emph{what} the series converges to; we just know it converges. A famous, unexpected result is that this series converges to $\ds{\pi^2}/{6}$.
-
-\item		This is a $p$--series with $p=1/2$; the theorem states that it diverges.
-
-\item		This is not a $p$--series; the definition does not allow for alternating signs. Therefore we cannot apply Theorem \ref{thm:pseries}. (Another famous result states that this series, the \emph{Alternating Harmonic Series}, converges to $\ln 2$.)
-
-\item		This is a general $p$--series with $p=3$, therefore it converges.
-
-\item		This is not a $p$--series, but a geometric series with $r=1/2$. It converges.
-\end{enumerate}
-\vskip-1.5\baselineskip
+\example{ex_series_harm}{The Harmonic Series diverges}{
+Show that the Harmonic Series $\ds \sum\limits_{n=1}^\infty \frac{1}{n}$ diverges.
+\index{Harmonic Series}}
+{We begin by realizing the following:
+\begin{align*}
+\sum\limits_{n=1}^\infty \frac{1}{n}
+&= 1 + \frac12 + \frac13 + \frac14 + \frac15 + \frac16+\frac17+\frac18 +\cdots\\
+&\geq 1 + \frac12 + \underbrace{\frac14 + \frac14}_{=1/2} + \underbrace{\frac18 + \frac18+\frac18+\frac18}_{=1/2} +\cdots\\
+\end{align*}
+We continue by noticing that the terms from $1/9$ through $1/16$ added in the Harmonic series are eight terms all $\geq 1/16$, so they add to 1/2.  Then the terms $1/17$ through $1/32$ are sixteen terms all $\geq 1/32$, so they add to 1/2.  It should be clear that this pattern continues when we group terms up to a power of 2.  Therefore,
+\begin{align*}
+\sum\limits_{n=1}^\infty \frac{1}{n}
+&= 1 + \frac12 + \frac13 + \frac14 + \frac15 + \frac16+\frac17+\frac18 +\cdots\\
+&\geq 1 + \frac12 + \underbrace{\frac14 + \frac14}_{=1/2} + \underbrace{\frac18 + \frac18+\frac18+\frac18}_{=1/2} +\cdots\\
+&= 1+ \frac12+\frac12+\frac12+\frac12+\frac12+\frac12
+\end{align*}
+It should be clear that adding infinitely many $1/2$ terms gives $\infty$.  Then the infinite series $\sum\limits_{n=1}^\infty$ is greater than or equal to a series that diverges to $\infty$.  Therefore, the Harmonic Series must diverge to $\infty$.
 }\\
+
+On the other hand, a related series $\ds \sum\limits_{n=1}^\infty \frac{(-1)^{n+1}}{n}=1 - \frac12 + \frac13 - \frac14 + \frac15 - \frac16+\frac17-\frac18+\frac19-\cdots$, called the \emph{Alternating Harmonic Series} actually converges to $\ln 2$.\index{Alternating Harmonic Series}  We cannot explain why at the moment.  In Section~\ref{sec:alt_series}, we will be able to explain why it converges.  However, it won't be until Taylor Series are discussed in Section~\ref{sec:taylor_series} that we can explain why the limit is, in fact, $\ln 2$.
 
 Later sections will provide tests by which we can determine whether or not a given series converges. This, in general, is much easier than determining \emph{what} a given series converges to. There are many cases, though, where the sum can be determined. \\
 
@@ -279,7 +243,7 @@ S_4 &= \ln\left(2\right)+\ln\left(\frac32\right)+\ln\left(\frac43\right)+\ln\lef
 At first, this does not seem helpful, but recall the logarithmic identity: $\ln x+\ln y = \ln (xy).$ Applying this to $S_4$ gives:
 $$S_4 = \ln\left(2\right)+\ln\left(\frac32\right)+\ln\left(\frac43\right)+\ln\left(\frac54\right) = \ln\left(\frac21\cdot\frac32\cdot\frac43\cdot\frac54\right) = \ln\left(5\right).$$
 
-We can conclude that $\{S_n\} = \big\{\ln (n+1)\big\}$. This sequence  does not converge, as $\ds \lim_{n\to\infty}S_n=\infty$. Therefore  $\ds\sum_{n=1}^\infty  \ln\left(\frac{n+1}{n}\right)=\infty$; the series diverges. Note in Figure \ref{fig:series4}(b) how the sequence of partial sums grows slowly; after 100 terms, it is not yet over 5. Graphically we may be fooled into thinking the series converges, but our analysis above shows that it does not.
+We can conclude that $\{S_n\} = \big\{\ln (n+1)\big\}$. This sequence  does not converge, as $\ds \lim_{n\to\infty}S_n=\infty$. Therefore  $\ds\sum_{n=1}^\infty  \ln\left(\frac{n+1}{n}\right)=\infty$; the series diverges. Note in Figure \ref{fig:series4}(b) how the sequence of partial sums grows slowly; after 100 terms, it is not yet over 5. (Only some terms of $a_n$ and $S_n$ are shown in the plot.)  Graphically we may be fooled into thinking the series converges, but our analysis above shows that it does not.
 %\mfigure{.35}{Scatter plots relating to the series of Example \ref{ex_series4} part 2.}{fig:series4b}{figures/figseries4b}
 \end{enumerate}
 \vskip-1.5\baselineskip
@@ -305,12 +269,13 @@ Before using this theorem, we provide a few ``famous'' series.
 %\begin{minipage}{\specialboxlength}
 \keyidea{idea:famous_series}{Important Series}
 {\begin{enumerate}
-\item	\parbox{90pt}{$\ds\sum_{n=0}^\infty \frac1{n!} = e$. } (Note that the index starts with $n=0$.)
+%\item \parbox{118pt}{$\ds\sum_{n=0}^\infty r^n = \frac{1}{1-r}$ for $|r|<1$. } (\emph{Geometric Series})
+\item	\parbox{118pt}{$\ds\sum_{n=0}^\infty \frac1{n!} = e$. } (Note that the index starts with $n=0$.)
 \item	$\ds\sum_{n=1}^\infty \frac1{n^2} = \frac{\pi^2}{6}$.
 \item	$\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2} = \frac{\pi^2}{12}$.
 \item	$\ds\sum_{n=0}^\infty \frac{(-1)^{n}}{2n+1} = \frac{\pi}{4}$.
-\item	\parbox{90pt}{$\ds\sum_{n=1}^\infty \frac{1}{n} $ \quad diverges.} (This is called the \emph{Harmonic Series}.)\index{Harmonic Series}
-\item	\parbox{90pt}{$\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n} = \ln 2$.} (This is called the \emph{Alternating Harmonic Series}.)\index{Alternating Harmonic Series}
+\item	\parbox{118pt}{$\ds\sum_{n=1}^\infty \frac{1}{n} $ \quad diverges.} (\emph{Harmonic Series}.)
+\item	\parbox{118pt}{$\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n} = \ln 2$.} (\emph{Alternating Harmonic Series}.)
 \end{enumerate}
 }
 %\end{minipage}
@@ -319,7 +284,7 @@ Before using this theorem, we provide a few ``famous'' series.
 \example{ex_series5}{Evaluating series}{
 Evaluate the given series.\\
 
-\noindent 1. $\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}\big(n^2-n\big)}{n^3}$\qquad 2. $\ds\sum_{n=1}^\infty \frac{1000}{n!}$\\3. $\ds \frac1{16}+\frac1{25}+\frac1{36}+\frac1{49}+\cdots$ \qquad 4. $\ds \sum_{n=1}^\infty \frac{n^2}{n!}$
+\noindent 1. $\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}\big(n^2-n\big)}{n^3}$\qquad\qquad 2. $\ds\sum_{n=1}^\infty \frac{1000}{n!}$\\3. $\ds \frac1{16}+\frac1{25}+\frac1{36}+\frac1{49}+\cdots$ \qquad 4. $\ds \sum_{n=1}^\infty \frac{n^2}{n!}$
 }
 {\begin{enumerate}
 \item	We start by using algebra to break the series apart:
@@ -357,7 +322,7 @@ This is illustrated in Figure \ref{fig:series5}(b). The graph shows how this par
 0.2838&\approx \sum_{n=4}^\infty \frac1{n^2} 
 \end{align*}
 
-\item              We manipulate this series to look like the series that involves $e$ in Key Idea \ref{idea:famous_series}.  In the steps below, we twice change relabel $n$ as $n+1$.  Note that $n!=n(n-1)!$.
+\item              We manipulate this series to look like the series that involves $e$ in Key Idea \ref{idea:famous_series}.  In the steps below, we twice relabel $n$ as $n+1$ to write it in terms of the series in the table.  Note that $n!=n(n-1)!$.
 \begin{align*}
 \sum_{n=1}^\infty \frac{n^2}{n!} &= \sum_{n=1}^\infty \frac{n}{(n-1)!}\\
 &= \sum_{n=0}^\infty \frac{n+1}{n!}\\
@@ -400,7 +365,7 @@ Note that the two statements in Theorem \ref{thm:series_nth_term} are really the
 
 Looking back, we can apply this theorem to the series in Example \ref{ex_series1}. In that example, the $n^\text{th}$ terms of both sequences do not converge to 0, therefore we can quickly conclude that each series diverges.
 
-\textbf{Important!} This theorem \emph{does not state} that if $\ds \lim_{n\to\infty} a_n = 0$ then $\ds \sum_{n=1}^\infty  a_n $ converges. The standard example of this is the Harmonic Series, as given in Key Idea \ref{idea:famous_series}. The Harmonic Sequence, $\{1/n\}$, converges to 0; the Harmonic Series, $\ds \sum_{n=1}^\infty 1/n$, diverges.
+\textbf{Important!} This theorem \emph{does not state} that if $\ds \lim_{n\to\infty} a_n = 0$ then $\ds \sum_{n=1}^\infty  a_n $ converges. The standard example of this is the Harmonic Series. The Harmonic Sequence, $\{1/n\}$, converges to 0; the Harmonic Series, $\ds \sum_{n=1}^\infty 1/n$, diverges.
 
 \theorem{thm:series_behavior}{Infinite Nature of Series}
 {The convergence or divergence remains unchanged by the addition or subtraction of any finite number of terms. That is:
@@ -419,7 +384,7 @@ The equations below illustrate this. The first line shows the infinite sum of th
 \parbox{50pt}{\centering	$\infty$} - \parbox{50pt}{\centering $16.7$} &=  \parbox{50pt}{\centering$\infty.$}
 \end{align*}													
 
-This section introduced us to series and defined a few special types of series whose convergence properties are well known: we know when a $p$-series or a geometric series converges or diverges. Most series that we encounter are not one of these types, but we are still interested in knowing whether or not they converge. The next three sections introduce tests that help us determine whether or not a given series converges. 
+This section introduced us to series and defined a few special types of series whose convergence properties are well known, such as geometric and telescoping series. Most series that we encounter are not one of these types, but we are still interested in knowing whether or not they converge. The next three sections introduce tests that help us determine whether or not a given series converges. 
 
 
 \printexercises{exercises/08_02_exercises}

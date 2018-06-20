@@ -1,6 +1,6 @@
 \section{Integral and Comparison Tests}\label{sec:int_comp_tests}
 
-Knowing whether or not a series converges is very important, especially when we discuss Power Series in Section \ref{sec:power_series}. Theorems \ref{thm:geom_series} and \ref{thm:pseries} give criteria for when Geometric and $p$-series converge, and Theorem \ref{thm:series_nth_term} gives a quick test to determine if a series diverges. There are many important series whose convergence cannot be determined by these theorems, though, so we introduce a set of tests that allow us to handle a broad range of series. We start with the Integral Test.\\
+Knowing whether or not a series converges is very important, especially when we discuss Power Series in Section \ref{sec:power_series}. Theorem \ref{thm:geom_series} gives a criterion for when geometric series converge, and Theorem \ref{thm:series_nth_term} gives a quick test to determine if a series diverges. There are many important series whose convergence cannot be determined by these theorems, though, so we introduce a set of tests that allow us to handle a broad range of series. We start with the Integral Test.\\
 
 %\mnote{.85}{\textbf{Note:} Recall we often use $\sum a_n$ to write $\ds \sum_{n=1}^\infty a_n$.}
 
@@ -64,9 +64,29 @@ Since $\ds \int_1^\infty \frac{\ln x}{x^2}\ dx$ converges, so does $\ds \sum_{n=
 %Note how the sequence $\{a_n\}$ is not strictly decreasing; it increases from $n=1$ to $n=2$. However, this does not keep us from applying the Integral Test as the sequence in positive and decreasing on $[2,\infty)$.
 }\\
 
-Theorem \ref{thm:pseries} was given without justification, stating that the general $p$-series $\ds \sum_{n=1}^\infty \frac 1{(an+b)^p}$ converges if, and only if, $p>1$. In the following example, we prove this to be true by applying the Integral Test.\\
+\noindent\textbf{\large $p$--Series}\\
 
-\example{ex_itest2}{Using the Integral Test to establish Theorem \ref{thm:pseries}.}
+In Section~\ref{sec:improper_integration} about improper integrals, we determined for which $p$ the integral $\ds \int_1^\infty \frac{1}{x^p}\ dx$ converges, and for which $p$ it diverges.  Combining this with the Integral Test, we can easily determine convergence for an important class of series called $p$--series.\\
+
+\definition{def:pseries}{$p$--Series, General $p$--Series}
+{\begin{enumerate}
+\item	A \textbf{$p$--series} is a series of the form $$\sum_{n=1}^\infty \frac{1}{n^p}, \qquad \text{where $p>0$.}$$
+
+\item	A \textbf{general $p$--series} is a series of the form 
+\index{series!p@$p$-series}\index{p@$p$-series}
+$$\sum_{n=1}^\infty \frac{1}{(an+b)^p}, \qquad \text{where $p>0$ and $a$, $b$ are real numbers.}$$
+\end{enumerate}
+}
+
+\theorem{thm:pseries}{Convergence of General $p$--Series}
+{A general $p$--series $\ds\sum_{n=1}^\infty \frac{1}{(an+b)^p}$ converges if and only if $p>1$.\index{series!p@$p$-series}\index{p@$p$-series}
+\index{convergence!of p@of $p$-series}\index{divergence!of p@of $p$-series}
+}
+\mnote{.355}{\textbf{Note:} Theorem \ref{thm:pseries} assumes that $an+b\neq 0$ for all $n$. If $an+b=0$ for some $n$, then of course the series does not converge regardless of $p$ as not all of the terms of the sequence are defined.}
+
+We prove the convergence of general $p$--series in the next example.\\\clearpage
+
+\example{ex_itest2}{Proving Theorem \ref{thm:pseries}.}
 {
 Use the Integral Test to prove that $\ds \sum_{n=1}^\infty \frac1{(an+b)^p}$ converges if, and only if, $p>1$.
 }
@@ -82,8 +102,45 @@ Therefore $\ds \sum_{n=1}^\infty \frac 1{(an+b)^p}$ converges if, and only if, $
 \vskip.25\baselineskip
 }\\
 
-We consider two more convergence tests in this section, both \textit{comparison} tests. That is, we determine the convergence of one series by  comparing it to another series with known convergence. 
-\clearpage
+\example{ex_series6}{Determining convergence of series}{
+Determine the convergence of the following series.
+
+\noindent\begin{minipage}[t]{.33\linewidth}
+\begin{enumerate}
+\item		$\ds\sum_{n=1}^\infty \frac{1}{n}$
+\item		$\ds\sum_{n=1}^\infty \frac{1}{n^2}$
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.33\linewidth}
+\begin{enumerate}\addtocounter{enumi}{2}
+\item		$\ds\sum_{n=1}^\infty \frac{1}{\sqrt{n}}$
+\item		$\ds\sum_{n=1}^\infty \frac{(-1)^n}{n}$
+\end{enumerate}
+\end{minipage}\begin{minipage}[t]{.33\linewidth}
+\begin{enumerate}\addtocounter{enumi}{4}
+\item		$\ds\sum_{n=11}^\infty \frac{1}{\left(\frac12n-5\right)^3}$
+\item		$\ds\sum_{n=1}^\infty \frac{1}{2^n}$
+\end{enumerate}
+\end{minipage}
+}
+{\begin{enumerate}
+\item		This is the Harmonic Series, which we proved to be divergent in the previous section.  Note, however, that it is also a $p$--series with $p=1$, another way to explain that it diverges.
+
+\item		This is a $p$--series with $p=2$. By Theorem \ref{thm:pseries}, it converges. Note that the theorem does not give a formula by which we can determine \emph{what} the series converges to; we just know it converges. A famous, unexpected result is that this series converges to $\ds{\pi^2}/{6}$.
+
+\item		This is a $p$--series with $p=1/2$; the theorem states that it diverges.
+
+\item		This is not a $p$--series; the definition does not allow for alternating signs. Therefore we cannot apply Theorem \ref{thm:pseries}. Also, we cannot use the Integral Test at all, because that can only be used when the terms are positive.  As stated in the previous section, this Alternating Harmonic Series converges to $\ln 2$ though we must wait for later sections to explain why.
+
+\item		This is a general $p$--series with $p=3$, therefore it converges.
+
+\item		This is not a $p$--series, but a geometric series with $r=1/2$. It converges.
+\end{enumerate}
+\vskip-1.5\baselineskip
+}\\
+
+We consider two more convergence tests in this section, both \textit{comparison} tests. That is, we determine the convergence of one series by  comparing it to another series with known convergence. \\
+%\clearpage
 
 \noindent\textbf{\large Direct Comparison Test}\\
 
@@ -96,7 +153,7 @@ We consider two more convergence tests in this section, both \textit{comparison}
 	\end{enumerate}
 }
 
-\mnote{.8}{\textbf{Note:} A sequence $\{a_n\}$ is a \textbf{positive sequence} if $a_n>0$ for all $n$.\\ 
+\mnote{.567}{\textbf{Note:} A sequence $\{a_n\}$ is a \textbf{positive sequence} if $a_n>0$ for all $n$.\\ 
 
 Because of Theorem \ref{thm:series_behavior}, any theorem that relies on a positive sequence still holds true when $a_n>0$ for all but a finite number of values of $n$.
 \index{sequence!positive}
@@ -123,7 +180,7 @@ The concept of direct comparison is powerful and often relatively easy to apply.
 
 Consider $\ds\sum_{n=1}^\infty \frac1{n+\ln n}$. It is very similar to the divergent series given in Example \ref{ex_dct2}. We suspect that it also diverges, as $\ds \frac 1n \approx \frac1{n+\ln n}$ for large $n$. However, the inequality that we naturally want to use ``goes the wrong way'': since $n\leq n+\ln n$ for all $n\geq 1$, $\ds\frac1n \geq \frac{1}{n+\ln n}$ for all $n\geq 1$. The given series has terms \textit{less than} the terms of a divergent series, and we cannot conclude anything from this.
 
-Fortunately, we can apply another test to the given series to determine its convergence.\\
+Fortunately, we can apply another test to the given series to determine its convergence.\\\clearpage
 
 \noindent\textbf{\large Limit Comparison Test}\\
 
