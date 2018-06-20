@@ -1,4 +1,3 @@
-\phantom{1} \clearpage %comment out this line if the Key Idea with all of the Important Taylor Series Expansions ends up on an odd numbered page
 \section{Taylor Series}\label{sec:taylor_series}
 
 In Section \ref{sec:power_series}, we showed how certain functions can be represented by a power series function. In \ref{sec:taylor_poly}, we showed how we can approximate functions with polynomials, given that enough derivative information is available. In this section we combine these concepts: if a function $f(x)$ is infinitely differentiable, we show how to represent it with a power series function.
@@ -234,7 +233,7 @@ While this is not strictly a power series, it is a series that allows us to stud
 \example{ex_ts7}{Using Taylor series to evaluate definite integrals}
 {Use the Taylor series of $e^{-x^2}$ to evaluate $\ds \int_0^1e^{-x^2}\ dx$.
 }
-{We learned, when studying Numerical Integration, that $e^{-x^2}$ does not have an antiderivative expressible in terms of elementary functions. This means any definite integral of this function must have its value approximated, and not computed exactly.
+{We learned, when studying Numerical Integration, that $e^{-x^2}$ does not have an antiderivative expressible in terms of elementary functions. This means any definite integral of this function must have its value approximated, and not computed exactly.  (In Section~\ref{sec:nonelem}, we defined the error function $\erf x$ so we can express this integral's value exactly in terms of that function.  However, that does not help us approximate this integral.)
 
 We can quickly write out the Taylor series for $e^{-x^2}$ using the Taylor series of $e^x$:
 \begin{align*}
