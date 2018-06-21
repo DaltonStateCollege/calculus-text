@@ -186,6 +186,37 @@ Let $\sqrt{(x-0)^2+(y-0)^2} = \sqrt{x^2+y^2}<\delta$. Consider $|f(x,y)-0|$:
 Thus if $\sqrt{(x-0)^2+(y-0)^2}<\delta$ then $|f(x,y)-0|<\epsilon$, which is what we wanted to show. Thus $\ds \lim_{(x,y)\to(0,0)} \frac{5x^2y^2}{x^2+y^2} = 0$.
 }\\
 
+\noindent\textbf{\large Using Polar Coordinates to Determine a Limit as $(x,y)\to(0,0)$}\\
+
+Recall from Section~\ref{sec:polar} that in polar coordinates, we have $x=r\cos \theta$, $y=r\sin\theta$, where $r$ is a directed distance from the origin.  Also recall that the origin $(0,0)$ (called the \emph{pole} in polar coordinates) is described by $r=0$ for \textbf{every} $\theta$.  This gives us another way to compute a limit of a function in two variables \emph{only} for the case $(x,y)\to(0,0)$ (as points other than $(0,0)$ depend on more than just $r$).  If we convert to polar, then we can take the limit as $r$ approaches 0.  If this limit exists, and does not depend on $\theta$, then it is the limit as $(x,y)\to(0,0)$.  If it depends on $\theta$, then the limit does not exist.  This is often easier but not always.  In the next two example, we redo two earlier limits with this method, and obtain the same results.\\
+
+\example{ex_multilimit_pol1}{Finding a limit by conversion to polar coordinates}{
+Let $\ds f(x,y) = \frac{5x^2y^2}{x^2+y^2}$. Find $\ds\lim_{(x,y)\to (0,0)}  f(x,y)$ by converting to polar coordinates.
+}
+{Converting to polar coordinates, and replacing ``$(x,y)\to (0,0)$'' with ``$r\to 0$'', we obtain
+\begin{align*}
+\lim_{(x,y)\to (0,0)}  f(x,y) &= \lim_{(x,y)\to (0,0)}  \frac{5x^2y^2}{x^2+y^2}\\
+&= \lim_{r\to 0}  \frac{5(r\cos \theta)^2 (r\sin\theta)^2}{r^2}\\
+&= \lim_{r\to 0} 5r^2\cos^2\theta \sin^2\theta\\
+&= 0.
+\end{align*}
+}\\
+
+That is the same result we previously obtained in Example~\ref{ex_multilimit5}.  Next we will redo the second limit in  Example~\ref{ex_multilimit3} by converting to polar coordinates and once again we will see the limit does not exist.\\
+
+\example{ex_multilimit_pol2}{Finding a limit by conversion to polar coordinates}{
+Let $\ds f(x,y) = \frac{3xy}{x^2+y^2}$. Find $\ds\lim_{(x,y)\to (0,0)}  f(x,y)$ by converting to polar coordinates.
+}
+{Converting to polar coordinates, we obtain
+\begin{align*}
+\lim_{(x,y)\to (0,0)}  f(x,y) &= \lim_{(x,y)\to (0,0)}  \frac{3xy}{x^2+y^2}\\
+&= \lim_{r\to 0}  \frac{3r\cos\theta\cdot r\sin\theta}{r^2}\\
+&= \lim_{r\to 0}  \frac{3r^2\cos\theta \sin\theta}{r^2}\\
+&= \lim_{r\to 0}  3\cos\theta \sin\theta
+\end{align*}
+which does not exist because it depends on $\theta$.  Therefore, we get different results along different paths headed to the origin, so the multivariable limit does not exist.
+}\\
+
 \noindent\textbf{\large Continuity}\\
 
 Definition \ref{def:continuous} defines what it means for a function of one variable to be continuous. In brief, it meant that the graph of the function did not have breaks, holes, jumps, etc. We define continuity for functions of two variables in a similar way as we did for functions of one variable.
@@ -213,7 +244,7 @@ We now consider the limit $\ds \lim_{(x,y)\to (0,0)} f(x,y)$. Substituting $0$ f
 
 Consider two related limits: $\ds \lim_{(x,y)\to (0,0)} \cos y$ and $\ds \lim_{(x,y)\to(0,0)} \frac{\sin x}x$. The first limit does not contain $x$, and since $\cos y$ is continuous, $$\ds \lim_{(x,y)\to (0,0)} \cos y =\lim_{y\to 0} \cos y = \cos 0 = 1.$$
 
-The second limit does not contain $y$. By Theorem \ref{thm:special_limits} we can say
+The second limit does not contain $y$. By Theorem \ref{thm:special_limits} (or L'H\^{o}pital's Rule), we can say
 $$\lim_{(x,y)\to (0,0)} \frac{\sin x}{x} = \lim_{x\to 0} \frac{\sin x}{x} = 1.$$
 Finally, Theorem \ref{thm:multi_limit_algebra} of this section states that we can combine these two limits as follows:
 \begin{align*}

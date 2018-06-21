@@ -133,16 +133,16 @@ $$\frac{\partial w}{\partial t} = \pi(2\pi) + \pi^2 = 3\pi^2.$$
 
 \noindent\textbf{\large Implicit Differentiation}\\
 
-We studied finding $\frac{dy}{dx}$ when $y$ is given as an implicit function of $x$ in detail in Section \ref{sec:imp_deriv}. We find here that the Multivariable Chain Rule gives a simpler method of finding $\frac{dy}{dx}$.
+We studied finding $\frac{dy}{dx}$ when $y$ is given by an implicit equation of $x$ in detail in Section \ref{sec:imp_deriv}. We find here that the Multivariable Chain Rule gives a simpler method of finding $\frac{dy}{dx}$.
 
-For instance, consider the implicit function $x^2y-xy^3=3.$ We learned to use the following steps to find $\frac{dy}{dx}$:
+For instance, consider the implicit equation $x^2y-xy^3=3.$ We learned to use the following steps to find $\frac{dy}{dx}$:
 \begin{align}
 \frac{d}{dx}\Big(x^2y-xy^3\big) &= \frac{d}{dx}\Big(3\Big) \notag\\
 2xy + x^2\frac{dy}{dx}-y^3-3xy^2\frac{dy}{dx} &= 0\notag \\
 \frac{dy}{dx} = -\frac{2xy-y^3}{x^2-3xy^2}.\label{eq:mchain2}
 \end{align}
 
-Instead of using this method, consider $z=x^2y-xy^3$. The implicit function above describes the level curve $z=3$. Considering $x$ and $y$ as functions of $x$, the Multivariable Chain Rule states that
+Instead of using this method, consider $z=x^2y-xy^3$. The implicit relation above describes the level curve $z=3$. Considering $x$ and $y$ as functions of $x$, the Multivariable Chain Rule states that
 \begin{equation}\frac{dz}{dx} = \frac{\partial z}{\partial x}\frac{dx}{dx}+\frac{\partial z}{\partial y}\frac{dy}{dx}.\label{eq:mchain1}\end{equation}
 Since $z$ is constant (in our example, $z=3$), $\frac{dz}{dx} = 0$. We also know $\frac{dx}{dx} = 1$. Equation \eqref{eq:mchain1} becomes
 \begin{align*}
@@ -156,7 +156,7 @@ Note how our solution for $\frac{dy}{dx}$ in Equation \eqref{eq:mchain2} is just
 We state the above as a theorem.
 
 \theorem{thm:implicit_deriv_chain}{Implicit Differentiation}
-{Let $f$ be a differentiable function of $x$ and $y$, where $f(x,y)=c$ defines $y$ as  an implicit function of $x$, for some constant $c$. Then
+{Let $f$ be a differentiable function of $x$ and $y$, where $f(x,y)=c$ defines an implicit relation between $x$ and $y$, for some constant $c$. Then
 \index{derivative!implicit}\index{implicit differentiation}
 $$\frac{dy}{dx} = - \frac{f_x(x,y)}{f_y(x,y)}.$$
 }
@@ -164,8 +164,8 @@ $$\frac{dy}{dx} = - \frac{f_x(x,y)}{f_y(x,y)}.$$
 We practice using Theorem \ref{thm:implicit_deriv_chain} by applying it to a problem from Section \ref{sec:imp_deriv}.\\
 
 \example{ex_mchain5}{Implicit Differentiation}{
-Given the implicitly defined function $\sin(x^2y^2)+y^3=x+y$, find $y\primeskip'$. Note: this is the same problem as given in Example \ref{ex_implicit5} of Section \ref{sec:imp_deriv}, where the solution took about a full page to find.}
-{Let $f(x,y) = \sin(x^2y^2)+y^3-x-y$; the implicitly defined function above is equivalent to $f(x,y)=0$. We find $\frac{dy}{dx}$ by applying Theorem \ref{thm:implicit_deriv_chain}. We find 
+Given the implicitly defined relation $\sin(x^2y^2)+y^3=x+y$, find $y\primeskip'$. Note: this is the same problem as given in Example \ref{ex_implicit5} of Section \ref{sec:imp_deriv}, where the solution took about a full page to find.}
+{Let $f(x,y) = \sin(x^2y^2)+y^3-x-y$; the implicitly defined relation above is equivalent to $f(x,y)=0$. We find $\frac{dy}{dx}$ by applying Theorem \ref{thm:implicit_deriv_chain}. We find 
 $$f_x(x,y) = 2xy^2\cos(x^2y^2)-1\qquad \text{and}\qquad f_y(x,y) = 2x^2y\cos(x^2y^2)+3y^2-1,$$
 so 
 $$\frac{dy}{dx} = -\frac{2xy^2\cos(x^2y^2)-1}{2x^2y\cos(x^2y^2)+3y^2-1},$$
