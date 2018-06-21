@@ -163,7 +163,7 @@ Find the area of the surface $f(x,y) = x^2-3y+3$ over the region $R$ bounded by 
 $$\iint_R \sqrt{1+(2x)^2+(-3)^2}\ dA = \iint_R \sqrt{10+4x^2}\ dA.$$
 As with integrals describing arc length, double integrals describing surface area are in general hard to evaluate directly because of the square--root. This particular integral can be easily evaluated, though, with judicious choice of our order of integration. 
 
-Integrating with order $dx\ dy$ requires us to evaluate $\int \sqrt{10+4x^2}\ dx$. This can be done, though it involves Integration By Parts and $\sinh^{-1}x$. Integrating with order $dy\ dx$ has as its first integral $\int \sqrt{10+4x^2}\ dy$, which is easy to evaluate: it is simply $y\sqrt{10+4x^2}+C$. So we proceed with the order $dy\ dx$; the bounds are already given in the statement of the problem.
+Integrating with order $dx\ dy$ requires us to evaluate $\int \sqrt{10+4x^2}\ dx$. This can be done, though it is messier and involves a trigonometric substitution. Integrating with order $dy\ dx$ has as its first integral $\int \sqrt{10+4x^2}\ dy$, which is easy to evaluate: it is simply $y\sqrt{10+4x^2}+C$. So we proceed with the order $dy\ dx$; the bounds are already given in the statement of the problem.
 \begin{align*}
 \iint_R\sqrt{10+4x^2}\ dA &= \int_0^4\int_{-x}^x\sqrt{10+4x^2}\ dy \ dx\\
 				&= \int_0^4\left.\big(y\sqrt{10+4x^2}\big)\right|_{-x}^x dx\\
