@@ -98,7 +98,7 @@ Replacing $x$ with $r\cos\theta$ in the integrand, along with replacing $y$ with
 	\cos^4\theta &=\cos^2\theta\cos^2\theta\\
 								&= \frac12\big(1+\cos(2\theta)\big)\frac12\big(1+\cos(2\theta)\big) \\
 								&= \frac14\big(1+2\cos(2\theta)+\cos^2(2\theta)\big)\\
-								&=\frac14\Big(1+2\cos(2\theta)+\frac12\big(1+\cos(4\theta)\big)\Big)\\
+								&=\frac14\left(1+2\cos(2\theta)+\frac12\big(1+\cos(4\theta)\big)\right)\\
 								&= \frac38+\frac12\cos(2\theta)+\frac18\cos(4\theta).
 		\intertext{Picking up from where we left off above, we have}
 		&=\int_0^\pi\frac{44}3\cos^4\theta\ d\theta\\
@@ -151,7 +151,7 @@ All together, the volume of a sphere with radius $a$ is:
 	&= \left.\left(\frac23a^3\theta\right)\right|_0^{2\pi}\\
 	&= \frac43\pi a^3.
 \end{align*}
-Generally, the formula for the volume of a sphere with radius $r$ is given as $4/3\pi r^3$; we have justified this formula with our calculation.
+Generally, the formula for the volume of a sphere with radius $r$ is given as $\frac{4}{3}\pi r^3$; we have justified this formula with our calculation.  In Section~\ref{sec:cylindrical_spherical}, we will be able to use spherical coordinates to write a triple integral that is even easier to compute.
 }\\
 
 \example{ex_doublepol4}{Finding the volume of a solid}{
@@ -178,15 +178,37 @@ The region $R$ that we are integrating over is bound by $0\leq r\leq \cos(3\thet
 $$V = \iint_R f(x,y)\ dA = \int_0^\pi\int_0^{\cos(3\theta)}\big(1-r\cos\theta+0.1r\sin\theta\big)r\ dr\ d\theta.$$
 Distributing the $r$, the inner integral is easy to evaluate, leading to 
 $$ \int_0^\pi \left(\frac12\cos^2(3\theta)-\frac13\cos^3(3\theta)\cos\theta+\frac{0.1}3\cos^3(3\theta)\sin\theta\right)\ d\theta.$$
-This integral takes time to compute by hand; it is rather long and cumbersome. The powers of cosine need to be reduced, and products like $\cos(3\theta)\cos\theta$ need to be turned to sums using the Product To Sum formulas in the back cover of this text. 
+This integral takes time to compute by hand; it is rather long and cumbersome. The powers of cosine need to be reduced, and products like $\cos(3\theta)\cos\theta$ need to be turned to sums using the Product To Sum formulas in Section~\ref{sec:trigint} (and in the back cover of this text). 
 
 We rewrite $\frac12\cos^2(3\theta)$ as $\frac14(1+\cos(6\theta))$. We can also rewrite $\frac13\cos^3(3\theta)\cos\theta$ as: 
-$$\frac13\cos^3(3\theta)\cos\theta = \frac13\cos^2(3\theta)\cos(3\theta)\cos\theta = \frac13\frac{1+\cos(6\theta)}2\big(\cos(4\theta)+\cos(2\theta)\big).$$
+$$\frac13\cos^3(3\theta)\cos\theta = \frac13\cos^2(3\theta)\cos(3\theta)\cos\theta = \frac13\cdot\frac{1+\cos(6\theta)}2\big(\cos(4\theta)+\cos(2\theta)\big).$$
 This last expression still needs simplification, but eventually all terms can be reduced to the form $a\cos(m\theta)$ or $a\sin(m\theta)$ for various values of $a$ and $m$.
 
 We forgo the algebra and recommend the reader employ technology, such as WolframAlpha\textregistered, to compute the numeric answer. Such technology gives:
-$$\int_0^\pi\int_0^{\cos(3\theta)}\big(1-r\cos\theta+0.1r\sin\theta\big)r\ dr\ d\theta = \frac{\pi}{4} \approx 0.785u^3.$$
-Since the units were not specified, we leave the result as almost $0.8$ cubic units (meters, feet, etc.) Should the artist want to scale the piece uniformly, so that each rose petal had a length other than 1, she should keep in mind that scaling by a factor of $k$ scales the volume by a factor of $k^3$. 
+$$\int_0^\pi\int_0^{\cos(3\theta)}\big(1-r\cos\theta+0.1r\sin\theta\big)r\ dr\ d\theta = \frac{\pi}{4} \approx 0.785.$$
+Since the units were not specified, we leave the result as $0.785$ cubic units (meters, feet, etc.) Should the artist want to scale the piece uniformly, so that each rose petal had a length other than 1, she should keep in mind that scaling by a factor of $k$ scales the volume by a factor of $k^3$. 
+}\\
+
+We finish up with an example, showing a situation in which we can evaluate a single-variable definite integral (in which the integrand does not have an elementary antiderivative) by rewriting it as a double integral and converting to polar coordinates.  Specifically, it is easy with the Direct Comparison Test to show the integral $\ds \int_0^{\infty} e^{-x^2}\ dx$ converges, but what exactly does it converge to?  We mentioned, without proof, in Section~\ref{sec:nonelem} that it converges to $\sqrt{\pi}/2$, an important result in statistics.  Below, we give a proof.\\
+
+\example{ex_doublepol5}{Proving $\int_0^{\infty} e^{-x^2}\ dx=\sqrt{\pi}/2$ using polar coordinates}{
+Evaluate $\ds \int_0^{\infty} e^{-x^2}\ dx$.
+}
+{Let $I$ denote the integral $\ds \int_0^{\infty} e^{-x^2}\ dx$ we wish to compute.  Then we start with $I^2$ by multiplying $I$ by itself.  Since $x$ is just a ``dummy variable'', we change to $y$ in the second integral, with the corresponding $dy$.  Using two variables allows us to combine the expression into a single integral.  We will not discuss improper double integrals, except in this example.  The first quadrant $(x>0,y>0)$ is expressible in polar coordinates as $(r>0, 0\leq \theta\leq \pi/2)$.
+
+\begin{align*}
+		I^2 &= \left(\int_0^{\infty} e^{-x^2}\ dx\right)\left(\int_0^{\infty} e^{-y^2}\ dy\right) & &  \\
+						&=\int_0^{\infty} \int_0^{\infty} e^{-x^2}e^{-y^2}\ dx\ dy  & & \text{\footnotesize (use Theorem~\ref{thm:dint_prod_shortcut})}\\
+						&= \int_0^{\infty} \int_0^{\infty} e^{-\left(x^2+y^2\right)}\ dx\ dy & & \text{\footnotesize (exponent rules)}\\
+						&= \int_0^{\pi/2} \int_0^\infty e^{-r^2} r\ dr\ d\theta & & \text{\footnotesize (convert to polar)}\\
+						&= \left(\int_0^{\pi/2} \ d\theta\right)\left(\int_0^\infty e^{-r^2} r\ dr\right) & & \text{\footnotesize (use Theorem~\ref{thm:dint_prod_shortcut})}\\
+&= \frac{\pi}{2}\lim_{b\to\infty}\int_0^b e^{-r^2} r\ dr & & \text{\footnotesize (definition of improper integral)}\\
+						&= \frac{\pi}{2}\lim_{b\to\infty}-\frac{1}{2}\int_0^{-b^2} e^u\ du & & \text{\footnotesize (substitution $u=-r^2$)}\\
+&= -\frac{\pi}{4}\lim_{b\to\infty}\left(e^{-b^2} - 1\right) \\
+&= \frac{\pi}{4}.
+		\end{align*}
+
+Since $I^2=\pi/4$, it follows that $I=\pm \sqrt{\pi}/2$.  It is obvious that $I=\int_0^{\infty} e^{-x^2}\ dx$, the signed area of a region above the $x$-axis, must be positive.  Therefore,\\$\int_0^{\infty} e^{-x^2}\ dx = \sqrt{\pi}/2$.
 }\\
 
 We have used iterated integrals to find areas of plane regions and volumes under surfaces. Just as a single integral can be used to compute much more than ``area under the curve,'' iterated integrals can be used to compute much more than we have thus far seen. The next two sections show two, among many, applications of iterated integrals.
