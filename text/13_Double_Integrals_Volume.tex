@@ -262,7 +262,7 @@ Thus we have the following ``curve to curve, point to point'' bounds: $y^2/4\leq
 \begin{align*}
 \iint_R (4-y)\ dA &= \int_0^4\int_{y^2/4}^{2\sqrt{y}}(4-y)\ dx\ dy\\
 				&= \int_0^4 \big(x(4-y)\big)\Big|_{y^2/4}^{2\sqrt{y}} dy\\
-				&= \int_0^4 \Big(\big(2\sqrt{y}-\frac{y^2}{4}\big)\big(4-y)\Big)\ dy = \int_0^4 \Big( \frac{y^3}{4}-y^2-2y^{3/2}+8y^{1/2}\Big)\ dy\\
+				&= \int_0^4 \left(\left(2\sqrt{y}-\frac{y^2}{4}\right)(4-y)\right)\ dy = \int_0^4 \left( \frac{y^3}{4}-y^2-2y^{3/2}+8y^{1/2}\right)\ dy\\
 				&= \left.\left(\frac{y^4}{16}-\frac{y^3}{3}-\frac{4y^{5/2}}5+\frac{16y^{3/2}}3\right)\right|_0^4\\
 				&= \frac{176}{15} = 11.7\overline{3}.
 \end{align*}
@@ -315,7 +315,7 @@ Rewrite the iterated integral $\ds \int_0^3\int_y^3 e^{-x^2}\ dx\ dy$ with the o
 
 To change the bounds, note that the curves bounding $y$ are $y=0$ up to $y=x$; the triangle is enclosed between $x=0$ and $x=3$. Thus the new bounds of integration are $0\leq y\leq x$ and $0\leq x\leq 3$, giving the iterated integral $\ds \int_0^3\int_0^x e^{-x^2}\ dy\ dx$.
 
-How easy is it to evaluate each iterated integral? Consider the order of integrating $dx\ dy$, as given in the original problem. The first indefinite integral we need to evaluate is $\int e^{-x^2}\ dx$; we have stated before (see Section \ref{sec:numerical_integration}) that this integral cannot be evaluated in terms of elementary functions. We are stuck.
+How easy is it to evaluate each iterated integral? Consider the order of integrating $dx\ dy$, as given in the original problem. The first indefinite integral we need to evaluate is $\int e^{-x^2}\ dx$; we have stated before (see Section \ref{sec:numerical_integration}) that this integral cannot be evaluated in terms of elementary functions. We are stuck.  (We could actually write it in terms of the nonelementary error function $\erf x$ from Section~\ref{sec:nonelem} and get cancelation.  However, we will do it the simpler way.)
 
 Changing the order of integration makes a big difference here. In the second iterated integral, we are faced with $\int e^{-x^2}\ dy$; integrating with respect to $y$ gives us $ye^{-x^2}+C$, and the first definite integral evaluates to 
 $$\int_0^x e^{-x^2}\ dy = xe^{-x^2}.$$

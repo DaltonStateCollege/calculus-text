@@ -200,8 +200,33 @@ $$\int_0^4\int_{y^2/4}^{(y+4)/2}1\ dx\ dy = \int_0^2\int_0^{2\sqrt{x}} 1\ dy\ dx
 %Note how we did not specify the integrand, leaving it to be some function $f(x,y)$. This again stresses the point that the integrand has no bearing on the bounds of integration.
 }\\
 
-This section has introduced a new concept, the iterated integral. We developed one application for iterated integration: area between curves. However, this is not new, for we already know how to find areas bounded by curves.
+There is a useful shortcut that applies to a handful of iterated integrals.  It can be used the integrand has the form $f(x)g(y)$ of a function $f(x)$ of $x$ alone and a function $g(y)$ of $y$ alone (for example $\sin(x)y^2$ but not $\sin x + y^2$ nor $\sin\left(xy^2\right)$) and the bounds contain only numbers.  In this case the double integral can be broken into the product of two single integrals which are faster to compute.  This is the next theorem.
 
-In the next section we apply iterated integration to solve problems we currently do not know how to handle. The ``real" goal of this section was not to learn a new way of computing area. Rather, our goal was to learn how to define a region in the plane using the bounds of an iterated integral. That skill is very important in the following sections.
+\theorem{thm:dint_prod_shortcut}{}
+{Let $f(x)$ and $g(y)$ be continuous functions on $[a,b]$ and $[c,d]$, respectively.  Then
+$$\int_c^d \int_a^b f(x) g(y) dx dy = \left(\int_a^b f(x) dx\right) \left(\int_c^d g(y) dy\right).$$
+}
+
+To explain this shortcut, we begin by realizing that $g(y)$ is considered a ``constant'' multiple when integrating with respect to $x$ and can pulled outside of the first iterated integral:
+
+$$\int_c^d \int_a^b f(x) g(y) dx dy = \int_c^d \left( \int_a^b f(x) g(y) dx \right) dy = \int_c^d g(y) \left( \int_a^b f(x) dx \right) dy.$$  Then the entire integral $\int_a^b f(x) dx$ is a constant that can be pulled outside the $y$-integral.  It s very important that the bounds do not contain $y$.  So
+
+$$\int_c^d g(y) \left( \int_a^b f(x) dx \right) dy = \left( \int_a^b f(x) dx \right) \left(\int_c^d g(y) dy\right).$$
+
+We use this shortcut in the next example.
+
+\example{ex_double9}{Using Theorem~\ref{thm:dint_prod_shortcut}}
+{Compute $\ds \int_2^5 \int_0^{\pi} \sin(x)y^2\ dx\ dy$.
+}
+{\begin{align*}
+\ds \int_2^5 \int_0^{\pi} \sin(x)y^2\ dx\ dy
+&= \left(\int_0^{\pi} \sin(x)\ dx\right) \left(\int_2^5 y^2\ dy\right)\\
+&=\left( -\cos x\big|_0^{\pi}\right) \left(\frac{y^3}{3}\Big|_2^5\right)\\
+&=\big(1-(-1)\big) \left( \frac{5^3}{3} - \frac{2^3}{3} \right)\\
+&=78.
+\end{align*}
+}\\
+
+This section has introduced a new concept, the iterated integral. We developed one application for iterated integration: area between curves. However, this is not new, for we already know how to find areas bounded by curves.  In the next section we apply iterated integration to solve problems we currently do not know how to handle. The ``real" goal of this section was not to learn a new way of computing area. Rather, our goal was to learn how to define a region in the plane using the bounds of an iterated integral. That skill is very important in the following sections.
 
 \printexercises{exercises/13_01_exercises}
