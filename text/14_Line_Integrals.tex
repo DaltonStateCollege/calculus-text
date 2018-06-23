@@ -32,7 +32,7 @@ Work is force times distance moved. In this last example it was negative, becaus
 \keyidea{idea:gradient_path_independence}{}
 {
 When $\vec F$ is the gradient of a potential function $f(x, y)$, the work $\int \vec F \cdot \vec T ds$ depends only on the endpoints $P = (x_0,y_0)$ and $Q = (x_1,y_1)$. The work is the change in $f$: if
-$$\vec F = \partial f/\partial x \vec i + \partial f/\partial y \vec j$$
+$$\vec F = \frac{\partial f}{\partial x} \vec i + \frac{\partial f}{\partial y} \vec j$$
 then
 $$\int_C \vec F \cdot \vec T ds = f(Q) - f(P).$$
 }\\
@@ -60,14 +60,14 @@ $$\int_C g(x,y) \: ds = \lim_{||\Delta s|| \to 0} \sum_{i=1}^n f(x_i,y_i)\Delta 
 
 The points $(x_i, y_i)$ lie on the curve $C$. The last point $Q$ is $(x_n, y_n)$ and the first point $P$ is $(x_0, y_0)$. The step $\Delta s_i$ is the distance to $(x_i, y_i)$ from the previous point. As $\Delta s \to 0$, the straight pieces better and better approximate the path of the curve. Note that the special case $f(x,y) = 1$ gives the arc length of $C$. As long as $f(x, y)$ is piecewise continuous (a finite number of jumps allowed) and the path is piecewise smooth (a finite number of corners allowed), the limit exists and defines the line integral.\\
 
-When $f(x,y)$ is the density of a wire $C$, the line integral is the total mass of the wire. When $f(x,y)$ is $\vec F \cdot \vec T$, the integral is the work done along the path $C$. Calculating these values using the above definition is cumbersome. We now parametrize the curve $C$ as above.  The parameter could be thought of as the time for a moving object.  In doing so, the differential $ds$ becomes $\frac{ds}{dt} \: dt$ and everything in the integral can be changed over the new variable $t$, where $t = a$ gives the starting point $P = (x(a),y(a))$ and $t = b$ gives the ending point $Q = (x(b),y(b))$:
-$$\int_C f(x,y) \: ds = \int_{t=a}^{t=b} f(x(t),y(t)) \: \sqrt{(\dfrac{dx}{dt})^2+(\dfrac{dy}{dt})^2} \: dt$$\\
+When $f(x,y)$ is the density of a wire $C$, the line integral is the total mass of the wire. When $f(x,y)$ is $\vec F \cdot \vec T$, the integral is the work done along the path $C$. Calculating these values using the above definition is cumbersome. We now parametrize the curve $C$ as above.  The parameter could be thought of as the time for a moving object.  In doing so, the differential $ds$ becomes $\frac{ds}{dt} \: dt$ and everything in the integral can be changed over the new variable $t$, where $t = a$ gives the starting point $P = \big(x(a),y(a)\big)$ and $t = b$ gives the ending point $Q = \big(x(b),y(b)\big)$:
+$$\int_C f(x,y) \: ds = \int_{t=a}^{t=b} f\big(x(t),y(t)\big) \: \sqrt{\left(\dfrac{dx}{dt}\right)^2+\left(\dfrac{dy}{dt}\right)^2} \: dt$$\\
 
-We can repeat this process in three dimensions as well. In three dimensions the points on a smooth three-dimensional curve $C$ are given by a parametrization $(x(t), y(t), z(t))$, from $t = a$ to $t = b$, and so given a piecewise continuous function $f(x,y,z)$ we obtain
-$$\int_C f(x,y,z) \: ds = \int_{t=a}^{t=b} f(x(t),y(t),z(t)) \: \sqrt{(\dfrac{dx}{dt})^2+(\dfrac{dy}{dt})^2 + \dfrac{dx}{dt})^2} \: dt$$\\
+We can repeat this process in three dimensions as well. In three dimensions the points on a smooth three-dimensional curve $C$ are given by a parametrization $\big(x(t), y(t), z(t)\big)$, from $t = a$ to $t = b$, and so given a piecewise continuous function $f(x,y,z)$ we obtain
+$$\int_C f(x,y,z) \: ds = \int_{t=a}^{t=b} f\big(x(t),y(t),z(t)\big) \: \sqrt{\left(\dfrac{dx}{dt}\right)^2+\left(\dfrac{dy}{dt}\right)^2 + \left(\dfrac{dx}{dt}\right)^2} \: dt$$\\
 
 
-\example{ex_line_integrals1}{}{Suppose the points on a coil spring $C$ are $$(x(t), y(t), z(t)) = (\cos t, \sin t, t)$$ for $t = 0$ to $t = 4\pi$. Find the mass of the spring if the density is given by $\rho = 4$ kilograms per meter.}
+\example{ex_line_integrals1}{}{Suppose the points on a coil spring $C$ are $$\left(x(t), y(t), z(t)\right) = (\cos t, \sin t, t)$$ for $t = 0$ to $t = 4\pi$. Find the mass of the spring if the density is given by $\rho = 4$ kilograms per meter.}
 {We first calculate 
 $$(dx/dt)^2 + (dy/dt)^2 + (dz/dt)^2 = \sin^2 t + \cos^2 t + 1 = 2.$$ Thus
 $\dfrac{ds}{dt} = \sqrt{2}$. To find the total mass, integrate the mass per unit length, which is $g = \rho = 4$ from $t = 0$ to $t = 4\pi$.
@@ -111,7 +111,7 @@ $$\int_C -y \: dx + x \: dy = \int_0^{\pi/2} -sin(t)(-\sin(t) \: dt) + \cos(t)( 
 Note here that the value of the work done does depend on the path taken, not just the starting and ending points.
 }\\
 
-\keyidea{idea:lineintegral_work}{Computing work done by a force field $\vec F$ along a curve $C$}{Suppose a smooth curve $C$ is parametrized by $$\vec r(t) = x(t) \vec i + y(t) \vec j$$ and an object is traveling along the curve $C$ from a point at $t = a$ to $t = b$ subject to a force $\vec F$.  To determine the work done by $\vec F$ on the object, one computes $\int_C M \: dx + N \: dy$ by first substituting $x(t)$ and $y(t)$ into $M(x,y)$ and $N(x,y)$ to create a function of the parameter $t$.  Find $dx$ and $dy$ by taking the derivatives of $x(t)$ and $y(t)$ to turn the integral into an integral of $t$.  Then integrate from $t = a$ to $t = b$ to compute the work done.  The procedure is similar if $C$ is in three-dimensional space and the object subject to the force $\vec F(x,y,z)$.
+\keyidea{idea:lineintegral_work}{Work done by a force field $\vec F$ along a curve $C$}{Suppose a smooth curve $C$ is parametrized by $$\vec r(t) = x(t) \vec i + y(t) \vec j$$ and an object is traveling along the curve $C$ from a point at $t = a$ to $t = b$ subject to a force $\vec F$.  To determine the work done by $\vec F$ on the object, one computes $\int_C M \: dx + N \: dy$ by first substituting $x(t)$ and $y(t)$ into $M(x,y)$ and $N(x,y)$ to create a function of the parameter $t$.  Find $dx$ and $dy$ by taking the derivatives of $x(t)$ and $y(t)$ to turn the integral into an integral of $t$.  Then integrate from $t = a$ to $t = b$ to compute the work done.  The procedure is similar if $C$ is in three-dimensional space and the object subject to the force $\vec F(x,y,z)$.
 }\\
 
 \example{ex_line_integrals4}{}{Consider a force field $\vec F(x,y) = x^2 \vec i - xy \vec j$ and a particle moving along the quarter-circle path from $(1,0)$ to $(0,1)$ along the unit circle. Determine the work done by the force field on the particle.}{We will again use the parametrization
@@ -130,28 +130,28 @@ Note that the work is negative because the particle is moving against the force 
 
 When a force field does work on a mass $m$, it normally gives that mass a new velocity.
 Newton's Law is $\vec F = m \vec a = m \dfrac{d \vec v}{dt}$. The work done $\int_C \vec F \cdot d\vec r$ along a path $C$ from $P$ to $Q$ is
-\begin{equation} \int (m \dfrac{d \vec v}{dt}) \cdot (\vec v dt) 
+\begin{equation} \int \left(m \dfrac{d \vec v}{dt}\right) \cdot (\vec v dt) 
   = \left[ \dfrac{1}{2}m \vec v \cdot \vec v \right]_P^Q
-  = \dfrac{1}{2}m \mid \vec v(Q) \mid^2 - \dfrac{1}{2}m \mid \vec v(P)\mid^2
+  = \dfrac{1}{2}m || \vec v(Q) ||^2 - \dfrac{1}{2}m || \vec v(P)||^2
 \label{workeq1}	
 \end{equation}\\
 
-The work equals the change in the kinetic energy $\frac{1}{2}m\mid \vec v \mid^2$. However, for a gradient field $\vec F = \nabla f$ the
+The work equals the change in the kinetic energy $\frac{1}{2}m|| \vec v ||^2$. However, for a gradient field $\vec F = \nabla f$ the
 work is also the negative change in potential
 \begin{equation}
 \text{work}=\int \vec F \cdot d\vec r = -\int df = f(P)-f(Q).
 \label{workeq2}
 \end{equation}\\
 
-Comparing \ref{workeq1} with \ref{workeq2}, the combination $\frac{1}{2}m\mid\vec v \mid ^2 + f$ is the same at $P$ and $Q$. The total energy, kinetic plus potential, is \emph{conserved}.\\
-
-\mfigure[scale=0.5]{.3}{The vector field $\mathbf{R}$}{fig:fig_line_integrals_closed_path}{figures/fig_line_integrals_closed_path}
+Comparing \ref{workeq1} with \ref{workeq2}, the combination $\frac{1}{2}m||\vec v || ^2 + f$ is the same at $P$ and $Q$. The total energy, kinetic plus potential, is \emph{conserved}.\\
 
 Most of the examples in physics concentrate on special fields in which the work done depends only on the starting and ending points of the path. We now explain what happens when the integral is independent of the path. Suppose you integrate from $P$ to $Q$ on one path, and then back to $P$ on another path. Combined, that is a closed path from containing $P$. See Figure \ref{fig:fig_line_integrals_closed_path}. But a backward integral is the negative of a forward integral, since $d\vec r$ switches sign. If the two integrals from $P$ to $Q$ are equal, the integral around the closed path is zero.
 \begin{align*}
 \oint_C \vec F \cdot d\vec r & = \int_P^Q \vec F \cdot d\vec r + \int_Q^P \vec F \cdot d\vec r \\
  & = \int_P^Q\vec F \cdot d\vec r - \int_P^Q\vec F \cdot d\vec r = 0 \\
 \end{align*}\\
+
+\mfigure[scale=0.6]{.82}{The vector field $\mathbf{R}$}{fig:fig_line_integrals_closed_path}{figures/fig_line_integrals_closed_path}
 
 Notationally, the circle on the first integral indicates a closed path. It is not necessary for closed paths to indicate a particular start and endpoint $P$. However, not all closed path integrals are zero! For most fields $\vec F$, different paths yield
 different work. For what are called \emph{conservative} fields, all paths with the same starting and ending points yield the same work. Then zero work around a closed path indicates conservation of energy. The crucial question is how to determine which fields are conservative without trying an infinite number of paths.\\
@@ -188,7 +188,7 @@ $$\dfrac{\partial M}{\partial y} = \dfrac{\partial N}{\partial x}.$$\\
 {Let $\vec F(x,y) = M(x,y) \vec i + N(x,y) \vec j$ be a vector field defined on an open simply-connected region $D$.  If $M(x,y)$ and $N(x,y)$ have continuous first-order partial derivatives and $\dfrac{\partial M}{\partial y} = \dfrac{\partial N}{\partial x}$ then $\vec F$ is conservative.
 }\\
 
-The property of region $D$ being open and simply-connected means, essentially, that there are no holes in the region on which the vector field is defined. In such situations, the above test will determine whether or not a given vector field is conservative.  In the case that it is, one may be able to employ anti-derivatives to find the potential function $f(x,y)$ so that $\vec F = \nabla f$.  It is necessary to know this potential function if one is to use the Fundamental Theorem to compute line integrals of conservative vector fields.\\
+The property of region $D$ being open and simply-connected means, essentially, that there are no holes in the region on which the vector field is defined. In such situations, the above test will determine whether or not a given vector field is conservative.  In the case that it is, one may be able to employ antiderivatives to find the potential function $f(x,y)$ so that $\vec F = \nabla f$.  It is necessary to know this potential function if one is to use the Fundamental Theorem to compute line integrals of conservative vector fields.\\
 
 
 \example{ex_line_integrals5}{}{Show that $\vec F(x,y) = 2xy\vec i + x^2\vec j$ is conservative.  Then find a potential function $f(x,y)$ so that $\nabla f = \vec F$.} {For $M(x,y) = 2xy$ and $N(x,y) = x^2$, note that $\dfrac{\partial M}{\partial y} = 2x$ and $\dfrac{\partial N}{\partial x} = 2x$, also.  Since $M$ and $N$ are defined everywhere and have continuous partial derivatives of every type, it follows that $\vec F$ is conservative.  Now we find the potential.
@@ -211,7 +211,7 @@ Setting these equal, this implies that $g'(y) = 2y$ or that $g(y) = y^2 + C$ for
 Note that this approach of finding $f(x,y)$ should fail if the vector field $\vec F$ is not conservative.  The next example illustrates this for the spin field from a previous example.\\
 
 \example{ex_line_integrals7}{}{Attempt to find a potential function $f(x,y)$ for the vector field $$\vec F(x,y) = -y \vec i + x \vec j.$$}
-{Note that this vector field is not conservative as $\dfrac{\partial M}{\partial y} = -1$ while $\dfrac{\partial N}{\partial x} = 1$.  To show how the finding the potential as in the last example results in a problem, we directly solve $\dfrac{\partial f}{\partial x} = M(x,y) = -y$ and try to achieve $\dfrac{\partial f}{\partial y} = x$. First $\dfrac{\partial f}{\partial x} = -y$ gives 
+{Note that this vector field is not conservative as $\dfrac{\partial M}{\partial y} = -1$ while $\dfrac{\partial N}{\partial x} = 1$.  To show how finding the potential as in the last example results in a problem, we directly solve $\dfrac{\partial f}{\partial x} = M(x,y) = -y$ and try to achieve $\dfrac{\partial f}{\partial y} = x$. First $\dfrac{\partial f}{\partial x} = -y$ gives 
 $$f(x,y) = -xy + g(y)$$
 for some (possibly constant) function $g(y)$ depending only on $y$. Taking $\dfrac{\partial}{\partial y}$ of this yields $-x + g'(y)$. That does not agree with the requirement that
 $\dfrac{\partial f}{\partial y} = x$. There is no way to define $g(y)$ to make this work.  Therefore we conclude that the spin field $-y\vec i + x\vec j$ is not conservative as it has no potential function.}

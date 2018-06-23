@@ -45,7 +45,7 @@ The planes intersect along the line $2x+y=4$. Therefore the region $R$ is bounde
 \begin{align*}
 V &= \iint_R \big(8-3x-2y-(3x+y-4)\big)\ dA \\
 	&= \int_0^2\int_0^{4-2x} \big(12-6x-3y\big)\ dy\ dx\\
-	&= 16\text{u}^3.
+	&= 16.
 \end{align*}
 The volume between the surfaces is $16$ cubic units.
 }\\
@@ -89,7 +89,8 @@ Let $||\Delta D||$ represent the length of the longest diagonal of rectangular s
 
 \setboxwidth{100pt}
 \enlargethispage{3\baselineskip}
-\noindent\hskip-100pt\begin{minipage}{\linewidth}
+\noindent%\hskip-100pt
+\begin{minipage}{\linewidth}
 \definition{def:triple_integral}{Triple Integrals, Iterated Integration (Part I)}
 {Let $D$ be a closed, bounded region in space. Let $a$ and $b$ be real numbers, let $g_1(x)$ and $g_2(x)$ be continuous functions of $x$, and let $f_1(x,y)$ and $f_2(x,y)$ be continuous functions of $x$ and $y$.
 \index{integration!triple}\index{triple integral}\index{iterated integration}
@@ -111,7 +112,8 @@ Our informal understanding of the notation $\iiint_D\ dV$ is ``sum up lots of li
 
 We now state the major theorem of this section.\vskip-5pt
 
-\noindent\hskip-100pt\begin{minipage}{\linewidth}
+\noindent%\hskip-100pt
+\begin{minipage}{\linewidth}
 \theorem{thm:triple_integration}{Triple Integration (Part I)}
 {Let $D$ be a closed, bounded region in space and let $\Delta D$ be any subdivision of $D$ into $n$ rectangular solids, where the  $i^\text{\,th}$ subregion $D_i$ has dimensions $\dx_i\times\dy_i\times\ddz_i$ and volume $\Delta V_i$.
 \index{integration!triple}\index{triple integral}\index{iterated integration}
@@ -171,7 +173,7 @@ V &= \iiint_D \ dV\\
 		&=\int_0^3\int_0^{6-2x}z\Big|_0^{2-\frac 13y-\frac 23x}\ dy\ dz \\
 		&= \int_0^3\int_0^{6-2x}\left(2-\frac 13y-\frac 23x\right)\ dy\ dz.
 		\intertext{From this step on, we are evaluating a double integral as done many times before. We skip these steps and give the final volume,}
-		&= 6\text{u}^3.		
+		&= 6\text{units}^3.		
 \end{align*}
 \drawexampleline
 \noindent The order $dz\ dx\ dy$:\\
@@ -888,10 +890,6 @@ $$\big(\overline{x},\overline{y},\overline{z}\big) = \left(0,\frac{-1.99}{3.855}
 
 As stated before, there are many uses for triple integration beyond finding volume. When $h(x,y,z)$ describes a rate of change function over some space region $D$, then $\ds \iiint_D h(x,y,z)\ dV$ gives the total change over $D$. Our one specific example of this was computing mass; a density function is simply a ``rate of mass change per volume'' function. Integrating density gives total mass.
 
-While knowing \textit{how to integrate}  is important, it is arguably much more important to know \textit{how to set up} integrals. It takes skill to create a formula that describes a desired quantity; modern technology is very useful in evaluating these formulas quickly and accurately.\\
-
-This chapter investigated the natural follow--on to partial derivatives: iterated integration. We learned how to use the bounds of a double integral to describe a region in the plane using both rectangular and polar coordinates, then later expanded to use the bounds of a triple integral to describe a region in space. We used double integrals to find volumes under surfaces, surface area, and the center of mass of lamina; we used triple integrals as an alternate method of finding volumes of space regions and also to find the center of mass of a region in space.
-
-Integration does not stop here. We could continue to iterate our integrals, next investigating ``quadruple integrals'' whose bounds describe a region in 4--dimensional space (which are very hard to visualize). We can also look back to ``regular'' integration where we found the area under a curve in the plane. A natural analogue to this is finding the ``area under a curve,'' where the curve is in space, not in a plane. These are just two of many avenues to explore under the heading of ``integration.'' 
+While knowing \textit{how to integrate}  is important, it is arguably much more important to know \textit{how to set up} integrals. It takes skill to create a formula that describes a desired quantity; modern technology is very useful in evaluating these formulas quickly and accurately.
 
 \printexercises{exercises/13_06_exercises}

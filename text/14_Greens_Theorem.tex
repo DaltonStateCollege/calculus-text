@@ -4,14 +4,22 @@ This section contains the Fundamental Theorem of Calculus extended to two dimens
 
 In Section \ref{sec:FTC} you learn that the integral of $\dfrac{df}{dx}$ from $x=a$ to $x=b$ equals $f(b) - f (a)$. This connects a one-dimensional integral to a zero-dimensional integral - the value $f(b) - f(a)$ is some kind of a point integral. It is this absolutely crucial idea (to integrate a derivative from information at the boundary) that extends Green's Theorem into two dimensions.\\
 
-There are two important integrals around a curve $C$. The first is for a force field $\vec F$, and the work done is $\displaystyle\int_C \vec F \cdot \vec T \: ds = \displaystyle\int_C M \: dx + N \: dy.$  The second is for a flow field $\vec F$, and the flux is $\displaystyle\int_C \vec F \cdot \vec n \: dx = \displaystyle\int_C M \: dy - N \: dx$, where $\vec n$ is the normal vector. Green's Theorem handles both, in two dimensions. In three dimensions they split into the Divergence Theorem (Section \ref{sec:div_theorem}) and Stokes' Theorem (Section \ref{sec:stokes_theorem}). Green's Theorem applies to "smooth" functions $M(x, y)$ and $N(x, y)$ with continuous first derivatives in a region containing the interior $R$ inside the curve $C$. $M(x,y)$ and $N(x,y)$ will have a specific meaning in applications (to electricity and magnetism or to fluid flow or to mechanics). We capture the central idea first and the applications follow.\\
+There are two important integrals around a curve $C$. The first is for a force field $\vec F$, and the work done is $\displaystyle\int_C \vec F \cdot \vec T \: ds = \displaystyle\int_C M \: dx + N \: dy.$  The second is for a flow field $\vec F$, and the flux is $\displaystyle\int_C \vec F \cdot \vec n \: dx = \displaystyle\int_C M \: dy - N \: dx$, where $\vec n$ is the normal vector. Green's Theorem handles both, in two dimensions. In three dimensions they split into the Divergence Theorem (Section \ref{sec:div_theorem}) and Stokes' Theorem (Section \ref{sec:stokes_theorem}). Green's Theorem applies to "smooth" functions $M(x, y)$ and $N(x, y)$ with continuous first derivatives in a region containing the interior $R$ inside the curve $C$. $M(x,y)$ and $N(x,y)$ will have a specific meaning in applications (to electricity and magnetism or to fluid flow or to mechanics). We capture the central idea first and the applications follow.
 
-\theorem{thm:greens_theorem}{Green's Theorem}
-{Suppose the region $R$ is bounded by a simple, closed, piecewise smooth curve $C$ oriented in the counter-clockwise direction. If $M(x,y)$ and $N(x,y)$ have continuous first-order partial derivatives on an open region containing $R$, then
-$$\oint_C M(x,y) \: dx + N(x,y) \: dy = \iint_R \dfrac{\partial N}{\partial x} - \dfrac{\partial M}{\partial y} \: dA$$
+As Green's Theorem is about simple, closed curves, we first define some terminology.\\
+
+\definition{def:simple_closed_ccw}{Simple, Closed Curves, and the Counterclockwise Direction}
+{Recall that a curve is \textbf{closed} if its starting and ending points are the same.  A curve is \textbf{simple} if it does not intersect itself, except possibly at the starting and ending points.  Any simple, closed curve $C$ encloses a region $R$.  Suppose an ant is crawling along the curve $C$.  The \textbf{counterclockwise} direction is the one in which the enclosed region $R$ is always on the ant's left.
 }\\
 
-Recall that a curve is closed if its starting and ending points are the same, and a curve is simple if it does not intersect itself.  Green's Theorem indicates that a line integral around the boundary $C$ is equal to a double integral over the enclosed region. Before we look at why Green's Theorem is true, let us look at some examples.\\
+We are familiar with the term ``counterclockwise'' for circles.  This allows us to define it for any simple, closed curve, such as the wacky curve in Figure~\ref{fig:ccw_example}.\\
+
+\mfigure[scale=0.39]{.314}{A simple closed curve.}{fig:ccw_example}{figures/counter_clockwise_example}
+
+\theorem{thm:greens_theorem}{Green's Theorem}
+{Suppose the region $R$ is bounded by a simple, closed, piecewise smooth curve $C$ oriented in the counterclockwise direction. If $M(x,y)$ and $N(x,y)$ have continuous first-order partial derivatives on an open region containing $R$, then
+$$\oint_C M(x,y) \: dx + N(x,y) \: dy = \iint_R \dfrac{\partial N}{\partial x} - \dfrac{\partial M}{\partial y} \: dA$$
+}\\
 
 \example{ex_greenstheorem1}{}{First consider the case that $\vec F(x,y)$ is a conservative force field with a potential function $f(x,y)$ so that $\nabla f = \vec F$. Let $C$ be a simple, closed, piecewise smooth curve enclosing a region $R$. What does Green's Theorem say about the work done around $C$ in this case?}{Since $\vec F = M \: \vec i + N \: \vec j$ is conservative, we get that
 $$\dfrac{\partial N}{\partial x} = \dfrac{\partial M}{\partial y}$$
@@ -68,7 +76,7 @@ which is the same as the other side due to the addition of a minus sign when the
 Next consider a region $R$ which is not simple but is instead a union of simple regions, such as in Figure \ref{fig:fig_greens_thm_comp_region}. As in the figure, we would break the region into three pieces $R_1$, $R_2$, and $R_3$ which are all simple. The three individual double integrals sum to the double integral of $R$, which would also equal the sum of the three line integrals by the above argument. When we add the line integrals, the line integrals over the cross cuts cancel out as they are going in opposite directions, resulting in only the boundary pieces adding up to the total line integral.  This leaves the double integral of the interior equal to the line integral of just the boundary, as Green's Theorem would state. The next example will pertain to a region that is a union of two simple regions. \\
 
 If the region $R$ contains the piece $R_4$ in Figure \ref{fig:fig_greens_thm_comp_region}, then the theorem is still true. The
-integral around the outside is still counter-clockwise, but the integral is clockwise around the inner circle. Keep the region $R$ to your left as you go around $C$. The complete ring is doubly connected, not simply connected. Green's Theorem allows any finite number of regions $R_i$ and cross cuts and holes.\\
+integral around the outside is still counterclockwise, but the integral is clockwise around the inner circle. Keep the region $R$ to your left as you go around $C$. The complete ring is doubly connected, not simply connected. Green's Theorem allows any finite number of regions $R_i$ and cross cuts and holes.\\
 
 \example{ex_greenstheorem4}{}{Compute the line integral $\oint_C y^2 \: dx + 3xy \: dy$ where $C$ is the boundary of the semiannular region in the upper half-plane between $x^2 + y^2 = 1$ and $x^2 + y^2 = 4$.}{The enclosed region $R$ is not simple, but is a union of two simple pieces if you cut down the $y$-axis. Therefore Green's Theorem applies in this situation.  The theorem gives
 $$\oint_C y^2 \: dx + 3xy \: dy = \iint_R 3y - 2y \: dA = \iint_R y \: dA.$$
