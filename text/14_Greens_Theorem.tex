@@ -28,21 +28,6 @@ $$\oint_C M(x,y) \: dx + N(x,y) \: dy = \iint_R 0 \: dA = 0.$$
 This verifies the claim in the last section that line integrals of conservative vector fields around closed curves are zero.
 }\\
 
-Consider any vector field $\vec F(x,y) = M \: \vec i + N \: \vec j$ in which $\dfrac{\partial N}{\partial x}-\dfrac{\partial M}{\partial y} = 1$.  For example, this would include the cases where $\vec F(x,y) = x \: \vec j$ or $\vec F(x,y) = -y \: \vec i$.  What is the line integral of $\vec F$ around a simple closed curve $C$ computing? By Green's Theorem
-$$\oint_C \vec F \cdot d\vec r = \oint_C M(x,y) \: dx + N(x,y) \: dy = \iint_R 1 \: dA$$
-which is the area of $R$, or the area enclosed by $C$.  In this way, one can use a line integral to compute area as long as one knows the boundary curve of the region. \\
-
-\mfigure[scale=0.4]{.3}{Ellipse}{fig:fig_greens_thm_ellipse}{figures/fig_greens_thm_ellipse}
-
-\example{ex_greenstheorem2}{}{Using a line integral, compute the area of the ellipse
-$$\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$$
-with semiaxes of length $a$ and $b$.}{See Figure \ref{fig:fig_greens_thm_ellipse}.  By the above equation for the ellipse, we can parametrize the ellipse as
-$$x = a \cos(t), \: \: y = b \sin(t)$$
-for $0 \leq t \leq 2\pi$.  By computing the line integral of $\vec F(x,y) = x \: \vec j$ around this curve we will arrive at the area of the ellipse by Green's Theorem.  Using $M(x,y) = 0$ and $$N(x,y) = x = a \cos(t),$$ we get an area of
-$$\oint_C \vec F \cdot d\vec r = \oint_C N(x,y) \: dy = \int_0^{2\pi} a \cos(t) \: (b \cos(t)) \: dt = ab \int_0^{2\pi} \cos^2(t) \: dt = ab \pi$$
-square units.
-}\\
-
 \example{ex_greenstheorem3}{}{Compute the line integral $\oint_C x^3 \: dx + xy^2 \: dy$ where $C$ is the triangular curve consisting of line segments connecting $(0,0)$ to $(1,0)$, $(1,0)$ to $(1,1)$, and $(1,1)$ to $(0,0)$.}{Computing this directly would require three different line integrals and three different parametrizations for the line segments.  Instead we employ Green's Theorem and compute a single double integral.  Letting $R$ be the triangle inside the curves bounded by $y = 0$ and $y = x$, we get
 $$\oint_C x^3 \: dx + xy^2 \: dy = \iint_R (y^2 - 0) \: dA = \int_0^1 \int_{0}^{x} y^2 \: dy \: dx = \dfrac{1}{12}.$$
 }\\
@@ -76,12 +61,30 @@ which is the same as the other side due to the addition of a minus sign when the
 Next consider a region $R$ which is not simple but is instead a union of simple regions, such as in Figure \ref{fig:fig_greens_thm_comp_region}. As in the figure, we would break the region into three pieces $R_1$, $R_2$, and $R_3$ which are all simple. The three individual double integrals sum to the double integral of $R$, which would also equal the sum of the three line integrals by the above argument. When we add the line integrals, the line integrals over the cross cuts cancel out as they are going in opposite directions, resulting in only the boundary pieces adding up to the total line integral.  This leaves the double integral of the interior equal to the line integral of just the boundary, as Green's Theorem would state. The next example will pertain to a region that is a union of two simple regions. \\
 
 If the region $R$ contains the piece $R_4$ in Figure \ref{fig:fig_greens_thm_comp_region}, then the theorem is still true. The
-integral around the outside is still counterclockwise, but the integral is clockwise around the inner circle. Keep the region $R$ to your left as you go around $C$. The complete ring is doubly connected, not simply connected. Green's Theorem allows any finite number of regions $R_i$ and cross cuts and holes.\\
+integral around the outside is still counterclockwise, but the integral is clockwise around the inner circle. Keeping the region $R$ to your left as you go around $C$ gives the counterclockwise direction according to our definition. The complete ring is doubly connected, not simply connected. Green's Theorem allows any finite number of regions $R_i$ and cross cuts and holes.\\
 
 \example{ex_greenstheorem4}{}{Compute the line integral $\oint_C y^2 \: dx + 3xy \: dy$ where $C$ is the boundary of the semiannular region in the upper half-plane between $x^2 + y^2 = 1$ and $x^2 + y^2 = 4$.}{The enclosed region $R$ is not simple, but is a union of two simple pieces if you cut down the $y$-axis. Therefore Green's Theorem applies in this situation.  The theorem gives
 $$\oint_C y^2 \: dx + 3xy \: dy = \iint_R 3y - 2y \: dA = \iint_R y \: dA.$$
 Notice that this region can be integrated over easily via polar coordinates.  Therefore
 $$\oint_C y^2 \: dx + 3xy \: dy = \int_0^{\pi} \int_{1}^{2} (r \sin\theta) r \: dr \: d\theta = \dfrac{14}{3}.$$
+}\\
+
+Consider any vector field $\vec F(x,y) = M \: \vec i + N \: \vec j$ in which $\dfrac{\partial N}{\partial x}-\dfrac{\partial M}{\partial y} = 1$.  For example, this would include the cases where $\vec F(x,y) = x \: \vec j$ or $\vec F(x,y) = -y \: \vec i$.  What is the line integral of $\vec F$ around a simple closed curve $C$ computing? By Green's Theorem
+$$\oint_C \vec F \cdot d\vec r = \oint_C M(x,y) \: dx + N(x,y) \: dy = \iint_R 1 \: dA$$
+which is the area of $R$, or the area enclosed by $C$.  In this way, one can use a line integral to compute area as long as one knows the boundary curve of the region. \\
+
+\noindent\textbf{\large Usng Green's Theorem to Compute Areas}
+\vskip\baselineskip
+
+\mfigure[scale=0.4]{.3}{Ellipse}{fig:fig_greens_thm_ellipse}{figures/fig_greens_thm_ellipse}
+
+\example{ex_greenstheorem2}{}{Using a line integral, compute the area of the ellipse
+$$\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$$
+with semiaxes of length $a$ and $b$.}{See Figure \ref{fig:fig_greens_thm_ellipse}.  By the above equation for the ellipse, we can parametrize the ellipse as
+$$x = a \cos(t), \: \: y = b \sin(t)$$
+for $0 \leq t \leq 2\pi$.  By computing the line integral of $\vec F(x,y) = x \: \vec j$ around this curve we will arrive at the area of the ellipse by Green's Theorem.  Using $M(x,y) = 0$ and $$N(x,y) = x = a \cos(t),$$ we get an area of
+$$\oint_C \vec F \cdot d\vec r = \oint_C N(x,y) \: dy = \int_0^{2\pi} a \cos(t) \: (b \cos(t)) \: dt = ab \int_0^{2\pi} \cos^2(t) \: dt = ab \pi$$
+square units.
 }\\
 
 One can consider a region $R$ in the plane as a flat surface in three-dimensional space. Green's Theorem says that we can compute an integral over the surface $R$ by instead computing a line integral around the boundary of the region.  This will hold for more general surfaces in space, and the result that generalizes Green's Theorem is called Stokes' Theorem, discussed in Section \ref{sec:stokes_theorem}.
