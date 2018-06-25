@@ -67,18 +67,30 @@ integral around the outside is still counterclockwise, but the integral is clock
 $$\oint_C y^2 \: dx + 3xy \: dy = \iint_R 3y - 2y \: dA = \iint_R y \: dA.$$
 Notice that this region can be integrated over easily via polar coordinates.  Therefore
 $$\oint_C y^2 \: dx + 3xy \: dy = \int_0^{\pi} \int_{1}^{2} (r \sin\theta) r \: dr \: d\theta = \dfrac{14}{3}.$$
-}\\
-
-Consider any vector field $\vec F(x,y) = M \: \vec i + N \: \vec j$ in which $\dfrac{\partial N}{\partial x}-\dfrac{\partial M}{\partial y} = 1$.  For example, this would include the cases where $\vec F(x,y) = x \: \vec j$ or $\vec F(x,y) = -y \: \vec i$.  What is the line integral of $\vec F$ around a simple closed curve $C$ computing? By Green's Theorem
-$$\oint_C \vec F \cdot d\vec r = \oint_C M(x,y) \: dx + N(x,y) \: dy = \iint_R 1 \: dA$$
-which is the area of $R$, or the area enclosed by $C$.  In this way, one can use a line integral to compute area as long as one knows the boundary curve of the region. \\
+}\\\clearpage
 
 \noindent\textbf{\large Usng Green's Theorem to Compute Areas}
 \vskip\baselineskip
 
+So far, we have used Green's Theorem to rewrite line integrals as double integrals, making them easier to compute.  However, Green's Theorem gives equality between a line integral and a double integral, and therefore can also be used to rewrite a double integral as a line integral.  This can be done for any double integral, but we wll only focus on $\iint_R 1 dA$, the area of a region $R$.
+
+Consider the region $R$ in Figure~\ref{fig:fig_greens_thm_int_curve}.\mfigure[scale=0.9]{.7}{The region $R$ is bounded inside the simple closed curve $x=\cos(3t) - \sin t$, $y=2\cos t$}{fig:fig_greens_thm_int_curve}{figures/integral_curve}  This region is inside the simple closed curve given by the parametric equations $$x=\cos(3t) - \sin t \text{ and } y=2\cos t$$ traced once on the interval $[0,2\pi]$.  Note that determining bounds for this region in terms of $x$ andor $y$, as we would typically do to compute rewrite the double integral as an iterated integral, cannot be done in a simple way.  However, as we have a parameterization for the boundary curve, it is not hard to compute a line integral along that curve.
+
+Consider any vector field $\vec F(x,y) = M \: \vec i + N \: \vec j$ for which $\dfrac{\partial N}{\partial x}-\dfrac{\partial M}{\partial y} = 1$.  There are infinitely many such vector fields, the most basic of which are $\vec F(x,y) = x \: \vec j$ or $\vec F(x,y) = -y \: \vec i$.  What is the line integral of $\vec F$ around a simple closed curve $C$ computing? By Green's Theorem
+$$\oint_C \vec F \cdot d\vec r = \oint_C M(x,y) \: dx + N(x,y) \: dy = \iint_R 1 \: dA$$
+which is the area of $R$, or the area enclosed by $C$.  In this way, one can use a line integral to compute area as long as one knows the boundary curve of the region.
+
+We summarize this using a Key Idea before we continue with examples.
+
+\keyidea{idea:green_area}{Area inside a simple closed curve $C$}{Let $R$ be the region inside a simple closed curve $C$, parameterized in the counterclockwise direction.  Let $\vec F(x,y) = M \: \vec i + N \: \vec j$ be any vector field for which $N_x - M_y = 1$  Then
+$$\text{Area of }R = \iint_R 1\ dA = \oint_C M(x,y) \: dx + N(x,y) \: dy.$$
+In particular,
+$$\text{Area of }R = \iint_R 1\ dA = \oint_C x\: dy = - \oint_C y\: dx.$$
+}\\
+
 \mfigure[scale=0.4]{.3}{Ellipse}{fig:fig_greens_thm_ellipse}{figures/fig_greens_thm_ellipse}
 
-\example{ex_greenstheorem2}{}{Using a line integral, compute the area of the ellipse
+\example{ex_greenstheorem2}{Area inside an ellipse}{Using a line integral, compute the area of the ellipse
 $$\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$$
 with semiaxes of length $a$ and $b$.}{See Figure \ref{fig:fig_greens_thm_ellipse}.  By the above equation for the ellipse, we can parametrize the ellipse as
 $$x = a \cos(t), \: \: y = b \sin(t)$$
