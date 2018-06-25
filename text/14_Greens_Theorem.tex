@@ -88,15 +88,41 @@ In particular,
 $$\text{Area of }R = \iint_R 1\ dA = \oint_C x\: dy = - \oint_C y\: dx.$$
 }\\
 
-\mfigure[scale=0.4]{.3}{Ellipse}{fig:fig_greens_thm_ellipse}{figures/fig_greens_thm_ellipse}
+\example{ex_greenstheorem9}{Computing area using Green's Theorem}{Compute the area of the region $R$ inside the simple closed parametric curve $C$ given by $$x=\cos(3t) - \sin t \text{ and } y=2\cos t$$ traced once on the interval $[0,2\pi]$.} {This is the region shown in Figure~\ref{fig:fig_greens_thm_int_curve}.  The given parameterization gives the counterclockwise direction.  (If we did not know that, however, and computed a line integral in the opposite direction, it would give the opposite value.  Since an area must be positive, we could take the absolute value in which case the direction of the curve would not matter.)  Using Key Idea~\ref{idea:green_area},
+\begin{align*}
+\iint_R 1\ dA &= \oint_C x\: dy\\
+&= \int_0^{2\pi} \big( \cos(3t) - \sin t \big) (-2\sin t)\ dt\\
+&=-2 \int_0^{2\pi} \big( \sin t \cos(3t) - \sin^2 t \big)\ dt.
+\end{align*}
+Recall now that we must proceed with the Product-to-Sum identities,
+\begin{align*}
+\iint_R 1\ dA &= -2 \int_0^{2\pi} \big( \sin t \cos(3t) - \sin^2 t \big)\ dt\\
+&=-2 \int_0^{2\pi} \left(  \frac{\sin(4t) + \sin(-2t)}{2} - \frac{1-\cos(2t)}{2}   \right)\ dt\\
+&= \int_0^{2\pi} \big(  -\sin(4t) +\sin (2t) + 1 - \cos(2t)  \big)\ dt\\
+&= \left. \frac{\cos(4t)}{4} - \frac{\cos(2t)}{2} + t - \frac{\sin(2t)}{2}\right|_0^{2\pi}\\
+&=2\pi \text{ square units.}
+\end{align*}
+}\\
+
+The ability to compute an area using Green's Theorem has physical value as well.  A \textbf{planimeter} is a device used to compute the area of an arbitrary two-dimensional shape.  It operates by tracing the boundary of the shape, and computing an appropriate line integral while tracing the boundary.
+
+We finish this section with a more familiar shape.
+\clearpage
 
 \example{ex_greenstheorem2}{Area inside an ellipse}{Using a line integral, compute the area of the ellipse
 $$\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$$
-with semiaxes of length $a$ and $b$.}{See Figure \ref{fig:fig_greens_thm_ellipse}.  By the above equation for the ellipse, we can parametrize the ellipse as
+with semiaxes of length $a$ and $b$.}{\mfigure[scale=0.4]{.79}{Ellipse}{fig:fig_greens_thm_ellipse}{figures/fig_greens_thm_ellipse}
+See Figure \ref{fig:fig_greens_thm_ellipse}.  By the above equation for the ellipse, we can parameterize the ellipse as
 $$x = a \cos(t), \: \: y = b \sin(t)$$
-for $0 \leq t \leq 2\pi$.  By computing the line integral of $\vec F(x,y) = x \: \vec j$ around this curve we will arrive at the area of the ellipse by Green's Theorem.  Using $M(x,y) = 0$ and $$N(x,y) = x = a \cos(t),$$ we get an area of
-$$\oint_C \vec F \cdot d\vec r = \oint_C N(x,y) \: dy = \int_0^{2\pi} a \cos(t) \: (b \cos(t)) \: dt = ab \int_0^{2\pi} \cos^2(t) \: dt = ab \pi$$
-square units.
+for $0 \leq t \leq 2\pi$, which traces the ellipse once in the counterclockwise direction.  Using Key Idea~\ref{idea:green_area}, we get an area of
+\begin{align*}
+\iint_R 1\ dA &= \oint_C x \: dy \\
+&= \int_0^{2\pi} a \cos(t) \: (b \cos(t)) \: dt \\
+&= ab \int_0^{2\pi} \cos^2(t) \: dt \\
+&= ab  \int_0^{2\pi} \frac{1+\cos(2t)}{2} \: dt \\
+&= ab \left.\left(\frac{t}{2} + \frac{\sin(2t)}{4}\right)\right|_0^{2\pi}\\
+&=\pi ab \text{ square units.}
+\end{align*}
 }\\
 
 One can consider a region $R$ in the plane as a flat surface in three-dimensional space. Green's Theorem says that we can compute an integral over the surface $R$ by instead computing a line integral around the boundary of the region.  This will hold for more general surfaces in space, and the result that generalizes Green's Theorem is called Stokes' Theorem, discussed in Section \ref{sec:stokes_theorem}.
