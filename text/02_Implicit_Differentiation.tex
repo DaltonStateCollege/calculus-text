@@ -221,10 +221,10 @@ y &= x^x \\
 \ln (y) &= \parbox{50pt}{$\ln (x^x)$} \text{\small (apply logarithm rule)}\\
 \ln (y) &= \parbox{50pt}{$x\ln x$}  \text{\small (now use implicit differentiation)}\\
 \frac{d}{dx}\Big(\ln (y)\Big) &= \frac{d}{dx}\Big(x\ln x\Big) \\
-\frac{y\frac{dy}{dx}}{y} &= \ln x + x\cdot\frac1x\\
-\frac{y\frac{dy}{dx}}{y} &= \ln x + 1\\
-y\frac{dy}{dx} &= \parbox{50pt}{$y\big(\ln x+1\big)$} \text{\small (substitute $y=x^x$)}\\
-y\frac{dy}{dx} &= x^x\big(\ln x+1\big).
+\frac{1}{y}\cdot\frac{dy}{dx} &= \ln x + x\cdot\frac1x\\
+\frac{1}{y}\cdot\frac{dy}{dx} &= \ln x + 1\\
+\frac{dy}{dx} &= \parbox{50pt}{$y\big(\ln x+1\big)$} \text{\small (substitute $y=x^x$)}\\
+\frac{dy}{dx} &= x^x\big(\ln x+1\big).
 \end{align*} 
 
 Throughout this section, we have left answers in terms of both $x$ and $y$, which makes sense because we did not have a formula for $y$ in terms of $x$.  However, in this example, we do know that $y=x^x$, so we simplified our final answer to be just in terms of $x$.  We actually found a derivative of an explicit function using implicit differentiation.
