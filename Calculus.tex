@@ -36,7 +36,8 @@
 	\setallmainfonts[Mapping=tex-text]{Calibri}
 	\setmainfont[Mapping=tex-text]{Calibri}
 	\setsansfont[Mapping=tex-text]{Calibri}
-	\setmathsfont(Greek){[cmmi10]}}
+	%\setmathsfont(Greek){[cmmi10]}
+           }
 	{}
 	
 	\ifthenelse{\boolean{luatex}}%
@@ -52,6 +53,8 @@
 	}
 	{}
 \makeindex
+\renewcommand{\theta}{\vartheta}
+\renewcommand{\varphi}{\phi}
 
 \numberwithin{examplecounter}{chapter}
 
@@ -236,7 +239,9 @@
 \input{text/13_Center_of_Mass}
 \input{text/13_Surface_Area}
 \input{text/13_Triple_Integration}
-\input{text/13_Cylindrical_Spherical}
+\input{text/13_Cylindrical}
+\input{text/13_Spherical}
+%\input{text/13_Cylindrical_Spherical_old}
 
 %%\addtocounter{chapter}{12}
 \clearpage{\pagestyle{empty}\cleardoublepage}

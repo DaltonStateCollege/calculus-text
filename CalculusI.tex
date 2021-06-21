@@ -38,7 +38,8 @@
 	\setallmainfonts[Mapping=tex-text]{Calibri}
 	\setmainfont[Mapping=tex-text]{Calibri}
 	\setsansfont[Mapping=tex-text]{Calibri}
-	\setmathsfont(Greek){[cmmi10]}}
+	%\setmathsfont(Greek){[cmmi10]}
+           }
 	{}
 	
 	\ifthenelse{\boolean{luatex}}%
@@ -55,6 +56,8 @@
 	{}
 
 \makeindex
+\renewcommand{\theta}{\vartheta}
+\renewcommand{\varphi}{\phi}
 
 \numberwithin{examplecounter}{chapter}
 

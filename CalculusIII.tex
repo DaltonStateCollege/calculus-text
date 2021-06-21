@@ -59,7 +59,8 @@
 	\setallmainfonts[Mapping=tex-text]{Calibri}
 	\setmainfont[Mapping=tex-text]{Calibri}
 	\setsansfont[Mapping=tex-text]{Calibri}
-	\setmathsfont(Greek){[cmmi10]}}
+	%\setmathsfont(Greek){[cmmi10]}
+           }
 	{
 	\usepackage{libertine}
 	\usepackage[libertine]{newtxmath}
@@ -79,6 +80,8 @@
 	{}
 	
 	\makeindex
+	\renewcommand{\theta}{\vartheta}
+\renewcommand{\varphi}{\phi}
 
 \numberwithin{examplecounter}{chapter}
 
@@ -294,7 +297,8 @@
 \input{text/13_Center_of_Mass}
 \input{text/13_Surface_Area}
 \input{text/13_Triple_Integration}
-\input{text/13_Cylindrical_Spherical}
+\input{text/13_Cylindrical_CalcIIIText}
+\input{text/13_Spherical_CalcIIIText}
 
 %%%\addtocounter{chapter}{12}
 %
