@@ -1,0 +1,214 @@
+\section{Center of Mass of a Lamina with Uniform Density (Optional)}\label{sec:center_of_mass_calc_ii}
+
+Consider a circular disk with uniform density.  It is common knowledge that the disk will balance on a point if the point is placed at the center of the disk.  Now there are several ways to alter this situation.  What if the density is not uniform, meaning that parts of the disk are composed of heavier material than other parts?  There is still a point on which the disk will balance, but that center of mass probably will not be the center of the circle.  Another question is to ask about a shape that is not a circle.  It is easy to describe the ``center'' of a circle or rectangle, because both of those shapes exhibit symmetry both horizontally and vertically.  However, consider the region bounded between $y=x^2$ and $y=3x+4$, shown in Figure~\ref{fig:toad_village}.
+This region lacks the symmetry that circles and rectangles have, so it is unclear where its center of mass lies, even in the case where density is uniform.
+
+\mfigure[scale=0.78]{.6}{}{fig:toad_village}{figures/center_of_mass_calc2_fig1.png}
+
+In this section, we will learn how to compute the center of mass of a planar lamina with uniform density.  The center of mass concept will be discussed in more detail in Calculus III, where using the tools of multivariable calculus, we can compute the center of mass in the scenario where density is not constant, as well as of regions in three-dimensional space.  The formulas to be obtained in this section are special cases of those discussed in multivariable calculus.\\
+
+\noindent\textbf{\large Moments About the $x$- and $y$- Axes.}\\
+
+Our discussion into computing centers of mass begins with quantities called {\it moments}, which are weighted measures if distance from a particular point or line.
+We first consider a discrete system (i.e., mass is located at individual points, not along a continuum).  Let point masses $m_1$, $m_2,\ldots,m_n$ be located at points $(x_1,y_1)$, $(x_2,y_2),\ldots,(x_n,y_n)$, respectively, in the $xy$-plane.
+\begin{itemize}
+	\item The \textbf{moment about the $y$-axis}, $M_y$, is 
+	$\ds M_y = \sum_{i=1}^n m_ix_i.$
+	\item The \textbf{moment about the $x$-axis}, $M_x$, is 
+	$\ds M_x = \sum_{i=1}^n m_iy_i.$
+\end{itemize}
+
+
+One can think that these definitions are ``backwards'' as $M_y$ sums up ``$x$'' distances. But remember, ``$x$'' distances are measurements of distance from the $y$-axis, hence defining the moment about the $y$-axis.\\
+
+\example{ex_moments_intro}{Finding the moments of a discrete system}{
+Let point masses of 1kg, 2kg, and 5kg be located at points $(2,0)$, $(1,1)$, and $(3,1)$, respectively, and are connected by thin rods of negligible weight. Find the moments of the system.}
+{\noindent\begin{minipage}{.4\linewidth}
+\begin{align*}
+M_x &=  \sum_{i=1}^n m_iy_i \\
+		&= 1(0) + 2(1) + 5(1) \\
+		&= 7 \text{ kg}.
+\end{align*}
+\end{minipage}
+\begin{minipage}{.4\linewidth}
+\begin{align*}
+M_y &=  \sum_{i=1}^n m_ix_i \\
+		&= 1(2) + 2(1) + 5(3) \\
+		&= 19 \text{ kg}.
+\end{align*}
+\end{minipage}
+\begin{minipage}{.2\linewidth}
+\end{minipage}
+}\\
+
+Now we move away from a discrete system, and onto a region of a plane bounded by continuous functions.
+Consider a lamina $L$ bounded between $y=x^2$ and $y=3x+4$, shown in Figure~\ref{fig:toad_village}.
+Let us assume the lamina has uniform density $\delta$, where the unit of $\delta$ is some unit of mass per unit of area.
+We wish to compute the moments of $L$.
+As with other applications of integration, we first approximate $L$ using rectangles.  Solving $x^2=3x+4$, we see that the two curves intersect at $x=-1$ and $x=4$.  We split the interval $[-1,4]$ into five subintervals: $[-1,0], [0,1], [1,2], [2,3], [3,4]$.
+Let us take the midpoint of each subinterval and use the points on $y=x^2$ and $y=3x+4$ at that midpoint as the bottom and top of each rectangle, as seen in Figure~\ref{fig:under_pressure}.  We get the following since mass equals density times area:
+
+\mfigure[scale=0.78]{.52}{Approximating the region in Figure~\ref{fig:toad_village} with rectangles.}{fig:under_pressure}{figures/center_of_mass_calc2_fig2.png}
+
+\begin{itemize}
+\item For the rectangle on $[-1,0]$, the width is 1 and it goes from $y=(-0.5)^2=0.25$ up to $y=3(-0.5)+4=2.5$.  Thus, the center of the rectangle is $(-0.5, 1.375)$.  The height is $2.5-0.25 = 2.25$ units, and the area is $2.25$ square units.  So the mass of the rectangle is $2.25\delta$.
+\item For the rectangle on $[0,1]$, the width is 1 and it goes from $y=0.5^2=0.25$ up to $y=3(0.5)+4=5.5$.  Thus, the center of the rectangle is $(0.5, 2.875)$.  The height is $5.5-0.25 = 5.25$ units, and the area is $5.25$ square units.  So the mass of the rectangle is $5.25\delta$.
+\item For the rectangle on $[1,2]$, the width is 1 and it goes from $y=1.5^2=2.25$ up to $y=3(1.5)+4=8.5$.  Thus, the center of the rectangle is $(1.5, 5.375)$.  The height is $8.5-2.25 = 6.25$ units, and the area is $6.25$ square units.  So the mass of the rectangle is $6.25\delta$.
+\item For the rectangle on $[2,3]$, the width is 1 and it goes from $y=2.5^2=6.25$ up to $y=3(2.5)+4=11.5$.  Thus, the center of the rectangle is $(2.5, 8.875)$.  The height is $11.5-6.25 = 5.25$ units, and the area is $5.25$ square units.  So the mass of the rectangle is $5.25\delta$.
+\item For the rectangle on $[3,4]$, the width is 1 and it goes from $y=3.5^2=12.25$ up to $y=3(3.5)+4=14.5$.  Thus, the center of the rectangle is $(3.5, 13.375)$.  The height is $14.5-12.25 = 2.25$ units, and the area is $2.25$ square units.  So the mass of the rectangle is $2.25\delta$.
+\end{itemize}
+
+Using the rectangles to approximate the moments, and assuming that all of the mass of each rectangle is in the center of the rectangle, then we get $M_x \approx (2.25\delta)(1.375) + (5.25\delta)(2.875) + (6.25\delta)(5.375) + (5.25\delta)(8.875) + (2.25\delta)(13.375) \approx 128.47\delta$ and $M_y \approx (2.25\delta)(-0.5) + (5.25\delta)(0.5) + (6.25\delta)(1.5) + (5.25\delta)(2.5) + (2.25\delta)(3.5) = 24\delta$.
+
+The center of mass, as we will soon see, is located at $\left(\bar{x}, \bar{y}\right) = \left(\frac{M_y}{m}, \frac{M_x}{m}\right)$ where
+$m$ is the mass of the lamina.  The area of the lamina is
+$$\int\limits_{-1}^4 \left(3x+4-x^2\right)\ dx = \frac{125}{6}$$
+so its mass is $m=125\delta/6$.  Using our approximations for the moments, we get $\overline{x} = \frac{M_y}{m} \approx (24\delta)/(125\delta/6) \approx 1.15$ and $\overline{y} = \frac{M_x}{m}\approx (128.47\delta)/(125\delta/6) \approx 6.17$.
+Here we approximate the center of mass of the lamina as $(1.15, 6.17)$.
+
+Suppose we have a two-dimensional region, bounded on the bottom by $y=g(x)$, on the top by $y=f(x)$, from $x=a$ to $x=b$, and a lamina on that region with uniform density $\delta$.
+To compute the moments (and the center of mass) precisely, we let the number of subintervals approach infinity, and the width of each subinterval approach 0, as in our other applications of calculus.  Divide $[a,b]$ into $n$ subintervals with endpoints $a=x_0, x_1, x_2, \dots, x_n = b$ with equal width $\Delta x = (b-a)/n$.
+We approximate the lamina with $n$ rectangles, where we choose the center $\bar{x}_i=$  to determine the height of each rectangle.  $x_{i-1} \leq x \leq x_i, g(\bar{x}_i) \leq y \leq f(\bar{x}_i)$.
+The $i$th rectangle has area $\big( f(\bar{x}_i) - g(\bar{x}_i) \big) \Delta x$, so we approximate the moments
+\begin{align*}
+M_x &\approx \sum\limits_{i=1}^n \delta \left( \frac{f(\bar{x}_i) + g(\bar{x}_i)}{2}\right) \big( f(\bar{x}_i) - g(\bar{x}_i) \big) \Delta x = \sum\limits_{i=1}^n \frac{\delta}{2} \big( f(\bar{x}_i)^2 - g(\bar{x}_i)^2 \big) \Delta x,  \\
+M_y &\approx \sum\limits_{i=1}^n \delta \bar{x}_i \big( f(\bar{x}_i) - g(\bar{x}_i) \big) \Delta x.
+\end{align*}
+
+Letting $n$ approach infinity, and $\Delta x$ approach 0, the sums become the following integrals:
+$$
+M_x = \delta \int\limits_a^b \frac{1}{2}\left(f(x)^2 - g(x)^2 \right)\ dx, \hspace{0.7 in} M_y = \delta \int\limits_a^b x\big(f(x)-g(x)\big)\ dx.
+$$
+
+Thus the center of mass is $\big(\bar{x}, \bar{y} \big)$ where
+\begin{align*}
+\bar{x} &= \frac{M_y}{m} = \frac{\delta \int\limits_a^b x\big(f(x)-g(x)\big)\ dx}{\delta A} = \frac{1}{A} \int\limits_a^b x\big(f(x)-g(x)\big)\ dx,\\
+\bar{y} &= \frac{M_x}{m} = \frac{\delta \int\limits_a^b \frac{1}{2}\left(f(x)^2 - g(x)^2 \right)\ dx}{\delta A} = \frac{1}{A} \int\limits_a^b \frac{1}{2}\left(f(x)^2 - g(x)^2 \right)\ dx,
+\end{align*}
+where $A$ is the area of the lamina.  In particular, notice that $\delta$ canceled out, so when density is uniform the center of mass does not depend on the density.  We summarize these formulas into a Key Idea.
+
+\keyidea{idea:center2D}{Moments and Center of Mass of a Planar Lamina with Uniform Density}
+{Consider a lamina with uniform density bounded by $x=a, x=b, y=f(x), y=g(x)$ with $f(x)\geq g(x)$ for all $x$ in the interval $[a,b]$.
+Let $A$ denote the area of the lamina.  The moments are given by
+$$
+M_x = \delta \int\limits_a^b \frac{1}{2}\left(f(x)^2 - g(x)^2 \right)\ dx, \hspace{0.5 in} M_y = \delta \int\limits_a^b x\big(f(x)-g(x)\big)\ dx.
+$$
+The center of mass is $\big(\bar{x}, \bar{y} \big)$ where
+$$
+\bar{x} = \frac{M_y}{m} = \frac{1}{A} \int\limits_a^b x\big(f(x)-g(x)\big)\ dx, \hspace{0.15 in}
+\bar{y} = \frac{M_x}{m} = \frac{1}{A} \int\limits_a^b \frac{1}{2}\left(f(x)^2 - g(x)^2 \right)\ dx.
+$$
+}
+
+\example{ex_comcii1}{Finding center of mass}{
+Assuming uniform density, find the center of mass of the lamina bounded between $y=x^2$ and $y=3x+4$ shown in Figure~\ref{fig:toad_village}.
+}
+{As $y=x^2$ is on the bottom and $y=3x+4$ is on top, we set $f(x)=3x+4$ and $g(x)=x^2$.  We have already determined that the region goes from $x=-1$ to $x=4$, and that the area is $A=125/6$.  We compute
+\begin{align*}
+\bar{x} &= \frac{6}{125} \int\limits_{-1}^4 x\left((3x+4)-x^2 \right)\ dx\\
+&= \frac{6}{125} \int\limits_{-1}^4 \left(3x^2 + 4x - x^3\right)\ dx\\
+&= \frac{6}{125} \left(x^3 + 2x^2 - \frac{1}{4}x^4\right)\Big|_{-1}^4\\
+&= \frac{6}{125} \left(\frac{125}{4} \right)\\
+&= \frac32,\\
+\bar{y} &= \frac{6}{125} \int\limits_{-1}^4 \frac{1}{2}\left((3x+4)^2 - \big(x^2\big)^2 \right)\ dx\\
+&= \frac{3}{125} \int\limits_{-1}^4 \left(9x^2 + 24x + 16 - x^4 \right)\ dx\\
+&= \frac{3}{125} \left( 3x^3 + 12x^2 +16x - \frac{1}{5}x^5 \right)\Big|_{-1}^4\\
+&= \frac{3}{125} (250)\\
+&= 6.
+\end{align*}
+Thus, the exact center of mass is $(1.5, 6)$, not far off from our Riemann sum approximation of $(1.15, 6.17)$ earlier.
+}\\
+
+\example{ex_comcii2}{Finding center of mass}{
+Assuming uniform density, find the center of mass of the semicircle which is the upper half of the circle with radius $r$ centered at the origin, shown in Figure~\ref{fig:orient_express}.
+}
+{This semicircle is bounded above by $y=\sqrt{r^2-x^2}$ and below by $y=0$ on the interval $[-r,r]$.
+We know the area of the semicircle is $A=\frac12 \pi r^2$.
+As it is symmetric across the $y$-axis, no work is involved to compute $x$-coordinate of the center of mass $\bar{x}=0$.
+We now compute
+
+\begin{align*}
+\bar{y} &= \frac{2}{\pi r^2} \int \limits_{-r}^r \frac{1}{2} \left( \Big(\sqrt{r^2-x^2}\Big)^2 - 0^2 \right) \ dx\\
+&= \frac{1}{\pi r^2} \int \limits_{-r}^r \left(r^2-x^2\right)\ dx\\
+&= \frac{1}{\pi r^2} \left(r^2 x - \frac{1}{3}x^3\right)\Big|_{-r}^r\\
+&= \frac{1}{\pi r^2} \left( \left(r^3-\frac{1}{3}r^3\right) - \left((-r)^3-\frac{1}{3}(-r)^3\right) \right)\\
+&= \frac{1}{\pi r^2} \left( \frac{4r^3}{3} \right)\\
+&= \frac{4r}{3\pi}.
+\end{align*}
+
+So the center of mass is $\left(0,\frac{4r}{3\pi}\right)$.
+Note that there is not really anything too special about the center of the circle being placed at the origin.  If we instead placed the center of the circle at $(h,k)$, the center of mass of the the semicircle would shift $h$ units horizontally and $k$ units vertically, to
+$\left(h,k+\frac{4r}{3\pi}\right)$.
+\mfigure[scale=1]{0.7}{The center of mass of the semicircle is $\left(0,\frac{4r}{3\pi}\right)$ as computed in Example~\ref{ex_comcii2}.}{fig:orient_express}{figures/center_of_mass_calc2_fig3.png}
+Also there is nothing special about the base of the circle being horizontal.  Thus, the center of mass of any semicircle of radius $r$ is located $\frac{4r}{3\pi}$ units from the center in the direction perpendicular to the base of the semicircle.
+}\\
+
+\example{ex_comcii3}{Finding center of mass}{
+Assuming uniform density, find the center of mass of the quarter circle which is the first quadrant portion of the circle with radius $r$ centered at the origin.
+}
+{The quarter circle is bounded above by $y=\sqrt{r^2-x^2}$ and below by $y=0$ on the interval $[0,r]$.
+We know the area of the quarter circle is $A=\frac14 \pi r^2$.
+Unlike in the previous example, this region is neither symmetric across the $x$-axis nor $y$-axis, so we use integrals to compute both coordinates of the center of mass:
+
+\begin{align*}
+\bar{x} &= \frac{4}{\pi r^2} \int \limits_0^r x\left( \sqrt{r^2-x^2} - 0 \right) \ dx\\
+&= \frac{4}{\pi r^2} \int\limits_{r^2}^0 -\frac12 u^{1/2}\ du &\Big(\text{substituting $u=r^2-x^2$}\Big)\\
+&= \frac{4}{\pi r^2} \left(-\frac13 u^{3/2} \right)\Big|_{r^2}^0\\
+&= \frac{4}{\pi r^2} \left( \frac{r^3}{3} \right)\\
+&= \frac{4r}{3\pi},\\
+\bar{y} &= \frac{4}{\pi r^2} \int \limits_0^r \frac{1}{2} \left( \Big(\sqrt{r^2-x^2}\Big)^2 - 0^2 \right) \ dx\\
+&= \frac{2}{\pi r^2} \int \limits_0^r \left(r^2-x^2\right)\ dx\\
+&= \frac{2}{\pi r^2} \left(r^2 x - \frac{1}{3}x^3\right)\Big|_0^r\\
+&= \frac{2}{\pi r^2} \left( \left(r^3-\frac{1}{3}r^3\right) - 0 \right)\\
+&= \frac{2}{\pi r^2} \left( \frac{2r^3}{3} \right)\\
+&= \frac{4r}{3\pi}.
+\end{align*}
+
+So the center of mass is $\left( \frac{4r}{3\pi}, \frac{4r}{3\pi} \right)$.  Note that the quarter circle is symmetric across the line $y=x$, so the center of mass lies on that line.  Had we noticed that first, we only needed to compute one of $\bar{x},\bar{y}$ as they are equal.  This is shown in Figure~\ref{fig:bone_yard}.
+\mfigure[scale=1.2]{0.55}{The center of mass of the quarter circle of radius $r$ in Example~\ref{ex_comcii3} is $\left( \frac{4r}{3\pi}, \frac{4r}{3\pi} \right)$.}{fig:bone_yard}{figures/center_of_mass_calc2_fig4.png}
+}\\
+
+All of the regions we have seen so far in this section have been {\it convex}, meaning that any line segment that connects any two points in the region stays within the boundaries of the region.  For regions that are {\it not} convex, it is actually possible for the center of mass to lie outside the region.  We encounter this paradox in the following example.\\
+
+\example{ex_comcii4}{A center of mass that lies outside the lamina}{
+Assuming uniform density, find the center of mass of the lamina inside the quadrilateral formed from line segments from $(0,6)$ to $(5,1)$ to $(0,5)$ to $(2,0)$ and back to $(0,6)$.  This region is shown in Figure~\ref{fig:makin_waves}.
+
+\mfigure[scale=.6]{0.75}{The center of mass of the quadrilateral in Example~\ref{ex_comcii4} is $(1,82/21)$, which lies outside the quadrilateral.}{fig:makin_waves}{figures/center_of_mass_calc2_fig5.png}
+}
+{We first determine the equations of the line segments that form the boundary of the lamina.  We let $y=f(x)$ form the top boundary of the lamina, and $y=g(x)$ form the bottom of the lamina.  Each of these must be defined piecewise: $f(x)=3x+6$ on $[-2,0]$, $f(x)=-x+6$ on $[0,5]$, $g(x)=\frac52 x+5$ on $[-2,0]$, and $g(x)=-\frac45 x +5$ on $[0,5]$.  As we have different formulas on $[-2,0]$ and $[0,5]$, we must split up each integral computation into a sum of two integrals.
+First we determine the area of the lamina:
+$$
+A = \int\limits_{-2}^0 \left((3x+6)-\left(\frac52 x +5\right)\right)\ dx + \int\limits_0^5 \left((-x+6)-\left( -\frac45 x +5 \right)\right)\ dx = \frac{7}{2}.
+$$
+Now to determine the center of mass:
+\begin{align*}
+\bar{x} &= \frac27 \left( \int\limits_{-2}^0 x\left( (3x+6)-\left(\frac52 x +5\right) \right)\ dx +  \int\limits_0^5 x\left( (-x+6)-\left(-\frac45 x +5\right) \right)\ dx\right)\\ &= 1,\\
+\bar{y} &= \frac27 \left( \int\limits_{-2}^0 \frac12 \left( (3x+6)^2-\left(\frac52 x +5\right)^2 \right)\ dx +  \int\limits_0^5 \frac12 \left( (-x+6)^2-\left(-\frac45 x +5\right)^2 \right)\ dx\right) \\&= \frac{82}{21},
+\end{align*}
+where we leave out the details of the integral computations.  The center of mass, $\left(1,\frac{82}{21}\right)$, lies outside the quadrilateral.
+}\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+We end this chapter with a reminder of the true skills meant to be developed here. We are not truly concerned with an ability to find fluid forces or the volumes of solids of revolution. Work done by a variable force is important, though measuring the work done in pulling a rope up a cliff is probably not.
+
+What we are actually concerned with is the ability to solve certain problems by first approximating the solution, then refining the approximation, then recognizing if/when this refining process results in a definite integral through a limit. Knowing the formulas found inside the special boxes within this chapter is beneficial as it helps solve problems found in the exercises, and other mathematical skills are strengthened by properly applying these formulas. However, more importantly, understand how each of these formulas was constructed. Each is the result of a summation of approximations; each summation was a Riemann sum, allowing us to take a limit and find the exact answer through a definite integral. \\
+
+The next chapter addresses an entirely different topic: sequences and series. In short, a sequence is a list of numbers, where a series is the summation of a list of numbers. These seemingly simple ideas lead to very powerful mathematics.
+
+\printexercises{exercises/07_07_exercises}

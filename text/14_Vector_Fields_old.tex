@@ -1,0 +1,82 @@
+\section{Vector Fields}\label{sec:vector_fields}
+
+For an ordinary scalar function, the input is a number $x$ and the output is a number
+$f(x)$. For a vector field (or vector function), the input is a point $(x, y)$ and the output
+is a two-dimensional vector $F(x, y)$. There is a ``field'' of vectors, one at every point.
+In three dimensions the input point is $(x, y, z)$ and the output vector $\vec F$ has three
+components.\\
+
+\mfigure[scale=0.5]{.7}{The vector field $\mathbf{R}$}{fig:fig_vec_fields_radial}{figures/fig_vec_fields_radial}
+
+\mfigure[scale=0.5]{.5}{The vector field $\mathbf{R}$}{fig:fig_vec_fields_radial_over_r}{figures/fig_vec_fields_radial_over_r}
+
+\mfigure[scale=0.5]{.3}{The vector field $\mathbf{R}$}{fig:fig_vec_fields_radial_over_r_squared}{figures/fig_vec_fields_radial_over_r_squared}
+
+Let $R$ be a region in the $xy$-plane. A \textbf{vector field}  $\vec F$ assigns to every point
+$(x, y)$ in $\mathbb{R}$ a vector $\vec F(x, y)$ with two components:
+$$\vec F(x, y) = M(x, y)\vec i + N(x, y)\vec j.$$
+This plane vector field involves two functions of two variables. They are the components
+$M$ and $N$, which vary from point to point. A vector has fixed components; a
+vector field has varying components. A three-dimensional vector field has components $M(x, y, z)$, $N(x, y, z)$, and
+$P(x, y, z)$. Then the vectors are 
+$$\vec F(x,y,z) = M(z,y,z)\vec i + N(x,y,z)\vec j + P(x,y,z)\vec k.$$
+
+\example{vecfield1}{}{Consider the position vector field $\vec R = x \vec i + y \vec j$.}{Its components are $M(x,y) = x$ and $N(x,y) = y$. The vectors grow larger as we leave the origin - see Figure \ref{fig:fig_vec_fields_radial}. Their direction is outward and their length is $\mid R \mid = \sqrt{x^2+y^2} = r$. This type of vector field is often referred to as a radial field.}\\
+
+\medskip
+
+\example{vecfield2}{}{Now suppose the vector field $\vec F$ is given by $\vec F = \dfrac{\vec R}{r}$.}{Then $$\vec F(x,y) = \dfrac{x}{\sqrt{x^2 + y^2}} \vec i + \dfrac{y}{\sqrt{x^2 + y^2}} \vec j$$ consists of unit vectors pointing outward. We obtain this vector field by dividing $\vec R = x\vec i + y\vec j$ by its length at every point except the origin. See Figure \ref{fig:fig_vec_fields_radial_over_r}.  Figure \ref{fig:fig_vec_fields_radial_over_r_squared} shows a third vector field $\dfrac{\vec R}{r^2}$, where the length of each vector is $1/r$.}\\
+
+\medskip
+
+\example{vecfield3}{}{A spin field or rotation field goes around the origin
+instead of away from it.}{Such a field in two dimensions is given by 
+$$\vec S(x,y) = -y \vec i  + x \vec j$$
+
+\mfigure[scale=0.5]{.8}{The vector field $\mathbf{S}$}{fig:fig_vec_fields_spin}{figures/fig_vec_fields_spin}
+
+\mfigure[scale=0.5]{.6}{The vector field $\mathbf{S}/r$}{fig:fig_vec_fields_spin_over_r}{figures/fig_vec_fields_spin_over_r}
+
+\mfigure[scale=0.5]{.4}{The vector field $\mathbf{S}/r^2$}{fig:fig_vec_fields_spin_over_r_squared}{figures/fig_vec_fields_spin_over_r_squared}
+
+as given in Figure \ref{fig:fig_vec_fields_spin} where the components are $M(x,y) = - y$ and $N(x,y) = x$. Each vector $\vec S(x,y)$ has length $$\mid \vec S \mid = \sqrt{(-y)^2 + x^2} = r$$
+Note, however, that $\vec S$ is perpendicular to $\vec R$ as defined above, since their dot product is zero: $\vec S \cdot \vec R = (- y)(x) + (x)(y) = 0$. The
+spin fields $\vec S/r$ and $\vec S/r^2$ have lengths $1$ and $1/r$, respectively.
+See Figure \ref{fig:fig_vec_fields_spin_over_r} and Figure \ref{fig:fig_vec_fields_spin_over_r_squared}.  Notice the blank at $(0,0)$ in these second two spin fields, where these fields are not defined.}\\
+
+\medskip
+
+\noindent\textbf{\large Gradient Vector Fields}\\
+
+\noindent A \textbf{gradient field} in two dimensions starts with an ordinary function $f(x, y)$ of two variables. The corresponding vector field $\vec F$ is the gradient $\nabla f(x,y)$ given by
+$$\vec F(x,y) = \nabla f(x,y) = \dfrac{\partial f}{\partial x}\; \vec i + \dfrac{\partial f}{\partial y}\; \vec j.$$ 
+This vector field $\nabla f$ is everywhere perpendicular to the level curves $f(x, y) = c$. The
+length $\mid \nabla f \mid$ tells how fast $f$ is changing (in the direction it changes fastest). A similar construction of a gradient vector field can be done in three dimensions for a function $f(x,y,z)$ of three variables.\\
+
+\example{vecfield3a}{}{Consider the function $f(x,y) = x^2y$.  Determine the gradient vector field associated to this function.}{The partial derivatives of $f(x,y)$ are $$\dfrac{\partial f}{\partial x} = 2xy \: \text{ and } \: \dfrac{\partial f}{\partial y} = x^2$$ and so the gradient vector field corresponding to $f(x,y)$ is given by
+$$\vec F(x,y) = \nabla f(x,y) = 2xy \vec i + x^2 \vec j$$.} \\
+
+This last type of vector field brings up a question. For any given vector field $\vec F(x,y)$, is it the gradient field of some function $f(x,y)$? If so, what is the function $f(x,y)$?\\
+
+\example{vecfield4}{}{Show that the radial field $$\vec R(x,y) = x \vec i + y \vec j$$ discussed above is the gradient field of some function $f(x,y)$.}{We need a function $f(x,y)$ so that $\dfrac{\partial f}{\partial x} = x$ and $\dfrac{\partial f}{\partial y} = y$.  Note that $x^2 + y^2$ has partial derivatives of $2x$ and $2y$, respectively.  Therefore $f(x,y) = \dfrac{1}{2}(x^2 + y^2)$ will have a gradient equal to $\vec R(x,y)$.}\\
+
+It turns out that the spin fields $\vec S(x,y)$ and $\vec S(x,y)/r$ discussed above are not the gradients of any function $f(x,y)$, while $\vec S(x,y)/r^2$ is. A major goal of this chapter is to recognize gradient fields by a simple test. A vector field $\vec F$ which is the gradient field of some function $f(x,y)$ is called \textbf{conservative}. The function $f$ is the \textbf{potential function} for the gradient field. This terminology, and the next examples, come from physics and engineering.\\
+
+\example{vecfield5}{}{Suppose a fluid is moving steadily down a pipe, or that a river flows smoothly with no waterfalls. Let 
+$$\vec V(x,y,z) = v_x(x,y,z) \vec i + v_y(x,y,z) \vec j + v_z(x,y,z)$$ be the velocity at the point $(x,y,z)$.}{This vector field $\vec V$ gives the direction of flow and speed of flow at every point, with $v_x$, $v_y$, and $v_z$ being the components of the velocity in the direction of $x$, $y$ and $z$-axes. The speed of the fluid at any point is the length 
+$$\mid \vec V \mid = \sqrt{v_x^2 + v_y^2 + v_z^2}$$ One could also consider velocity fields for wind or for a moving gas.}\\
+
+\medskip
+
+\example{vecfield6}{}{Consider the gravitational force $|\vec F|$ between two objects of mass $m$ and $M$ given by
+$$\mid \vec F \mid = \dfrac{m M G}{r^2}$$
+where $G$ is the gravitational constant. ($G \approx 6.672 \times 10^{-11}$ when distance is in meters, mass is in kilograms, and time is in seconds.)  Assume that the object with mass $M$ is at the origin in $\mathbb{R}^3$.
+}{As a vector field we can write
+$$\vec F = \dfrac{m M G}{r^2} \left(-\dfrac{(x,y,z)}{r}\right) = - \dfrac{m M G}{r^3}\left( \vec i + \vec j + \vec k \right)$$
+since gravitational force is directed inward toward the origin. Like all radial fields, gravity is a gradient field.  It comes from the potential function
+$$f(x,y,z) = \dfrac{m M G}{r} = \dfrac{m M G}{\sqrt{x^2 + y^2 + z^2}}$$ which one can verify. Note that this shows that the potential function $f(x,y,z)$ gives the gravitational potential energy at a point.}\\
+
+
+
+
+\printexercises{exercises/14_01_exercises_old}

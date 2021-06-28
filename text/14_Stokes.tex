@@ -1,0 +1,138 @@
+\section{Stokes' Theorem}\label{sec:stokes}
+
+Just as the spatial Divergence Theorem of the previous section is an extension of the planar Divergence Theorem, Stokes' Theorem is the spatial extension of Green's Theorem. Recall that Green's Theorem states that the circulation of a vector field around a closed curve in the plane is equal to the sum of the curl of the field over the region enclosed by the curve. Stokes' Theorem effectively makes the same statement: given a closed curve that lies on a surface \surfaceS, the circulation of a vector field around that curve is the same as the sum of ``the curl of the field'' across the enclosed surface. We use quotes around ``the curl of the field'' to signify that this statement is not quite correct, as we do not sum $\curl \vec F$, but $\curl \vec F\cdot\vec n$, where $\vec n$ is a unit vector normal to \surfaceS. That is, we sum the portion of $\curl \vec F$ that is orthogonal to \surfaceS\ at a point.
+
+Green's Theorem dictated that the curve was to be traversed counterclockwise when measuring circulation. Stokes' Theorem will follow a right hand rule: when the thumb of one's right hand points in the direction of $\vec n$, the path $C$ will be traversed in the direction of the curling fingers of the hand (this is equivalent to traversing counterclockwise in the plane).
+
+\theorem{thm:stokes_thm}{Stokes' Theorem}
+{Let \surfaceS\ be a piecewise-smooth, orientable surface whose boundary is a piecewise-smooth curve $C$, let $\vec n$ be a unit vector normal to \surfaceS, let $C$ be traversed with respect to $\vec n$ according to the right hand rule, and let the components of $\vec F$ have continuous first partial derivatives over \surfaceS. Then\index{Stokes' Theorem}
+$$\oint_C \vec F\cdot \ d\vec r = \iint_\surfaceS (\curl\vec F)\cdot \vec n\ dS.$$
+}\\
+
+In general, the best approach to evaluating the surface integral in Stokes' Theorem is to parameterize the surface \surfaceS\ with a function $\vec r(u,v)$. We can find a unit normal vector $\vec n$ as 
+$$\vec n = \frac{\vec r_u\times\vec r_v}{\snorm{\vec r_u\times\vec r_v}}.$$
+Since $dS = \snorm{\vec r_u\times\vec r_v}\ dA$, the surface integral in practice is evaluated as 
+$$\iint_\surfaceS (\curl \vec F)\cdot (\vec r_u\times\vec r_v)\ dA,$$
+where $\vec r_u\times\vec r_v$ may be replaced by $\vec r_v\times\vec r_u$ to properly match the direction of this vector with the orientation of the parameterization of $C$. \\
+
+\example{ex_stokes1}{Verifying Stokes' Theorem}
+{Considering the planar surface $f(x,y) = 7-2x-2y$, let $C$ be the curve in space that lies on this surface above the circle of radius 1 and centered at $(1,1)$ in the $x$-$y$ plane, let \surfaceS\ be the planar region enclosed by $C$, as illustrated in Figure \ref{fig:stokes1}, and let $\vec F = \langle x+y,2y, y^2\rangle$. Verify Stokes' Theorem by showing $\oint_C \vec F\cdot \ d\vec r = \iint_\surfaceS (\curl\vec F)\cdot \vec n\ dS$.
+}
+{We begin by parameterizing $C$ and then find the circulation. A unit circle centered at $(1,1)$ can be parameterized with $x=\cos t+1$, $y=\sin t+1$ on $0\leq t\leq 2\pi$; to put this curve on the surface $f$, make the $z$ component equal $f(x,y)$: $z = 7-2(\cos t+1)-2(\sin t+1)  = 3-2\cos t - 2\sin t$. All together, we parameterize $C$ with $\vec r(t) = \la \cos t+1, \sin t+1, 3-2\cos t-2\sin t\ra$. 
+\enlargethispage{3\baselineskip}
+
+\mfigurethree{width=145pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004444748163223267,
+3Dc2c=0.5374560356140137 0.806864321231842 0.24517536163330078,
+3Dcoo=45.07202911376953 32.75735855102539 55.02788543701172,
+3Droo=399.9999566444115,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{width=145pt}{.75}{As given in Example \ref{ex_stokes1}, the surface \surfaceS\ is the portion of the plane bounded by the curve.}{fig:stokes1}{figures/figstokes1} 
+
+The circulation of $\vec F$ around $C$ is
+\begin{align*}
+\oint_C\vec F\cdot \ d\vec r &= \int_0^{2\pi}\vec F\big(\vec r(t)\big)\cdot \vrp(t)\ dt \\%\quad \text{(which simplifies to)}\\
+	%&= \int_0^{2\pi} \la\cos t+\sin t+2, 2\sin t+2, (\sin t+1)^2\ra\cdot \la -\sin t,\cos t, -2\sin t+2\cos t\ra\ dt \\
+	&= \int_0^{2\pi}\big(2\sin^3t-2\cos t\sin^2t+3\sin^2t-3\cos t\sin t\big)\ dt \\
+	&= 3\pi.
+	\end{align*}
+
+We now parameterize \surfaceS. (We reuse the letter ``r'' for our surface as this is our custom.) Based on the parameterization of $C$ above, we describe \surfaceS\ with $\vec r(u,v) = \la v\cos u+1, v\sin u+1, 3-2v\cos u-2v\sin u\ra$, where $0\leq u\leq 2\pi$ and $0\leq v\leq 1$. 
+
+We leave it to the reader to confirm that $\vec r_u\times \vec r_v = \langle 2v,2v,v\rangle$. As $0\leq v\leq 1$, this vector always has a non-negative $z$-component, which the right--hand rule requires given the orientation of $C$ used above. We also leave it to the reader to confirm $\curl\vec F = \langle 2y,0,-1\rangle$.
+
+The surface integral of Stokes' Theorem is thus
+\begin{align*}
+\iint_\surfaceS (\curl\vec F)\cdot \vec n\ dS &= \iint_\surfaceS (\curl\vec F)\cdot (\vec r_u\times \vec r_v)\ dA \\
+	&= \int_0^1\int_0^{2\pi} \langle 2v\sin u+2,0,-1\rangle\cdot\langle 2v,2v,v\rangle\ du\ dv\\
+	&= 3\pi,
+\end{align*}
+which matches our previous result.
+}\\
+
+One of the interesting results of Stokes' Theorem is that if two surfaces $\surfaceS_1$ and $\surfaceS_2$ share the same boundary, then $\iint_{\surfaceS_1} (\curl \vec F)\cdot \vec n\ dS = \iint_{\surfaceS_2} (\curl \vec F)\cdot \vec n\ dS$. That is, the value of these two surface integrals is somehow independent of the interior of the surface. We demonstrate this principle in the next example.\\
+\clearpage
+
+\example{ex_stokes2}{Stokes' Theorem and surfaces that share a boundary}
+{Let $C$ be the curve given in Example \ref{ex_stokes1} and note that it lies on the surface $z = 6-x^2-y^2$. Let \surfaceS\ be the region of this surface bounded by $C$, and let $\vec F = \langle x+y,2y,y^2\rangle$ as in the previous example. Compute $\iint_\surfaceS (\curl\vec F)\cdot \vec n\ dS $ to show it equals the result found in the previous example.
+\mtable{.55}{As given in Example \ref{ex_stokes2}, the surface \surfaceS\ is the portion of the plane bounded by the curve.}{fig:stokes2}
+{\begin{tabular}{c}
+\myincludegraphicsthree{width=145pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004444750025868416,
+3Dc2c=0.5374560356140137 0.806864321231842 0.24517536163330078,
+3Dcoo=48.335105895996094 37.655845642089844 31.75312042236328,
+3Droo=399.9999566444115,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{width=145pt}{figures/figstokes2}\\
+(a)\\[10pt]
+\myincludegraphicsthree{width=145pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004444750025868416,
+3Dc2c=0.5374560356140137 0.806864321231842 0.24517536163330078,
+3Dcoo=48.335105895996094 37.655845642089844 31.75312042236328,
+3Droo=399.9999566444115,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{width=145pt}{figures/figstokes3}\\
+(b)
+\end{tabular}
+}
+
+%\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+%3Droll=0,
+%3Dortho=0.004444750025868416,
+%3Dc2c=0.5374560356140137 0.806864321231842 0.24517536163330078,
+%3Dcoo=48.335105895996094 37.655845642089844 31.75312042236328,
+%3Droo=399.9999566444115,
+%3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1}{.55}{As given in Example \ref{ex_stokes2}, the surface \surfaceS\ is the portion of the plane bounded by the curve.}{fig:stokes2}{figures/figstokes2} 
+}
+{We begin by demonstrating that $C$ lies on the surface $z=6-x^2-y^2$. We can parameterize the $x$ and $y$ components of $C$ with $x=\cos t+1$, $y=\sin t+1$ as before. Lifting these components to the surface $f$ gives the $z$ component as $z = 6-x^2-y^2 = 6-(\cos t+1)^2-(\sin t+1)^2 = 3-2\cos t-2\sin t$, which is the same $z$ component as found in Example \ref{ex_stokes1}. Thus the curve $C$ lies on the surface $z=6-x^2-y^2$, as illustrated in Figure \ref{fig:stokes2}. 
+
+%\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+%3Droll=0,
+%3Dortho=0.004444750025868416,
+%3Dc2c=0.5374560356140137 0.806864321231842 0.24517536163330078,
+%3Dcoo=48.335105895996094 37.655845642089844 31.75312042236328,
+%3Droo=399.9999566444115,
+%3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1}{.3}{Illustrating how the surfaces in Examples \ref{ex_stokes1} and \ref{ex_stokes2} have the same boundary.}{fig:stokes3}{figures/figstokes3} 
+
+Since $C$ and $\vec F$ are the same as in the previous example, we already know that $\oint_C\vec F\cdot\ d\vec r = 3\pi$. We confirm that this is also the value of $\iint_\surfaceS (\curl\vec F)\cdot \vec n\ dS $.
+
+We parameterize \surfaceS\ with $$\vec r(u,v) = \langle v\cos u+1,v\sin u+1, 6-(v\cos u+1)^2-(v\sin u+1)^2\rangle,$$
+where $0\leq u\leq 2\pi$ and $0\leq v\leq 1$, and leave it to the reader to confirm that
+$$\vec r_u\times \vec r_v = \la 2v\big(v\cos u+1\big), 2v\big(v\sin u+1\big),v\ra,$$
+which also conforms to the right--hand rule with regard to the orientation of $C$. With $\curl \vec F = \langle 2y,0,-1\rangle$ as before, we have
+\begin{multline*}
+\iint_\surfaceS (\curl\vec F)\cdot \vec n\ dS = \\ 
+\int_0^1\int_0^{2\pi} \la 2v\sin u+2,0,-1\ra\cdot \la 2v\big(v\cos u+1\big), 2v\big(v\sin u+1\big),v\ra\ du\ dv =\\
+3\pi.
+\end{multline*}
+Even though the  surfaces used in this example and in Example \ref{ex_stokes1} are very different, because they share the same boundary, Stokes' Theorem guarantees they have equal ``sum of curls'' across their respective surfaces.
+}\\
+
+\clearpage
+%\vskip\baselineskip
+\noindent\textbf{\large A Common Thread of Calculus}\\
+
+We have threefold interest in each of the major theorems of this chapter: the Fundamental Theorem of Line Integrals, Green's, Stokes' and the Divergence Theorems. First, we find the beauty of their truth interesting. Second, each provides two methods of computing a desired quantity, sometimes offering a simpler method of computation. 
+
+%As with Green's Theorem and Divergence Theorems, our interest in Stokes' Theorem is also twofold. We are interested in the beauty of its truth, and we are also interested in the fact that circulation can be calculated in (at least) two distinct ways. 
+
+There is yet one more reason of interest in the major theorems of this chapter. %The Fundamental Theorem of Line Integrals, Green's, Stokes' and the Divergence Theorems 
+These important theorems also all share an important principle with the Fundamental Theorem of Calculus, introduced in Chapter \ref{chapter:integration}. 
+
+Revisit this fundamental theorem, adopting the notation used heavily in this chapter. Let $I$ be the interval $[a,b]$ and let $y=F(x)$ be differentiable on $I$, with $F\,'(x) = f(x)$. The Fundamental Theorem of Calculus states that 
+$$\int_I f(x)\ dx = F(b) - F(a).$$
+That is, the sum of the rates of change of a function $F$ over an interval $I$ can also be calculated with a certain sum of $F$ itself on the boundary of $I$ (in this case, at the points $x=a$ and $x=b$).
+
+Each of the named theorems above can be expressed in similar terms. Consider the Fundamental Theorem of Line Integrals: given a function $z=f(x,y)$, the gradient $\nabla f$ is a type of rate of change of $f$. Given a curve $C$ with initial and terminal points $A$ and $B$, respectively, this fundamental theorem states that 
+$$\int_C \nabla f\ ds = f(B) - f(A),$$
+where again the sum of a rate of change of $f$ along a curve $C$ can also be evaluated by a certain sum of $f$ at the boundary of $C$ (i.e., the points $A$ and $B$).
+
+Green's Theorem is essentially a special case of Stokes' Theorem, so we consider just Stokes' Theorem here. Recalling that the curl of a vector field $\vec F$ is a measure of a rate of change of $\vec F$, Stokes' Theorem states that over a surface \surfaceS\ bounded by a closed curve $C$,
+$$\iint_\surfaceS \big(\curl \vec F\big)\cdot \vec n\ dS = \oint_C \vec F\cdot d\vec r,$$
+i.e., the sum of a rate of change of $\vec F$ can be calculated with a certain sum of $\vec F$ itself over the boundary of \surfaceS. In this case, the latter sum is also an infinite sum, requiring an integral. 
+
+Finally, the Divergence Theorems state that the sum of divergences of a vector field (another measure of a rate of change of $\vec F$) over a region can also be computed with a certain sum of $\vec F$ over the boundary of that region. When the region is planar, the latter sum of $\vec F$ is an integral; when the region is spatial, the latter sum of $\vec F$ is a double integral.
+
+The common thread among these theorems: the sum of a rate of change of a function over a region can be computed as another sum of the function itself on the boundary of the region. While very general, this is a very powerful and important statement.
+
+\printexercises{exercises/14_08_exercises}

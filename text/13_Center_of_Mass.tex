@@ -1,5 +1,7 @@
 \section{Center of Mass}\label{sec:center_of_mass}
 
+In Section~\ref{sec:center_of_mass_calc_ii}, we introduced centers of mass, but only computed them for planar laminas with constant density.  With the tools of double integrals, we can now compute a broader range of centers of mass.
+
 We have used iterated integrals to find areas of plane regions and signed volumes under surfaces. A brief recap of these uses will be useful in this section as we apply iterated integrals to compute the \textbf{mass} and \textbf{center of mass} of planar regions.
 
 To find the area of a planar region, we evaluated the double integral $\iint_R\ dA$. That is, summing up the areas of lots of little subregions of $R$ gave us the total area. Informally, we think of $\iint_R\ dA$ as meaning ``sum up lots of little areas over $R$.''
@@ -190,8 +192,8 @@ In a discrete system (i.e., mass is located at individual points, not along a co
 
 We can extend the concept of the center of mass of discrete points along a line to the center of mass of discrete points in the plane rather easily. To do so, we define some terms then give a theorem.
 
-\definition{def:moment}{Moments about the $x$- and $y$- Axes.}
-{Let point masses $m_1$, $m_2,\ldots,m_n$ be located at points $(x_1,y_1)$, $(x_2,y_2)\ldots,(x_n,y_n)$, respectively, in the $x$-$y$ plane. \index{moment}
+\definition{def:moment}{Moments About the $x$- and $y$- Axes.}
+{Let point masses $m_1$, $m_2,\ldots,m_n$ be located at points $(x_1,y_1)$, $(x_2,y_2),\ldots,(x_n,y_n)$, respectively, in the $x$-$y$ plane. \index{moment}
 \begin{enumerate}
 	\item The \textbf{moment about the $y$-axis}, $M_y$, is 
 	$\ds M_y = \sum_{i=1}^n m_ix_i.$
@@ -205,7 +207,7 @@ One can think that these definitions are ``backwards'' as $M_y$ sums up ``$x$'' 
 We now define the center of mass of discrete points in the plane.
 
 \theorem{thm:center_mass_points_plane}{Center of Mass of Discrete Planar System}
-{Let point masses $m_1$, $m_2,\ldots,m_n$ be located at points $(x_1,y_1)$, $(x_2,y_2)\ldots,(x_n,y_n)$, respectively, in the $x$-$y$ plane, and let $\ds M = \sum_{i=1}^n m_i$.  
+{Let point masses $m_1$, $m_2,\ldots,m_n$ be located at points $(x_1,y_1)$, $(x_2,y_2),\ldots,(x_n,y_n)$, respectively, in the $x$-$y$ plane, and let $\ds M = \sum_{i=1}^n m_i$.  
 \index{center of mass}
 
 The center of mass of the system is at $(\overline{x},\overline{y})$, where 
@@ -213,7 +215,7 @@ $$\overline{x}= \frac{M_y}{M}\quad \text{and}\quad \overline{y} = \frac{M_x}{M}.
 }
 
 \example{ex_mass5}{Finding the center of mass of a discrete planar system}{
-Let point masses of 1kg, 2kg, and 5kg be located at points $(2,0)$, $(1,1)$ and $(3,1)$, respectively, and are connected by thin rods of negligible weight. Find the center of mass of the system.}
+Let point masses of 1kg, 2kg, and 5kg be located at points $(2,0)$, $(1,1)$, and $(3,1)$, respectively, and are connected by thin rods of negligible weight. Find the center of mass of the system.}
 {We follow Theorem \ref{thm:center_mass_points_plane} and Definition \ref{def:moment} to find $M$, $M_x$ and $M_y$:
 
 $M = 1+2+5 = 8$kg.
@@ -222,14 +224,14 @@ $M = 1+2+5 = 8$kg.
 \begin{align*}
 M_x &=  \sum_{i=1}^n m_iy_i \\
 		&= 1(0) + 2(1) + 5(1) \\
-		&= 7.
+		&= 7 \text{ kg}.
 \end{align*}
 \end{minipage}
 \begin{minipage}{.5\linewidth}
 \begin{align*}
 M_y &=  \sum_{i=1}^n m_ix_i \\
 		&= 1(2) + 2(1) + 5(3) \\
-		&= 19.
+		&= 19 \text{ kg}.
 \end{align*}
 \end{minipage}
 \mfigure{.3}{Illustrating the center of mass of a discrete planar system in Example \ref{ex_mass5}.}{fig:mass5}{figures/figmass5}

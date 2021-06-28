@@ -84,7 +84,7 @@ Use Newton's Method to approximate a solution to $\cos{x} = x$, accurate to 5 pl
 
 So we rewrite $\cos x=x$ as $\cos{x}-x=0$.  Written this way, we are finding a root of $f(x)=\cos{x}-x$.  We compute $\fp(x)=-\sin{x} - 1$.  Next we need a starting value, $x_0$.  Consider Figure \ref{fig:newt3}, where $f(x) = \cos x-x$ is graphed. It seems that $x_0=0.75$ is pretty close to the root, so we will use that as our $x_0$. (The figure also shows the graphs of $y=\cos x$ and $y=x$, drawn with dashed lines. Note how they intersect at the same $x$ value as when $f(x) = 0$.)
 
-\mfigure{.7}{A graph of $f(x)=\cos x-x$ used to find an initial approximation of its root.}{fig:newt3}{figures/fignewt3}
+\mfigure{.32}{A graph of $f(x)=\cos x-x$ used to find an initial approximation of its root.}{fig:newt3}{figures/fignewt3}
 
 We now compute $x_1$, $x_2$, etc.  The formula for $x_1$ is 
 $$x_1 = 0.75 - \frac{\cos(0.75)-0.75}{-\sin(0.75)-1}\approx 0.7391111388.$$

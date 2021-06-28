@@ -260,8 +260,9 @@ Notes:
 			\begin{minipage}{\marginparwidth}%
 				\centering%
 				\ifthenelse{\boolean{in_threeD}}{% in 3D
-	  		\includemedia[#1]{\includegraphics{#6_3D\colornamesuffix}}{#6_3D.prc}}%now not in 3D
-				{\myincludegraphics[#2]{#6}}%
+	  		\includemedia[#1]{\includegraphics[#2]{#6_3D\colornamesuffix}}{#6_3D.prc}}%now not in 3D
+				%{\includegraphics[width=150pt]{#6_3D\colornamesuffix}}%
+				{\myincludegraphics[#2]{#6_3D}}%
   			\captionsetup{type=figure}%
   			%#1%
 	  		\caption{#4}\label{#5}%
@@ -270,8 +271,9 @@ Notes:
 			\begin{minipage}{\marginparwidth}%
 			  \centering%
   			\ifthenelse{\boolean{in_threeD}}{% in 3D
-	  		\includemedia[#1]{\includegraphics{#6_3D\colornamesuffix}}{#6_3D.prc}}%now not in 3D
-				{\myincludegraphics[#2]{#6}}%
+	  		\includemedia[#1]{\includegraphics[#2]{#6_3D\colornamesuffix}}{#6_3D.prc}}%now not in 3D
+				%{\includegraphics[width=150pt]{#6_3D\colornamesuffix}}%
+				{\myincludegraphics[#2]{#6_3D}}%
   			\captionsetup{type=figure}%
   			%#1%
 	  		\caption{#4}\label{#5}%
@@ -368,6 +370,8 @@ Notes:
 \newcommand{\pf}{\ensuremath{\partial f}}
 \newcommand{\underlinespace}{\underline{\phantom{xxxxxx}}}
 
+\newcommand{\surfaceS}{\ensuremath{\mathcal{S}}}
+
 \newcommand{\mathN}{\ensuremath{\mathbb{N}}}
 
 \newcommand{\zerooverzero}{\ensuremath{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\text{\ ''}}}}
@@ -381,11 +385,13 @@ Notes:
 
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\curl}{curl}
 \DeclareMathOperator{\erf}{erf}
 \DeclareMathOperator{\erfc}{erfc}
 \DeclareMathOperator{\erfi}{erfi}
 \DeclareMathOperator{\dilog}{dilog}
 \DeclareMathOperator{\Si}{Si}
+\DeclareMathOperator{\divv}{div}
 
 \newcommand{\sword}[1]{\textbf{#1}}
 

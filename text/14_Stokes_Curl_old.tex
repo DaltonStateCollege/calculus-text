@@ -1,0 +1,136 @@
+\section{Stokes' Theorem and Curl}\label{sec:stokes_theorem}
+
+In the last section, the Divergence Theorem gave us a generalization of Green's Theorem to a closed surface. In this section we consider a surface which is not closed, and hence has a boundary.  This boundary will be a curve in three-dimensional space. This puts us back in the setting of Green's Theorem - a region bounded by a curve. Stokes' Theorem will be this generalization of Green's Theorem to three-dimensional space. Instead of a region in the plane, the region will be a surface in three-dimensional space.\\
+
+Before we get to Stokes' Theorem, we will define and discuss the idea of the \emph{curl} of a vector field. In the previous section, we defined divergence as the dot product of $\nabla = \left\langle \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} \right\rangle$ with the vector field.  We will use another vector operation, the cross product, to define curl.\\
+
+\noindent\textbf{\large Curl}\\
+
+Consider a three-dimensional vector field $$\vec F(x,y,z) = M(x,y,z) \: \vec i + N(x,y,z) \: \vec j + P(x,y,z) \: \vec k$$ in which the component functions have continuous partial derivatives. In Green's Theorem, the vector field had only two dimensions and the line integral around the curve turned into a double integral of the scalar function $\dfrac{\partial N}{\partial x} - \dfrac{\partial M}{\partial y}$.  In three-dimensions, this function changes to something involving what we will call the curl of the vector field.\\
+
+\definition{def:curl}{Curl}{Let $\vec F(x,y,z) = M(x,y,z) \: \vec i + N(x,y,z) \: \vec j + P(x,y,z) \: \vec k$ be a vector field.  The \textbf{curl} of the field $\vec F$, denoted by $\text{curl } \vec F$, is given by
+$$\text{curl }\vec F(x,y,z) = \left( \dfrac{\partial P}{\partial y} - \dfrac{\partial N}{\partial z} \right) \vec i + \left( \dfrac{\partial M}{\partial z} - \dfrac{\partial P}{\partial x} \right) \vec j + \left( \dfrac{\partial N}{\partial x} - \dfrac{\partial M}{\partial y} \right) \vec k$$
+which is a real-valued function. An easier way to remember this is as the cross product of $$\nabla = \left\langle \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial y}, \dfrac{\partial}{\partial z} \right\rangle$$ with the vector field $\vec F$, or as 
+$$\text{curl } \vec F = \nabla \times \vec F = \left| \begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ &  & \\ M & N & P \end{array} \right|$$
+}\\
+
+Note that if $P(x,y,z) = 0$ above and we have a two-dimensional vector field with $M(x,y,z) = M(x,y)$ and $N(x,y,z) = N(x,y)$ in the plane not depending on $z$, then $\dfrac{\partial M}{\partial z} = \dfrac{\partial N}{\partial z} = 0$ and
+$$\text{curl } \vec F = \left| \begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ &  & \\ M(x,y) & N(x,y) & 0 \end{array} \right| = \left(\dfrac{\partial N}{\partial x} - \dfrac{\partial M}{\partial y} \right) \vec k$$
+as in Green's Theorem.  That is, in this case we have the restatement of Green's Theorem as
+$$\oint_C M(x,y) \: dx + N(x,y) \: dy = \iint_R \text{curl } \vec F \cdot \vec n \: dA$$
+where $C$ is the closed boundary curve of the region $R$ in the plane.\\
+
+\example{ex_curl_01}{}{Determine the curl of the spin field $$\vec F(x,y,z) = (z-y) \: \vec i + (x-z) \: \vec j + (y-x) \: \vec k$$ which has an axis of rotation given by the vector $\vec a = (1,1,1)$.}{The curl of $\vec F$ is given by the cross product
+\begin{eqnarray*}
+\text{curl } F & = & \nabla \times \vec F = \left| \begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ &  & \\ (z-y) & (x-z) & (y-x) \end{array} \right| \\
+& = & (1 + 1) \vec i - (-1-1) \vec j + (1+1) \vec k = (2,2,2) = 2 \vec a
+\end{eqnarray*}
+This result generalizes. The curl of a spin field about an axis of rotation given by the vector $\vec a$ is in the direction of the axis of rotation. This gives us our first clue as to what the curl of a vector field represents - it measures the spin.
+}\\
+
+We have spent a significant amount of time talking about conservative vector fields in this chapter.  What is the curl of such a vector field, one which is the gradient of a scalar function?  Consider the potential function $f(x,y,z)$ with continuous derivatives with gradient vector field $$\vec F = \nabla f(x,y,z) = \dfrac{\partial f}{\partial x} \: \vec i + \dfrac{\partial f}{\partial y} \: \vec j + \dfrac{\partial f}{\partial z} \: \vec k$$
+Then the curl of $\vec F$ is
+\begin{eqnarray*}
+\text{curl } \vec F & = & \left| \begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ &  & \\ \dfrac{\partial f}{\partial x} & \dfrac{\partial f}{\partial y} & \dfrac{\partial f}{\partial z} \end{array} \right| \\
+& = & \left( \dfrac{\partial}{\partial y} \dfrac{\partial f}{\partial z} - \dfrac{\partial}{\partial z} \dfrac{\partial f}{\partial y} \right) \vec i + \left( \dfrac{\partial}{\partial z} \dfrac{\partial f}{\partial x} - \dfrac{\partial}{\partial x} \dfrac{\partial f}{\partial z} \right)  \vec j + \left( \dfrac{\partial}{\partial x} \dfrac{\partial f}{\partial y} - \dfrac{\partial}{\partial y} \dfrac{\partial f}{\partial x} \right) \vec k
+\end{eqnarray*}
+Since $f_{yz} = f_{zy}$, $f_{xz} = f_{zx}$, and $f_{xy} = f_{yx}$, we arrive at $\text{curl } \vec F = \vec 0$.  Therefore the curl of any conservative vector field is zero.\\
+
+Similarly, if $\vec F$ is the curl of another vector field, say $\vec F = \text{curl } \vec G$, then $\text{div } \vec F = \text{div } \text{curl } \vec G = 0$.  That is, the divergence of a curl field is zero.  We summarize these last two results in the following theorem.
+
+\theorem{thm:curl_thm}{}{Consider a vector field $\vec F$. If $\vec F = \nabla f(x,y,z)$ is a conservative vector field, then $\text{curl } \vec F = \vec 0$. If $\vec G$ is another vector field and $\vec F = \text{curl } \vec G$, then $\text{div } \vec F = 0$.
+}\\
+
+While we may think of curl as measuring the spin of a field, we would be incorrect in thinking that a vector field made up of parallel vectors would always have zero for a curl.  The vector field in the next example is such a case, where the parallel vectors have differing lengths.\\
+
+\mfigure[scale=0.5]{.3}{Velocity field $\mathbf{V} = z \mathbf{i}$}{fig:fig_stokes_curl_wheel}{figures/fig_stokes_curl_wheel}
+
+\example{ex_curl_02}{}{Determine the curl of the vector field $\vec F(x,y,z) = z \: \vec i$, in which every vector is parallel to the $x$-axis.}{We compute
+$$\text{curl } \vec F = \left| \begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ &  & \\ z & 0 & 0 \end{array} \right| = \vec j$$
+and so the curl of this vector field is in the direction of the $y$-axis. To make some sense of this, imagine a wheel placed anywhere in the $xz$-plane of this velocity vector field. The velocity at the top of the wheel will be greater than that at the bottom, causing the wheel to spin.  See Figure \ref{fig:fig_stokes_curl_wheel}. The axis of rotation is in the direction of the $y$-axis, and this is the curl vector calculated above.
+}\\
+
+\noindent\textbf{\large Conservative Fields and Potential Functions}\\
+
+Recall that a vector field $\vec F(x,y) = M(x,y) \: \vec i + N(x,y) \: \vec j$ in the $xy$-plane is conservative (is a gradient field) whenever $M_y = N_x$, which is equivalent to saying the curl of this vector field is $\vec 0$.  As we saw above, this extends to vector fields in three dimensions.  If $$\vec F(x,y,z) = M(x,y,z) \: \vec i + N(x,y,z) \: \vec j + P(x,y,z) \: \vec k$$ is conservative, then $\text{curl } \vec F(x,y,z) = \vec 0$.  In particular, $\text{curl } \vec F = \vec 0$ means that
+$$M_y = N_x, \: M_z = P_x, \text{ and } N_z = P_y.$$
+These are three equations we can readily deal with to determine whether there exists a potential function $f(x,y,z)$ so that $\vec F = \nabla f$.  Recall now the key properties of conservative vector fields, stated here now for three dimensions.\\
+
+\keyidea{idea:conservative_fields}{}
+{A vector field $\vec F(x,y,z) = M(x,y,z) \: \vec i + N(x,y,z) \: \vec j + P(x,y,z) \: \vec k$ is conservative if it has the following properties:
+\begin{enumerate}
+	\item The work $\displaystyle\oint_C \vec F \cdot d\vec r = 0$ around every closed path in space;
+	\item The value of work $\displaystyle\oint_C \vec F \cdot d\vec r$ depends only on the initial point $P$ and terminal point $Q$, not on the path in space;
+	\item $\vec F$ is a gradient field: there exists a function $f(x,y,z)$ so that $M = f_x$, $N = f_y$, and $P = f_z$;
+	\item The components of $\vec F$ satisfy $M_y = N_x$, $M_z = P_x$, and $N_z = P_y$.
+\end{enumerate}
+A field with one of these properties has all of them.  The fourth one is a quick check to determine if a given vector field in three dimensions is conservative or not.
+}\\
+
+\example{ex_conservative_01}{}{Determine whether or not $$\vec F(x,y,z) = (z-y) \: \vec i + (x-z) \: \vec j + (y-x) \: \vec k$$ is a conservative field.}{We compute the appropriate partial derivatives of the components.  Notice that $M_z = 1$ while $P_x = -1$.  Since these are not equal, the fourth property above fails and so $\vec F$ cannot be the gradient field of a potential function.
+}\\
+
+\example{ex_conservative_02}{}{Determine whether or not $$\vec F(x,y,z) = e^{yz} \: \vec i + xz \: e^{yz} \: \vec j + xy \: e^{yz} \: \vec k$$ is a conservative field. If so, find a potential function $f(x,y,z)$ for this vector field.}{We compute the appropriate partial derivatives of the components. Notice that
+$$M_y = z \: e^{yz} = N_x, \: M_z = xy^2 \: e^{yz} = P_x, \text{ and } N_z = (x + xyz) \: e^{yz} = P_y$$
+and so $\vec F$ is conservative.  To find its potential function, we use the same technique as in Section \ref{sec:line_integrals}.  There is a function $f(x,y,z)$ so that $f_x = e^{yz}$, $f_y = xz \: e^{yz}$, and $f_z = xy \: e^{yz}$.  We start with the first and integrate with respect to $x$, which yields that
+$$f(x,y,z) = x \: e^{yz} + g(y,z)$$
+where $g$ may depend at most only on $y$ and $z$.  Next take the derivative of this with respect to $y$ and compare with the above $f_y$.  This yields
+$$f_y = xz \: e^{yz} + g_y(y,z) = xz \: e^{yz}$$
+and so $g_y(y,z) = 0$.  This means that $g(y,z) = g(z)$ can only depend on at most $z$.  Similarly, the $z$-derivative yields
+$$f_z = xy \: e^{yz} + g'(z) = xy \: e^{yz}$$
+and so $g'(z) = 0$ meaning that $g$ is a constant. Therefore the potential function is $f(x,y,z) = x \: e^{yz} + C$ for any constant $C$.
+}\\
+
+Now that we have worked with curl and have see how it relates to conservative fields, we will move on to the last main result in this chapter, Stokes' Theorem.\\
+
+\noindent\textbf{\large Stokes' Theorem}\\
+
+Stokes' Theorem will be like Green's Theorem - a line integral equals a surface integral. The line integral is still the work $\displaystyle\oint \vec F \cdot d\vec r$ around a curve.  The surface integral in Green's Theorem is $\displaystyle\iint (N_x - M_y) \: dx \: dy$, with the surface being flat in the $xy$-plane. The normal vector to this surface is therefore $\vec k$, and we recognize $N_x - M_y$ as the $\vec k$-component of the curl.  Green's Theorem uses only this component because the normal vector direction is always $\vec k$.  For Stokes' Theorem on a curved surface, we will need all three components of curl as the normal vector is not always as simple.\\
+
+\theorem{thm:stokes_thm}{Stokes' Theorem}{Consider a three-dimensional vector field $\vec F(x,y,z)$ and a surface $T$ with closed boundary curve $C$, oriented in the positive direction.  Then
+$$\oint_C \vec F \cdot d\vec r = \iint_T (\text{curl } \vec F) \cdot \vec n \: dS$$
+where $\vec n$ is the unit normal vector of the surface.
+}\\
+
+While this theorem is not easy to visualize, think of the right-hand side above as the sum of the spins along the surface.  The left-hand side is the total circulation (or work) around the boundary $C$.  Notice one simple corollary of this result, however.  If $\vec F$ is conservative (a gradient field) then $\text{curl } \vec F = \vec 0$ and so the work done around the closed curve $C$ is zero, as we know.\\
+
+\mfigure[scale=0.5]{.3}{Surface formed by two triangles}{fig:fig_stokes_curl_triangles}{figures/fig_stokes_curl_triangles}
+
+We next provide a quick argument as to why this theorem is true, leaving out a formal proof.  In Figure \ref{fig:fig_stokes_curl_triangles} we see a triangle $ABC$ attached to a triangle $ACD$, creating a surface.  More generally $S$ will be a closed curved surface but two triangles are enough to make the point here.  In the plane of each triangle, Green's Theorem is known and gives us
+$$\oint_{AB+BC+CA} \vec F \cdot d\vec R = \iint_{ABC} \text{curl } \vec F \cdot \vec n_1 \: dS$$
+and
+$$\oint_{AC+CD+DA} \vec F \cdot d\vec R = \iint_{ACD} \text{curl } \vec F \cdot \vec n_2 \: dS.$$
+Now add.  The right sides give the integral of $\text{curl } \vec F \cdot \vec n$ over the two-triangle surface.  On the left side we get the integral over $CA$ canceling the one over $AC$ - the cross cut disappears.  That leaves $AB + BC + CD + DA$, the boundary $C$ of the surface, the left side of Stokes' Theorem. Next we give some examples of Stokes' Theorem in use.\\
+
+\example{ex_stokes_01}{}{Use Stokes' Theorem to compute $\displaystyle\iint_T \text{curl } \vec F \cdot \vec n \: dS$, if $T$ is the part of the unit sphere $x^2 + y^2 + z^2 = 1$ lying above the $xy$-plane and 
+$$\vec F(x,y,z) = y \: \vec i + x^2 \: \vec j + z \: \vec k$$}{Using Stokes' Theorem, we can change this surface integral to a line integral around the boundary of this hemisphere, which is the unit circle. We use the standard parameterization
+$$\vec r(t) = \cos(t) \: \vec i + \sin(t) \: \vec j + 0 \: \vec k$$
+for the unit circle $C$, where $0 \leq t \leq 2\pi$.  By Stokes' Theorem,
+\begin{eqnarray*}
+\displaystyle\iint_T \text{curl } \vec F \cdot \vec n \: dS & = & \oint_C \vec F \cdot d\vec r \\
+ & = & \int_0^{2\pi} \left( \sin(t), \cos^2(t), 0 \right) \cdot \left( -\sin(t), \cos(t), 0\right) \: dt \\
+ & = & \int_0^{2\pi} -\sin^2(t) + \cos^3(t) \: dt = -\pi
+\end{eqnarray*}
+In this way, we have avoided computing the curl of the given vector field as well as avoided computing a surface integral by instead computing a line integral.
+}\\
+
+\example{ex_stokes_02}{}{Use Stokes' Theorem to compute $\displaystyle\oint_C \vec F \cdot d\vec r$ where 
+$$\vec F(x,y,z) = -y^2 \: \vec i + x \: \vec j + z^2 \: \vec k$$ and $C$ is the curve of intersection of the plane $z = 2-y$ and the cylinder $x^2 + y^2 = 1$, with the usual counterclockwise orientation.}{Instead of computing a line integral in this case, we will instead compute a surface integral using a surface $T$ that has $C$ as its boundary.  The surface $T$ we will choose is the elliptical region in the plane $z = 2-y$ inside the cylinder $x^2 + y^2 = 1$.  The shadow of this surface down on the $xy$-plane is the unit disc $D$.  And so with $z = 2-y$ we parameterize
+$$\vec r(x,y) = x \: \vec i + y \: \vec j + (2-y) \: \vec k$$
+which results in a normal vector
+$$\vec n = \vec r_x \times \vec r_y = \vec j + \vec k$$
+For the curl of $\vec F$, we compute
+$$\text{curl } \vec F = \left|\begin{array}{ccc} \vec i & \vec j & \vec k \\ & & \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ & & \\ -y^2 & x & z^2 \end{array} \right| = (1+2y) \: \vec k$$
+Therefore by Stokes' Theorem
+\begin{eqnarray*}
+\displaystyle\oint_C \vec F \cdot d\vec r & = & \iint_T \text{curl } \vec F \cdot \vec n \: dS \\
+ & = & \iint_D (0,0,1+2y) \cdot (0,1,1) \: dA \\ 
+ & = & \iint_D 1+2y \: dA \\
+ & = & \int_{0}^{2\pi} \int_0^1 \left( 1 + 2r\sin(\theta)\right) r \: dr \: d\theta = \pi
+\end{eqnarray*}
+In this way, we have avoided having to parameterize the boundary curve $C$ and instead only had to do a surface integral over a surface above the unit disk in the $xy$-plane. 
+}\\
+
+In closing, notice how most of the main results in this chapter (Green's Theorem, The Divergence Theorem, Stokes' Theorem) involve an interchange between one type of integral and another, such as a work line integral being equal to a flux surface integral.  Besides being useful theoretically, in certain situations one of these integrals may be easier than the other to compute directly and so we get a computational advantage as well.\\
+
+\printexercises{exercises/14_06_exercises_old}
